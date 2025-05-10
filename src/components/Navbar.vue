@@ -93,7 +93,7 @@ const isOpen = ref<boolean>(false);
       <ChevronsDown
         class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white"
       />
-      ShadcnVue</a
+      Efficient Driver</a
     >
     <!-- Mobile -->
     <div class="flex items-center lg:hidden">
@@ -119,7 +119,7 @@ const isOpen = ref<boolean>(false);
                   <ChevronsDown
                     class="bg-gradient-to-tr from-primary/70 via-primary to-primary/70 rounded-lg size-9 mr-2 border text-white"
                   />
-                  ShadcnVue
+                  Efficient Driver
                 </a>
               </SheetTitle>
             </SheetHeader>
@@ -208,11 +208,11 @@ const isOpen = ref<boolean>(false);
         as-child
         size="sm"
         variant="ghost"
-        aria-label="View on GitHub"
+        aria-label="Efficient Driver Dashboard"
       >
         <a
-          aria-label="View on GitHub"
-          href="https://github.com/leoMirandaa/shadcn-vue-landing-page.git"
+          aria-label="Efficient Driver Dashboard"
+          href="https://dash.driver.efficientdriver.net"
           target="_blank"
         >
           <GithubIcon class="size-5" />
