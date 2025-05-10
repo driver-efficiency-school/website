@@ -25,7 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { ChevronsDown, Menu } from "lucide-vue-next";
+import { Menu } from "lucide-vue-next";
 import DashIcon from "@/icons/DashIcon.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 
@@ -60,18 +60,16 @@ const routeList: RouteProps[] = [
 
 const featureList: FeatureProps[] = [
   {
-    title: "Showcase Your Value ",
-    description: "Highlight how your product solves user problems.",
+    title: "Drive Green",
+    description: "Cut emissions with offline eco-insights.",
   },
   {
-    title: "Build Trust",
-    description:
-      "Leverages social proof elements to establish trust and credibility.",
+    title: "Save Fuel",
+    description: "Track savings, boost efficiency fast.",
   },
   {
-    title: "Capture Leads",
-    description:
-      "Make your lead capture form visually appealing and strategically.",
+    title: "Stay Safe",
+    description: "Get offline tips for safer driving.",
   },
 ];
 
@@ -85,8 +83,7 @@ const isOpen = ref<boolean>(false);
     'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
   }">
     <a href="/" class="font-bold text-lg flex items-center">
-      <ChevronsDown
-        class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
+      <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
       Efficient Driver
     </a>
     <!-- Mobile -->
@@ -100,9 +97,8 @@ const isOpen = ref<boolean>(false);
           <div>
             <SheetHeader class="mb-4 ml-4">
               <SheetTitle class="flex items-center">
-                <a href="/" class="flex items-center">
-                  <ChevronsDown
-                    class="bg-gradient-to-tr from-primary/70 via-primary to-primary/70 rounded-lg size-9 mr-2 border text-white" />
+                <a href="/" class="font-bold text-lg flex items-center">
+                  <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
                   Efficient Driver
                 </a>
               </SheetTitle>
@@ -135,8 +131,8 @@ const isOpen = ref<boolean>(false);
             Features
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div class="grid w-[600px] grid-cols-2 gap-5 p-4">
-              <img src="https://www.radix-vue.com/logo.svg" alt="Beach" class="h-full w-full rounded-md object-cover" />
+            <div class="grid w-[512px] grid-cols-2 gap-5 p-4">
+              <img src="../icons/EDIcons_256x256_Transparent.png" alt="Beach" class="h-full w-full rounded-md object-cover" />
               <ul class="flex flex-col gap-2">
                 <li v-for="{ title, description } in featureList" :key="title"
                   class="rounded-md p-3 text-sm hover:bg-muted">
@@ -169,7 +165,7 @@ const isOpen = ref<boolean>(false);
       <ToggleTheme />
 
       <Button as-child size="sm" variant="ghost" aria-label="Efficient Driver Dashboard">
-        <a aria-label="Efficient Driver Dashboard" href="https://dash.driver.efficientdriver.net" target="_blank">
+        <a aria-label="Efficient Driver Dashboard" href="https://dash.driver.efficiency.school" target="_blank">
           <DashIcon class="size-5" />
         </a>
       </Button>

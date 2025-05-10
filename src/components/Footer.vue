@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ChevronsDown } from "lucide-vue-next";
 import Separator from "./ui/separator/Separator.vue";
 </script>
 
@@ -9,10 +8,8 @@ import Separator from "./ui/separator/Separator.vue";
       <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div class="col-span-full xl:col-span-2">
           <a href="#" class="flex font-bold items-center">
-            <ChevronsDown
-              class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-
-            <h3 class="text-2xl">Efficient Driver 2.0</h3>
+            <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
+            <h3 class="text-2xl">Efficient Driver</h3>
           </a>
         </div>
 
