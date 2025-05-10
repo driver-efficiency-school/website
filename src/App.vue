@@ -2,7 +2,6 @@
 import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
 import Benefits from "./components/Benefits.vue";
-import Features from "./components/Features.vue";
 import Services from "./components/Services.vue";
 import HowItWorks from "./components/HowItWorks.vue";
 import Sponsors from "./components/Sponsors.vue";
@@ -18,8 +17,8 @@ import { ref } from 'vue';
 
 const showTerms = ref(false);
 
-function toggleTerms() {
-  showTerms.value = !showTerms.value;
+function navigate(target: 'main' | 'terms') {
+  showTerms.value = target === 'terms';
   if (showTerms.value) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -27,7 +26,7 @@ function toggleTerms() {
 </script>
 
 <template>
-  <Navbar @toggle-terms="toggleTerms" />
+  <Navbar @navigate="navigate" />
   <div v-if="!showTerms">
     <Hero />
     <Sponsors />
@@ -43,5 +42,5 @@ function toggleTerms() {
     <FAQ />
   </div>
   <TermsOfUse v-else />
-  <Footer @toggle-terms="toggleTerms" />
+  <Footer @navigate="navigate" />
 </template>

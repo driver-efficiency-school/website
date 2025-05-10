@@ -29,6 +29,8 @@ import { Menu, ExternalLinkIcon } from "lucide-vue-next";
 import DashIcon from "@/icons/DashIcon.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 
+const emit = defineEmits(['navigate']);
+
 interface RouteProps {
   href: string;
   label: string;
@@ -89,7 +91,7 @@ const isOpen = ref<boolean>(false);
     'shadow-dark': mode === 'dark',
     'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
   }">
-    <a href="/" class="font-bold text-lg flex items-center">
+    <a href="/" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
       <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
       Efficient Driver
     </a>
@@ -104,7 +106,7 @@ const isOpen = ref<boolean>(false);
           <div>
             <SheetHeader class="mb-4 ml-4">
               <SheetTitle class="flex items-center">
-                <a href="/" class="font-bold text-lg flex items-center">
+                <a href="/" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
                   <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
                   Efficient Driver
                 </a>
@@ -114,7 +116,7 @@ const isOpen = ref<boolean>(false);
             <div class="flex flex-col gap-2">
               <Button v-for="{ href, label } in routeList" :key="label" as-child variant="ghost"
                 class="justify-start text-base">
-                <a @click="isOpen = false" :href="href">
+                <a @click="emit('navigate', 'main'); isOpen = false" :href="href">
                   {{ label }}
                 </a>
               </Button>
@@ -130,7 +132,6 @@ const isOpen = ref<boolean>(false);
 
           <SheetFooter class="flex-col sm:flex-col justify-start items-start">
             <Separator class="mb-2" />
-
             <ToggleTheme />
           </SheetFooter>
         </SheetContent>
@@ -166,7 +167,7 @@ const isOpen = ref<boolean>(false);
           <NavigationMenuLink asChild>
             <Button v-for="{ href, label } in routeList" :key="label" as-child variant="ghost"
               class="justify-start text-base">
-              <a :href="href">
+              <a @click="emit('navigate', 'main')" :href="href">
                 {{ label }}
               </a>
             </Button>
@@ -177,7 +178,6 @@ const isOpen = ref<boolean>(false);
 
     <div class="hidden lg:flex">
       <ToggleTheme />
-
       <Button as-child size="sm" variant="ghost" aria-label="Efficient Driver Dashboard">
         <a aria-label="Efficient Driver Dashboard" href="https://dash.driver.efficiency.school" target="_blank">
           <DashIcon class="size-5" />
@@ -191,7 +191,6 @@ const isOpen = ref<boolean>(false);
 .shadow-light {
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.085);
 }
-
 .shadow-dark {
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.141);
 }

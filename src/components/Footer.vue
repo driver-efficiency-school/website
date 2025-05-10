@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Separator from "./ui/separator/Separator.vue";
-const emit = defineEmits(['toggle-terms']);
+
+const emit = defineEmits(['navigate']);
 </script>
 
 <template>
@@ -8,7 +9,7 @@ const emit = defineEmits(['toggle-terms']);
     <div class="p-10 bg-muted/50 dark:bg-card border rounded-2xl">
       <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div class="col-span-full xl:col-span-2">
-          <a href="#" class="flex font-bold items-center">
+          <a href="#" class="flex font-bold items-center" @click="emit('navigate', 'main')">
             <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
             <h3 class="text-2xl">Efficient Driver</h3>
           </a>
@@ -36,17 +37,17 @@ const emit = defineEmits(['toggle-terms']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Platforms</h3>
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
+            <a href="/" class="opacity-60 hover:opacity-100">
               iOS
             </a>
           </div>
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
+            <a href="/" class="opacity-60 hover:opacity-100">
               Android (Future Support)
             </a>
           </div>
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
+            <a href="/" class="opacity-60 hover:opacity-100">
               Apple Watch (Future Support)
             </a>
           </div>
@@ -55,22 +56,22 @@ const emit = defineEmits(['toggle-terms']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Help</h3>
           <div>
-            <a href="#contact" class="opacity-60 hover:opacity-100">
+            <a href="$contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Contact Us
             </a>
           </div>
           <div>
-            <a href="#faq" class="opacity-60 hover:opacity-100">
+            <a href="#faq" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               FAQ
             </a>
           </div>
           <div>
-            <a href="#contact" class="opacity-60 hover:opacity-100">
+            <a href="#contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Feedback
             </a>
           </div>
           <div>
-            <a @click="emit('toggle-terms')" class="opacity-60 hover:opacity-100 cursor-pointer">
+            <a @click="emit('navigate', 'terms')" class="opacity-60 hover:opacity-100 cursor-pointer">
               Terms of Use
             </a>
           </div>
