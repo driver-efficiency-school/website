@@ -2,6 +2,7 @@
 import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
 import Benefits from "./components/Benefits.vue";
+import Features from "./components/Features.vue";
 import Services from "./components/Services.vue";
 import HowItWorks from "./components/HowItWorks.vue";
 import Sponsors from "./components/Sponsors.vue";
@@ -13,13 +14,16 @@ import Contact from "./components/Contact.vue";
 import FAQ from "./components/FAQ.vue";
 import Footer from "./components/Footer.vue";
 import TermsOfUse from "./components/TermsOfUse.vue";
+import PrivacyPolicy from "./components/PrivacyPolicy.vue";
 import { ref } from 'vue';
 
 const showTerms = ref(false);
+const showPrivacy = ref(false);
 
-function navigate(target: 'main' | 'terms') {
+function navigate(target: 'main' | 'terms' | 'privacy') {
   showTerms.value = target === 'terms';
-  if (showTerms.value) {
+  showPrivacy.value = target === 'privacy';
+  if (showTerms.value || showPrivacy.value) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
@@ -27,7 +31,7 @@ function navigate(target: 'main' | 'terms') {
 
 <template>
   <Navbar @navigate="navigate" />
-  <div v-if="!showTerms">
+  <div v-if="!showTerms && !showPrivacy">
     <Hero />
     <Sponsors />
     <Benefits />
@@ -41,6 +45,7 @@ function navigate(target: 'main' | 'terms') {
     <Contact />
     <FAQ />
   </div>
-  <TermsOfUse v-else />
+  <TermsOfUse v-else-if="showTerms" />
+  <PrivacyPolicy v-else-if="showPrivacy" />
   <Footer @navigate="navigate" />
 </template>

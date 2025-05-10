@@ -37,17 +37,17 @@ const emit = defineEmits(['navigate']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Platforms</h3>
           <div>
-            <a href="/" class="opacity-60 hover:opacity-100">
+            <a href="/" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               iOS
             </a>
           </div>
           <div>
-            <a href="/" class="opacity-60 hover:opacity-100">
+            <a href="/" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Android (Future Support)
             </a>
           </div>
           <div>
-            <a href="/" class="opacity-60 hover:opacity-100">
+            <a href="/" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Apple Watch (Future Support)
             </a>
           </div>
@@ -56,7 +56,7 @@ const emit = defineEmits(['navigate']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Help</h3>
           <div>
-            <a href="$contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a href="#contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Contact Us
             </a>
           </div>
@@ -73,6 +73,11 @@ const emit = defineEmits(['navigate']);
           <div>
             <a @click="emit('navigate', 'terms')" class="opacity-60 hover:opacity-100 cursor-pointer">
               Terms of Use
+            </a>
+          </div>
+          <div>
+            <a @click="emit('navigate', 'privacy')" class="opacity-60 hover:opacity-100 cursor-pointer">
+              Privacy Policy
             </a>
           </div>
         </div>
