@@ -21,7 +21,8 @@ import { ArrowRight } from "lucide-vue-next";
         <div class="max-w-screen-md mx-auto text-center text-5xl md:text-6xl font-bold">
           <h1>
             <p class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">Efficient Driver 2.0</p>
-            <p>Eco-Driving, Offline – Anytime, Anywhere</p>
+            <p>Eco-Driving</p>
+            <p>Offline Anytime Anywhere</p>
           </h1>
         </div>
 

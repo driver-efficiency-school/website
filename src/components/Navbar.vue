@@ -25,7 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { Menu } from "lucide-vue-next";
+import { Menu, ExternalLinkIcon } from "lucide-vue-next";
 import DashIcon from "@/icons/DashIcon.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 
@@ -55,6 +55,13 @@ const routeList: RouteProps[] = [
   {
     href: "#faq",
     label: "FAQ",
+  },
+];
+
+const externalList: RouteProps[] = [
+  {
+    href: "https://dash.driver.efficiency.school",
+    label: "Dashboard",
   },
 ];
 
@@ -109,6 +116,13 @@ const isOpen = ref<boolean>(false);
                 class="justify-start text-base">
                 <a @click="isOpen = false" :href="href">
                   {{ label }}
+                </a>
+              </Button>
+              <Separator class="my-2" />
+              <Button v-for="{ href, label } in externalList" :key="label" as-child variant="ghost" class="justify-start text-base">
+                <a @click="isOpen = false" :href="href" target="_blank">
+                  {{ label }}
+                  <ExternalLinkIcon class="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </div>
