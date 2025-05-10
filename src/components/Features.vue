@@ -21,39 +21,39 @@ interface FeaturesProps {
 const featureList: FeaturesProps[] = [
   {
     icon: "tabletSmartphone",
-    title: "Mobile Friendly",
+    title: "Offline Eco-Driving",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
-  },
-  {
-    icon: "badgeCheck",
-    title: "Social Proof",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      "Track your driving efficiency anywhere – No internet or hardware required.",
   },
   {
     icon: "goal",
-    title: "Targeted Content",
+    title: "Fuel & CO2 Savings",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      "Quantify fuel savings and CO2 reductions with detailed trip metrics.",
+  },
+  {
+    icon: "badgeCheck",
+    title: "Safer Driving Tips",
+    description:
+      "Get personalized offline coaching to improve your driving habits and safety.",
   },
   {
     icon: "pictureInPicture",
-    title: "Strong Visuals",
+    title: "Gamified Experience",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Earn badges and achieve eco-driving goals with fun challenges.",
   },
   {
     icon: "mousePointerClick",
-    title: "Clear CTA",
+    title: "Privacy Protection",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      "Your data stays local – No internet, no sharing, just privacy.",
   },
   {
     icon: "newspaper",
-    title: "Clear Headline",
+    title: "Business Solutions",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      "Multi-user support and custom reports for driving schools and fleets.",
   },
 ];
 
@@ -86,13 +86,11 @@ const iconMap: Record<
     </h2>
 
     <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
-      What Makes Us Different
+      Why Choose Efficient Driver 2.0?
     </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-      fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-      facere tenetur.
+      Discover the powerful features that make Efficient Driver 2.0 the ultimate offline eco-driving app – designed to help you save fuel, reduce emissions, and drive safer, all without needing internet or hardware.
     </h3>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

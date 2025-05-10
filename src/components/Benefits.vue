@@ -18,28 +18,28 @@ interface BenefitsProps {
 
 const benefitList: BenefitsProps[] = [
   {
-    icon: "blocks",
-    title: "Build Brand Trust",
+    icon: "sparkle",
+    title: "Reduce Emissions",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
-  },
-  {
-    icon: "lineChart",
-    title: "More Leads",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, natus consectetur.",
+      "Track and minimize your carbon footprint with every trip, contributing to a greener planet.",
   },
   {
     icon: "wallet",
-    title: "Higher Conversions",
+    title: "Save Fuel Costs",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus consectetur. A odio velit cum aliquam",
+      "Quantify fuel savings with detailed trip metrics, helping you save money on every journey.",
   },
   {
-    icon: "sparkle",
-    title: "Test Marketing Ideas",
+    icon: "lineChart",
+    title: "Drive Safer",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur dolores.",
+      "Get personalized offline coaching to improve your driving habits, keeping you safer on the road.",
+  },
+  {
+    icon: "blocks",
+    title: "Privacy First",
+    description:
+      "Your data stays with you – Local storage ensures privacy, with no internet or hardware required.",
   },
 ];
 
@@ -68,12 +68,10 @@ const iconMap: Record<
         <h2 class="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
 
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          Your Shortcut to Success
+          Drive Smarter, Save More – Key Benefits
         </h2>
         <p class="text-xl text-muted-foreground mb-8">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non ducimus
-          reprehenderit architecto rerum similique facere odit deleniti
-          necessitatibus quo quae.
+          Efficient Driver 2.0 empowers you to reduce emissions, save fuel, and drive safer – all offline, using just your device’s sensors. Discover how we make eco-driving effortless and impactful.
         </p>
       </div>
 

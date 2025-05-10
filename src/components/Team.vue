@@ -27,38 +27,38 @@ interface SocialNetworkProps {
 const teamList: TeamProps[] = [
   {
     imageUrl: "https://i.pravatar.cc/250?img=58",
-    firstName: "Leo",
-    lastName: "Miranda",
-    positions: ["Vue Fronted Developer", "Creator Of This Website"],
+    firstName: "Alex",
+    lastName: "Carter",
+    positions: ["Lead Developer", "Eco-Driving Innovator"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/efficientdriver-alex/",
       },
       {
         name: "Github",
-        url: "https://github.com/leoMirandaa",
+        url: "https://github.com/efficientdriver-alex",
       },
       {
         name: "X",
-        url: "https://x.com/leo_mirand4",
+        url: "https://x.com/efficientdriver_alex",
       },
     ],
   },
   {
     imageUrl:
       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "Elizabeth",
-    lastName: "Moore",
-    positions: ["UI/UX Designer"],
+    firstName: "Priya",
+    lastName: "Sharma",
+    positions: ["Product Manager", "Sustainability Advocate"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/efficientdriver-priya/",
       },
       {
         name: "X",
-        url: "https://x.com/leo_mirand4",
+        url: "https://x.com/efficientdriver_priya",
       },
     ],
   },
@@ -66,16 +66,16 @@ const teamList: TeamProps[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     firstName: "David",
-    lastName: "Diaz",
-    positions: ["Machine Learning Engineer", "TensorFlow Tinkerer"],
+    lastName: "Nguyen",
+    positions: ["Data Scientist", "Fuel Efficiency Expert"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/efficientdriver-david/",
       },
       {
         name: "Github",
-        url: "https://github.com/leoMirandaa",
+        url: "https://github.com/efficientdriver-david",
       },
     ],
   },
@@ -83,20 +83,20 @@ const teamList: TeamProps[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1573497161161-c3e73707e25c?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     firstName: "Sarah",
-    lastName: "Robinson",
-    positions: ["Cloud Native Developer", " Kubernetes Orchestrator"],
+    lastName: "Kim",
+    positions: ["UI/UX Designer", "Driver Experience Specialist"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/efficientdriver-sarah/",
       },
       {
         name: "Github",
-        url: "https://github.com/leoMirandaa",
+        url: "https://github.com/efficientdriver-sarah",
       },
       {
         name: "X",
-        url: "https://x.com/leo_mirand4",
+        url: "https://x.com/efficientdriver_sarah",
       },
     ],
   },
@@ -104,12 +104,12 @@ const teamList: TeamProps[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1616805765352-beedbad46b2a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     firstName: "Michael",
-    lastName: "Holland",
-    positions: ["DevOps Engineer", "CI/CD Pipeline Mastermind"],
+    lastName: "Brown",
+    positions: ["Enterprise Solutions Lead"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/efficientdriver-michael/",
       },
     ],
   },
@@ -117,16 +117,16 @@ const teamList: TeamProps[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     firstName: "Zoe",
-    lastName: "Garcia",
-    positions: ["JavaScript Evangelist", "Deno Champion"],
+    lastName: "Patel",
+    positions: ["Mobile Developer", "Offline Tech Specialist"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/efficientdriver-zoe/",
       },
       {
         name: "Github",
-        url: "https://github.com/leoMirandaa",
+        url: "https://github.com/efficientdriver-zoe",
       },
     ],
   },
@@ -134,33 +134,33 @@ const teamList: TeamProps[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     firstName: "Evan",
-    lastName: "James",
-    positions: ["Backend Developer"],
+    lastName: "Lee",
+    positions: ["Marketing Lead", "Eco-Community Builder"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/leopoldo-miranda/",
+        url: "https://www.linkedin.com/in/efficientdriver-evan/",
       },
       {
         name: "Github",
-        url: "https://github.com/leoMirandaa",
+        url: "https://github.com/efficientdriver-evan",
       },
       {
         name: "X",
-        url: "https://x.com/leo_mirand4",
+        url: "https://x.com/efficientdriver_evan",
       },
     ],
   },
   {
     imageUrl:
-      "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "Pam",
+      "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    firstName: "Emma",
     lastName: "Taylor",
-    positions: ["Fullstack developer", "UX Researcher"],
+    positions: ["Customer Support Manager"],
     socialNetworks: [
       {
         name: "X",
-        url: "https://x.com/leo_mirand4",
+        url: "https://x.com/efficientdriver_emma",
       },
     ],
   },
@@ -186,7 +186,7 @@ const socialIcon = (socialName: string) => {
       <h2 class="text-lg text-primary text-center mb-2 tracking-wider">Team</h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">
-        The Company Dream Team
+        Meet the Team Behind Efficient Driver 2.0
       </h2>
     </div>
 

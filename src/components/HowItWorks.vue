@@ -11,31 +11,31 @@ interface HowItWorksProps {
 
 const HowItWorksList: HowItWorksProps[] = [
   {
-    badgeTitle: "Contribute",
-    title: "Make a Difference with Every Contribution",
+    badgeTitle: "Download",
+    title: "Download the App – No Hardware Needed",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint reiciendis quidem iure.",
+      "Install Efficient Driver 2.0 from the App Store and start your eco-driving journey without any internet or hardware.",
     image: "roboto.png",
   },
   {
-    badgeTitle: "Discover",
-    title: "Create an Impact with Every Choice",
+    badgeTitle: "Drive",
+    title: "Drive and Track – Offline, Anytime",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, sint reiciendis quidem iure veritatis optio facere tenetur.",
+      "Use your device’s sensors to track your driving efficiency offline – No internet required.",
     image: "runner.png",
   },
   {
-    badgeTitle: "Innovate",
-    title: "Make Every Action Count",
+    badgeTitle: "Analyze",
+    title: "Analyze and Save – Fuel & CO2 Insights",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, odit similique quasi sint.",
+      "Get detailed trip metrics to quantify fuel savings and reduce CO2 emissions effortlessly.",
     image: "pacheco.png",
   },
   {
-    badgeTitle: "Collaborate",
-    title: "Tackle this challenge together",
+    badgeTitle: "Improve",
+    title: "Improve and Stay Safe – Personalized Tips",
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint reiciendis quidem iure.",
+      "Receive offline coaching tips to drive safer and earn badges for eco-friendly driving habits.",
     image: "gamestation.png",
   },
 ];
@@ -49,7 +49,7 @@ const HowItWorksList: HowItWorksProps[] = [
       </h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">
-        Step-by-Step Process
+        Get Started with Efficient Driver 2.0 in 4 Easy Steps
       </h2>
     </div>
 

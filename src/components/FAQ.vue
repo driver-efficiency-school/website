@@ -14,32 +14,31 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Is this template free?",
-    answer: "Yes. It is a free Efficient Driver template.",
+    question: "Does Efficient Driver 2.0 require internet or hardware?",
+    answer: "No. Efficient Driver 2.0 works completely offline using your device’s sensors – no internet or hardware is needed.",
     value: "item-1",
   },
   {
-    question: "Duis aute irure dolor in reprehenderit in voluptate velit?",
+    question: "What are the pricing plans for Efficient Driver 2.0?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam consectetur sapiente, iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+      "We offer a 200km free trial, followed by affordable plans: Smart Driver at $1.99/month, Eco Master at $2.99/month, and Enterprise at $19.99/user/year (currently 50% off!).",
     value: "item-2",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet Consectetur natus dolor minus quibusdam?",
+    question: "Is my data safe with Efficient Driver 2.0?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis.",
+      "Yes. Your data stays local on your device with no internet sharing, ensuring complete privacy.",
     value: "item-3",
   },
   {
-    question: "Excepteur sint occaecat cupidata non proident sunt?",
-    answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    question: "Which devices are compatible with Efficient Driver 2.0?",
+    answer:
+      "Efficient Driver 2.0 supports iOS 18+ devices, with future support for Apple Watch, Android, and embedded devices.",
     value: "item-4",
   },
   {
-    question:
-      "Enim ad minim veniam, quis nostrud exercitation ullamco laboris?",
-    answer: "consectetur adipisicing elit. Sint labore.",
+    question: "How can I get support for Efficient Driver 2.0?",
+    answer: "Our support team is here to help! Contact us at support@efficientdriver.net for assistance.",
     value: "item-5",
   },
 ];
@@ -51,7 +50,7 @@ const FAQList: FAQProps[] = [
       <h2 class="text-lg text-primary text-center mb-2 tracking-wider">FAQS</h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">
-        Common Questions
+        Frequently Asked Questions
       </h2>
     </div>
 
@@ -67,7 +66,7 @@ const FAQList: FAQProps[] = [
       Still have questions?
       <a href="#" class="text-muted-foreground"></a>
 
-      <a href="#" class="underline">Contact us</a>
+      <a href="mailto:support@efficientdriver.net" class="underline">Contact us at support@efficientdriver.net</a>
     </h3>
   </section>
 </template>

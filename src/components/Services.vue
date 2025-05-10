@@ -21,25 +21,27 @@ interface ServiceProps {
 
 const serviceList: ServiceProps[] = [
   {
-    title: "Custom Domain Integration",
+    title: "Eco-Driving Insights",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit adipisicing.",
+      "Track your driving efficiency offline and get insights to reduce emissions and save fuel.",
     pro: 0,
   },
   {
-    title: "Social Media Integrations",
+    title: "Privacy Protection",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, dicta.",
+      "Your data stays local on your device – No internet sharing, ensuring complete privacy.",
     pro: 0,
   },
   {
-    title: "Email Marketing Integrations",
-    description: "Lorem dolor sit amet adipisicing.",
+    title: "Safety Coaching",
+    description:
+      "Receive personalized offline tips to improve your driving habits and stay safer on the road.",
     pro: 0,
   },
   {
-    title: "SEO Optimization",
-    description: "Lorem ipsum dolor sit amet consectetur.",
+    title: "Enterprise Solutions",
+    description:
+      "Scalable multi-user support and custom reports for driving schools and fleets.",
     pro: 1,
   },
 ];
@@ -52,11 +54,10 @@ const serviceList: ServiceProps[] = [
     </h2>
 
     <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
-      Grow Your Business
+      Drive Smarter with Efficient Driver 2.0
     </h2>
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      From marketing and sales to operations and strategy, we have the expertise
-      to help you achieve your goals.
+      Explore the core offerings of Efficient Driver 2.0 – designed to help you reduce emissions, save fuel, drive safer, and support your business, all while keeping your data private.
     </h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 

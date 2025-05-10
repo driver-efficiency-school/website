@@ -12,27 +12,27 @@ import Separator from "./ui/separator/Separator.vue";
             <ChevronsDown
               class="bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
 
-            <h3 class="text-2xl">Efficient Driver</h3>
+            <h3 class="text-2xl">Efficient Driver 2.0</h3>
           </a>
         </div>
 
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Contact</h3>
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
-              Github
+            <a href="mailto:support@efficientdriver.net" class="opacity-60 hover:opacity-100">
+              Email
             </a>
           </div>
 
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
-              Twitter
+            <a href="tel:+18005551234" class="opacity-60 hover:opacity-100">
+              Phone
             </a>
           </div>
 
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
-              Instagram
+            <a href="https://www.efficientdriver.net" class="opacity-60 hover:opacity-100">
+              Website
             </a>
           </div>
         </div>
@@ -47,13 +47,13 @@ import Separator from "./ui/separator/Separator.vue";
 
           <div>
             <a href="#" class="opacity-60 hover:opacity-100">
-              Android
+              Android (Future Support)
             </a>
           </div>
 
           <div>
             <a href="#" class="opacity-60 hover:opacity-100">
-              Web
+              Apple Watch (Future Support)
             </a>
           </div>
         </div>
@@ -61,19 +61,19 @@ import Separator from "./ui/separator/Separator.vue";
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Help</h3>
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
+            <a href="/contact" class="opacity-60 hover:opacity-100">
               Contact Us
             </a>
           </div>
 
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
+            <a href="/faq" class="opacity-60 hover:opacity-100">
               FAQ
             </a>
           </div>
 
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
+            <a href="/contact" class="opacity-60 hover:opacity-100">
               Feedback
             </a>
           </div>
@@ -82,20 +82,20 @@ import Separator from "./ui/separator/Separator.vue";
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Socials</h3>
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
-              Twitch
+            <a href="https://www.instagram.com/" class="opacity-60 hover:opacity-100">
+              Instagram
             </a>
           </div>
 
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
-              Discord
+            <a href="https://www.tiktok.com/" class="opacity-60 hover:opacity-100">
+              TikTok
             </a>
           </div>
 
           <div>
-            <a href="#" class="opacity-60 hover:opacity-100">
-              Dribbble
+            <a href="https://www.linkedin.com/" class="opacity-60 hover:opacity-100">
+              LinkedIn
             </a>
           </div>
         </div>
@@ -104,10 +104,10 @@ import Separator from "./ui/separator/Separator.vue";
       <Separator class="my-6" />
       <section className="">
         <h3 class="">
-          &copy; 2025
-          <a target="_blank" href="https://www.digidhamu.com"
+          © 2025
+          <a target="_blank" href="https://www.efficientdriver.net"
             className="text-primary transition-all border-primary hover:border-b-2">
-            digidhamu.com
+            efficientdriver.net
           </a>
         </h3>
       </section>

@@ -29,7 +29,7 @@ const contactForm = reactive<ContactFormeProps>({
   firstName: "",
   lastName: "",
   email: "",
-  subject: "Web Development",
+  subject: "General Inquiry",
   message: "",
 });
 
@@ -39,7 +39,7 @@ const handleSubmit = () => {
   const { firstName, lastName, email, subject, message } = contactForm;
   console.log(contactForm);
 
-  const mailToLink = `mailto:leomirandadev@gmail.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
+  const mailToLink = `mailto:support@efficientdriver.net?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
 
   window.location.href = mailToLink;
 };
@@ -52,11 +52,10 @@ const handleSubmit = () => {
         <div class="mb-4">
           <h2 class="text-lg text-primary mb-2 tracking-wider">Contact</h2>
 
-          <h2 class="text-3xl md:text-4xl font-bold">Connect With Us</h2>
+          <h2 class="text-3xl md:text-4xl font-bold">Get in Touch</h2>
         </div>
         <p class="mb-8 text-muted-foreground lg:w-5/6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          ipsam sint enim exercitationem ex autem corrupti quas tenetur
+          Have questions about Efficient Driver 2.0? Reach out to our team for support, inquiries, or feedback – we’re here to help you drive smarter and greener!
         </p>
 
         <div class="flex flex-col gap-4">
@@ -66,7 +65,7 @@ const handleSubmit = () => {
               <div class="font-bold">Find Us</div>
             </div>
 
-            <div>742 Evergreen Terrace, Springfield, IL 62704</div>
+            <div>123 Eco Lane, Green City, CA 90210</div>
           </div>
 
           <div>
@@ -75,7 +74,7 @@ const handleSubmit = () => {
               <div class="font-bold">Call Us</div>
             </div>
 
-            <div>+1 (619) 123-4567</div>
+            <div>+1 (800) 555-1234</div>
           </div>
 
           <div>
@@ -84,7 +83,7 @@ const handleSubmit = () => {
               <div class="font-bold">Mail Us</div>
             </div>
 
-            <div>leomirandadev@gmail.com</div>
+            <div>support@efficientdriver.net</div>
           </div>
 
           <div>
@@ -95,7 +94,7 @@ const handleSubmit = () => {
 
             <div>
               <div>Monday - Friday</div>
-              <div>8AM - 4PM</div>
+              <div>9AM - 5PM (Online Support)</div>
             </div>
           </div>
         </div>
@@ -109,18 +108,18 @@ const handleSubmit = () => {
             <div class="flex flex-col md:flex-row gap-8">
               <div class="flex flex-col w-full gap-1.5">
                 <Label for="first-name">First Name</Label>
-                <Input id="first-name" type="text" placeholder="Leopoldo" v-model="contactForm.firstName" />
+                <Input id="first-name" type="text" placeholder="Alex" v-model="contactForm.firstName" />
               </div>
 
               <div class="flex flex-col w-full gap-1.5">
                 <Label for="last-name">Last Name</Label>
-                <Input id="last-name" type="text" placeholder="Miranda" v-model="contactForm.lastName" />
+                <Input id="last-name" type="text" placeholder="Smith" v-model="contactForm.lastName" />
               </div>
             </div>
 
             <div class="flex flex-col gap-1.5">
               <Label for="email">Email</Label>
-              <Input id="email" type="email" placeholder="leomirandadev@gmail.com" v-model="contactForm.email" />
+              <Input id="email" type="email" placeholder="alex.smith@example.com" v-model="contactForm.email" />
             </div>
 
             <div class="flex flex-col gap-1.5">
@@ -132,17 +131,15 @@ const handleSubmit = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem value="Web Development">
-                      Web Development
+                    <SelectItem value="General Inquiry">
+                      General Inquiry
                     </SelectItem>
-                    <SelectItem value="Mobile Development">
-                      Mobile Development
+                    <SelectItem value="Billing Support">
+                      Billing Support
                     </SelectItem>
-                    <SelectItem value="Figma Design"> Figma Design </SelectItem>
-                    <SelectItem value="REST API "> REST API </SelectItem>
-                    <SelectItem value="FullStack Project">
-                      FullStack Project
-                    </SelectItem>
+                    <SelectItem value="Technical Support">Technical Support</SelectItem>
+                    <SelectItem value="Enterprise Solutions">Enterprise Solutions</SelectItem>
+                    <SelectItem value="Feature Request">Feature Request</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -150,7 +147,7 @@ const handleSubmit = () => {
 
             <div class="flex flex-col gap-1.5">
               <Label for="message">Message</Label>
-              <Textarea id="message" placeholder="Your message..." rows="5" v-model="contactForm.message" />
+              <Textarea id="message" placeholder="Your message about Efficient Driver 2.0..." rows="5" v-model="contactForm.message" />
             </div>
 
             <Alert v-if="invalidInputForm" variant="destructive">
