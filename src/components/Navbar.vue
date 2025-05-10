@@ -91,7 +91,7 @@ const isOpen = ref<boolean>(false);
     'shadow-dark': mode === 'dark',
     'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
   }">
-    <a href="/" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
+    <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
       <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
       Efficient Driver
     </a>
@@ -106,7 +106,7 @@ const isOpen = ref<boolean>(false);
           <div>
             <SheetHeader class="mb-4 ml-4">
               <SheetTitle class="flex items-center">
-                <a href="/" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
+                <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
                   <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
                   Efficient Driver
                 </a>

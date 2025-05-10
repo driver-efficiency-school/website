@@ -15,7 +15,7 @@ import FAQ from "./components/FAQ.vue";
 import Footer from "./components/Footer.vue";
 import TermsOfUse from "./components/TermsOfUse.vue";
 import PrivacyPolicy from "./components/PrivacyPolicy.vue";
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const showTerms = ref(false);
 const showPrivacy = ref(false);
@@ -23,10 +23,26 @@ const showPrivacy = ref(false);
 function navigate(target: 'main' | 'terms' | 'privacy') {
   showTerms.value = target === 'terms';
   showPrivacy.value = target === 'privacy';
+  window.location.hash = target === 'main' ? '' : target;
   if (showTerms.value || showPrivacy.value) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
+
+// Handle initial and dynamic hash changes
+function handleHashChange() {
+  const hash = window.location.hash.replace('#', '');
+  showTerms.value = hash === 'terms';
+  showPrivacy.value = hash === 'privacy';
+  if (showTerms.value || showPrivacy.value) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+onMounted(() => {
+  handleHashChange(); // Check initial hash on page load
+  window.addEventListener('hashchange', handleHashChange);
+});
 </script>
 
 <template>

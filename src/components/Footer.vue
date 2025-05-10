@@ -9,7 +9,7 @@ const emit = defineEmits(['navigate']);
     <div class="p-10 bg-muted/50 dark:bg-card border rounded-2xl">
       <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div class="col-span-full xl:col-span-2">
-          <a href="#" class="flex font-bold items-center" @click="emit('navigate', 'main')">
+          <a href="/#" class="flex font-bold items-center" @click="emit('navigate', 'main')">
             <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
             <h3 class="text-2xl">Efficient Driver</h3>
           </a>
@@ -37,17 +37,17 @@ const emit = defineEmits(['navigate']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Platforms</h3>
           <div>
-            <a href="/" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               iOS
             </a>
           </div>
           <div>
-            <a href="/" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Android (Future Support)
             </a>
           </div>
           <div>
-            <a href="/" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Apple Watch (Future Support)
             </a>
           </div>
@@ -71,12 +71,12 @@ const emit = defineEmits(['navigate']);
             </a>
           </div>
           <div>
-            <a @click="emit('navigate', 'terms')" class="opacity-60 hover:opacity-100 cursor-pointer">
+            <a href="#terms" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'terms')">
               Terms of Use
             </a>
           </div>
           <div>
-            <a @click="emit('navigate', 'privacy')" class="opacity-60 hover:opacity-100 cursor-pointer">
+            <a href="#privacy" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'privacy')">
               Privacy Policy
             </a>
           </div>
