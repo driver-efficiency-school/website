@@ -26,7 +26,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 import { ChevronsDown, Menu } from "lucide-vue-next";
-import GithubIcon from "@/icons/GithubIcon.vue";
+import DashIcon from "@/icons/DashIcon.vue";
 import ToggleTheme from "./ToggleTheme.vue";
 
 interface RouteProps {
@@ -170,7 +170,7 @@ const isOpen = ref<boolean>(false);
 
       <Button as-child size="sm" variant="ghost" aria-label="Efficient Driver Dashboard">
         <a aria-label="Efficient Driver Dashboard" href="https://dash.driver.efficientdriver.net" target="_blank">
-          <GithubIcon class="size-5" />
+          <DashIcon class="size-5" />
         </a>
       </Button>
     </div>
