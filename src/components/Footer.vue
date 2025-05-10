@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Separator from "./ui/separator/Separator.vue";
+const emit = defineEmits(['toggle-terms']);
 </script>
 
 <template>
@@ -20,13 +21,11 @@ import Separator from "./ui/separator/Separator.vue";
               Email
             </a>
           </div>
-
           <div>
             <a href="tel:+18005551234" class="opacity-60 hover:opacity-100">
               Phone
             </a>
           </div>
-
           <div>
             <a href="https://www.efficientdriver.net" class="opacity-60 hover:opacity-100">
               Website
@@ -41,13 +40,11 @@ import Separator from "./ui/separator/Separator.vue";
               iOS
             </a>
           </div>
-
           <div>
             <a href="#" class="opacity-60 hover:opacity-100">
               Android (Future Support)
             </a>
           </div>
-
           <div>
             <a href="#" class="opacity-60 hover:opacity-100">
               Apple Watch (Future Support)
@@ -58,20 +55,23 @@ import Separator from "./ui/separator/Separator.vue";
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Help</h3>
           <div>
-            <a href="/contact" class="opacity-60 hover:opacity-100">
+            <a href="#contact" class="opacity-60 hover:opacity-100">
               Contact Us
             </a>
           </div>
-
           <div>
-            <a href="/faq" class="opacity-60 hover:opacity-100">
+            <a href="#faq" class="opacity-60 hover:opacity-100">
               FAQ
             </a>
           </div>
-
           <div>
-            <a href="/contact" class="opacity-60 hover:opacity-100">
+            <a href="#contact" class="opacity-60 hover:opacity-100">
               Feedback
+            </a>
+          </div>
+          <div>
+            <a @click="emit('toggle-terms')" class="opacity-60 hover:opacity-100 cursor-pointer">
+              Terms of Use
             </a>
           </div>
         </div>
@@ -83,13 +83,11 @@ import Separator from "./ui/separator/Separator.vue";
               Instagram
             </a>
           </div>
-
           <div>
             <a href="https://www.tiktok.com/" class="opacity-60 hover:opacity-100">
               TikTok
             </a>
           </div>
-
           <div>
             <a href="https://www.linkedin.com/" class="opacity-60 hover:opacity-100">
               LinkedIn
@@ -99,11 +97,10 @@ import Separator from "./ui/separator/Separator.vue";
       </div>
 
       <Separator class="my-6" />
-      <section className="">
-        <h3 class="">
+      <section>
+        <h3>
           © 2025
-          <a target="_blank" href="https://www.efficientdriver.net"
-            className="text-primary transition-all border-primary hover:border-b-2">
+          <a target="_blank" href="https://www.efficientdriver.net" class="text-primary transition-all border-primary hover:border-b-2">
             efficientdriver.net
           </a>
         </h3>
