@@ -80,10 +80,7 @@ const iconMap: Record<
 </script>
 
 <template>
-  <section
-    id="features"
-    class="container py-24 sm:py-32"
-  >
+  <section id="features" class="container py-24 sm:py-32">
     <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
       Features
     </h2>
@@ -99,19 +96,11 @@ const iconMap: Record<
     </h3>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div
-        v-for="{ icon, title, description } in featureList"
-        :key="title"
-      >
+      <div v-for="{ icon, title, description } in featureList" :key="title">
         <Card class="h-full bg-background border-0 shadow-none">
           <CardHeader class="flex justify-center items-center">
-            <div
-              class="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4"
-            >
-              <component
-                :is="iconMap[icon]"
-                class="size-6 text-primary"
-              />
+            <div class="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
+              <component :is="iconMap[icon]" class="size-6 text-primary" />
             </div>
 
             <CardTitle>

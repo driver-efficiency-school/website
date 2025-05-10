@@ -62,10 +62,7 @@ const iconMap: Record<
 </script>
 
 <template>
-  <section
-    id="benefits"
-    class="container py-24 sm:py-32"
-  >
+  <section id="benefits" class="container py-24 sm:py-32">
     <div class="grid lg:grid-cols-2 place-items-center lg:gap-24">
       <div>
         <h2 class="text-lg text-primary mb-2 tracking-wider">Benefits</h2>
@@ -81,22 +78,15 @@ const iconMap: Record<
       </div>
 
       <div class="grid lg:grid-cols-2 gap-4 w-full">
-        <Card
-          v-for="({ icon, title, description }, index) in benefitList"
-          :key="title"
-          class="bg-muted/50 dark:bg-card hover:bg-background dark:hover:bg-background transition-all delay-75 group/number"
-        >
+        <Card v-for="({ icon, title, description }, index) in benefitList" :key="title"
+          class="bg-muted/50 dark:bg-card hover:bg-background dark:hover:bg-background transition-all delay-75 group/number">
           <CardHeader>
             <div class="flex justify-between">
-              <component
-                class="size-8 mb-6 text-primary"
-                :is="iconMap[icon]"
-              />
+              <component class="size-8 mb-6 text-primary" :is="iconMap[icon]" />
 
               <span
-                class="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30"
-                >0{{ index + 1 }}</span
-              >
+                class="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30">0{{
+                index + 1 }}</span>
             </div>
 
             <CardTitle>{{ title }}</CardTitle>

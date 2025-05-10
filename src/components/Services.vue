@@ -46,10 +46,7 @@ const serviceList: ServiceProps[] = [
 </script>
 
 <template>
-  <section
-    id="services"
-    class="container py-24 sm:py-32"
-  >
+  <section id="services" class="container py-24 sm:py-32">
     <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
       Services
     </h2>
@@ -63,24 +60,14 @@ const serviceList: ServiceProps[] = [
     </h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-    <div
-      class="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full lg:w-[60%] mx-auto"
-    >
-      <div
-        v-for="{ title, description, pro } in serviceList"
-        :key="title"
-      >
+    <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full lg:w-[60%] mx-auto">
+      <div v-for="{ title, description, pro } in serviceList" :key="title">
         <Card class="bg-muted/60 dark:bg-card h-full relative">
           <CardHeader>
             <CardTitle>{{ title }}</CardTitle>
             <CardDescription>{{ description }}</CardDescription>
           </CardHeader>
-          <Badge
-            v-if="pro === ProService.YES"
-            variant="secondary"
-            class="absolute -top-2 -right-3"
-            >PRO</Badge
-          >
+          <Badge v-if="pro === ProService.YES" variant="secondary" class="absolute -top-2 -right-3">PRO</Badge>
         </Card>
       </div>
     </div>
