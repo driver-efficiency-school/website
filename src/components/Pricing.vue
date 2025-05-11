@@ -21,6 +21,7 @@ interface PlanProps {
   popular: PopularPlan;
   price: number;
   description: string;
+  discount: string | null; // Added for discount badge
   buttonText: string;
   benefitList: string[];
 }
@@ -30,8 +31,8 @@ const plans: PlanProps[] = [
     title: "Free Trial",
     popular: 0,
     price: 0,
-    description:
-      "Try Efficient Driver 2.0 with a 200km trial – perfect for testing the basics.",
+    description: "Try with a 200km trial – perfect to start.",
+    discount: null, // No discount for free plan
     buttonText: "Start Free Trial",
     benefitList: [
       "200km trial",
@@ -45,8 +46,8 @@ const plans: PlanProps[] = [
     title: "Smart Driver",
     popular: 0,
     price: 1.99,
-    description:
-      "Ideal for learners and eco-drivers – unlock detailed metrics and offline coaching.",
+    description: "Ideal for learners – detailed metrics, coaching.",
+    discount: "50% OFF",
     buttonText: "Get Started",
     benefitList: [
       "Unlimited trips",
@@ -60,8 +61,8 @@ const plans: PlanProps[] = [
     title: "Eco Master",
     popular: 1,
     price: 2.99,
-    description:
-      "Perfect for eco-conscious drivers – get advanced analytics and gamified features.",
+    description: "Best for eco-drivers – analytics, gamified fun.",
+    discount: "50% OFF",
     buttonText: "Get Started",
     benefitList: [
       "All Smart Driver features",
@@ -75,8 +76,8 @@ const plans: PlanProps[] = [
     title: "Enterprise",
     popular: 0,
     price: 19.99,
-    description:
-      "Scalable solution for businesses – perfect for driving schools and fleets.",
+    description: "For businesses – scalable, robust solution.",
+    discount: "60% OFF",
     buttonText: "Contact Us",
     benefitList: [
       "Multi-user support",
@@ -100,7 +101,7 @@ const plans: PlanProps[] = [
     </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-      Unlock the full potential of Efficient Driver 2.0 with our flexible plans – start with a free trial, upgrade for more features, or choose our Enterprise solution for your business.
+      Unlock the full potential of Efficient Driver 2.0 with our flexible plans – now up to 60% off for a limited time! Start free, upgrade, or go Enterprise.
     </h3>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
@@ -109,16 +110,20 @@ const plans: PlanProps[] = [
         popular,
         price,
         description,
+        discount,
         buttonText,
         benefitList,
       } in plans" :key="title" :class="{
           'drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.1]':
             popular === PopularPlan?.YES,
         }">
-        <CardHeader>
+        <CardHeader class="relative">
           <CardTitle class="pb-2">
             {{ title }}
           </CardTitle>
+          <span v-if="discount" class="absolute top-2 right-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded">
+            {{ discount }}
+          </span>
 
           <CardDescription class="pb-4">{{ description }}</CardDescription>
 

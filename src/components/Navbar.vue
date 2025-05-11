@@ -25,8 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { Menu, ExternalLinkIcon } from "lucide-vue-next";
-import DashIcon from "@/icons/DashIcon.vue";
+import { Menu, ExternalLinkIcon, ChartSpline } from "lucide-vue-next";
 import ToggleTheme from "./ToggleTheme.vue";
 
 const emit = defineEmits(['navigate']);
@@ -180,7 +179,7 @@ const isOpen = ref<boolean>(false);
       <ToggleTheme />
       <Button as-child size="sm" variant="ghost" aria-label="Efficient Driver Dashboard">
         <a aria-label="Efficient Driver Dashboard" href="https://dash.driver.efficiency.school" target="_blank">
-          <DashIcon class="size-5" />
+          <ChartSpline class="size-5" />
         </a>
       </Button>
     </div>

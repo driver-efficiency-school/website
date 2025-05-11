@@ -3,148 +3,136 @@
 
 <template>
   <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
-    <h1 class="text-3xl font-bold mb-6 text-center">Privacy Policy</h1>
+    <!-- Document Title (excluded from opacity-70) -->
+    <h1 class="text-3xl font-bold mb-6 text-center">Privacy Policy for Efficient Driver 2.0</h1>
+
+    <!-- Section 1: Policy Summary -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Policy Summary</h2>
-      <p>This Application collects some Personal Data from its Users.</p>
-      <h3 class="text-xl font-semibold mt-4 mb-2">Personal Data collected for the following purposes and using the following services:</h3>
-      <ul class="list-disc pl-6">
-        <li><strong>Access to third party services' accounts</strong>
-          <ul class="list-disc pl-6">
-            <li>Access to the Facebook account: Permissions: Access Requests</li>
-          </ul>
-        </li>
-        <li><strong>Contacting the User</strong>
-          <ul class="list-disc pl-6">
-            <li>Contact form: Personal Data: Country, Email address, First Name, Last Name, Phone number, ZIP/Postal code</li>
-          </ul>
-        </li>
-        <li><strong>Displaying content from external platforms</strong>
-          <ul class="list-disc pl-6">
-            <li>Google Maps widget: Personal Data: Cookie and Usage data</li>
-          </ul>
-        </li>
-        <li><strong>Location-based interactions</strong>
-          <ul class="list-disc pl-6">
-            <li>Geolocation: Personal Data: Geographic position</li>
-          </ul>
-        </li>
-      </ul>
+      <div class="opacity-70">
+        <p>Efficient Driver 2.0 collects limited Personal Data from its Users to provide services.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Personal Data collected for the following purposes and using the following services:</h3>
+        <ul class="list-disc pl-6">
+          <li><strong>Location-based interactions</strong>
+            <ul class="list-disc pl-6">
+              <li>Geolocation: Personal Data: Geographic position (for eco-driving insights)</li>
+            </ul>
+          </li>
+          <li><strong>Contacting the User</strong>
+            <ul class="list-disc pl-6">
+              <li>Contact form: Personal Data: Email address, First Name, Last Name, Phone number</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </section>
+
+    <!-- Section 2: Data Controller and Owner -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Data Controller and Owner</h2>
-      <p>Dhamodharan Krishnan, G-7, Creative Environs, 55/9, 24th Main, 2nd Sector, HSR Layout Bangalore Karnataka 560102 India, edcontact@digidhamu.com</p>
+      <div class="opacity-70">
+        <p>Efficient Driver 2.0 Team, 123 Eco Lane, Green City, CA 90210, USA, support@efficientdriver.net</p>
+      </div>
     </section>
+
+    <!-- Section 3: Types of Data Collected -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Types of Data Collected</h2>
-      <p>Among the types of Personal Data that this Application collects, by itself or through third parties, there are: first name, last name, phone number, email address, ZIP/Postal code, and geographic position.</p>
-      <p>Other Personal Data collected may be described in other sections of this privacy policy or by dedicated explanation text contextually with the Data collection.</p>
-      <p>The Personal Data may be freely provided by the User, or collected automatically when using this Application. Any use of Cookies - or of other tracking tools - by this Application or by the owners of third party services used by this Application, unless stated otherwise, serves to identify Users and remember their preferences, for the sole purpose of providing the service required by the User.</p>
-      <p>Failure to provide certain Personal Data may make it impossible for this Application to provide its services.</p>
-      <p>Users are responsible for any Personal Data of third parties obtained, published, or shared through this Application and confirm that they have the third party's consent to provide the Data to the Owner.</p>
+      <div class="opacity-70">
+        <p>Efficient Driver 2.0 collects minimal Personal Data, including: First Name, Last Name, Phone number, Email address, and Geographic position.</p>
+        <p class="mt-4">Other Personal Data may be described in other sections of this policy or during data collection.</p>
+        <p class="mt-4">Data may be provided by the User or collected automatically (e.g., Geographic position). We use minimal Cookies or tracking tools only to provide required services.</p>
+        <p class="mt-4">Not providing certain Personal Data may prevent Efficient Driver 2.0 from delivering its services.</p>
+        <p class="mt-4">Users are responsible for any third-party Personal Data shared through Efficient Driver 2.0 and must have consent to provide it.</p>
+      </div>
     </section>
+
+    <!-- Section 4: Mode and Place of Processing the Data -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Mode and Place of Processing the Data</h2>
-      <h3 class="text-xl font-semibold mb-2">Methods of Processing</h3>
-      <p>The Data Controller processes the Data of Users in a proper manner and shall take appropriate security measures to prevent unauthorized access, disclosure, modification, or unauthorized destruction of the Data.</p>
-      <p>The Data processing is carried out using computers and/or IT enabled tools, following organizational procedures and modes strictly related to the purposes indicated. In addition to the Data Controller, in some cases, the Data may be accessible to certain types of persons in charge, involved with the operation of the site (administration, sales, marketing, legal, system administration) or external parties (such as third party technical service providers, mail carriers, hosting providers, IT companies, communications agencies) appointed, if necessary, as Data Processors by the Owner. The updated list of these parties may be requested from the Data Controller at any time.</p>
-      <h3 class="text-xl font-semibold mb-2">Place</h3>
-      <p>The Data is processed at the Data Controller's operating offices and in any other places where the parties involved with the processing are located. For further information, please contact the Data Controller.</p>
-      <h3 class="text-xl font-semibold mb-2">Retention Time</h3>
-      <p>The Data is kept for the time necessary to provide the service requested by the User, or stated by the purposes outlined in this document, and the User can always request that the Data Controller suspend or remove the data.</p>
+      <div class="opacity-70">
+        <h3 class="text-xl font-semibold mt-4 mb-2">Methods of Processing</h3>
+        <p>We process User Data securely to prevent unauthorized access, disclosure, or destruction.</p>
+        <p class="mt-4">Data is processed using IT tools, following strict procedures for stated purposes. Data may be accessed by internal teams (e.g., support, tech) or external parties (e.g., hosting providers) as needed, appointed as Data Processors. Contact us for a list of these parties.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Place</h3>
+        <p>Data is processed at our offices in the USA and other locations of involved parties. Contact us for details.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Retention Time</h3>
+        <p>Data is kept only as long as needed for the requested service or stated purposes. Users can request data suspension or removal.</p>
+      </div>
     </section>
+
+    <!-- Section 5: The Use of the Collected Data -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">The Use of the Collected Data</h2>
-      <p>The Data concerning the User is collected to allow the Owner to provide its services, as well as for the following purposes: Access to third party services' accounts, Contacting the User, and Location-based interactions.</p>
-      <p>The Personal Data used for each purpose is outlined in the specific sections of this document.</p>
+      <div class="opacity-70">
+        <p>We collect User Data to provide services like Location-based interactions and Contacting the User.</p>
+        <p class="mt-4">Data usage details are outlined in specific sections of this policy.</p>
+      </div>
     </section>
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Facebook Permissions Asked by This Application</h2>
-      <p>This Application may ask for some Facebook permissions allowing it to perform actions with the User's Facebook account and to retrieve information, including Personal Data, from it.</p>
-      <p>For more information about the following permissions, refer to the <a href="https://developers.facebook.com/docs/facebook-login/permissions" target="_blank" class="underline">Facebook permissions documentation</a> and to the <a href="https://www.facebook.com/about/privacy" target="_blank" class="underline">Facebook privacy policy</a>.</p>
-      <p>The permissions asked are the following:</p>
-      <ul class="list-disc pl-6">
-        <li><strong>Basic information</strong>: By default, this includes certain User’s Data such as id, name, picture, gender, and their locale. Certain connections of the User, such as the Friends, are also available. If the User has made more of their Data public, more information will be available.</li>
-        <li><strong>Website</strong>: Provides access to the User's web site URL.</li>
-      </ul>
-    </section>
+
+    <!-- Section 6: Detailed Information on the Processing of Personal Data -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Detailed Information on the Processing of Personal Data</h2>
-      <p>Personal Data is collected for the following purposes and using the following services:</p>
-      <ul class="list-disc pl-6">
-        <li><strong>Access to third party services' accounts</strong>
-          <p>This type of services allows this Application to access Data from your account on a third party service and perform actions with it. These services are not activated automatically, but require explicit authorization by the User.</p>
-          <ul class="list-disc pl-6">
-            <li><strong>Access to the Facebook account (This Application)</strong>: This service allows this Application to connect with the User's account on the Facebook social network, provided by Facebook, Inc. Permissions asked: App. Place of processing: US – <a href="https://www.facebook.com/about/privacy" target="_blank" class="underline">Privacy Policy</a></li>
-          </ul>
-        </li>
-        <li><strong>Location-based interactions</strong>
-          <ul class="list-disc pl-6">
-            <li><strong>Geolocation (This Application)</strong>: This Application may collect, use, and share User location Data in order to provide location-based services. Most browsers and devices provide tools to opt out from this feature by default. If explicit authorization has been provided, the User’s location data may be tracked by this Application. Personal Data collected: geographic position.</li>
-          </ul>
-        </li>
-        <li><strong>Contacting the User</strong>
-          <ul class="list-disc pl-6">
-            <li><strong>Contact form (This Application)</strong>: By filling in the contact form with their Data, the User authorizes this Application to use these details to reply to requests for information, quotes or any other kind of request as indicated by the form’s header. Personal Data collected: email address, first name, last name, phone number, and ZIP/Postal code.</li>
-          </ul>
-        </li>
-      </ul>
+      <div class="opacity-70">
+        <p>Personal Data is collected for these purposes and services:</p>
+        <ul class="list-disc pl-6">
+          <li><strong>Location-based interactions</strong>
+            <p class="mt-2">Efficient Driver 2.0 collects location data for eco-driving insights, with user consent.</p>
+            <ul class="list-disc pl-6">
+              <li><strong>Geolocation (Efficient Driver 2.0)</strong>: We may collect and share User location Data for location-based services. Opt-out tools are available in most devices. Personal Data collected: Geographic position.</li>
+            </ul>
+          </li>
+          <li><strong>Contacting the User</strong>
+            <ul class="list-disc pl-6">
+              <li><strong>Contact form (Efficient Driver 2.0)</strong>: By submitting the form, Users authorize us to use their details to respond to requests. Personal Data collected: Email address, First Name, Last Name, Phone number.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </section>
+
+    <!-- Section 7: Additional Information about Data Collection and Processing -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Additional Information about Data Collection and Processing</h2>
-      <h3 class="text-xl font-semibold mb-2">Legal Action</h3>
-      <p>The User's Personal Data may be used for legal purposes by the Data Controller, in Court or in the stages leading to possible legal action arising from improper use of this Application or the related services.</p>
-      <p>The User declares to be aware that the Data Controller may be required to reveal personal data upon request of public authorities.</p>
-      <h3 class="text-xl font-semibold mb-2">Additional Information about User's Personal Data</h3>
-      <p>In addition to the information contained in this privacy policy, this Application may provide the User with additional and contextual information concerning particular services or the collection and processing of Personal Data upon request.</p>
-      <h3 class="text-xl font-semibold mb-2">System Logs and Maintenance</h3>
-      <p>For operation and maintenance purposes, this Application and any third party services may collect files that record interaction with this Application (System Logs) or use for this purpose other Personal Data (such as IP Address).</p>
-      <h3 class="text-xl font-semibold mb-2">Information Not Contained in This Policy</h3>
-      <p>More details concerning the collection or processing of Personal Data may be requested from the Data Controller at any time. Please see the contact information at the beginning of this document.</p>
-      <h3 class="text-xl font-semibold mb-2">The Rights of Users</h3>
-      <p>Users have the right, at any time, to know whether their Personal Data has been stored and can consult the Data Controller to learn about their contents and origin, to verify their accuracy or to ask for them to be supplemented, cancelled, updated or corrected, or for their transformation into anonymous format or to block any data held in violation of the law, as well as to oppose their treatment for any and all legitimate reasons. Requests should be sent to the Data Controller at the contact information set out above.</p>
-      <p>This Application does not support “Do Not Track” requests.</p>
-      <p>To determine whether any of the third party services it uses honor the “Do Not Track” requests, please read their privacy policies.</p>
-      <h3 class="text-xl font-semibold mb-2">Changes to This Privacy Policy</h3>
-      <p>The Data Controller reserves the right to make changes to this privacy policy at any time by giving notice to its Users on this page. It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom. If a User objects to any of the changes to the Policy, the User must cease using this Application and can request that the Data Controller removes the Personal Data. Unless stated otherwise, the then-current privacy policy applies to all Personal Data the Data Controller has about Users.</p>
-      <h3 class="text-xl font-semibold mb-2">Information about This Privacy Policy</h3>
-      <p>The Data Controller is responsible for this privacy policy, prepared starting from the modules provided by Iubenda and hosted on Iubenda's servers.</p>
+      <div class="opacity-70">
+        <h3 class="text-xl font-semibold mt-4 mb-2">Legal Action</h3>
+        <p>User Data may be used for legal purposes by Efficient Driver 2.0 in court or related proceedings due to improper app use.</p>
+        <p class="mt-4">Users acknowledge that we may be required to disclose data upon public authority requests.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Additional Information about User's Personal Data</h3>
+        <p>Upon request, Efficient Driver 2.0 may provide additional details about specific services or data processing.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">System Logs and Maintenance</h3>
+        <p>For operation and maintenance, Efficient Driver 2.0 may collect System Logs or use other Data (e.g., IP Address).</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Information Not Contained in This Policy</h3>
+        <p>More details on data processing can be requested from Efficient Driver 2.0 at support@efficientdriver.net.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">The Rights of Users</h3>
+        <p>Users can verify, update, or delete their Data by contacting Efficient Driver 2.0. They can also oppose data processing for legitimate reasons.</p>
+        <p class="mt-4">Efficient Driver 2.0 does not support “Do Not Track” requests. Check third-party services for their policies.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Changes to This Privacy Policy</h3>
+        <p>We may update this policy, with changes effective immediately upon posting. Users should check this page regularly (last modified: May 11, 2025). If you object, stop using the app and request data removal.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Information about This Privacy Policy</h3>
+        <p>Efficient Driver 2.0 is responsible for this privacy policy.</p>
+      </div>
     </section>
+
+    <!-- Section 8: Definitions and Legal References -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">Definitions and Legal References</h2>
-      <h3 class="text-xl font-semibold mb-2">Personal Data (or Data)</h3>
-      <p>Any information regarding a natural person, a legal person, an institution or an association, which is, or can be, identified, even indirectly, by reference to any other information, including a personal identification number.</p>
-      <h3 class="text-xl font-semibold mb-2">Usage Data</h3>
-      <p>Information collected automatically from this Application (or third party services employed in this Application), which can include: the IP addresses or domain names of the computers utilized by the Users who use this Application, the URI addresses (Uniform Resource Identifier), the time of the request, the method utilized to submit the request to the server, the size of the file received in response, the numerical code indicating the status of the server's answer (successful outcome, error, etc.), the country of origin, the features of the browser and the operating system utilized by the User, the various time details per visit (e.g., the time spent on each page within the Application) and the details about the path followed within the Application with special reference to the sequence of pages visited, and other parameters about the device operating system and/or the User's IT environment.</p>
-      <h3 class="text-xl font-semibold mb-2">User</h3>
-      <p>The individual using this Application, which must coincide with or be authorized by the Data Subject, to whom the Personal Data refers.</p>
-      <h3 class="text-xl font-semibold mb-2">Data Subject</h3>
-      <p>The legal or natural person to whom the Personal Data refers.</p>
-      <h3 class="text-xl font-semibold mb-2">Data Processor (or Data Supervisor)</h3>
-      <p>The natural person, legal person, public administration or any other body, association or organization authorized by the Data Controller to process the Personal Data in compliance with this privacy policy.</p>
-      <h3 class="text-xl font-semibold mb-2">Data Controller (or Owner)</h3>
-      <p>The natural person, legal person, public administration or any other body, association or organization with the right, also jointly with another Data Controller, to make decisions regarding the purposes, and the methods of processing of Personal Data and the means used, including the security measures concerning the operation and use of this Application. The Data Controller, unless otherwise specified, is the Owner of this Application.</p>
-      <h3 class="text-xl font-semibold mb-2">This Application</h3>
-      <p>The hardware or software tool by which the Personal Data of the User is collected.</p>
+      <div class="opacity-70">
+        <h3 class="text-xl font-semibold mt-4 mb-2">Personal Data (or Data)</h3>
+        <p>Any info identifying a person, directly or indirectly, including via a personal ID number.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Usage Data</h3>
+        <p>Data collected automatically (e.g., IP addresses, browser details, visit times, page sequences) by Efficient Driver 2.0 or third-party services.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">User</h3>
+        <p>The individual using Efficient Driver 2.0, authorized by the Data Subject.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Data Subject</h3>
+        <p>The person to whom the Personal Data refers.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Data Processor (or Data Supervisor)</h3>
+        <p>Entity authorized by Efficient Driver 2.0 to process Personal Data per this policy.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Data Controller (or Owner)</h3>
+        <p>Efficient Driver 2.0, deciding the purposes, methods, and security of Personal Data processing.</p>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Efficient Driver 2.0</h3>
+        <p>The app by which User Personal Data is collected.</p>
+      </div>
     </section>
   </div>
 </template>
-
-<style scoped>
-section {
-  margin-bottom: 2rem;
-}
-h2 {
-  color: #ffffff;
-}
-h3 {
-  color: #ffffff;
-}
-p, li {
-  color: #c9c9c9;
-  line-height: 1.6;
-}
-a {
-  color: #60a5fa;
-}
-</style>
