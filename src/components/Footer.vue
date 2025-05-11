@@ -51,6 +51,16 @@ const emit = defineEmits(['navigate']);
               Apple Watch (Future Support)
             </a>
           </div>
+          <div>
+            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+              Android Watch (Future Support)
+            </a>
+          </div>
+          <div>
+            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+              Dashboard Device (Future Support)
+            </a>
+          </div>
         </div>
 
         <div class="flex flex-col gap-2">
@@ -68,6 +78,11 @@ const emit = defineEmits(['navigate']);
           <div>
             <a href="#contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Feedback
+            </a>
+          </div>
+          <div>
+            <a href="#investors" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'investors')">
+              Investors
             </a>
           </div>
           <div>

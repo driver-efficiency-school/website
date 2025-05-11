@@ -13,18 +13,21 @@ import Community from "./components/Community.vue";
 import Contact from "./components/Contact.vue";
 import FAQ from "./components/FAQ.vue";
 import Footer from "./components/Footer.vue";
+import Investors from "./components/Investors.vue";
 import TermsOfUse from "./components/TermsOfUse.vue";
 import PrivacyPolicy from "./components/PrivacyPolicy.vue";
 import { ref, onMounted } from 'vue';
 
+const showInvestors = ref(false);
 const showTerms = ref(false);
 const showPrivacy = ref(false);
 
-function navigate(target: 'main' | 'terms' | 'privacy') {
+function navigate(target: 'main' | 'investors' | 'terms' | 'privacy') {
+  showInvestors.value = target === 'investors';
   showTerms.value = target === 'terms';
   showPrivacy.value = target === 'privacy';
   window.location.hash = target === 'main' ? '' : target;
-  if (showTerms.value || showPrivacy.value) {
+  if (showInvestors.value || showTerms.value || showPrivacy.value) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
@@ -32,9 +35,10 @@ function navigate(target: 'main' | 'terms' | 'privacy') {
 // Handle initial and dynamic hash changes
 function handleHashChange() {
   const hash = window.location.hash.replace('#', '');
+  showInvestors.value = hash === 'investors';
   showTerms.value = hash === 'terms';
   showPrivacy.value = hash === 'privacy';
-  if (showTerms.value || showPrivacy.value) {
+  if (showInvestors.value || showTerms.value || showPrivacy.value) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
@@ -47,7 +51,7 @@ onMounted(() => {
 
 <template>
   <Navbar @navigate="navigate" />
-  <div v-if="!showTerms && !showPrivacy">
+  <div v-if="!showInvestors && !showTerms && !showPrivacy">
     <Hero />
     <Sponsors />
     <Benefits />
@@ -61,6 +65,7 @@ onMounted(() => {
     <Contact />
     <FAQ />
   </div>
+  <Investors v-if="showInvestors" />
   <TermsOfUse v-else-if="showTerms" />
   <PrivacyPolicy v-else-if="showPrivacy" />
   <Footer @navigate="navigate" />
