@@ -101,7 +101,7 @@ const plans: PlanProps[] = [
     </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-      Unlock the full potential of Efficient Driver 2.0 with our flexible plans – now up to 60% off for a limited time! Start free, upgrade, or go Enterprise.
+      Unlock the full potential of Efficiver with our flexible plans – now up to 60% off for a limited time! Start free, upgrade, or go Enterprise.
     </h3>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">

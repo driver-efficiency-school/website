@@ -14,7 +14,7 @@ const HowItWorksList: HowItWorksProps[] = [
     badgeTitle: "Download",
     title: "Download the App – No Hardware Needed",
     description:
-      "Install Efficient Driver 2.0 from the App Store and start your eco-driving journey without any internet or hardware.",
+      "Install Efficiver from the App Store and start your eco-driving journey without any internet or hardware.",
     image: "roboto.png",
   },
   {
@@ -49,7 +49,7 @@ const HowItWorksList: HowItWorksProps[] = [
       </h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">
-        Get Started with Efficient Driver 2.0 in 4 Easy Steps
+        Get Started with Efficiver in 4 Easy Steps
       </h2>
     </div>
 

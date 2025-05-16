@@ -14,31 +14,31 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Does Efficient Driver 2.0 require internet or hardware?",
-    answer: "No. Efficient Driver 2.0 works completely offline using your device’s sensors – no internet or hardware is needed.",
+    question: "Does Efficiver require internet or hardware?",
+    answer: "No. Efficiver works completely offline using your device’s sensors – no internet or hardware is needed.",
     value: "item-1",
   },
   {
-    question: "What are the pricing plans for Efficient Driver 2.0?",
+    question: "What are the pricing plans for Efficiver?",
     answer:
       "We offer a 200km free trial, followed by affordable plans: Smart Driver at $1.99/month, Eco Master at $2.99/month, and Enterprise at $19.99/user/year (currently 50% off!).",
     value: "item-2",
   },
   {
-    question: "Is my data safe with Efficient Driver 2.0?",
+    question: "Is my data safe with Efficiver?",
     answer:
       "Yes. Your data stays local on your device with no internet sharing, ensuring complete privacy.",
     value: "item-3",
   },
   {
-    question: "Which devices are compatible with Efficient Driver 2.0?",
+    question: "Which devices are compatible with Efficiver?",
     answer:
-      "Efficient Driver 2.0 supports iOS 18+ devices, with future support for Apple Watch, Android, and embedded devices.",
+      "Efficiver supports iOS 18+ devices, with future support for Apple Watch, Android, and embedded devices.",
     value: "item-4",
   },
   {
-    question: "How can I get support for Efficient Driver 2.0?",
-    answer: "Our support team is here to help! Contact us at support@efficientdriver.net for assistance.",
+    question: "How can I get support for Efficiver?",
+    answer: "Our support team is here to help! Contact us at support@efficiver.com for assistance.",
     value: "item-5",
   },
 ];
@@ -65,7 +65,7 @@ const FAQList: FAQProps[] = [
       Still have questions?
       <a href="#" class="text-muted-foreground"></a>
 
-      <a href="mailto:support@efficientdriver.net" class="underline">Contact us at support@efficientdriver.net</a>
+      <a href="mailto:support@efficiver.com" class="underline">Contact us at support@efficiver.com</a>
     </h3>
   </section>
 </template>

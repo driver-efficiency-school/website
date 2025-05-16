@@ -92,7 +92,7 @@ const isOpen = ref<boolean>(false);
   }">
     <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
       <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
-      Efficient Driver
+      Efficiver
     </a>
     <!-- Mobile -->
     <div class="flex items-center lg:hidden">
@@ -107,7 +107,7 @@ const isOpen = ref<boolean>(false);
               <SheetTitle class="flex items-center">
                 <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
                   <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
-                  Efficient Driver
+                  Efficiver
                 </a>
               </SheetTitle>
             </SheetHeader>
@@ -177,8 +177,8 @@ const isOpen = ref<boolean>(false);
 
     <div class="hidden lg:flex">
       <ToggleTheme />
-      <Button as-child size="sm" variant="ghost" aria-label="Efficient Driver Dashboard">
-        <a aria-label="Efficient Driver Dashboard" href="https://dash.driver.efficiency.school" target="_blank">
+      <Button as-child size="sm" variant="ghost" aria-label="Efficiver Dashboard">
+        <a aria-label="Efficiver Dashboard" href="https://dash.driver.efficiency.school" target="_blank">
           <ChartSpline class="size-5" />
         </a>
       </Button>

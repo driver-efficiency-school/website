@@ -20,14 +20,14 @@ import { ArrowRight } from "lucide-vue-next";
 
         <div class="max-w-screen-md mx-auto text-center text-5xl md:text-6xl font-bold">
           <h1>
-            <p class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">Efficient Driver 2.0</p>
-            <p>Eco-Driving</p>
-            <p>Offline Anytime Anywhere</p>
+            <p class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">Efficiver</p>
+            <p>Save. Drive. Live.</p>
+            <p>Offline. Anytime. Anywhere.</p>
           </h1>
         </div>
 
         <p class="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-          Drive smarter with Efficient Driver 2.0 – an offline, sensor-based app designed to reduce emissions, save fuel, and promote safer driving. Join thousands of eco-conscious drivers and businesses in making a difference.
+          Drive smarter with Efficiver – an offline, sensor-based app designed to reduce emissions, save fuel, and promote safer driving. Join thousands of eco-conscious drivers and businesses in making a difference.
         </p>
 
         <div class="space-y-4 md:space-y-0 md:space-x-4">
@@ -51,7 +51,7 @@ import { ArrowRight } from "lucide-vue-next";
         <img
           class="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-2 border-t-primary/30 img-border-animation"
           :src="mode == 'light' ? 'hero-image-light.jpg' : 'hero-image-dark.jpg'"
-          alt="Efficient Driver 2.0 dashboard" />
+          alt="Efficiver dashboard" />
 
         <!-- gradient effect img -->
         <div

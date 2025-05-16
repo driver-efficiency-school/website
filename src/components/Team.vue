@@ -33,15 +33,15 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficientdriver-alex/",
+        url: "https://www.linkedin.com/in/efficiver-alex/",
       },
       {
         name: "Github",
-        url: "https://github.com/efficientdriver-alex",
+        url: "https://github.com/efficiver-alex",
       },
       {
         name: "X",
-        url: "https://x.com/efficientdriver_alex",
+        url: "https://x.com/efficiver_alex",
       },
     ],
   },
@@ -54,11 +54,11 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficientdriver-priya/",
+        url: "https://www.linkedin.com/in/efficiver-priya/",
       },
       {
         name: "X",
-        url: "https://x.com/efficientdriver_priya",
+        url: "https://x.com/efficiver_priya",
       },
     ],
   },
@@ -71,11 +71,11 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficientdriver-david/",
+        url: "https://www.linkedin.com/in/efficiver-david/",
       },
       {
         name: "Github",
-        url: "https://github.com/efficientdriver-david",
+        url: "https://github.com/efficiver-david",
       },
     ],
   },
@@ -88,15 +88,15 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficientdriver-sarah/",
+        url: "https://www.linkedin.com/in/efficiver-sarah/",
       },
       {
         name: "Github",
-        url: "https://github.com/efficientdriver-sarah",
+        url: "https://github.com/efficiver-sarah",
       },
       {
         name: "X",
-        url: "https://x.com/efficientdriver_sarah",
+        url: "https://x.com/efficiver_sarah",
       },
     ],
   },
@@ -109,7 +109,7 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficientdriver-michael/",
+        url: "https://www.linkedin.com/in/efficiver-michael/",
       },
     ],
   },
@@ -122,11 +122,11 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficientdriver-zoe/",
+        url: "https://www.linkedin.com/in/efficiver-zoe/",
       },
       {
         name: "Github",
-        url: "https://github.com/efficientdriver-zoe",
+        url: "https://github.com/efficiver-zoe",
       },
     ],
   },
@@ -139,15 +139,15 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficientdriver-evan/",
+        url: "https://www.linkedin.com/in/efficiver-evan/",
       },
       {
         name: "Github",
-        url: "https://github.com/efficientdriver-evan",
+        url: "https://github.com/efficiver-evan",
       },
       {
         name: "X",
-        url: "https://x.com/efficientdriver_evan",
+        url: "https://x.com/efficiver_evan",
       },
     ],
   },
@@ -160,7 +160,7 @@ const teamList: TeamProps[] = [
     socialNetworks: [
       {
         name: "X",
-        url: "https://x.com/efficientdriver_emma",
+        url: "https://x.com/efficiver_emma",
       },
     ],
   },
@@ -186,7 +186,7 @@ const socialIcon = (socialName: string) => {
       <h2 class="text-lg text-primary text-center mb-2 tracking-wider">Team</h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">
-        Meet the Team Behind Efficient Driver 2.0
+        Meet the Team Behind Efficiver
       </h2>
     </div>
 

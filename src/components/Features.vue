@@ -86,11 +86,11 @@ const iconMap: Record<
     </h2>
 
     <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
-      Why Choose Efficient Driver 2.0?
+      Why Choose Efficiver?
     </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      Discover the powerful features that make Efficient Driver 2.0 the ultimate offline eco-driving app – designed to help you save fuel, reduce emissions, and drive safer, all without needing internet or hardware.
+      Discover the powerful features that make Efficiver the ultimate offline eco-driving app – designed to help you save fuel, reduce emissions, and drive safer, all without needing internet or hardware.
     </h3>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -71,7 +71,7 @@ const iconMap: Record<
           Drive Smarter, Save More – Key Benefits
         </h2>
         <p class="text-xl text-muted-foreground mb-8">
-          Efficient Driver 2.0 empowers you to reduce emissions, save fuel, and drive safer – all offline, using just your device’s sensors. Discover how we make eco-driving effortless and impactful.
+          Efficiver empowers you to reduce emissions, save fuel, and drive safer – all offline, using just your device’s sensors. Discover how we make eco-driving effortless and impactful.
         </p>
       </div>
 

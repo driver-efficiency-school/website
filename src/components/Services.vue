@@ -54,10 +54,10 @@ const serviceList: ServiceProps[] = [
     </h2>
 
     <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
-      Drive Smarter with Efficient Driver 2.0
+      Drive Smarter with Efficiver
     </h2>
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-      Explore the core offerings of Efficient Driver 2.0 – designed to help you reduce emissions, save fuel, drive safer, and support your business, all while keeping your data private.
+      Explore the core offerings of Efficiver – designed to help you reduce emissions, save fuel, drive safer, and support your business, all while keeping your data private.
     </h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 

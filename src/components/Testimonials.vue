@@ -33,7 +33,7 @@ const reviewList: ReviewProps[] = [
     name: "John Smith",
     userName: "Eco-Conscious Driver",
     comment:
-      "Efficient Driver 2.0 helped me save 15% on fuel in just one month! The offline feature is a game-changer.",
+      "Efficiver helped me save 15% on fuel in just one month! The offline feature is a game-changer.",
     rating: 5.0,
   },
   {
@@ -57,7 +57,7 @@ const reviewList: ReviewProps[] = [
     name: "Ethan Brown",
     userName: "Fleet Manager",
     comment:
-      "Our fleet reduced emissions by 10% thanks to Efficient Driver 2.0’s enterprise features. Highly recommend!",
+      "Our fleet reduced emissions by 10% thanks to Efficiver’s enterprise features. Highly recommend!",
     rating: 5.0,
   },
   {
@@ -87,7 +87,7 @@ const reviewList: ReviewProps[] = [
       </h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
-        What Drivers Are Saying About Efficient Driver 2.0
+        What Drivers Are Saying About Efficiver
       </h2>
     </div>
 
@@ -112,7 +112,7 @@ const reviewList: ReviewProps[] = [
             <CardHeader>
               <div class="flex flex-row items-center gap-4">
                 <Avatar>
-                  <AvatarImage :src="review.image" alt="@efficientdriver" />
+                  <AvatarImage :src="review.image" alt="@efficiver" />
                   <AvatarFallback>ED</AvatarFallback>
                 </Avatar>
 

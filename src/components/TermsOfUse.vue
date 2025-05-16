@@ -3,13 +3,13 @@
 
 <template>
   <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
-    <h1 class="text-3xl font-bold mb-6 text-center">Terms of Use for Efficient Driver 2.0</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center">Terms of Use for Efficiver</h1>
 
     <!-- Section 1: Terms -->
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">1. Terms</h2>
       <div class="opacity-70">
-        <p>Use of the app is at your own risk. The materials on Efficient Driver 2.0's website are provided "as is." Efficient Driver 2.0 makes no warranties, expressed or implied, and disclaims all other warranties, including merchantability, fitness for a particular purpose, or non-infringement of intellectual property. Efficient Driver 2.0 does not warrant the accuracy, results, or reliability of the materials on its website or linked sites. We accept no responsibility for internet or app failures, or damage to users or their equipment due to app use. Your statutory rights are not affected.</p>
+        <p>Use of the app is at your own risk. The materials on Efficiver's website are provided "as is." Efficiver makes no warranties, expressed or implied, and disclaims all other warranties, including merchantability, fitness for a particular purpose, or non-infringement of intellectual property. Efficiver does not warrant the accuracy, results, or reliability of the materials on its website or linked sites. We accept no responsibility for internet or app failures, or damage to users or their equipment due to app use. Your statutory rights are not affected.</p>
       </div>
     </section>
 
@@ -18,7 +18,7 @@
       <h2 class="text-2xl font-semibold mb-4">2. Use License</h2>
       <div class="opacity-70">
         <ol class="list-decimal pl-6">
-          <li>Permission is granted to temporarily download one copy of the materials on Efficient Driver 2.0's app and website for personal, non-commercial viewing only. This is a license, not a title transfer, and you may not:
+          <li>Permission is granted to temporarily download one copy of the materials on Efficiver's app and website for personal, non-commercial viewing only. This is a license, not a title transfer, and you may not:
             <ol class="list-decimal pl-6">
               <li>modify or copy the materials;</li>
               <li>use the materials for commercial purposes or public display;</li>
@@ -29,8 +29,8 @@
               <li>transfer or mirror the materials on another server.</li>
             </ol>
           </li>
-          <li>This license terminates if you violate these restrictions and may be terminated by Efficient Driver 2.0 at any time. Upon termination, you must destroy any downloaded materials in your possession.</li>
-          <li>You agree to indemnify Efficient Driver 2.0 and its affiliates from any loss, damage, or costs arising from your use of the app in violation of these Terms or laws.</li>
+          <li>This license terminates if you violate these restrictions and may be terminated by Efficiver at any time. Upon termination, you must destroy any downloaded materials in your possession.</li>
+          <li>You agree to indemnify Efficiver and its affiliates from any loss, damage, or costs arising from your use of the app in violation of these Terms or laws.</li>
         </ol>
       </div>
     </section>
@@ -39,7 +39,7 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">3. Disclaimer</h2>
       <div class="opacity-70">
-        <p>Use of the app is at your own risk. The materials on Efficient Driver 2.0's website are provided "as is." Efficient Driver 2.0 makes no warranties, expressed or implied, and disclaims all other warranties, including merchantability, fitness for a particular purpose, or non-infringement of intellectual property. Efficient Driver 2.0 does not warrant the accuracy, results, or reliability of the materials on its website or linked sites. We accept no responsibility for internet or app failures, or damage to users or their equipment due to app use. Your statutory rights are not affected.</p>
+        <p>Use of the app is at your own risk. The materials on Efficiver's website are provided "as is." Efficiver makes no warranties, expressed or implied, and disclaims all other warranties, including merchantability, fitness for a particular purpose, or non-infringement of intellectual property. Efficiver does not warrant the accuracy, results, or reliability of the materials on its website or linked sites. We accept no responsibility for internet or app failures, or damage to users or their equipment due to app use. Your statutory rights are not affected.</p>
       </div>
     </section>
 
@@ -47,7 +47,7 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">4. Limitations</h2>
       <div class="opacity-70">
-        <p>Efficient Driver 2.0 or its suppliers are not liable for damages (including loss of data, profit, or business interruption) arising from the use or inability to use the materials on Efficient Driver 2.0's website, even if notified of such damage. Some jurisdictions may not allow limitations on implied warranties or liability for consequential damages, so these limitations may not apply to you.</p>
+        <p>Efficiver or its suppliers are not liable for damages (including loss of data, profit, or business interruption) arising from the use or inability to use the materials on Efficiver's website, even if notified of such damage. Some jurisdictions may not allow limitations on implied warranties or liability for consequential damages, so these limitations may not apply to you.</p>
       </div>
     </section>
 
@@ -55,7 +55,7 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">5. Revisions and Errata</h2>
       <div class="opacity-70">
-        <p>Materials on Efficient Driver 2.0's website may include technical, typographical, or photographic errors. Efficient Driver 2.0 does not warrant that these materials are accurate, complete, or current. We may update materials on the website at any time without notice but are not committed to doing so.</p>
+        <p>Materials on Efficiver's website may include technical, typographical, or photographic errors. Efficiver does not warrant that these materials are accurate, complete, or current. We may update materials on the website at any time without notice but are not committed to doing so.</p>
       </div>
     </section>
 
@@ -63,7 +63,7 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">6. Links</h2>
       <div class="opacity-70">
-        <p>Efficient Driver 2.0 has not reviewed all sites linked to its website and is not responsible for their content. Including a link does not imply endorsement by Efficient Driver 2.0. Use of linked websites is at your own risk.</p>
+        <p>Efficiver has not reviewed all sites linked to its website and is not responsible for their content. Including a link does not imply endorsement by Efficiver. Use of linked websites is at your own risk.</p>
       </div>
     </section>
 
@@ -71,7 +71,7 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">7. Site Terms of Use Modifications</h2>
       <div class="opacity-70">
-        <p>These Terms form the entire agreement between you and Efficient Driver 2.0 regarding app use. We may update these Terms, effective immediately upon posting. You’re responsible for reviewing updates and are bound by them upon continued app use. No other changes are effective unless in writing and signed by an authorized representative of Efficient Driver 2.0.</p>
+        <p>These Terms form the entire agreement between you and Efficiver regarding app use. We may update these Terms, effective immediately upon posting. You’re responsible for reviewing updates and are bound by them upon continued app use. No other changes are effective unless in writing and signed by an authorized representative of Efficiver.</p>
       </div>
     </section>
 
@@ -79,7 +79,7 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">8. Governing Law</h2>
       <div class="opacity-70">
-        <p>Any claim relating to Efficient Driver 2.0's website shall be governed by the laws of the State of California, USA, without regard to its conflict of law provisions.</p>
+        <p>Any claim relating to Efficiver's website shall be governed by the laws of the State of California, USA, without regard to its conflict of law provisions.</p>
       </div>
     </section>
 

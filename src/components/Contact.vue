@@ -39,7 +39,7 @@ const handleSubmit = () => {
   const { firstName, lastName, email, subject, message } = contactForm;
   console.log(contactForm);
 
-  const mailToLink = `mailto:support@efficientdriver.net?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
+  const mailToLink = `mailto:support@efficiver.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
 
   window.location.href = mailToLink;
 };
@@ -55,7 +55,7 @@ const handleSubmit = () => {
           <h2 class="text-3xl md:text-4xl font-bold">Get in Touch</h2>
         </div>
         <p class="mb-8 text-muted-foreground lg:w-5/6">
-          Have questions about Efficient Driver 2.0? Reach out to our team for support, inquiries, or feedback – we’re here to help you drive smarter and greener!
+          Have questions about Efficiver? Reach out to our team for support, inquiries, or feedback – we’re here to help you drive smarter and greener!
         </p>
 
         <div class="flex flex-col gap-4">
@@ -83,7 +83,7 @@ const handleSubmit = () => {
               <div class="font-bold">Mail Us</div>
             </div>
 
-            <div>support@efficientdriver.net</div>
+            <div>support@efficiver.com</div>
           </div>
 
           <div>
@@ -147,7 +147,7 @@ const handleSubmit = () => {
 
             <div class="flex flex-col gap-1.5">
               <Label for="message">Message</Label>
-              <Textarea id="message" placeholder="Your message about Efficient Driver 2.0..." rows="5" v-model="contactForm.message" />
+              <Textarea id="message" placeholder="Your message about Efficiver..." rows="5" v-model="contactForm.message" />
             </div>
 
             <Alert v-if="invalidInputForm" variant="destructive">
