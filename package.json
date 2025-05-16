@@ -1,11 +1,11 @@
 {
   "name": "website-ed",
-  "description": "Efficiver Website - A responsive landing page template built with Vue 3, TypeScript, and Tailwind CSS.",
+  "description": "Efficiver Website",
   "version": "2.0.0",
   "author": {
-    "name": "Leopoldo Miranda",
-    "email": "leomirandadev@gmail.com",
-    "url": "https://github.com/leomirandaa"
+    "name": "Dhamodharan Krishnan",
+    "email": "info@digidhamu.com",
+    "url": "https://www.efficiver.com"
   },
   "keywords": [
     "vue",
