@@ -12,7 +12,7 @@ import GithubIcon from "@/icons/GithubIcon.vue";
 import XIcon from "@/icons/XIcon.vue";
 
 interface TeamProps {
-  imageUrl: string;
+  emoji: string;
   firstName: string;
   lastName: string;
   positions: string[];
@@ -26,141 +26,54 @@ interface SocialNetworkProps {
 
 const teamList: TeamProps[] = [
   {
-    imageUrl: "https://i.pravatar.cc/250?img=58",
-    firstName: "Alex",
-    lastName: "Carter",
-    positions: ["Lead Developer", "Eco-Driving Innovator"],
+    emoji: "👨‍💻",
+    firstName: "Dhamodharan",
+    lastName: "Krishnan",
+    positions: ["Technology Head", "Eco-Driving Innovator"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficiver-alex/",
+        url: "https://www.linkedin.com/in/efficientdriver-dhamodharan/",
       },
       {
         name: "Github",
-        url: "https://github.com/efficiver-alex",
+        url: "https://github.com/efficientdriver-dhamodharan",
       },
       {
         name: "X",
-        url: "https://x.com/efficiver_alex",
+        url: "https://x.com/efficientdriver_dhamodharan",
       },
     ],
   },
   {
-    imageUrl:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "Priya",
-    lastName: "Sharma",
-    positions: ["Product Manager", "Sustainability Advocate"],
+    emoji: "👩‍💼",
+    firstName: "Karuneswara",
+    lastName: "Dhamodharan",
+    positions: ["Marketing Head", "Marketing Advocate"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficiver-priya/",
+        url: "https://www.linkedin.com/in/efficientdriver-karuneswara/",
       },
       {
         name: "X",
-        url: "https://x.com/efficiver_priya",
+        url: "https://x.com/efficientdriver_karuneswara",
       },
     ],
   },
   {
-    imageUrl:
-      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "David",
-    lastName: "Nguyen",
-    positions: ["Data Scientist", "Fuel Efficiency Expert"],
+    emoji: "👨‍🔧",
+    firstName: "Praba",
+    lastName: "Natarajan",
+    positions: ["Operations Head", "Operations Expert"],
     socialNetworks: [
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficiver-david/",
+        url: "https://www.linkedin.com/in/efficientdriver-praba/",
       },
       {
         name: "Github",
-        url: "https://github.com/efficiver-david",
-      },
-    ],
-  },
-  {
-    imageUrl:
-      "https://images.unsplash.com/photo-1573497161161-c3e73707e25c?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "Sarah",
-    lastName: "Kim",
-    positions: ["UI/UX Designer", "Driver Experience Specialist"],
-    socialNetworks: [
-      {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficiver-sarah/",
-      },
-      {
-        name: "Github",
-        url: "https://github.com/efficiver-sarah",
-      },
-      {
-        name: "X",
-        url: "https://x.com/efficiver_sarah",
-      },
-    ],
-  },
-  {
-    imageUrl:
-      "https://images.unsplash.com/photo-1616805765352-beedbad46b2a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "Michael",
-    lastName: "Brown",
-    positions: ["Enterprise Solutions Lead"],
-    socialNetworks: [
-      {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficiver-michael/",
-      },
-    ],
-  },
-  {
-    imageUrl:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "Zoe",
-    lastName: "Patel",
-    positions: ["Mobile Developer", "Offline Tech Specialist"],
-    socialNetworks: [
-      {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficiver-zoe/",
-      },
-      {
-        name: "Github",
-        url: "https://github.com/efficiver-zoe",
-      },
-    ],
-  },
-  {
-    imageUrl:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "Evan",
-    lastName: "Lee",
-    positions: ["Marketing Lead", "Eco-Community Builder"],
-    socialNetworks: [
-      {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/efficiver-evan/",
-      },
-      {
-        name: "Github",
-        url: "https://github.com/efficiver-evan",
-      },
-      {
-        name: "X",
-        url: "https://x.com/efficiver_evan",
-      },
-    ],
-  },
-  {
-    imageUrl:
-      "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    firstName: "Emma",
-    lastName: "Taylor",
-    positions: ["Customer Support Manager"],
-    socialNetworks: [
-      {
-        name: "X",
-        url: "https://x.com/efficiver_emma",
+        url: "https://github.com/efficientdriver-praba",
       },
     ],
   },
@@ -192,17 +105,18 @@ const socialIcon = (socialName: string) => {
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       <Card v-for="{
-        imageUrl,
+        emoji,
         firstName,
         lastName,
         positions,
         socialNetworks,
-      } in teamList" :key="imageUrl"
+      } in teamList" :key="`${firstName}-${lastName}`"
         class="bg-muted/60 dark:bg-card flex flex-col h-full overflow-hidden group/hoverimg">
         <CardHeader class="p-0 gap-0">
-          <div class="h-full overflow-hidden">
-            <img :src="imageUrl" alt=""
-              class="w-full aspect-square object-cover saturate-0 transition-all duration-200 ease-linear size-full group-hover/hoverimg:saturate-100 group-hover/hoverimg:scale-[1.01]" />
+          <div class="h-full overflow-hidden flex items-center justify-center">
+            <div class="w-full aspect-square flex items-center justify-center text-8xl bg-gradient-to-br from-primary/10 to-primary/20 transition-all duration-200 ease-linear group-hover/hoverimg:scale-[1.01]">
+              {{ emoji }}
+            </div>
           </div>
           <CardTitle class="py-6 pb-4 px-6">{{ firstName }}
             <span class="text-primary">{{ lastName }}</span>
