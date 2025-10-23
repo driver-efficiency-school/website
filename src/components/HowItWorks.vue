@@ -80,7 +80,7 @@ const HowItWorksList: HowItWorksProps[] = [
           </CardContent>
         </Card>
 
-        <div class="w-[150px] md:w-[250px] lg:w-[300px] mx-auto -scale-x-100 text-primary">
+        <div class="w-[105px] md:w-[175px] lg:w-[210px] mx-auto -scale-x-100 text-primary">
           <component :is="(index === 0 ? DownloadPhone : index === 1 ? DriveCar : index === 2 ? AnalyzeChart : ImproveBadge)"
             :aria-label="alt || title" />
         </div>
