@@ -77,6 +77,22 @@ const teamList: TeamProps[] = [
       },
     ],
   },
+  {
+    emoji: "👨‍🔧",
+    firstName: "Karthik",
+    lastName: "Karthik",
+    positions: ["Quality Assurance", "Efficiency Expert"],
+    socialNetworks: [
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/efficientdriver-praba/",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/efficientdriver-praba",
+      },
+    ],
+  },
 ];
 
 const socialIcon = (socialName: string) => {
