@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import DownloadPhone from '@/components/icons/DownloadPhone.vue'
+import DriveCar from '@/components/icons/DriveCar.vue'
+import AnalyzeChart from '@/components/icons/AnalyzeChart.vue'
+import ImproveBadge from '@/components/icons/ImproveBadge.vue'
 
 interface HowItWorksProps {
   badgeTitle: string;
   title: string;
   description: string;
-  image: string;
+  alt?: string;
 }
 
 const HowItWorksList: HowItWorksProps[] = [
@@ -15,28 +19,28 @@ const HowItWorksList: HowItWorksProps[] = [
     title: "Download the App – No Hardware Needed",
     description:
       "Install Efficiver from the App Store and start your eco-driving journey without any internet or hardware.",
-    image: "roboto.png",
+    alt: "Download the Efficiver app on mobile",
   },
   {
     badgeTitle: "Drive",
     title: "Drive and Track – Offline, Anytime",
     description:
       "Use your device’s sensors to track your driving efficiency offline – No internet required.",
-    image: "runner.png",
+    alt: "Drive and track with your phone in the car",
   },
   {
     badgeTitle: "Analyze",
     title: "Analyze and Save – Fuel & CO2 Insights",
     description:
       "Get detailed trip metrics to quantify fuel savings and reduce CO2 emissions effortlessly.",
-    image: "pacheco.png",
+    alt: "Trip analytics and CO2/fuel insights",
   },
   {
     badgeTitle: "Improve",
     title: "Improve and Stay Safe – Personalized Tips",
     description:
       "Receive offline coaching tips to drive safer and earn badges for eco-friendly driving habits.",
-    image: "gamestation.png",
+    alt: "Earn badges and improve driving",
   },
 ];
 </script>
@@ -55,7 +59,7 @@ const HowItWorksList: HowItWorksProps[] = [
 
     <div class="lg:w-[80%] mx-auto relative">
       <div v-for="(
-{ badgeTitle, title, description, image }, index
+{ badgeTitle, title, description, alt }, index
         ) in HowItWorksList" :key="title" :class="[
           'flex mb-8 items-center',
           { ' flex-row-reverse': index % 2 !== 0 },
@@ -76,8 +80,10 @@ const HowItWorksList: HowItWorksProps[] = [
           </CardContent>
         </Card>
 
-        <img :src="image" :alt="`Image describing ${title} `"
-          className="w-[150px]  md:w-[250px] lg:w-[300px] mx-auto -scale-x-100 " />
+        <div class="w-[150px] md:w-[250px] lg:w-[300px] mx-auto -scale-x-100 text-primary">
+          <component :is="(index === 0 ? DownloadPhone : index === 1 ? DriveCar : index === 2 ? AnalyzeChart : ImproveBadge)"
+            :aria-label="alt || title" />
+        </div>
         <div :class="[
           '-z-10 absolute right-0 w-44 h-72  lg:w-64 lg:h-80 rounded-full bg-primary/15 dark:bg-primary/10 blur-3xl',
           {
