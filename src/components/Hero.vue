@@ -5,6 +5,24 @@ const mode = useColorMode();
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-vue-next";
+
+const darkImages = [
+  'screen-dark_01.png',
+  'screen-dark_02.png',
+  'screen-dark_03.png',
+  'screen-dark_04.png',
+  'screen-dark_05.png',
+  'screen-dark_06.png'
+];
+
+const lightImages = [
+  'screen-light_101.png',
+  'screen-light_102.png',
+  'screen-light_103.png',
+  'screen-light_104.png',
+  'screen-light_105.png',
+  'screen-light_106.png'
+];
 </script>
 
 <template>
@@ -51,10 +69,14 @@ import { ArrowRight } from "lucide-vue-next";
           class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation">
         </div>
 
-        <img
-          class="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-2 border-t-primary/30 img-border-animation"
-          :src="mode == 'light' ? 'hero-image-light.jpg' : 'hero-image-dark.jpg'"
-          alt="Efficiver dashboard" />
+        <div class="grid grid-cols-3 gap-4 w-full md:w-[1200px] mx-auto rounded-lg relative border border-t-2 border-t-primary/30 img-border-animation">
+          <img
+            v-for="(image, index) in mode === 'light' ? lightImages : darkImages"
+            :key="index"
+            :src="image"
+            :alt="`Efficiver dashboard screenshot ${index + 1}`"
+            class="rounded-lg border border-primary/20" />
+        </div>
 
         <!-- gradient effect img -->
         <div
@@ -96,11 +118,11 @@ import { ArrowRight } from "lucide-vue-next";
 
 @keyframes img-border-animation {
   from {
-    @apply border-t-primary/10;
+    border-top-color: hsl(var(--primary) / 0.1);
   }
 
   to {
-    @apply border-t-primary/60;
+    border-top-color: hsl(var(--primary) / 0.6);
   }
 }
 </style>

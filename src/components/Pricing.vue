@@ -29,7 +29,7 @@ interface PlanProps {
 const plans: PlanProps[] = [
   {
     title: "Free Trial",
-    popular: 0,
+    popular: 1,
     price: 0,
     description: "Try with a 200km trial – perfect to start.",
     discount: null, // No discount for free plan
@@ -59,7 +59,7 @@ const plans: PlanProps[] = [
   },
   {
     title: "Eco Master",
-    popular: 1,
+    popular: 0,
     price: 2.99,
     description: "Best for eco-drivers – analytics, gamified fun.",
     discount: "50% OFF",
@@ -116,6 +116,7 @@ const plans: PlanProps[] = [
       } in plans" :key="title" :class="{
           'drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.1]':
             popular === PopularPlan?.YES,
+          'opacity-75': popular === PopularPlan?.NO,
         }">
         <CardHeader class="relative">
           <CardTitle class="pb-2">
@@ -143,7 +144,7 @@ const plans: PlanProps[] = [
         </CardContent>
 
         <CardFooter>
-          <Button :variant="popular === PopularPlan?.NO ? 'secondary' : 'default'" class="w-full">
+          <Button :variant="popular === PopularPlan?.NO ? 'secondary' : 'default'" :disabled="popular === PopularPlan?.NO" class="w-full">
             {{ buttonText }}
           </Button>
         </CardFooter>
