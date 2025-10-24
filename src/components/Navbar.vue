@@ -61,7 +61,7 @@ const routeList: RouteProps[] = [
 
 const externalList: RouteProps[] = [
   {
-    href: "https://dash.driver.efficiency.school",
+    href: "https://drive.efficiency.school",
     label: "Dashboard",
   },
 ];
@@ -178,7 +178,7 @@ const isOpen = ref<boolean>(false);
     <div class="hidden lg:flex">
       <ToggleTheme />
       <Button as-child size="sm" variant="ghost" aria-label="Efficiver Dashboard">
-        <a aria-label="Efficiver Dashboard" href="https://dash.driver.efficiency.school" target="_blank">
+        <a aria-label="Efficiver Dashboard" href="https://drive.efficiency.school" target="_blank">
           <ChartSpline class="size-5" />
         </a>
       </Button>
