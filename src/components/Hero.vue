@@ -7,21 +7,21 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-vue-next";
 
 const darkImages = [
-  'screen-dark_01.png',
-  'screen-dark_02.png',
-  'screen-dark_03.png',
-  'screen-dark_04.png',
-  'screen-dark_05.png',
-  'screen-dark_06.png'
+  'screen-dark_001.jpg',
+  'screen-dark_002.jpg',
+  'screen-dark_003.jpg',
+  'screen-dark_004.jpg',
+  'screen-dark_005.jpg',
+  'screen-dark_006.jpg'
 ];
 
 const lightImages = [
-  'screen-light_101.png',
-  'screen-light_102.png',
-  'screen-light_103.png',
-  'screen-light_104.png',
-  'screen-light_105.png',
-  'screen-light_106.png'
+  'screen-light_101.jpg',
+  'screen-light_102.jpg',
+  'screen-light_103.jpg',
+  'screen-light_104.jpg',
+  'screen-light_105.jpg',
+  'screen-light_106.jpg'
 ];
 </script>
 
