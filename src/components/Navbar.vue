@@ -92,7 +92,7 @@ const isOpen = ref<boolean>(false);
   }">
     <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
       <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
-      Efficiver
+      <span style="font-family: 'Audiowide', cursive;">Efficiver</span>
     </a>
     <!-- Mobile -->
     <div class="flex items-center lg:hidden">
@@ -107,7 +107,7 @@ const isOpen = ref<boolean>(false);
               <SheetTitle class="flex items-center">
                 <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
                   <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
-                  Efficiver
+                  <span style="font-family: 'Audiowide', cursive;">Efficiver</span>
                 </a>
               </SheetTitle>
             </SheetHeader>

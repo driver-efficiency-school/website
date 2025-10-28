@@ -2,7 +2,6 @@
 import { useColorMode } from "@vueuse/core";
 const mode = useColorMode();
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-vue-next";
 
@@ -36,15 +35,17 @@ const lightImages = [
           <span>Limited Time Offer – 50% Off!</span>
         </Badge>
 
-        <div class="max-w-screen-md mx-auto text-center text-5xl md:text-6xl font-bold">
-          <h1>
-            <p class="text-transparent bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">Efficiver</p>
-            <Badge variant="outline" class="text-xl py-2">
-              <span>Efficient + Driver</span>
-            </Badge>
-            <p>Save. Drive. Live.</p>
-            <p>Offline. Anytime. Anywhere.</p>
-          </h1>
+        <div class="max-w-screen-md mx-auto text-center">
+          <div class="flex justify-center mb-8">
+            <img 
+              src="/Logo-v1_Transparent.png" 
+              alt="Efficiver Logo" 
+              class="w-72 h-72 md:w-96 md:h-96 object-contain rounded-xl shadow-lg dark:shadow-none"
+            />
+          </div>
+          <div class="space-y-4">
+            <p class="text-2xl md:text-3xl font-semibold text-muted-foreground">Offline. Anytime. Anywhere.</p>
+          </div>
         </div>
 
         <p class="max-w-screen-sm mx-auto text-xl text-muted-foreground">
