@@ -32,10 +32,8 @@ import DiscordIcon from "@/icons/DiscordIcon.vue";
           </CardContent>
 
           <CardFooter>
-            <Button as-child>
-              <a href="https://www.instagram.com/" target="_blank">
-                Follow Us on Social Media
-              </a>
+            <Button disabled>
+              Follow Us on Social Media
             </Button>
           </CardFooter>
         </Card>

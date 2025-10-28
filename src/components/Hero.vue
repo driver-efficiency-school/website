@@ -3,6 +3,7 @@ import { useColorMode } from "@vueuse/core";
 const mode = useColorMode();
 
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-vue-next";
 
 const darkImages = [

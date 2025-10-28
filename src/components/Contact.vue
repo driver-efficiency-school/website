@@ -15,33 +15,71 @@ import {
 import { Textarea } from "./ui/textarea";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
-import { AlertCircle, Building2, Phone, Mail, Clock } from "lucide-vue-next";
+import { AlertCircle, Building2, Phone, Mail, Clock, CheckCircle, Loader2 } from "lucide-vue-next";
+import { apiService, type ContactFormData } from "@/lib/api";
 
-interface ContactFormeProps {
+interface ContactFormProps {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
+  company: string;
   subject: string;
   message: string;
 }
 
-const contactForm = reactive<ContactFormeProps>({
+const contactForm = reactive<ContactFormProps>({
   firstName: "",
   lastName: "",
   email: "",
+  phone: "",
+  company: "",
   subject: "General Inquiry",
   message: "",
 });
 
-const invalidInputForm = ref<boolean>(false);
+const isSubmitting = ref(false);
+const submitStatus = ref<'idle' | 'success' | 'error'>('idle');
+const errorMessage = ref('');
 
-const handleSubmit = () => {
-  const { firstName, lastName, email, subject, message } = contactForm;
-  console.log(contactForm);
+const handleSubmit = async () => {
+  if (isSubmitting.value) return;
 
-  const mailToLink = `mailto:support@efficiver.com?subject=${subject}&body=Hello I am ${firstName} ${lastName}, my Email is ${email}. %0D%0A${message}`;
+  isSubmitting.value = true;
+  submitStatus.value = 'idle';
+  errorMessage.value = '';
 
-  window.location.href = mailToLink;
+  try {
+    const formData: ContactFormData = {
+      name: `${contactForm.firstName} ${contactForm.lastName}`.trim(),
+      email: contactForm.email,
+      phone: contactForm.phone.trim() || undefined,
+      company: contactForm.company.trim() || undefined,
+      subject: contactForm.subject,
+      message: contactForm.message,
+      source: 'www.efficiver.com'
+    };
+
+    await apiService.submitContactForm(formData);
+    submitStatus.value = 'success';
+
+    // Reset form on success
+    Object.assign(contactForm, {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      company: "",
+      subject: "General Inquiry",
+      message: "",
+    });
+
+  } catch (error) {
+    submitStatus.value = 'error';
+    errorMessage.value = error instanceof Error ? error.message : 'An unexpected error occurred';
+  } finally {
+    isSubmitting.value = false;
+  }
 };
 </script>
 
@@ -118,8 +156,13 @@ const handleSubmit = () => {
             </div>
 
             <div class="flex flex-col gap-1.5">
-              <Label for="email">Email</Label>
-              <Input id="email" type="email" placeholder="alex.smith@example.com" v-model="contactForm.email" />
+              <Label for="phone">Phone (Optional)</Label>
+              <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" v-model="contactForm.phone" />
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <Label for="company">Company (Optional)</Label>
+              <Input id="company" type="text" placeholder="Your Company" v-model="contactForm.company" />
             </div>
 
             <div class="flex flex-col gap-1.5">
@@ -150,15 +193,26 @@ const handleSubmit = () => {
               <Textarea id="message" placeholder="Your message about Efficiver..." rows="5" v-model="contactForm.message" />
             </div>
 
-            <Alert v-if="invalidInputForm" variant="destructive">
+            <Alert v-if="submitStatus === 'error'" variant="destructive">
               <AlertCircle class="w-4 h-4" />
               <AlertTitle>Error</AlertTitle>
               <AlertDescription>
-                There is an error in the form. Please check your input.
+                {{ errorMessage || 'There was an error sending your message. Please try again.' }}
               </AlertDescription>
             </Alert>
 
-            <Button class="mt-4">Send message</Button>
+            <Alert v-if="submitStatus === 'success'" variant="default" class="border-green-200 bg-green-50 text-green-800">
+              <CheckCircle class="w-4 h-4" />
+              <AlertTitle>Message Sent!</AlertTitle>
+              <AlertDescription>
+                Thank you for contacting us. We'll get back to you soon!
+              </AlertDescription>
+            </Alert>
+
+            <Button class="mt-4" :disabled="isSubmitting" type="submit">
+              <Loader2 v-if="isSubmitting" class="w-4 h-4 mr-2 animate-spin" />
+              {{ isSubmitting ? 'Sending...' : 'Send message' }}
+            </Button>
           </form>
         </CardContent>
 

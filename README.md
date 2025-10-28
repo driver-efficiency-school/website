@@ -28,6 +28,49 @@ Live demo is now available: <a href="https://shadcn-vue-landing-page.vercel.app"
 - [x] User Friendly Navigation
 - [x] Dark Mode
 - [x] Meta tags
+- [x] Contact Form Integration (email-fullstack API)
+- [x] Newsletter Subscription (email-fullstack API)
+
+## API Integration
+
+This website integrates with the Efficiency School email backend API for:
+
+### Contact Form
+- **Endpoint**: `POST https://email.efficiency.school/api/v1/contact`
+- **Features**: Full contact form with validation, email notifications
+- **Source**: Automatically set to "efficiver.com"
+
+### Newsletter Subscription
+- **Endpoint**: `POST https://email.efficiency.school/api/v1/subscribers/subscribe`
+- **Features**: Email subscription with preferences, duplicate handling
+- **Source**: Automatically set to "efficiver.com"
+
+## Testing API Integration
+
+### Test Contact Form
+```bash
+curl -X POST https://email.efficiency.school/api/v1/contact \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Test User",
+    "email": "test@example.com",
+    "subject": "API Test",
+    "message": "Testing contact form integration",
+    "source": "efficiver.com"
+  }'
+```
+
+### Test Newsletter Subscription
+```bash
+curl -X POST https://email.efficiency.school/api/v1/subscribers/subscribe \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "subscriber@example.com",
+    "name": "Test Subscriber",
+    "preferences": ["technology", "business"],
+    "source": "efficiver.com"
+  }'
+```
 
 ## How to install
 

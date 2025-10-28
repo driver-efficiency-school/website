@@ -11,6 +11,7 @@ import Team from "./components/Team.vue";
 import Pricing from "./components/Pricing.vue";
 import Community from "./components/Community.vue";
 import Contact from "./components/Contact.vue";
+import NewsletterSignup from "./components/NewsletterSignup.vue";
 import FAQ from "./components/FAQ.vue";
 import Footer from "./components/Footer.vue";
 import Investors from "./components/Investors.vue";
@@ -63,6 +64,11 @@ onMounted(() => {
     <Community />
     <Pricing />
     <Contact />
+    <section class="container py-24 sm:py-32">
+      <div class="mx-auto max-w-2xl text-center">
+        <NewsletterSignup />
+      </div>
+    </section>
     <FAQ />
   </div>
   <Investors v-if="showInvestors" />

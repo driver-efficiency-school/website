@@ -100,19 +100,19 @@ const emit = defineEmits(['navigate']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Socials</h3>
           <div>
-            <a href="https://www.instagram.com/" class="opacity-60 hover:opacity-100">
+            <span class="opacity-30 cursor-not-allowed">
               Instagram
-            </a>
+            </span>
           </div>
           <div>
-            <a href="https://www.tiktok.com/" class="opacity-60 hover:opacity-100">
+            <span class="opacity-30 cursor-not-allowed">
               TikTok
-            </a>
+            </span>
           </div>
           <div>
-            <a href="https://www.linkedin.com/" class="opacity-60 hover:opacity-100">
+            <span class="opacity-30 cursor-not-allowed">
               LinkedIn
-            </a>
+            </span>
           </div>
         </div>
       </div>
