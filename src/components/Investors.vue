@@ -26,7 +26,7 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">3. Business Model</h2>
       <div class="opacity-70">
-        <p>Efficiver operates on a freemium model: a 200km free trial, followed by Smart Driver ($1.99/month), Eco Master ($2.99/month), and Enterprise ($19.99/user/year). Current discounts (50% off for individuals, 60% off for Enterprise) aim to drive adoption. We also offer localized pricing (e.g., $0.99/month in India) to capture global markets.</p>
+        <p>Efficiver is currently offering all premium features for free for a limited time to accelerate user adoption. This "Free for Early Adopters" strategy allows us to gather data and refine our product. Future monetization will reintroduce our tiered subscription model (Smart Driver, Eco Master) and expand enterprise partnerships.</p>
       </div>
     </section>
 
@@ -34,7 +34,7 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">4. Financial Highlights</h2>
       <div class="opacity-70">
-        <p>Since launch, Efficiver has attracted 1,000+ users, with 30% converting to paid plans. Our enterprise solution has secured 5 pilot programs with driving schools. Current discounts have boosted conversions by 40%, projecting $500K annual revenue in year one.</p>
+        <p>Since launch, Efficiver has attracted 1,000+ users. The current free offer is driving rapid organic growth, with a projected 100,000 active users by year-end. This user base is a critical asset for future monetization and Series A funding.</p>
       </div>
     </section>
 

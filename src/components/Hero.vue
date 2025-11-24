@@ -33,7 +33,7 @@ const lightImages = [
           <span class="mr-2 text-primary">
             <Badge>New</Badge>
           </span>
-          <span>Limited Time Offer – 50% Off!</span>
+          <span>Limited Time Offer – Free!</span>
         </Badge>
 
         <div class="max-w-screen-md mx-auto text-center">

@@ -27,27 +27,13 @@ interface PlanProps {
 }
 
 const plans: PlanProps[] = [
-  {
-    title: "Free Trial",
-    popular: 1,
-    price: 0,
-    description: "Try with a 200km trial – perfect to start.",
-    discount: null, // No discount for free plan
-    buttonText: "Start Free Trial",
-    benefitList: [
-      "200km trial",
-      "Basic eco-driving score",
-      "GPS speed tracking",
-      "Weather display (cached)",
-      "Limited session details",
-    ],
-  },
+
   {
     title: "Smart Driver",
     popular: 0,
-    price: 1.99,
+    price: 0,
     description: "Ideal for learners – detailed metrics, coaching.",
-    discount: "50% OFF",
+    discount: "Free (Limited Time)",
     buttonText: "Get Started",
     benefitList: [
       "Unlimited trips",
@@ -60,9 +46,9 @@ const plans: PlanProps[] = [
   {
     title: "Eco Master",
     popular: 0,
-    price: 2.99,
+    price: 0,
     description: "Best for eco-drivers – analytics, gamified fun.",
-    discount: "50% OFF",
+    discount: "Free (Limited Time)",
     buttonText: "Get Started",
     benefitList: [
       "All Smart Driver features",
@@ -101,10 +87,10 @@ const plans: PlanProps[] = [
     </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-      Unlock the full potential of Efficiver with our flexible plans – now up to 60% off for a limited time! Start free, upgrade, or go Enterprise.
+      Unlock the full potential of Efficiver with our flexible plans – now Free for a limited time! Start free, upgrade, or go Enterprise.
     </h3>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
       <Card v-for="{
         title,
         popular,

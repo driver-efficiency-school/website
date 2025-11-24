@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
 import Features from "./components/Features.vue";
 import HowItWorks from "./components/HowItWorks.vue";
-import Sponsors from "./components/Sponsors.vue";
 import Testimonials from "./components/Testimonials.vue";
 import Team from "./components/Team.vue";
 import Pricing from "./components/Pricing.vue";
@@ -56,14 +55,12 @@ onMounted(() => {
   <Navbar @navigate="navigate" />
   <div v-if="!showInvestors && !showTerms && !showPrivacy && !showComingSoon">
     <Hero />
-    <Sponsors />
     <Features />
     <HowItWorks />
     <Testimonials />
     <Team />
     <Community />
     <Pricing />
-    <Contact />
     <section class="container py-24 sm:py-32">
       <div class="mx-auto max-w-2xl text-center">
         <NewsletterSignup />
