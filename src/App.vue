@@ -17,18 +17,21 @@ import Footer from "./components/Footer.vue";
 import Investors from "./components/Investors.vue";
 import TermsOfUse from "./components/TermsOfUse.vue";
 import PrivacyPolicy from "./components/PrivacyPolicy.vue";
+import ComingSoon from "./components/ComingSoon.vue";
 import { ref, onMounted } from 'vue';
 
 const showInvestors = ref(false);
 const showTerms = ref(false);
 const showPrivacy = ref(false);
+const showComingSoon = ref(false);
 
-function navigate(target: 'main' | 'investors' | 'terms' | 'privacy') {
+function navigate(target: 'main' | 'investors' | 'terms' | 'privacy' | 'coming-soon') {
   showInvestors.value = target === 'investors';
   showTerms.value = target === 'terms';
   showPrivacy.value = target === 'privacy';
+  showComingSoon.value = target === 'coming-soon';
   window.location.hash = target === 'main' ? '' : target;
-  if (showInvestors.value || showTerms.value || showPrivacy.value) {
+  if (showInvestors.value || showTerms.value || showPrivacy.value || showComingSoon.value) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
@@ -39,7 +42,8 @@ function handleHashChange() {
   showInvestors.value = hash === 'investors';
   showTerms.value = hash === 'terms';
   showPrivacy.value = hash === 'privacy';
-  if (showInvestors.value || showTerms.value || showPrivacy.value) {
+  showComingSoon.value = hash === 'coming-soon';
+  if (showInvestors.value || showTerms.value || showPrivacy.value || showComingSoon.value) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
@@ -52,7 +56,7 @@ onMounted(() => {
 
 <template>
   <Navbar @navigate="navigate" />
-  <div v-if="!showInvestors && !showTerms && !showPrivacy">
+  <div v-if="!showInvestors && !showTerms && !showPrivacy && !showComingSoon">
     <Hero />
     <Sponsors />
     <Benefits />
@@ -74,5 +78,6 @@ onMounted(() => {
   <Investors v-if="showInvestors" />
   <TermsOfUse v-else-if="showTerms" />
   <PrivacyPolicy v-else-if="showPrivacy" />
+  <ComingSoon v-else-if="showComingSoon" />
   <Footer @navigate="navigate" />
 </template>

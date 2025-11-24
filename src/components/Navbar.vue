@@ -61,8 +61,8 @@ const routeList: RouteProps[] = [
 
 const externalList: RouteProps[] = [
   {
-    href: "https://drive.efficiency.school",
-    label: "Dashboard",
+    href: "#",
+    label: "Coming soon...",
   },
 ];
 
@@ -121,7 +121,7 @@ const isOpen = ref<boolean>(false);
               </Button>
               <Separator class="my-2" />
               <Button v-for="{ href, label } in externalList" :key="label" as-child variant="ghost" class="justify-start text-base">
-                <a @click="isOpen = false" :href="href" target="_blank">
+                <a @click.prevent="emit('navigate', 'coming-soon'); isOpen = false" :href="href">
                   {{ label }}
                   <ExternalLinkIcon class="ml-2 h-4 w-4" />
                 </a>
@@ -177,8 +177,8 @@ const isOpen = ref<boolean>(false);
 
     <div class="hidden lg:flex">
       <ToggleTheme />
-      <Button as-child size="sm" variant="ghost" aria-label="Efficiver Dashboard">
-        <a aria-label="Efficiver Dashboard" href="https://drive.efficiency.school" target="_blank">
+      <Button as-child size="sm" variant="ghost" aria-label="Coming soon...">
+        <a aria-label="Coming soon..." href="#" @click.prevent="emit('navigate', 'coming-soon')">
           <ChartSpline class="size-5" />
         </a>
       </Button>
