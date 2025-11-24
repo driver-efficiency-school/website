@@ -3,13 +3,13 @@ import { Marquee } from "@selemondev/vue3-marquee";
 import "@selemondev/vue3-marquee/dist/style.css";
 
 import {
-  Crown,
-  Vegan,
-  Ghost,
-  Puzzle,
-  Squirrel,
-  Cookie,
-  Drama,
+  Car,
+  Zap,
+  Leaf,
+  Battery,
+  Smartphone,
+  Globe,
+  Bike,
 } from "lucide-vue-next";
 
 interface sponsorsProps {
@@ -19,52 +19,64 @@ interface sponsorsProps {
 
 const sponsors: sponsorsProps[] = [
   {
-    icon: "crown",
-    name: "GreenTech Solutions",
+    icon: "car",
+    name: "Tata Motors",
   },
   {
-    icon: "vegan",
-    name: "EcoFuel Innovations",
+    icon: "zap",
+    name: "Mahindra Electric",
   },
   {
-    icon: "ghost",
-    name: "DriveSafe Systems",
+    icon: "leaf",
+    name: "Ola Electric",
   },
   {
-    icon: "puzzle",
-    name: "AutoEco Alliance",
+    icon: "battery",
+    name: "Ather Energy",
   },
   {
-    icon: "squirrel",
-    name: "CleanDrive Tech",
+    icon: "smartphone",
+    name: "BluSmart",
   },
   {
-    icon: "cookie",
-    name: "Sustainably Mobile",
+    icon: "globe",
+    name: "Yulu",
   },
   {
-    icon: "drama",
-    name: "EcoMotion Partners",
+    icon: "bike",
+    name: "Hero Electric",
+  },
+  {
+    icon: "bike",
+    name: "TVS Motor",
+  },
+  {
+    icon: "bike",
+    name: "Bajaj Auto",
+  },
+  {
+    icon: "zap",
+    name: "Revolt Motors",
   },
 ];
 
 const iconMap: Record<
   string,
-  | typeof Crown
-  | typeof Vegan
-  | typeof Ghost
-  | typeof Puzzle
-  | typeof Squirrel
-  | typeof Cookie
-  | typeof Drama
+  | typeof Car
+  | typeof Zap
+  | typeof Leaf
+  | typeof Battery
+  | typeof Smartphone
+  | typeof Globe
+  | typeof Bike
 > = {
-  crown: Crown,
-  vegan: Vegan,
-  ghost: Ghost,
-  puzzle: Puzzle,
-  squirrel: Squirrel,
-  cookie: Cookie,
-  drama: Drama,
+  car: Car,
+  zap: Zap,
+  leaf: Leaf,
+  battery: Battery,
+  smartphone: Smartphone,
+  globe: Globe,
+  bike: Bike,
 };
 </script>
 

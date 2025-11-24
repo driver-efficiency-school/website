@@ -57,8 +57,8 @@ const emit = defineEmits(['navigate']);
             </a>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
-              Dashboard Device (Future Support)
+            <a href="/#" class="opacity-60 hover:opacity-100" @click.prevent="emit('navigate', 'coming-soon')">
+              Dashboard (Coming Soon)
             </a>
           </div>
         </div>
