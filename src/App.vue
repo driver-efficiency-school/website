@@ -61,7 +61,7 @@
     <Team />
     <Community />
     <Pricing />
-    <section class="container py-24 sm:py-32">
+    <section id="newsletter" class="container py-24 sm:py-32">
       <div class="mx-auto max-w-2xl text-center">
         <NewsletterSignup />
       </div>
