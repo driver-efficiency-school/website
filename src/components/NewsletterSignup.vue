@@ -92,6 +92,8 @@ const togglePreference = (preferenceId: string) => {
           <Label for="newsletter-email">Email Address *</Label>
           <Input
             id="newsletter-email"
+            name="email"
+            autocomplete="email"
             type="email"
             placeholder="your.email@example.com"
             v-model="newsletterForm.email"
@@ -103,6 +105,8 @@ const togglePreference = (preferenceId: string) => {
           <Label for="newsletter-name">Name (Optional)</Label>
           <Input
             id="newsletter-name"
+            name="name"
+            autocomplete="name"
             type="text"
             placeholder="Your Name"
             v-model="newsletterForm.name"
@@ -110,7 +114,7 @@ const togglePreference = (preferenceId: string) => {
         </div>
 
         <div class="space-y-2 text-left">
-          <Label>Interests (Optional)</Label>
+          <div class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Interests (Optional)</div>
           <div class="flex flex-wrap gap-2">
             <button
               v-for="pref in availablePreferences"

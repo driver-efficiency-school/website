@@ -10,6 +10,10 @@ import {
   PictureInPicture,
   MousePointerClick,
   Newspaper,
+  Mic,
+  Activity,
+  Settings,
+  Fingerprint,
 } from "lucide-vue-next";
 
 interface FeaturesProps {
@@ -21,9 +25,9 @@ interface FeaturesProps {
 const featureList: FeaturesProps[] = [
   {
     icon: "tabletSmartphone",
-    title: "Offline Eco-Driving",
+    title: "Offline & Background",
     description:
-      "Track your driving efficiency anywhere – No internet or hardware required.",
+      "Track efficiency anywhere, even in the background while using Maps or Music.",
   },
   {
     icon: "goal",
@@ -32,10 +36,16 @@ const featureList: FeaturesProps[] = [
       "Quantify fuel savings and CO2 reductions with detailed trip metrics.",
   },
   {
-    icon: "badgeCheck",
-    title: "Safer Driving Tips",
+    icon: "settings",
+    title: "Engine Calibration",
     description:
-      "Get personalized offline coaching to improve your driving habits and safety.",
+      "Calibrate for Petrol, Diesel and EV engines for maximum accuracy.",
+  },
+  {
+    icon: "activity",
+    title: "Advanced Metrics",
+    description:
+      "Monitor Acceleration, Braking, Cornering, and Idle Time in real-time.",
   },
   {
     icon: "pictureInPicture",
@@ -44,10 +54,22 @@ const featureList: FeaturesProps[] = [
       "Earn badges and achieve eco-driving goals with fun challenges.",
   },
   {
-    icon: "mousePointerClick",
-    title: "Privacy Protection",
+    icon: "fingerprint",
+    title: "Biometric Privacy",
     description:
-      "Your data stays local – No internet, no sharing, just privacy.",
+      "Your data is local and secured with FaceID/TouchID. No tracking, ever.",
+  },
+  {
+    icon: "mic",
+    title: "Voice Commands",
+    description:
+      "Stay safe with hands-free voice controls to start and stop your drives.",
+  },
+  {
+    icon: "badgeCheck",
+    title: "Safer Driving Tips",
+    description:
+      "Get personalized offline coaching to improve your driving habits and safety.",
   },
   {
     icon: "newspaper",
@@ -67,6 +89,10 @@ const iconMap: Record<
   | typeof MousePointerClick
   | typeof MessageCircle
   | typeof Newspaper
+  | typeof Mic
+  | typeof Activity
+  | typeof Settings
+  | typeof Fingerprint
 > = {
   tabletSmartphone: TabletSmartphone,
   badgeCheck: BadgeCheck,
@@ -76,6 +102,10 @@ const iconMap: Record<
   mousePointerClick: MousePointerClick,
   messageCircle: MessageCircle,
   newspaper: Newspaper,
+  mic: Mic,
+  activity: Activity,
+  settings: Settings,
+  fingerprint: Fingerprint,
 };
 </script>
 

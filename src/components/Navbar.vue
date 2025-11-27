@@ -26,12 +26,13 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetDescription,
 } from "@/components/ui/sheet";
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-import { Menu, ExternalLinkIcon, ChartSpline } from "lucide-vue-next";
+import { Menu, ExternalLinkIcon, ChartSpline, ChevronDown } from "lucide-vue-next";
 import ToggleTheme from "./ToggleTheme.vue";
 
 const emit = defineEmits(['navigate']);
@@ -84,16 +85,16 @@ const externalList: RouteProps[] = [
 
 const featureList: FeatureProps[] = [
   {
-    title: "Drive Green",
-    description: "Cut emissions with offline eco-insights.",
+    title: "Background Ready",
+    description: "Track efficiency while using Maps or Music.",
   },
   {
-    title: "Save Fuel",
-    description: "Track savings, boost efficiency fast.",
+    title: "Engine Calibration",
+    description: "Petrol, Diesel & EV support for accuracy.",
   },
   {
-    title: "Stay Safe",
-    description: "Get offline tips for safer driving.",
+    title: "Biometric Privacy",
+    description: "Secured with FaceID/TouchID. 100% Private.",
   },
 ];
 
@@ -126,9 +127,17 @@ const isOpen = ref<boolean>(false);
                   <span style="font-family: 'Audiowide', cursive;">Efficiver</span>
                 </a>
               </SheetTitle>
+              <SheetDescription class="sr-only">
+                Mobile navigation menu
+              </SheetDescription>
             </SheetHeader>
 
             <div class="flex flex-col gap-2">
+              <Button as-child variant="ghost" class="justify-start text-base">
+                <a @click="emit('navigate', 'main'); isOpen = false" href="#features">
+                  Features
+                </a>
+              </Button>
               <Button v-for="{ href, label } in routeList" :key="label" as-child variant="ghost"
                 class="justify-start text-base">
                 <a @click="emit('navigate', 'main'); isOpen = false" :href="href">
@@ -176,12 +185,14 @@ const isOpen = ref<boolean>(false);
                 <ul class="flex flex-col gap-2">
                   <li v-for="{ title, description } in featureList" :key="title"
                     class="rounded-md p-3 text-sm hover:bg-muted">
-                    <p class="mb-1 font-semibold leading-none text-foreground">
-                      {{ title }}
-                    </p>
-                    <p class="line-clamp-2 text-muted-foreground">
-                      {{ description }}
-                    </p>
+                    <a href="#features" @click="emit('navigate', 'main')">
+                      <p class="mb-1 font-semibold leading-none text-foreground">
+                        {{ title }}
+                      </p>
+                      <p class="line-clamp-2 text-muted-foreground">
+                        {{ description }}
+                      </p>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -203,6 +214,10 @@ const isOpen = ref<boolean>(false);
       <DropdownMenu>
         <DropdownMenuTrigger class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-card px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
           About
+          <ChevronDown
+            class="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
+            aria-hidden="true"
+          />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="center" class="w-[250px]">
           <DropdownMenuItem v-for="{ title, href, description } in aboutList" :key="title" as-child>

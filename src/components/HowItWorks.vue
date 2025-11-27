@@ -16,16 +16,16 @@ interface HowItWorksProps {
 const HowItWorksList: HowItWorksProps[] = [
   {
     badgeTitle: "Download",
-    title: "Download the App – No Hardware Needed",
+    title: "Download & Calibrate",
     description:
-      "Install Efficiver from the App Store and start your eco-driving journey without any internet or hardware.",
+      "Install Efficiver and select your engine type (Petrol, Diesel and EV) for personalized tracking accuracy.",
     alt: "Download the Efficiver app on mobile",
   },
   {
     badgeTitle: "Drive",
-    title: "Drive and Track – Offline, Anytime",
+    title: "Drive & Track – Background Ready",
     description:
-      "Use your device’s sensors to track your driving efficiency offline – No internet required.",
+      "Track your driving efficiency in the background while using Maps or Music – No internet required.",
     alt: "Drive and track with your phone in the car",
   },
   {

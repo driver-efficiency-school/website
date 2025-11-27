@@ -146,30 +146,30 @@ const handleSubmit = async () => {
             <div class="flex flex-col md:flex-row gap-8">
               <div class="flex flex-col w-full gap-1.5">
                 <Label for="first-name">First Name</Label>
-                <Input id="first-name" type="text" placeholder="Alex" v-model="contactForm.firstName" />
+                <Input id="first-name" name="first-name" autocomplete="given-name" type="text" placeholder="Alex" v-model="contactForm.firstName" />
               </div>
 
               <div class="flex flex-col w-full gap-1.5">
                 <Label for="last-name">Last Name</Label>
-                <Input id="last-name" type="text" placeholder="Smith" v-model="contactForm.lastName" />
+                <Input id="last-name" name="last-name" autocomplete="family-name" type="text" placeholder="Smith" v-model="contactForm.lastName" />
               </div>
             </div>
 
             <div class="flex flex-col gap-1.5">
               <Label for="phone">Phone (Optional)</Label>
-              <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" v-model="contactForm.phone" />
+              <Input id="phone" name="phone" autocomplete="tel" type="tel" placeholder="+1 (555) 123-4567" v-model="contactForm.phone" />
             </div>
 
             <div class="flex flex-col gap-1.5">
               <Label for="company">Company (Optional)</Label>
-              <Input id="company" type="text" placeholder="Your Company" v-model="contactForm.company" />
+              <Input id="company" name="company" autocomplete="organization" type="text" placeholder="Your Company" v-model="contactForm.company" />
             </div>
 
             <div class="flex flex-col gap-1.5">
               <Label for="subject">Subject</Label>
 
-              <Select v-model="contactForm.subject">
-                <SelectTrigger>
+              <Select v-model="contactForm.subject" name="subject">
+                <SelectTrigger id="subject">
                   <SelectValue placeholder="Select a subject" />
                 </SelectTrigger>
                 <SelectContent>
@@ -190,7 +190,7 @@ const handleSubmit = async () => {
 
             <div class="flex flex-col gap-1.5">
               <Label for="message">Message</Label>
-              <Textarea id="message" placeholder="Your message about Efficiver..." rows="5" v-model="contactForm.message" />
+              <Textarea id="message" name="message" placeholder="Your message about Efficiver..." rows="5" v-model="contactForm.message" />
             </div>
 
             <Alert v-if="submitStatus === 'error'" variant="destructive">
