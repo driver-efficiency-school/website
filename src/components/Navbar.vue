@@ -99,6 +99,16 @@
   ]
 
   const isOpen = ref<boolean>(false)
+
+  function handleNavigateMain() {
+    emit('navigate', 'main')
+    isOpen.value = false
+  }
+
+  function handleNavigateComingSoon() {
+    emit('navigate', 'coming-soon')
+    isOpen.value = false
+  }
 </script>
 
 <template>
@@ -149,12 +159,7 @@
 
             <div class="flex flex-col gap-2">
               <Button as-child variant="ghost" class="justify-start text-base">
-                <a
-                  href="#features"
-                  @click="emit('navigate', 'main'); isOpen = false"
-                >
-                  Features
-                </a>
+                <a href="#features" @click="handleNavigateMain"> Features </a>
               </Button>
               <Button
                 v-for="{ href, label } in routeList"
@@ -163,7 +168,7 @@
                 variant="ghost"
                 class="justify-start text-base"
               >
-                <a :href="href" @click="emit('navigate', 'main'); isOpen = false">
+                <a :href="href" @click="handleNavigateMain">
                   {{ label }}
                 </a>
               </Button>
@@ -175,7 +180,7 @@
                 variant="ghost"
                 class="justify-start text-base"
               >
-                <a :href="href" @click.prevent="emit('navigate', 'coming-soon'); isOpen = false">
+                <a :href="href" @click.prevent="handleNavigateComingSoon">
                   {{ label }}
                   <ExternalLinkIcon class="ml-2 h-4 w-4" />
                 </a>
@@ -189,7 +194,7 @@
                 variant="ghost"
                 class="justify-start text-base pl-6"
               >
-                <a :href="href" @click="emit('navigate', 'main'); isOpen = false">
+                <a :href="href" @click="handleNavigateMain">
                   {{ title }}
                 </a>
               </Button>
