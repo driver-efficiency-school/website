@@ -14,6 +14,12 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
   Sheet,
   SheetContent,
   SheetFooter,
@@ -46,10 +52,6 @@ const routeList: RouteProps[] = [
     label: "Testimonials",
   },
   {
-    href: "#team",
-    label: "Team",
-  },
-  {
     href: "#contact",
     label: "Contact",
   },
@@ -59,10 +61,24 @@ const routeList: RouteProps[] = [
   },
 ];
 
+interface AboutItemProps {
+  title: string;
+  href: string;
+  description: string;
+}
+
+const aboutList: AboutItemProps[] = [
+  {
+    title: "Team",
+    href: "#team",
+    description: "Meet the passionate team behind Efficiver.",
+  },
+];
+
 const externalList: RouteProps[] = [
   {
     href: "#",
-    label: "Coming soon...",
+    label: "Dashboard",
   },
 ];
 
@@ -88,14 +104,14 @@ const isOpen = ref<boolean>(false);
   <header :class="{
     'shadow-light': mode === 'light',
     'shadow-dark': mode === 'dark',
-    'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
+    'w-[90%] md:w-[90%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
   }">
     <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
       <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
       <span style="font-family: 'Audiowide', cursive;">Efficiver</span>
     </a>
     <!-- Mobile -->
-    <div class="flex items-center lg:hidden">
+    <div class="flex items-center md:hidden">
       <Sheet v-model:open="isOpen">
         <SheetTrigger as-child>
           <Menu @click="isOpen = true" class="cursor-pointer" />
@@ -126,6 +142,14 @@ const isOpen = ref<boolean>(false);
                   <ExternalLinkIcon class="ml-2 h-4 w-4" />
                 </a>
               </Button>
+              <Separator class="my-2" />
+              <span class="px-4 text-sm font-semibold text-muted-foreground">About</span>
+              <Button v-for="{ title, href } in aboutList" :key="title" as-child variant="ghost"
+                class="justify-start text-base pl-6">
+                <a @click="emit('navigate', 'main'); isOpen = false" :href="href">
+                  {{ title }}
+                </a>
+              </Button>
             </div>
           </div>
 
@@ -138,44 +162,64 @@ const isOpen = ref<boolean>(false);
     </div>
 
     <!-- Desktop -->
-    <NavigationMenu class="hidden lg:block">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger class="bg-card text-base">
-            Features
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div class="grid w-[512px] grid-cols-2 gap-5 p-4">
-              <img src="../icons/EDIcons_256x256_Transparent.png" alt="Beach" class="h-full w-full rounded-md object-cover" />
-              <ul class="flex flex-col gap-2">
-                <li v-for="{ title, description } in featureList" :key="title"
-                  class="rounded-md p-3 text-sm hover:bg-muted">
-                  <p class="mb-1 font-semibold leading-none text-foreground">
-                    {{ title }}
-                  </p>
-                  <p class="line-clamp-2 text-muted-foreground">
-                    {{ description }}
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+    <!-- Desktop -->
+    <div class="hidden md:flex items-center gap-2 mx-auto">
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger class="bg-card text-base">
+              Features
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div class="grid w-[512px] grid-cols-2 gap-5 p-4">
+                <img src="../icons/EDIcons_256x256_Transparent.png" alt="Beach" class="h-full w-full rounded-md object-cover" />
+                <ul class="flex flex-col gap-2">
+                  <li v-for="{ title, description } in featureList" :key="title"
+                    class="rounded-md p-3 text-sm hover:bg-muted">
+                    <p class="mb-1 font-semibold leading-none text-foreground">
+                      {{ title }}
+                    </p>
+                    <p class="line-clamp-2 text-muted-foreground">
+                      {{ description }}
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Button v-for="{ href, label } in routeList" :key="label" as-child variant="ghost"
-              class="justify-start text-base">
-              <a @click="emit('navigate', 'main')" :href="href">
-                {{ label }}
-              </a>
-            </Button>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+          <NavigationMenuItem v-for="{ href, label } in routeList" :key="label">
+            <NavigationMenuLink asChild>
+              <Button as-child variant="ghost" class="justify-start text-base">
+                <a @click="emit('navigate', 'main')" :href="href">
+                  {{ label }}
+                </a>
+              </Button>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
 
-    <div class="hidden lg:flex">
+      <DropdownMenu>
+        <DropdownMenuTrigger class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-card px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+          About
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="center" class="w-[250px]">
+          <DropdownMenuItem v-for="{ title, href, description } in aboutList" :key="title" as-child>
+            <a @click="emit('navigate', 'main')" :href="href" class="block w-full cursor-pointer">
+              <p class="mb-1 font-semibold leading-none text-foreground">
+                {{ title }}
+              </p>
+              <p class="line-clamp-2 text-muted-foreground">
+                {{ description }}
+              </p>
+            </a>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+
+    <div class="hidden md:flex">
       <ToggleTheme />
       <Button as-child size="sm" variant="ghost" aria-label="Coming soon...">
         <a aria-label="Coming soon..." href="#" @click.prevent="emit('navigate', 'coming-soon')">

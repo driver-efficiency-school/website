@@ -71,7 +71,7 @@ const lightImages = [
           class="absolute -top-6 right-12 w-[90%] h-12 lg:h-[80%] bg-primary/50 blur-3xl rounded-full img-shadow-animation">
         </div>
 
-        <div class="grid grid-cols-3 gap-4 w-full md:w-[1200px] mx-auto rounded-lg relative border border-t-2 border-t-primary/30 img-border-animation">
+        <div class="grid grid-cols-3 gap-4 w-full max-w-[1200px] mx-auto rounded-lg relative border border-t-2 border-t-primary/30 img-border-animation">
           <img
             v-for="(image, index) in mode === 'light' ? lightImages : darkImages"
             :key="index"
