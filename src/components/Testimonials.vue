@@ -112,8 +112,7 @@ const reviewList: ReviewProps[] = [
             <CardHeader>
               <div class="flex flex-row items-center gap-4">
                 <Avatar>
-                  <AvatarImage :src="review.image" alt="@efficiver" />
-                  <AvatarFallback>ED</AvatarFallback>
+                  <AvatarFallback>{{ review.name.split(' ').map(n => n[0]).join('') }}</AvatarFallback>
                 </Avatar>
 
                 <div class="flex flex-col">

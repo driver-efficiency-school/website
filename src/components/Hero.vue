@@ -4,7 +4,7 @@ const mode = useColorMode();
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-vue-next";
+import { ArrowRight, Check } from "lucide-vue-next";
 
 const darkImages = [
   'screen-dark_001.jpg',
@@ -45,7 +45,7 @@ const lightImages = [
             />
           </div>
           <div class="space-y-4">
-            <p class="text-2xl md:text-3xl font-semibold text-muted-foreground">Offline. Anytime. Anywhere.</p>
+            <p class="text-2xl md:text-3xl font-semibold text-muted-foreground">The Offline Eco-Driving Assistant.</p>
           </div>
         </div>
 
@@ -54,14 +54,22 @@ const lightImages = [
         </p>
 
         <div class="space-y-4 md:space-y-0 md:space-x-4">
-          <Button class="w-5/6 md:w-1/4 font-bold group/arrow">
-            Download Now
-            <ArrowRight class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
+          <Button as-child class="w-5/6 md:w-1/4 font-bold group/arrow">
+            <a href="https://apps.apple.com/app/efficiver/id6754255974" target="_blank">
+              Download Now
+              <ArrowRight class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
+            </a>
           </Button>
 
           <Button as-child variant="secondary" class="w-5/6 md:w-1/4 font-bold">
             <a href="/features">Learn More</a>
           </Button>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 mt-8 text-base font-medium">
+          <span class="flex items-center"><Check class="size-5 mr-2 text-primary" /> No Data Collection</span>
+          <span class="flex items-center"><Check class="size-5 mr-2 text-primary" /> Works Offline</span>
+          <span class="flex items-center"><Check class="size-5 mr-2 text-primary" /> 100% Private</span>
         </div>
       </div>
 

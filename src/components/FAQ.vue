@@ -21,7 +21,7 @@ const FAQList: FAQProps[] = [
   {
     question: "What are the pricing plans for Efficiver?",
     answer:
-      "We offer a 200km free trial, followed by affordable plans: Smart Driver at $1.99/month, Eco Master at $2.99/month, and Enterprise at $19.99/user/year (currently 50% off!).",
+      "Currently, the Smart Driver and Eco Master plans are Free for a limited time! Our Enterprise plan is available at $19.99/user/year (currently 60% off!).",
     value: "item-2",
   },
   {
@@ -47,7 +47,7 @@ const FAQList: FAQProps[] = [
 <template>
   <section id="faq" class="container md:w-[700px] py-24 sm:py-32">
     <div class="text-center mb-8">
-      <h2 class="text-lg text-primary text-center mb-2 tracking-wider">FAQS</h2>
+      <h2 class="text-lg text-primary text-center mb-2 tracking-wider">FAQs</h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">
         Frequently Asked Questions

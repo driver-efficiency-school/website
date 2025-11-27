@@ -45,7 +45,7 @@ const plans: PlanProps[] = [
   },
   {
     title: "Eco Master",
-    popular: 0,
+    popular: 1,
     price: 0,
     description: "Best for eco-drivers – analytics, gamified fun.",
     discount: "Free (Limited Time)",
@@ -130,7 +130,7 @@ const plans: PlanProps[] = [
         </CardContent>
 
         <CardFooter>
-          <Button :variant="popular === PopularPlan?.NO ? 'secondary' : 'default'" :disabled="popular === PopularPlan?.NO" class="w-full">
+          <Button :variant="popular === PopularPlan?.NO ? 'secondary' : 'default'" class="w-full">
             {{ buttonText }}
           </Button>
         </CardFooter>
