@@ -85,61 +85,24 @@ const handleSubmit = async () => {
 
 <template>
   <section id="contact" class="container py-24 sm:py-32">
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div>
+    <div class="flex flex-col items-center gap-12">
+      <!-- Header -->
+      <div class="text-center max-w-3xl">
         <div class="mb-4">
           <h2 class="text-lg text-primary mb-2 tracking-wider">Contact</h2>
-
           <h2 class="text-3xl md:text-4xl font-bold">Get in Touch</h2>
         </div>
-        <p class="mb-8 text-muted-foreground lg:w-5/6">
+        <p class="text-muted-foreground">
           Have questions about Efficiver? Reach out to our team for support, inquiries, or feedback – we’re here to help you drive smarter and greener!
         </p>
-
-        <div class="flex flex-col gap-4">
-          <div>
-            <div class="flex gap-2 mb-1">
-              <Building2 />
-              <div class="font-bold">Find Us</div>
-            </div>
-
-            <div>123 Eco Lane, Green City, CA 90210</div>
-          </div>
-
-          <div>
-            <div class="flex gap-2 mb-1">
-              <Phone />
-              <div class="font-bold">Call Us</div>
-            </div>
-
-            <div>+1 (800) 555-1234</div>
-          </div>
-
-          <div>
-            <div class="flex gap-2 mb-1">
-              <Mail />
-              <div class="font-bold">Mail Us</div>
-            </div>
-
-            <div>support@efficiver.com</div>
-          </div>
-
-          <div>
-            <div class="flex gap-2">
-              <Clock />
-              <div class="font-bold">Visit Us</div>
-            </div>
-
-            <div>
-              <div>Monday - Friday</div>
-              <div>9AM - 5PM (Online Support)</div>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- form -->
-      <Card class="bg-muted/60 dark:bg-card">
+      <!-- Contact Info -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl">
+      </div>
+
+      <!-- Form -->
+      <Card class="w-full max-w-3xl bg-muted/60 dark:bg-card">
         <CardHeader class="text-primary text-2xl"> </CardHeader>
         <CardContent>
           <form @submit.prevent="handleSubmit" class="grid gap-4">
@@ -218,6 +181,6 @@ const handleSubmit = async () => {
 
         <CardFooter></CardFooter>
       </Card>
-    </section>
+    </div>
   </section>
 </template>
