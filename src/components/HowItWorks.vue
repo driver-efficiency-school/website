@@ -1,56 +1,54 @@
 <script setup lang="ts">
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import DownloadPhone from '@/components/icons/DownloadPhone.vue'
-import DriveCar from '@/components/icons/DriveCar.vue'
-import AnalyzeChart from '@/components/icons/AnalyzeChart.vue'
-import ImproveBadge from '@/components/icons/ImproveBadge.vue'
+  import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+  import { Badge } from '@/components/ui/badge'
+  import DownloadPhone from '@/components/icons/DownloadPhone.vue'
+  import DriveCar from '@/components/icons/DriveCar.vue'
+  import AnalyzeChart from '@/components/icons/AnalyzeChart.vue'
+  import ImproveBadge from '@/components/icons/ImproveBadge.vue'
 
-interface HowItWorksProps {
-  badgeTitle: string;
-  title: string;
-  description: string;
-  alt?: string;
-}
+  interface HowItWorksProps {
+    badgeTitle: string
+    title: string
+    description: string
+    alt?: string
+  }
 
-const HowItWorksList: HowItWorksProps[] = [
-  {
-    badgeTitle: "Download",
-    title: "Download & Calibrate",
-    description:
-      "Install Efficiver and select your engine type (Petrol, Diesel and EV) for personalized tracking accuracy.",
-    alt: "Download the Efficiver app on mobile",
-  },
-  {
-    badgeTitle: "Drive",
-    title: "Drive & Track – Background Ready",
-    description:
-      "Track your driving efficiency in the background while using Maps or Music – No internet required.",
-    alt: "Drive and track with your phone in the car",
-  },
-  {
-    badgeTitle: "Analyze",
-    title: "Analyze and Save – Fuel & CO2 Insights",
-    description:
-      "Get detailed trip metrics to quantify fuel savings and reduce CO2 emissions effortlessly.",
-    alt: "Trip analytics and CO2/fuel insights",
-  },
-  {
-    badgeTitle: "Improve",
-    title: "Improve and Stay Safe – Personalized Tips",
-    description:
-      "Receive offline coaching tips to drive safer and earn badges for eco-friendly driving habits.",
-    alt: "Earn badges and improve driving",
-  },
-];
+  const HowItWorksList: HowItWorksProps[] = [
+    {
+      badgeTitle: 'Download',
+      title: 'Download & Calibrate',
+      description:
+        'Install Efficiver and select your engine type (Petrol, Diesel and EV) for personalized tracking accuracy.',
+      alt: 'Download the Efficiver app on mobile'
+    },
+    {
+      badgeTitle: 'Drive',
+      title: 'Drive & Track – Background Ready',
+      description:
+        'Track your driving efficiency in the background while using Maps or Music – No internet required.',
+      alt: 'Drive and track with your phone in the car'
+    },
+    {
+      badgeTitle: 'Analyze',
+      title: 'Analyze and Save – Fuel & CO2 Insights',
+      description:
+        'Get detailed trip metrics to quantify fuel savings and reduce CO2 emissions effortlessly.',
+      alt: 'Trip analytics and CO2/fuel insights'
+    },
+    {
+      badgeTitle: 'Improve',
+      title: 'Improve and Stay Safe – Personalized Tips',
+      description:
+        'Receive offline coaching tips to drive safer and earn badges for eco-friendly driving habits.',
+      alt: 'Earn badges and improve driving'
+    }
+  ]
 </script>
 
 <template>
   <section id="features" class="container py-24 sm:py-32">
     <div class="text-center mb-8">
-      <h2 class="text-lg text-primary text-center mb-2 tracking-wider">
-        How It Works
-      </h2>
+      <h2 class="text-lg text-primary text-center mb-2 tracking-wider">How It Works</h2>
 
       <h2 class="text-3xl md:text-4xl text-center font-bold">
         Get Started with Efficiver in 4 Easy Steps
@@ -58,12 +56,11 @@ const HowItWorksList: HowItWorksProps[] = [
     </div>
 
     <div class="lg:w-[80%] mx-auto relative">
-      <div v-for="(
-{ badgeTitle, title, description, alt }, index
-        ) in HowItWorksList" :key="title" :class="[
-          'flex mb-8 items-center',
-          { ' flex-row-reverse': index % 2 !== 0 },
-        ]">
+      <div
+        v-for="({ badgeTitle, title, description, alt }, index) in HowItWorksList"
+        :key="title"
+        :class="['flex mb-8 items-center', { ' flex-row-reverse': index % 2 !== 0 }]"
+      >
         <Card class="h-full bg-transparent border-0 shadow-none">
           <CardHeader>
             <div class="pb-4">
@@ -81,15 +78,27 @@ const HowItWorksList: HowItWorksProps[] = [
         </Card>
 
         <div class="w-[105px] md:w-[175px] lg:w-[210px] mx-auto -scale-x-100 text-primary">
-          <component :is="(index === 0 ? DownloadPhone : index === 1 ? DriveCar : index === 2 ? AnalyzeChart : ImproveBadge)"
-            :aria-label="alt || title" />
+          <component
+            :is="
+              index === 0
+                ? DownloadPhone
+                : index === 1
+                  ? DriveCar
+                  : index === 2
+                    ? AnalyzeChart
+                    : ImproveBadge
+            "
+            :aria-label="alt || title"
+          />
         </div>
-        <div :class="[
-          '-z-10 absolute right-0 w-44 h-72  lg:w-64 lg:h-80 rounded-full bg-primary/15 dark:bg-primary/10 blur-3xl',
-          {
-            'left-0': index % 2 !== 0,
-          },
-        ]"></div>
+        <div
+          :class="[
+            '-z-10 absolute right-0 w-44 h-72  lg:w-64 lg:h-80 rounded-full bg-primary/15 dark:bg-primary/10 blur-3xl',
+            {
+              'left-0': index % 2 !== 0
+            }
+          ]"
+        ></div>
       </div>
     </div>
   </section>

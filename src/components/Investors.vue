@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
@@ -10,7 +9,12 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">1. Company Overview</h2>
       <div class="opacity-70">
-        <p>Efficiver, developed by Efficiver Team (based in Green City, CA, USA), is an offline eco-driving app launched to empower users to reduce emissions, save fuel, and drive safer. Our mission—Save Earth, Wealth, and Health—drives us to deliver privacy-first, sensor-based solutions without internet or hardware.</p>
+        <p>
+          Efficiver, developed by Efficiver Team (based in Green City, CA, USA), is an offline
+          eco-driving app launched to empower users to reduce emissions, save fuel, and drive safer.
+          Our mission—Save Earth, Wealth, and Health—drives us to deliver privacy-first,
+          sensor-based solutions without internet or hardware.
+        </p>
       </div>
     </section>
 
@@ -18,7 +22,12 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">2. Market Opportunity</h2>
       <div class="opacity-70">
-        <p>The eco-driving market is booming, driven by global demand for sustainability. Efficiver stands out with its offline capability, serving eco-conscious drivers, learners, and businesses (e.g., driving schools, fleets). Our app targets a $5B market, with potential to expand into emerging markets where internet access is limited.</p>
+        <p>
+          The eco-driving market is booming, driven by global demand for sustainability. Efficiver
+          stands out with its offline capability, serving eco-conscious drivers, learners, and
+          businesses (e.g., driving schools, fleets). Our app targets a $5B market, with potential
+          to expand into emerging markets where internet access is limited.
+        </p>
       </div>
     </section>
 
@@ -26,7 +35,12 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">3. Business Model</h2>
       <div class="opacity-70">
-        <p>Efficiver is currently offering all premium features for free for a limited time to accelerate user adoption. This "Free for Early Adopters" strategy allows us to gather data and refine our product. Future monetization will reintroduce our tiered subscription model (Smart Driver, Eco Master) and expand enterprise partnerships.</p>
+        <p>
+          Efficiver is currently offering all premium features for free for a limited time to
+          accelerate user adoption. This "Free for Early Adopters" strategy allows us to gather data
+          and refine our product. Future monetization will reintroduce our tiered subscription model
+          (Smart Driver, Eco Master) and expand enterprise partnerships.
+        </p>
       </div>
     </section>
 
@@ -34,7 +48,11 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">4. Financial Highlights</h2>
       <div class="opacity-70">
-        <p>Since launch, Efficiver has attracted 1,000+ users. The current free offer is driving rapid organic growth, with a projected 100,000 active users by year-end. This user base is a critical asset for future monetization and Series A funding.</p>
+        <p>
+          Since launch, Efficiver has attracted 1,000+ users. The current free offer is driving
+          rapid organic growth, with a projected 100,000 active users by year-end. This user base is
+          a critical asset for future monetization and Series A funding.
+        </p>
       </div>
     </section>
 
@@ -42,7 +60,12 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">5. Risk Factors</h2>
       <div class="opacity-70">
-        <p>Offline operation limits advanced analytics, potentially impacting personalization. Expanding to Android and Apple Watch requires investment. Competition from car manufacturer apps may challenge market share, though our offline-first approach mitigates this.</p>
+        <p>
+          Offline operation limits advanced analytics, potentially impacting personalization.
+          Expanding to Android and Apple Watch requires investment. Competition from car
+          manufacturer apps may challenge market share, though our offline-first approach mitigates
+          this.
+        </p>
       </div>
     </section>
 
@@ -50,7 +73,11 @@
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">6. Investor Contact</h2>
       <div class="opacity-70">
-        <p>Interested in joining our journey? Contact our Investor Relations team at <a href="mailto:investors@efficiver.com" class="underline">investors@efficiver.com</a> for partnership opportunities, financials, or to schedule a pitch.</p>
+        <p>
+          Interested in joining our journey? Contact our Investor Relations team at
+          <a href="mailto:investors@efficiver.com" class="underline">investors@efficiver.com</a> for
+          partnership opportunities, financials, or to schedule a pitch.
+        </p>
       </div>
     </section>
   </div>

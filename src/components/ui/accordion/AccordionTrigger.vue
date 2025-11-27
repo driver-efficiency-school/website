@@ -1,22 +1,17 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from "vue";
-import {
-  AccordionHeader,
-  AccordionTrigger,
-  type AccordionTriggerProps,
-} from "radix-vue";
-import { Plus } from "lucide-vue-next";
-import { cn } from "@/lib/utils";
+  import { type HTMLAttributes, computed } from 'vue'
+  import { AccordionHeader, AccordionTrigger, type AccordionTriggerProps } from 'radix-vue'
+  import { Plus } from 'lucide-vue-next'
+  import { cn } from '@/lib/utils'
 
-const props = defineProps<
-  AccordionTriggerProps & { class?: HTMLAttributes["class"] }
->();
+  const props = defineProps<AccordionTriggerProps & { class?: HTMLAttributes['class'] }>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props;
+  const delegatedProps = computed(() => {
+    const { class: _class, ...delegated } = props
+    void _class
 
-  return delegated;
-});
+    return delegated
+  })
 </script>
 
 <template>

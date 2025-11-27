@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Separator from "./ui/separator/Separator.vue";
+  import Separator from './ui/separator/Separator.vue'
 
-const emit = defineEmits(['navigate']);
+  const emit = defineEmits(['navigate'])
 </script>
 
 <template>
@@ -10,7 +10,11 @@ const emit = defineEmits(['navigate']);
       <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div class="col-span-full xl:col-span-2">
           <a href="/#" class="flex font-bold items-center" @click="emit('navigate', 'main')">
-            <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
+            <img
+              src="../icons/EDIcons_128x128_Transparent.png"
+              alt="Logo"
+              class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"
+            />
             <h3 class="text-2xl">Efficiver</h3>
           </a>
         </div>
@@ -18,19 +22,13 @@ const emit = defineEmits(['navigate']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Contact</h3>
           <div>
-            <a href="mailto:support@efficiver.com" class="opacity-60 hover:opacity-100">
-              Email
-            </a>
+            <a href="mailto:support@efficiver.com" class="opacity-60 hover:opacity-100"> Email </a>
           </div>
           <div>
-            <a href="tel:+18005551234" class="opacity-60 hover:opacity-100">
-              Phone
-            </a>
+            <a href="tel:+18005551234" class="opacity-60 hover:opacity-100"> Phone </a>
           </div>
           <div>
-            <a href="https://www.efficiver.com" class="opacity-60 hover:opacity-100">
-              Website
-            </a>
+            <a href="https://www.efficiver.com" class="opacity-60 hover:opacity-100"> Website </a>
           </div>
         </div>
 
@@ -57,7 +55,11 @@ const emit = defineEmits(['navigate']);
             </a>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click.prevent="emit('navigate', 'coming-soon')">
+            <a
+              href="/#"
+              class="opacity-60 hover:opacity-100"
+              @click.prevent="emit('navigate', 'coming-soon')"
+            >
               Dashboard (Coming Soon)
             </a>
           </div>
@@ -66,7 +68,11 @@ const emit = defineEmits(['navigate']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Help</h3>
           <div>
-            <a href="#contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#contact"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               Contact Us
             </a>
           </div>
@@ -76,27 +82,47 @@ const emit = defineEmits(['navigate']);
             </a>
           </div>
           <div>
-            <a href="#newsletter" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#newsletter"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               Newsletter
             </a>
           </div>
           <div>
-            <a href="#contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#contact"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               Feedback
             </a>
           </div>
           <div>
-            <a href="#investors" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'investors')">
+            <a
+              href="#investors"
+              class="opacity-60 hover:opacity-100 cursor-pointer"
+              @click="emit('navigate', 'investors')"
+            >
               Investors
             </a>
           </div>
           <div>
-            <a href="#terms" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'terms')">
+            <a
+              href="#terms"
+              class="opacity-60 hover:opacity-100 cursor-pointer"
+              @click="emit('navigate', 'terms')"
+            >
               Terms of Use
             </a>
           </div>
           <div>
-            <a href="#privacy" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'privacy')">
+            <a
+              href="#privacy"
+              class="opacity-60 hover:opacity-100 cursor-pointer"
+              @click="emit('navigate', 'privacy')"
+            >
               Privacy Policy
             </a>
           </div>
@@ -105,19 +131,13 @@ const emit = defineEmits(['navigate']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Socials</h3>
           <div>
-            <span class="opacity-30 cursor-not-allowed">
-              Instagram
-            </span>
+            <span class="opacity-30 cursor-not-allowed"> Instagram </span>
           </div>
           <div>
-            <span class="opacity-30 cursor-not-allowed">
-              TikTok
-            </span>
+            <span class="opacity-30 cursor-not-allowed"> TikTok </span>
           </div>
           <div>
-            <span class="opacity-30 cursor-not-allowed">
-              LinkedIn
-            </span>
+            <span class="opacity-30 cursor-not-allowed"> LinkedIn </span>
           </div>
         </div>
       </div>
@@ -126,7 +146,11 @@ const emit = defineEmits(['navigate']);
       <section>
         <h3>
           © 2025
-          <a target="_blank" href="https://www.efficiver.com" class="text-primary transition-all border-primary hover:border-b-2">
+          <a
+            target="_blank"
+            href="https://www.efficiver.com"
+            class="text-primary transition-all border-primary hover:border-b-2"
+          >
             efficiver.com
           </a>
         </h3>
