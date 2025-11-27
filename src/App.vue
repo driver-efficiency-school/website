@@ -9,6 +9,7 @@ import Pricing from "./components/Pricing.vue";
 import Community from "./components/Community.vue";
 import NewsletterSignup from "./components/NewsletterSignup.vue";
 import FAQ from "./components/FAQ.vue";
+import Contact from "./components/Contact.vue";
 import Footer from "./components/Footer.vue";
 import Investors from "./components/Investors.vue";
 import TermsOfUse from "./components/TermsOfUse.vue";
@@ -65,6 +66,7 @@ onMounted(() => {
         <NewsletterSignup />
       </div>
     </section>
+    <Contact />
     <FAQ />
   </div>
   <Investors v-if="showInvestors" />

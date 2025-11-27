@@ -76,6 +76,11 @@ const emit = defineEmits(['navigate']);
             </a>
           </div>
           <div>
+            <a href="#newsletter" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+              Newsletter
+            </a>
+          </div>
+          <div>
             <a href="#contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
               Feedback
             </a>
