@@ -3,6 +3,7 @@
   import Hero from './components/Hero.vue'
   import Features from './components/Features.vue'
   import HowItWorks from './components/HowItWorks.vue'
+  import Comparison from './components/Comparison.vue'
   import Testimonials from './components/Testimonials.vue'
   import Team from './components/Team.vue'
   import Pricing from './components/Pricing.vue'
@@ -16,6 +17,7 @@
   import PrivacyPolicy from './components/PrivacyPolicy.vue'
   import ComingSoon from './components/ComingSoon.vue'
   import BackToTop from './components/BackToTop.vue'
+  import ExitIntentPopup from './components/ExitIntentPopup.vue'
   import { ref, onMounted } from 'vue'
 
   const showInvestors = ref(false)
@@ -57,6 +59,7 @@
   <div v-if="!showInvestors && !showTerms && !showPrivacy && !showComingSoon">
     <Hero />
     <Features />
+    <Comparison />
     <HowItWorks />
     <Testimonials />
     <Team />
@@ -76,4 +79,5 @@
   <ComingSoon v-else-if="showComingSoon" />
   <Footer @navigate="navigate" />
   <BackToTop />
+  <ExitIntentPopup />
 </template>

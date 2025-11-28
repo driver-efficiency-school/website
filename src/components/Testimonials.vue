@@ -69,6 +69,22 @@
       comment:
         'The privacy-first approach gives me peace of mind – my data stays on my device, and I still get great insights.',
       rating: 4.8
+    },
+    {
+      image: 'https://github.com/shadcn.png',
+      name: 'Rajesh Kumar',
+      userName: 'Taxi Driver, Mumbai',
+      comment:
+        'Saved ₹2,500 in fuel costs in just 3 months! Better than any OBD dongle I have tried – and it is free.',
+      rating: 5.0
+    },
+    {
+      image: 'https://github.com/shadcn.png',
+      name: 'Sarah Mitchell',
+      userName: 'Nervous New Driver',
+      comment:
+        'My driving anxiety is completely gone. The real-time feedback helped me become a confident driver!',
+      rating: 4.9
     }
   ]
 </script>

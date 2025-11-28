@@ -1,7 +1,7 @@
 {
   "name": "website-ed",
   "description": "Efficiver Website",
-  "version": "2.0.0",
+  "version": "1.0.3",
   "author": {
     "name": "Dhamodharan Krishnan",
     "email": "info@digidhamu.com",
@@ -19,6 +19,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/bump-version.mjs",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",

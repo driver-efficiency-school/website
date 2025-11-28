@@ -1,7 +1,19 @@
 <script setup lang="ts">
+  import { ref } from 'vue'
   import Separator from './ui/separator/Separator.vue'
 
   const emit = defineEmits(['navigate'])
+
+  const version = 'v1.0.3 (25112802)'
+  const copied = ref(false)
+
+  function copyVersion() {
+    navigator.clipboard.writeText(version)
+    copied.value = true
+    setTimeout(() => {
+      copied.value = false
+    }, 2000)
+  }
 </script>
 
 <template>
@@ -137,9 +149,9 @@
       </div>
 
       <Separator class="my-6" />
-      <section>
+      <section class="flex flex-col sm:flex-row items-center justify-between gap-2">
         <h3>
-          © 2025
+          © 2015–2025
           <a
             target="_blank"
             href="https://www.efficiver.com"
@@ -147,7 +159,15 @@
           >
             efficiver.com
           </a>
+          <span class="hidden sm:inline"> • All rights reserved</span>
         </h3>
+        <button
+          class="font-mono text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors cursor-pointer"
+          :title="copied ? 'Copied!' : 'Click to copy version'"
+          @click="copyVersion"
+        >
+          {{ copied ? 'Copied!' : version }}
+        </button>
       </section>
     </div>
   </footer>

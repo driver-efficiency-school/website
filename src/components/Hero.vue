@@ -30,18 +30,25 @@
   <section class="container">
     <div class="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
       <div class="text-center space-y-8">
-        <Badge variant="outline" class="text-sm py-2">
-          <span class="mr-2 text-primary">
-            <Badge>New</Badge>
-          </span>
-          <span>Limited Time Offer – Free!</span>
-        </Badge>
+        <div class="flex flex-wrap justify-center gap-3">
+          <Badge variant="outline" class="text-sm py-2">
+            <span class="mr-2 text-primary">
+              <Badge>New</Badge>
+            </span>
+            <span>Limited Time Offer – Free!</span>
+          </Badge>
+          <Badge variant="secondary" class="text-sm py-2">
+            <span class="mr-2">🚗</span>
+            <span>Join 10K+ Drivers</span>
+          </Badge>
+        </div>
 
         <div class="max-w-screen-md mx-auto text-center">
           <div class="flex justify-center mb-8">
             <img
               src="/Logo-v1_Transparent.png"
-              alt="Efficiver Logo"
+              alt="Efficiver Logo - Free offline driving coach app for fuel efficiency and safe driving"
+              loading="lazy"
               class="w-72 h-72 md:w-96 md:h-96 object-contain rounded-xl shadow-lg dark:shadow-none"
             />
           </div>
@@ -103,7 +110,8 @@
             v-for="(image, index) in mode === 'light' ? lightImages : darkImages"
             :key="index"
             :src="image"
-            :alt="`Efficiver dashboard screenshot ${index + 1}`"
+            :alt="`Efficiver app screenshot showing ${index === 0 ? 'DriveButton interface' : index === 1 ? 'calibration screen' : index === 2 ? 'trip score card' : index === 3 ? 'fuel savings metrics' : index === 4 ? 'driving analytics' : 'eco-driving badges'}`"
+            loading="lazy"
             class="rounded-lg border border-primary/20"
           />
         </div>
