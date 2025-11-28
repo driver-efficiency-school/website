@@ -12,7 +12,7 @@
           <a href="/#" class="flex font-bold items-center" @click="emit('navigate', 'main')">
             <img
               src="../icons/EDIcons_128x128_Transparent.png"
-              alt="Logo"
+              alt="Efficiver Logo - Free Driving Coach App"
               class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"
             />
             <h3 class="text-2xl">Efficiver</h3>
@@ -40,19 +40,13 @@
             </a>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
-              Android (Future Support)
-            </a>
+            <span class="opacity-40 cursor-not-allowed"> Android (Coming Soon) </span>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
-              Apple Watch (Future Support)
-            </a>
+            <span class="opacity-40 cursor-not-allowed"> Apple Watch (Coming Soon) </span>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
-              Android Watch (Future Support)
-            </a>
+            <span class="opacity-40 cursor-not-allowed"> Android Watch (Coming Soon) </span>
           </div>
           <div>
             <a

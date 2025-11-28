@@ -5,6 +5,7 @@
   import { Button } from '@/components/ui/button'
   import { Badge } from '@/components/ui/badge'
   import { ArrowRight, Check } from 'lucide-vue-next'
+  import ShareButtons from './ShareButtons.vue'
 
   const darkImages = [
     'screen-dark_001.jpg',
@@ -82,6 +83,10 @@
           <span class="flex items-center"
             ><Check class="size-5 mr-2 text-primary" /> FaceID Secured</span
           >
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <ShareButtons />
         </div>
       </div>
 

@@ -60,9 +60,9 @@
     {
       title: 'Enterprise',
       popular: 0,
-      price: 19.99,
+      price: 0,
       description: 'For businesses – scalable, robust solution.',
-      discount: '60% OFF',
+      discount: 'Coming Soon',
       buttonText: 'Contact Us',
       benefitList: [
         'Multi-user support',

@@ -15,6 +15,7 @@
   import TermsOfUse from './components/TermsOfUse.vue'
   import PrivacyPolicy from './components/PrivacyPolicy.vue'
   import ComingSoon from './components/ComingSoon.vue'
+  import BackToTop from './components/BackToTop.vue'
   import { ref, onMounted } from 'vue'
 
   const showInvestors = ref(false)
@@ -74,4 +75,5 @@
   <PrivacyPolicy v-else-if="showPrivacy" />
   <ComingSoon v-else-if="showComingSoon" />
   <Footer @navigate="navigate" />
+  <BackToTop />
 </template>
