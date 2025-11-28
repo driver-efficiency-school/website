@@ -66,6 +66,12 @@
       answer:
         'Our support team is here to help! Contact us at support@efficiver.com for assistance or visit our FAQ section for quick answers.',
       value: 'item-9'
+    },
+    {
+      question: 'What happened to Efficient Driver?',
+      answer:
+        'We have rebranded to Efficiver – shorter, catchier, and reflects our mission to make every drive more efficient. Same great app, same team, just a better name!',
+      value: 'item-10'
     }
   ]
 </script>

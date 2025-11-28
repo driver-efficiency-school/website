@@ -157,8 +157,9 @@
             href="https://www.efficiver.com"
             class="text-primary transition-all border-primary hover:border-b-2"
           >
-            efficiver.com
+            Efficiver
           </a>
+          <span class="text-muted-foreground/60">(formerly Efficient Driver)</span>
           <span class="hidden sm:inline"> • All rights reserved</span>
         </h3>
         <button

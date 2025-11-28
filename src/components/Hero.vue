@@ -43,6 +43,11 @@
           </Badge>
         </div>
 
+        <p class="text-sm text-muted-foreground">
+          Formerly known as Efficient Driver – now
+          <span class="font-semibold text-primary">Efficiver</span>
+        </p>
+
         <div class="max-w-screen-md mx-auto text-center">
           <div class="flex justify-center mb-8">
             <img
