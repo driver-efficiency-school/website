@@ -8,21 +8,21 @@
   import ShareButtons from './ShareButtons.vue'
 
   const darkImages = [
-    'screen-dark_001.jpg',
-    'screen-dark_002.jpg',
-    'screen-dark_003.jpg',
-    'screen-dark_004.jpg',
-    'screen-dark_005.jpg',
-    'screen-dark_006.jpg'
+    'screen-dark_001.webp',
+    'screen-dark_002.webp',
+    'screen-dark_003.webp',
+    'screen-dark_004.webp',
+    'screen-dark_005.webp',
+    'screen-dark_006.webp'
   ]
 
   const lightImages = [
-    'screen-light_101.jpg',
-    'screen-light_102.jpg',
-    'screen-light_103.jpg',
-    'screen-light_104.jpg',
-    'screen-light_105.jpg',
-    'screen-light_106.jpg'
+    'screen-light_101.webp',
+    'screen-light_102.webp',
+    'screen-light_103.webp',
+    'screen-light_104.webp',
+    'screen-light_105.webp',
+    'screen-light_106.webp'
   ]
 </script>
 
@@ -51,9 +51,11 @@
         <div class="max-w-screen-md mx-auto text-center">
           <div class="flex justify-center mb-8">
             <img
-              src="/Logo-v1_Transparent.png"
+              src="/Logo-v1_Transparent.webp"
               alt="Efficiver Logo - Free offline driving coach app for fuel efficiency and safe driving"
-              loading="lazy"
+              width="784"
+              height="615"
+              fetchpriority="high"
               class="w-72 h-72 md:w-96 md:h-96 object-contain rounded-xl shadow-lg dark:shadow-none"
             />
           </div>
@@ -81,7 +83,7 @@
           </Button>
 
           <Button as-child variant="secondary" class="w-5/6 md:w-1/4 font-bold">
-            <a href="/features">Learn More</a>
+            <a href="#features">Learn More About Efficiver Features</a>
           </Button>
         </div>
 
@@ -116,8 +118,10 @@
             :key="index"
             :src="image"
             :alt="`Efficiver app screenshot showing ${index === 0 ? 'DriveButton interface' : index === 1 ? 'calibration screen' : index === 2 ? 'trip score card' : index === 3 ? 'fuel savings metrics' : index === 4 ? 'driving analytics' : 'eco-driving badges'}`"
+            width="600"
+            height="1304"
             loading="lazy"
-            class="rounded-lg border border-primary/20"
+            class="rounded-lg border border-primary/20 w-full h-auto"
           />
         </div>
 

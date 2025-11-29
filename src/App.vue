@@ -1,24 +1,30 @@
 <script setup lang="ts">
+  import { defineAsyncComponent, ref, onMounted } from 'vue'
+
+  // Critical above-the-fold components - load immediately
   import Navbar from './components/Navbar.vue'
   import Hero from './components/Hero.vue'
-  import Features from './components/Features.vue'
-  import HowItWorks from './components/HowItWorks.vue'
-  import Comparison from './components/Comparison.vue'
-  import Testimonials from './components/Testimonials.vue'
-  import Team from './components/Team.vue'
-  import Pricing from './components/Pricing.vue'
-  import Community from './components/Community.vue'
-  import NewsletterSignup from './components/NewsletterSignup.vue'
-  import FAQ from './components/FAQ.vue'
-  import Contact from './components/Contact.vue'
   import Footer from './components/Footer.vue'
-  import Investors from './components/Investors.vue'
-  import TermsOfUse from './components/TermsOfUse.vue'
-  import PrivacyPolicy from './components/PrivacyPolicy.vue'
-  import ComingSoon from './components/ComingSoon.vue'
-  import BackToTop from './components/BackToTop.vue'
-  import ExitIntentPopup from './components/ExitIntentPopup.vue'
-  import { ref, onMounted } from 'vue'
+
+  // Below-the-fold components - lazy load
+  const Features = defineAsyncComponent(() => import('./components/Features.vue'))
+  const HowItWorks = defineAsyncComponent(() => import('./components/HowItWorks.vue'))
+  const Comparison = defineAsyncComponent(() => import('./components/Comparison.vue'))
+  const Testimonials = defineAsyncComponent(() => import('./components/Testimonials.vue'))
+  const Team = defineAsyncComponent(() => import('./components/Team.vue'))
+  const Pricing = defineAsyncComponent(() => import('./components/Pricing.vue'))
+  const Community = defineAsyncComponent(() => import('./components/Community.vue'))
+  const NewsletterSignup = defineAsyncComponent(() => import('./components/NewsletterSignup.vue'))
+  const FAQ = defineAsyncComponent(() => import('./components/FAQ.vue'))
+  const Contact = defineAsyncComponent(() => import('./components/Contact.vue'))
+  const BackToTop = defineAsyncComponent(() => import('./components/BackToTop.vue'))
+  const ExitIntentPopup = defineAsyncComponent(() => import('./components/ExitIntentPopup.vue'))
+
+  // Conditional pages - only load when needed
+  const Investors = defineAsyncComponent(() => import('./components/Investors.vue'))
+  const TermsOfUse = defineAsyncComponent(() => import('./components/TermsOfUse.vue'))
+  const PrivacyPolicy = defineAsyncComponent(() => import('./components/PrivacyPolicy.vue'))
+  const ComingSoon = defineAsyncComponent(() => import('./components/ComingSoon.vue'))
 
   const showInvestors = ref(false)
   const showTerms = ref(false)

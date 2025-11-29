@@ -1,0 +1,8 @@
+# Efficiver Website Robots.txt
+# https://www.efficiver.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.efficiver.com/sitemap.xml

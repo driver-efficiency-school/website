@@ -93,8 +93,6 @@
     </Accordion>
     <h3 class="font-medium mt-4">
       Still have questions?
-      <a href="#" class="text-muted-foreground"></a>
-
       <a href="mailto:support@efficiver.com" class="underline"
         >Contact us at support@efficiver.com</a
       >

@@ -23,6 +23,7 @@
       )
     "
     variant="outline"
+    aria-label="Previous slide"
     @click="scrollPrev"
   >
     <slot>

@@ -104,7 +104,7 @@
           </CardTitle>
           <span
             v-if="discount"
-            class="absolute top-2 right-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded"
+            class="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded"
           >
             {{ discount }}
           </span>

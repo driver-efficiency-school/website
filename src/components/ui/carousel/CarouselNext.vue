@@ -23,6 +23,7 @@
       )
     "
     variant="outline"
+    aria-label="Next slide"
     @click="scrollNext"
   >
     <slot>

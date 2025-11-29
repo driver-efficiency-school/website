@@ -121,7 +121,7 @@
   >
     <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
       <img
-        src="../icons/EDIcons_128x128_Transparent.png"
+        src="../icons/EDIcons_128x128_Transparent.webp"
         alt="Efficiver Logo - Free Driving Coach App"
         class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"
       />
@@ -147,7 +147,7 @@
                   @click="emit('navigate', 'main')"
                 >
                   <img
-                    src="../icons/EDIcons_128x128_Transparent.png"
+                    src="../icons/EDIcons_128x128_Transparent.webp"
                     alt="Logo"
                     class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"
                   />
@@ -219,8 +219,8 @@
             <NavigationMenuContent>
               <div class="grid w-[512px] grid-cols-2 gap-5 p-4">
                 <img
-                  src="../icons/EDIcons_256x256_Transparent.png"
-                  alt="Beach"
+                  src="../icons/EDIcons_256x256_Transparent.webp"
+                  alt="Efficiver Features"
                   class="h-full w-full rounded-md object-cover"
                 />
                 <ul class="flex flex-col gap-2">

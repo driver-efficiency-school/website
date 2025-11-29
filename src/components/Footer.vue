@@ -4,7 +4,7 @@
 
   const emit = defineEmits(['navigate'])
 
-  const version = 'v1.0.5 (25112901)'
+  const version = 'v1.0.14 (25112910)'
   const copied = ref(false)
 
   function copyVersion() {
@@ -23,7 +23,7 @@
         <div class="col-span-full xl:col-span-2">
           <a href="/#" class="flex font-bold items-center" @click="emit('navigate', 'main')">
             <img
-              src="../icons/EDIcons_128x128_Transparent.png"
+              src="../icons/EDIcons_128x128_Transparent.webp"
               alt="Efficiver Logo - Free Driving Coach App"
               class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"
             />
@@ -52,13 +52,17 @@
             </a>
           </div>
           <div>
-            <span class="opacity-40 cursor-not-allowed"> Android (Coming Soon) </span>
+            <span class="text-muted-foreground cursor-not-allowed"> Android (Coming Soon) </span>
           </div>
           <div>
-            <span class="opacity-40 cursor-not-allowed"> Apple Watch (Coming Soon) </span>
+            <span class="text-muted-foreground cursor-not-allowed">
+              Apple Watch (Coming Soon)
+            </span>
           </div>
           <div>
-            <span class="opacity-40 cursor-not-allowed"> Android Watch (Coming Soon) </span>
+            <span class="text-muted-foreground cursor-not-allowed">
+              Android Watch (Coming Soon)
+            </span>
           </div>
           <div>
             <a
@@ -137,13 +141,13 @@
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Socials</h3>
           <div>
-            <span class="opacity-30 cursor-not-allowed"> Instagram </span>
+            <span class="text-muted-foreground cursor-not-allowed"> Instagram </span>
           </div>
           <div>
-            <span class="opacity-30 cursor-not-allowed"> TikTok </span>
+            <span class="text-muted-foreground cursor-not-allowed"> TikTok </span>
           </div>
           <div>
-            <span class="opacity-30 cursor-not-allowed"> LinkedIn </span>
+            <span class="text-muted-foreground cursor-not-allowed"> LinkedIn </span>
           </div>
         </div>
       </div>
@@ -159,11 +163,11 @@
           >
             Efficiver
           </a>
-          <span class="text-muted-foreground/60">(formerly Efficient Driver)</span>
+          <span class="text-muted-foreground">(formerly Efficient Driver)</span>
           <span class="hidden sm:inline"> • All rights reserved</span>
         </h3>
         <button
-          class="font-mono text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors cursor-pointer"
+          class="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
           :title="copied ? 'Copied!' : 'Click to copy version'"
           @click="copyVersion"
         >
