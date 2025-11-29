@@ -73,8 +73,8 @@
     },
     {
       emoji: '👨‍🔧',
-      firstName: 'Karthik',
-      lastName: 'Karthik',
+      firstName: 'Karthikeyan',
+      lastName: 'Bagyalingam',
       positions: ['Quality Assurance', 'Efficiency Expert'],
       socialNetworks: [
         {
