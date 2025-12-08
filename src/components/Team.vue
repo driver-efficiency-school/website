@@ -70,22 +70,6 @@
           url: 'https://github.com/efficientdriver-praba'
         }
       ]
-    },
-    {
-      emoji: '👨‍🔧',
-      firstName: 'Karthikeyan',
-      lastName: 'Bagyalingam',
-      positions: ['Quality Assurance', 'Efficiency Expert'],
-      socialNetworks: [
-        {
-          name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/efficientdriver-praba/'
-        },
-        {
-          name: 'Github',
-          url: 'https://github.com/efficientdriver-praba'
-        }
-      ]
     }
   ]
 
@@ -111,11 +95,11 @@
       <h2 class="text-3xl md:text-4xl text-center font-bold">Meet the Team Behind Efficiver</h2>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
       <Card
         v-for="{ emoji, firstName, lastName, positions, socialNetworks } in teamList"
         :key="`${firstName}-${lastName}`"
-        class="bg-muted/60 dark:bg-card flex flex-col h-full overflow-hidden group/hoverimg"
+        class="bg-muted/60 dark:bg-card flex flex-col h-full overflow-hidden group/hoverimg w-full"
       >
         <CardHeader class="p-0 gap-0">
           <div class="h-full overflow-hidden flex items-center justify-center">
