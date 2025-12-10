@@ -72,8 +72,8 @@
           businesses in making a difference.
         </p>
 
-        <div class="space-y-4 md:space-y-0 md:space-x-4">
-          <Button as-child class="w-5/6 md:w-1/4 font-bold group/arrow">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+          <Button as-child class="w-5/6 md:w-auto font-bold group/arrow">
             <a href="https://apps.apple.com/app/efficiver/id6754255974" target="_blank">
               Download Now
               <ArrowRight
@@ -82,7 +82,7 @@
             </a>
           </Button>
 
-          <Button as-child variant="secondary" class="w-5/6 md:w-1/4 font-bold">
+          <Button as-child variant="secondary" class="w-5/6 md:w-auto font-bold">
             <a href="#features">Learn More About Efficiver Features</a>
           </Button>
         </div>

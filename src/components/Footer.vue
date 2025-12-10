@@ -4,7 +4,7 @@
 
   const emit = defineEmits(['navigate'])
 
-  const version = 'v1.0.15 (25120801)'
+  const version = 'v1.0.16 (25121001)'
   const copied = ref(false)
 
   function copyVersion() {
