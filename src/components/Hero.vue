@@ -56,7 +56,7 @@
               width="784"
               height="615"
               fetchpriority="high"
-              class="w-72 h-72 md:w-96 md:h-96 object-contain rounded-xl shadow-lg dark:shadow-none"
+              class="w-72 h-72 md:w-96 md:h-96 object-contain dark:shadow-none"
             />
           </div>
           <div class="space-y-4">
