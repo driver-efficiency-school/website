@@ -24,20 +24,29 @@
   const Investors = defineAsyncComponent(() => import('./components/Investors.vue'))
   const TermsOfUse = defineAsyncComponent(() => import('./components/TermsOfUse.vue'))
   const PrivacyPolicy = defineAsyncComponent(() => import('./components/PrivacyPolicy.vue'))
+  const Help = defineAsyncComponent(() => import('./components/Help.vue'))
   const ComingSoon = defineAsyncComponent(() => import('./components/ComingSoon.vue'))
 
   const showInvestors = ref(false)
   const showTerms = ref(false)
   const showPrivacy = ref(false)
+  const showHelp = ref(false)
   const showComingSoon = ref(false)
 
-  function navigate(target: 'main' | 'investors' | 'terms' | 'privacy' | 'coming-soon') {
+  function navigate(target: 'main' | 'investors' | 'terms' | 'privacy' | 'help' | 'coming-soon') {
     showInvestors.value = target === 'investors'
     showTerms.value = target === 'terms'
     showPrivacy.value = target === 'privacy'
+    showHelp.value = target === 'help'
     showComingSoon.value = target === 'coming-soon'
     window.location.hash = target === 'main' ? '' : target
-    if (showInvestors.value || showTerms.value || showPrivacy.value || showComingSoon.value) {
+    if (
+      showInvestors.value ||
+      showTerms.value ||
+      showPrivacy.value ||
+      showHelp.value ||
+      showComingSoon.value
+    ) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
@@ -48,8 +57,15 @@
     showInvestors.value = hash === 'investors'
     showTerms.value = hash === 'terms'
     showPrivacy.value = hash === 'privacy'
+    showHelp.value = hash === 'help'
     showComingSoon.value = hash === 'coming-soon'
-    if (showInvestors.value || showTerms.value || showPrivacy.value || showComingSoon.value) {
+    if (
+      showInvestors.value ||
+      showTerms.value ||
+      showPrivacy.value ||
+      showHelp.value ||
+      showComingSoon.value
+    ) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
@@ -62,7 +78,7 @@
 
 <template>
   <Navbar @navigate="navigate" />
-  <div v-if="!showInvestors && !showTerms && !showPrivacy && !showComingSoon">
+  <div v-if="!showInvestors && !showTerms && !showPrivacy && !showHelp && !showComingSoon">
     <Hero />
     <Features />
     <Comparison />
@@ -82,6 +98,7 @@
   <Investors v-if="showInvestors" />
   <TermsOfUse v-else-if="showTerms" />
   <PrivacyPolicy v-else-if="showPrivacy" />
+  <Help v-else-if="showHelp" />
   <ComingSoon v-else-if="showComingSoon" />
   <Footer @navigate="navigate" />
   <BackToTop />

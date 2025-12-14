@@ -4,7 +4,7 @@
 
   const emit = defineEmits(['navigate'])
 
-  const version = 'v1.0.17 (25121401)'
+  const version = 'v1.0.21 (25121504)'
   const copied = ref(false)
 
   function copyVersion() {
@@ -134,6 +134,15 @@
               @click="emit('navigate', 'privacy')"
             >
               Privacy Policy
+            </a>
+          </div>
+          <div>
+            <a
+              href="#help"
+              class="opacity-60 hover:opacity-100 cursor-pointer"
+              @click="emit('navigate', 'help')"
+            >
+              Help & Support
             </a>
           </div>
         </div>
