@@ -16,7 +16,10 @@
         <h3 class="text-xl font-semibold mt-4 mb-2">Onboarding Steps</h3>
         <ol class="list-decimal pl-6">
           <li><strong>Welcome:</strong> Introduction to Efficiver's features</li>
-          <li><strong>Permissions:</strong> Grant location access for accurate tracking</li>
+          <li>
+            <strong>Permissions:</strong> <em>Required:</em> Grant location access for GPS tracking
+            - essential for app functionality
+          </li>
           <li>
             <strong>Vehicle Setup:</strong> Configure your vehicle type, engine size, and
             transmission
@@ -72,8 +75,8 @@
             improvements
           </li>
           <li>
-            <strong>Offline Operation:</strong> Works completely offline, all data stays on your
-            phone
+            <strong>Offline Operation:</strong> Works offline with GPS signal, all data stays on
+            your phone
           </li>
         </ul>
       </div>
@@ -182,8 +185,9 @@
 
           <dt class="font-semibold">GPS signal weak or unavailable</dt>
           <dd>
-            Ensure location permissions are granted. Drive to an area with better GPS reception. GPS
-            accuracy affects efficiency calculations.
+            GPS is <em>required</em> for Efficiver to function. Ensure location permissions are
+            granted and GPS is enabled. Drive to an area with better GPS reception - the app cannot
+            provide efficiency feedback without GPS signal.
           </dd>
 
           <dt class="font-semibold">High battery usage</dt>
@@ -296,7 +300,10 @@
         </ul>
         <h3 class="text-xl font-semibold mt-4 mb-2">Permissions</h3>
         <ul class="list-disc pl-6">
-          <li><strong>Location:</strong> Required for GPS tracking and efficiency calculations</li>
+          <li>
+            <strong>Location:</strong> <em>Required</em> for GPS tracking and all efficiency
+            calculations - the app cannot function without GPS
+          </li>
           <li><strong>Motion & Fitness:</strong> Used for auto-start/stop and engine detection</li>
           <li>
             <strong>Speech Recognition:</strong> Optional, for voice commands (future feature)
