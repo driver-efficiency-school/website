@@ -22,14 +22,16 @@
           </li>
           <li>
             <strong>Vehicle Setup:</strong> Configure your vehicle type, engine size, and
-            transmission
+            transmission settings
           </li>
           <li>
             <strong>Driving Experience:</strong> Set your proficiency level (1-5) for personalized
             tips
           </li>
           <li><strong>Hands-Free Driving:</strong> Learn about automatic drive detection</li>
-          <li><strong>Smart Engine Detection:</strong> Discover idle stop detection technology</li>
+          <li>
+            <strong>Smart Engine Idling Detection:</strong> Discover idle stop detection technology
+          </li>
           <li><strong>All Set:</strong> Complete setup and start driving efficiently</li>
         </ol>
       </div>
@@ -46,9 +48,9 @@
         <h3 class="text-xl font-semibold mt-4 mb-2">Key Features</h3>
         <ul class="list-disc pl-6">
           <li>
-            <strong>Automatic Engine Detection:</strong> Identifies your vehicle using vibration
-            patterns (like a unique 'fingerprint' from your car's engine shakes) - no OBD dongle
-            needed (a plug-in device for your car)
+            <strong>Engine Idling Detection:</strong> Identifies your idling engine using vibration
+            patterns (like a unique 'fingerprint' from your car's shakes) - no OBD dongle needed.
+            Requires a manual calibration while the vehicle is stationary and the engine is warm.
           </li>
           <li>
             <strong>Real-time Efficiency Scoring:</strong> Live percentage score showing your
@@ -111,7 +113,7 @@
         <ul class="list-disc pl-6">
           <li><strong>Current Gear:</strong> Recommended gear for manual transmissions</li>
           <li><strong>Idle Time:</strong> Total time spent idling with engine on</li>
-          <li><strong>Engine Status:</strong> Whether engine is detected as running</li>
+          <li><strong>Engine Status:</strong> Whether idling is detected</li>
         </ul>
       </div>
     </section>
@@ -124,8 +126,8 @@
         <ul class="list-disc pl-6">
           <li>Maintain steady speeds and avoid rapid acceleration</li>
           <li>
-            Anticipate traffic flow and brake gently - for example, coasting to a stoplight instead
-            of braking hard can boost your score
+            Anticipate traffic flow and brake gently. For example, coasting towards a stoplight
+            rather than braking abruptly will boost your efficiency score.
           </li>
           <li>
             Avoid quick starts from traffic lights – gentle acceleration saves fuel and raises your
@@ -144,6 +146,10 @@
           <li><strong>40-59%:</strong> Moderate efficiency, focus on reducing mistakes</li>
           <li><strong>0-39%:</strong> Significant improvement needed</li>
         </ul>
+        <p class="mt-4">
+          <strong>Note:</strong> <em>Harsh braking detection</em> is more sensitive than
+          acceleration to encourage smoother, safer driving and better fuel efficiency.
+        </p>
         <h3 class="text-xl font-semibold mt-4 mb-2">Vehicle-Specific Tips</h3>
         <ul class="list-disc pl-6">
           <li>
@@ -151,9 +157,12 @@
           </li>
           <li><strong>Electric:</strong> Maintain steady speeds to optimize battery range</li>
           <li>
-            <strong>Manual Transmission:</strong> Use higher gears at lower speeds when appropriate
+            <strong>Manual Transmission:</strong> Follow the optimal gear based on Efficiver advice
+            via Voice Assistance or Gear Indicator
           </li>
-          <li><strong>Automatic Transmission:</strong> Allow transmission to shift naturally</li>
+          <li>
+            <strong>Automatic Transmission:</strong> Let the vehicle manage gear shifts naturally
+          </li>
         </ul>
       </div>
     </section>
@@ -171,10 +180,11 @@
             Preferences. Grant Motion & Fitness permission in iOS Settings > Privacy & Security.
           </dd>
 
-          <dt class="font-semibold">Engine not detected properly</dt>
+          <dt class="font-semibold">Engine idling not detected properly</dt>
           <dd>
-            Drive at highway speeds for initial calibration. Ensure phone is securely mounted. The
-            app learns your engine's vibration pattern during the first drive.
+            Calibrate the engine idling signature while your vehicle is stationary and the engine is
+            warm. Ensure your phone is securely mounted so the app can accurately record your
+            engine's unique vibration 'fingerprint' while at rest.
           </dd>
 
           <dt class="font-semibold">No voice feedback</dt>
@@ -224,7 +234,9 @@
         <ul class="list-disc pl-6">
           <li><strong>Fuel Type:</strong> Petrol, Diesel, or Electric</li>
           <li><strong>Engine Size:</strong> Capacity in cc (petrol/diesel) or kW (electric)</li>
-          <li><strong>Transmission:</strong> Manual or Automatic</li>
+          <li>
+            <strong>Transmission:</strong> Specify if the vehicle has an Automatic transmission
+          </li>
           <li><strong>Turbocharged:</strong> Enable for turbo engines</li>
           <li><strong>Number of Gears:</strong> For manual transmissions (4-8 gears)</li>
         </ul>
@@ -304,7 +316,9 @@
             <strong>Location:</strong> <em>Required</em> for GPS tracking and all efficiency
             calculations - the app cannot function without GPS
           </li>
-          <li><strong>Motion & Fitness:</strong> Used for auto-start/stop and engine detection</li>
+          <li>
+            <strong>Motion & Fitness:</strong> Used for auto-start/stop and engine idling detection
+          </li>
           <li>
             <strong>Speech Recognition:</strong> Optional, for voice commands (future feature)
           </li>
@@ -379,7 +393,7 @@
         </p>
         <h3 class="text-xl font-semibold mt-4 mb-2">Recent Improvements</h3>
         <ul class="list-disc pl-6">
-          <li>Enhanced engine detection algorithms for better accuracy</li>
+          <li>Vibration-based engine idling detection for better performance</li>
           <li>Improved voice feedback system with multiple languages</li>
           <li>Advanced auto-start/stop functionality</li>
           <li>Better battery optimization and low-power mode</li>
@@ -396,7 +410,7 @@
           <li>Social features and leaderboards</li>
           <li>Detailed fuel cost savings reports</li>
         </ul>
-        <p class="mt-4">Last updated: December 15, 2025</p>
+        <p class="mt-4">Last updated: December 20, 2025</p>
       </div>
     </section>
   </div>
