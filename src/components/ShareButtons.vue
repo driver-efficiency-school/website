@@ -15,7 +15,7 @@
   const props = withDefaults(defineProps<ShareButtonsProps>(), {
     title: 'Efficiver - Free Driving Coach',
     text: "I'm saving fuel with Efficiver - the free offline driving coach app! 🚗💚",
-    url: 'https://www.efficiver.com'
+    url: config.contact.website
   })
 
   function shareOnTwitter() {

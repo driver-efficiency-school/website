@@ -10,6 +10,8 @@
   } from '@/components/ui/sheet'
   import { X, Fuel, ArrowRight } from 'lucide-vue-next'
 
+  import { config } from '@/lib/config'
+
   const isOpen = ref(false)
   const hasShown = ref(false)
 
@@ -31,7 +33,7 @@
   }
 
   function goToAppStore() {
-    window.open('https://apps.apple.com/app/efficiver/id6754255974', '_blank')
+    window.open(config.app.ios, '_blank')
     dismissPopup()
   }
 

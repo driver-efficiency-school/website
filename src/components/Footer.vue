@@ -130,7 +130,7 @@
 
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Help</h3>
-          <div>
+          <div v-if="config.features.contact">
             <a
               href="#contact"
               class="opacity-60 hover:opacity-100"
@@ -153,7 +153,7 @@
               Newsletter
             </a>
           </div>
-          <div>
+          <div v-if="config.features.contact">
             <a
               href="#contact"
               class="opacity-60 hover:opacity-100"
@@ -232,7 +232,7 @@
           © 2015–{{ currentYear }}
           <a
             target="_blank"
-            href="https://www.efficiver.com"
+            :href="config.contact.website"
             class="text-primary transition-all border-primary hover:border-b-2"
           >
             Efficiver
