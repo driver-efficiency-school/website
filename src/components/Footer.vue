@@ -117,14 +117,12 @@
             >
               Dashboard
             </a>
-            <a
+            <span
               v-else
-              href="/#"
-              class="flex items-center opacity-60 hover:opacity-100 cursor-not-allowed"
-              @click.prevent="emit('navigate', 'coming-soon')"
+              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
             >
               Dashboard <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
-            </a>
+            </span>
           </div>
         </div>
 

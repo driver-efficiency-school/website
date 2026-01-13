@@ -30,5 +30,8 @@ export const config = {
     linkedin: import.meta.env.VITE_SHARE_ON_LINKEDIN !== 'false',
     reddit: import.meta.env.VITE_SHARE_ON_REDDIT !== 'false',
     native: import.meta.env.VITE_SHARE_NATIVE !== 'false'
+  },
+  pricing: {
+    launchOffer: import.meta.env.VITE_LAUNCH_OFFER_ECO_MASTER !== 'false' // Default to true
   }
 }

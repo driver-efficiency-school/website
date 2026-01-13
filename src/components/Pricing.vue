@@ -8,7 +8,7 @@
     CardHeader,
     CardTitle
   } from '@/components/ui/card'
-
+  import { config } from '@/lib/config'
   import { Check } from 'lucide-vue-next'
 
   enum PopularPlan {
@@ -17,22 +17,20 @@
   }
 
   interface PlanProps {
+    id: string
     title: string
     popular: PopularPlan
-    price: number
     description: string
-    discount: string | null // Added for discount badge
     buttonText: string
     benefitList: string[]
   }
 
   const plans: PlanProps[] = [
     {
+      id: 'smart_driver',
       title: 'Smart Driver',
       popular: 0,
-      price: 0,
       description: 'Ideal for learners – detailed metrics, coaching.',
-      discount: 'Free (Limited Time)',
       buttonText: 'Get Started',
       benefitList: [
         'Unlimited trips',
@@ -43,11 +41,10 @@
       ]
     },
     {
+      id: 'eco_master',
       title: 'Eco Master',
       popular: 1,
-      price: 0,
       description: 'Best for eco-drivers – analytics, gamified fun.',
-      discount: 'Free (Limited Time)',
       buttonText: 'Get Started',
       benefitList: [
         'All Smart Driver features',
@@ -58,11 +55,10 @@
       ]
     },
     {
+      id: 'enterprise',
       title: 'Enterprise',
       popular: 0,
-      price: 0,
       description: 'For businesses – scalable, robust solution.',
-      discount: 'Coming Soon',
       buttonText: 'Contact Us',
       benefitList: [
         'Multi-user support',
@@ -73,10 +69,26 @@
       ]
     }
   ]
+
+  function getPriceLabel(id: string): string {
+    if (id === 'smart_driver') {
+      return 'Free Forever'
+    }
+    if (id === 'eco_master') {
+      return config.pricing.launchOffer ? 'Free (Launch Offer)' : 'In-App Purchase'
+    }
+    return 'Custom Pricing'
+  }
+
+  function getPriceSubtext(id: string): string {
+    if (id === 'smart_driver') return 'Basic Features'
+    if (id === 'eco_master') return 'Full Access'
+    return '/user/year'
+  }
 </script>
 
 <template>
-  <section class="container py-24 sm:py-32">
+  <section id="pricing" class="container py-24 sm:py-32">
     <h2 class="text-lg text-primary text-center mb-2 tracking-wider">Pricing</h2>
 
     <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
@@ -84,13 +96,13 @@
     </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-      Unlock the full potential of Efficiver with our flexible plans – now Free for a limited time!
-      Start free, upgrade, or go Enterprise.
+      Unlock the full potential of Efficiver with our flexible plans. Start free, upgrade in the
+      app, or go Enterprise.
     </h3>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
       <Card
-        v-for="{ title, popular, price, description, discount, buttonText, benefitList } in plans"
+        v-for="{ id, title, popular, description, buttonText, benefitList } in plans"
         :key="title"
         :class="{
           'drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.1]':
@@ -103,19 +115,17 @@
             {{ title }}
           </CardTitle>
           <span
-            v-if="discount"
+            v-if="id === 'eco_master' && config.pricing.launchOffer"
             class="absolute top-2 right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded"
           >
-            {{ discount }}
+            Launch Offer
           </span>
 
           <CardDescription class="pb-4">{{ description }}</CardDescription>
 
           <div>
-            <span class="text-3xl font-bold">${{ price }}</span>
-            <span class="text-muted-foreground">
-              {{ title === 'Enterprise' ? '/user/year' : '/month' }}</span
-            >
+            <span class="text-2xl font-bold">{{ getPriceLabel(id) }}</span>
+            <span class="text-muted-foreground ml-1 text-sm"> {{ getPriceSubtext(id) }}</span>
           </div>
         </CardHeader>
 
