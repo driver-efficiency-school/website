@@ -17,6 +17,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
+  server: {
+    port: 5173,
+    allowedHosts: ['www.efficiver.com', 'efficiver.com'],
+    hmr: {
+      protocol: 'wss',
+      host: 'www.efficiver.com',
+      clientPort: 443
+    }
+  },
   build: {
     rollupOptions: {
       output: {
