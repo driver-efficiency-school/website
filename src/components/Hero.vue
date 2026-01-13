@@ -6,6 +6,7 @@
   import { Badge } from '@/components/ui/badge'
   import { ArrowRight, Check } from 'lucide-vue-next'
   import ShareButtons from './ShareButtons.vue'
+  import { config } from '@/lib/config'
 
   const darkImages = [
     'screen-dark_001.webp',
@@ -74,7 +75,7 @@
 
         <div class="flex flex-col md:flex-row justify-center items-center gap-4">
           <Button as-child class="w-5/6 md:w-auto font-bold group/arrow">
-            <a href="https://apps.apple.com/app/efficiver/id6754255974" target="_blank">
+            <a :href="config.app.ios" target="_blank">
               Download Now
               <ArrowRight
                 class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform"

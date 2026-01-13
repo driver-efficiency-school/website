@@ -139,7 +139,7 @@
                 name="phone"
                 autocomplete="tel"
                 type="tel"
-                placeholder="+1 (555) 123-4567"
+                placeholder="+1 (555) 000-0000"
               />
             </div>
 

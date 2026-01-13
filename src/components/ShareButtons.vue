@@ -3,6 +3,8 @@
   import XIcon from '@/icons/XIcon.vue'
   import LinkedInIcon from '@/icons/LinkedInIcon.vue'
   import RedditIcon from '@/icons/RedditIcon.vue'
+  import { config } from '@/lib/config'
+  import { MoreHorizontal } from 'lucide-vue-next'
 
   interface ShareButtonsProps {
     title?: string
@@ -56,12 +58,16 @@
   }
 
   const canShare = typeof navigator !== 'undefined' && 'share' in navigator
+  const showNativeShare = config.share.native !== false // Default to true if not set
+  const hasAnyShare =
+    config.share.x || config.share.linkedin || config.share.reddit || (canShare && showNativeShare)
 </script>
 
 <template>
-  <div class="flex items-center gap-2">
+  <div v-if="hasAnyShare" class="flex items-center gap-2">
     <span class="text-sm text-muted-foreground mr-2">Share:</span>
     <Button
+      v-if="config.share.x"
       variant="outline"
       size="icon"
       class="h-8 w-8 rounded-full"
@@ -71,6 +77,7 @@
       <XIcon class="h-4 w-4" />
     </Button>
     <Button
+      v-if="config.share.linkedin"
       variant="outline"
       size="icon"
       class="h-8 w-8 rounded-full"
@@ -80,6 +87,7 @@
       <LinkedInIcon class="h-4 w-4" />
     </Button>
     <Button
+      v-if="config.share.reddit"
       variant="outline"
       size="icon"
       class="h-8 w-8 rounded-full"
@@ -89,14 +97,14 @@
       <RedditIcon class="h-4 w-4" />
     </Button>
     <Button
-      v-if="canShare"
+      v-if="canShare && showNativeShare"
       variant="outline"
-      size="sm"
-      class="h-8 rounded-full text-xs"
+      size="icon"
+      class="h-8 w-8 rounded-full"
       aria-label="Share via native share"
       @click="shareNative"
     >
-      More
+      <MoreHorizontal class="h-4 w-4" />
     </Button>
   </div>
 </template>

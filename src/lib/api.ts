@@ -1,4 +1,6 @@
-const API_BASE_URL = 'https://email.efficiency.school/api/v1'
+import { config } from '@/lib/config'
+
+const API_BASE_URL = config.api.baseUrl
 
 export interface ContactFormData {
   name: string
@@ -82,7 +84,7 @@ class ApiService {
   async subscribeToNewsletter(data: NewsletterSubscriptionData): Promise<SubscriptionResponse> {
     const payload = {
       ...data,
-      source: data.source || 'www.efficiver.com'
+      source: data.source || config.contact.website || 'www.efficiver.com'
     }
 
     return this.request<SubscriptionResponse>('/subscribers/subscribe', {

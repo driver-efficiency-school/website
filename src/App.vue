@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { defineAsyncComponent, ref, onMounted } from 'vue'
+  import { config } from '@/lib/config'
 
   // Critical above-the-fold components - load immediately
   import Navbar from './components/Navbar.vue'
@@ -87,12 +88,12 @@
     <Team />
     <Community />
     <Pricing />
-    <section id="newsletter" class="container py-24 sm:py-32">
+    <section v-if="config.features.newsletter" id="newsletter" class="container py-24 sm:py-32">
       <div class="mx-auto max-w-2xl text-center">
         <NewsletterSignup />
       </div>
     </section>
-    <Contact />
+    <Contact v-if="config.features.contact" />
     <FAQ />
   </div>
   <Investors v-if="showInvestors" />

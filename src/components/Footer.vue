@@ -1,11 +1,14 @@
 <script setup lang="ts">
   import { ref } from 'vue'
   import Separator from './ui/separator/Separator.vue'
+  import { config } from '@/lib/config'
+  import { Badge } from '@/components/ui/badge'
 
   const emit = defineEmits(['navigate'])
 
-  const version = 'v1.0.26 (25122001)'
+  const version = 'v1.0.33 (26011307)'
   const copied = ref(false)
+  const currentYear = new Date().getFullYear()
 
   function copyVersion() {
     navigator.clipboard.writeText(version)
@@ -34,13 +37,17 @@
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Contact</h3>
           <div>
-            <a href="mailto:support@efficiver.com" class="opacity-60 hover:opacity-100"> Email </a>
+            <a :href="'mailto:' + config.contact.email" class="opacity-60 hover:opacity-100">
+              Email
+            </a>
+          </div>
+          <div v-if="config.contact.phone">
+            <a :href="'tel:' + config.contact.phone" class="opacity-60 hover:opacity-100">
+              Phone
+            </a>
           </div>
           <div>
-            <a href="tel:+18005551234" class="opacity-60 hover:opacity-100"> Phone </a>
-          </div>
-          <div>
-            <a href="https://www.efficiver.com" class="opacity-60 hover:opacity-100"> Website </a>
+            <a :href="config.contact.website" class="opacity-60 hover:opacity-100"> Website </a>
           </div>
         </div>
 
@@ -52,25 +59,71 @@
             </a>
           </div>
           <div>
-            <span class="text-muted-foreground cursor-not-allowed"> Android (Coming Soon) </span>
-          </div>
-          <div>
-            <span class="text-muted-foreground cursor-not-allowed">
-              Apple Watch (Coming Soon)
-            </span>
-          </div>
-          <div>
-            <span class="text-muted-foreground cursor-not-allowed">
-              Android Watch (Coming Soon)
+            <a
+              v-if="config.app.android"
+              :href="config.app.android"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
+              Android
+            </a>
+            <span
+              v-else
+              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
+            >
+              Android <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
             </span>
           </div>
           <div>
             <a
-              href="/#"
+              v-if="config.app.watch.apple"
+              :href="config.app.watch.apple"
+              target="_blank"
               class="opacity-60 hover:opacity-100"
+            >
+              Apple Watch
+            </a>
+            <span
+              v-else
+              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
+            >
+              Apple Watch
+              <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
+            </span>
+          </div>
+          <div>
+            <a
+              v-if="config.app.watch.android"
+              :href="config.app.watch.android"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
+              Android Watch
+            </a>
+            <span
+              v-else
+              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
+            >
+              Android Watch
+              <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
+            </span>
+          </div>
+          <div>
+            <a
+              v-if="config.app.dashboard"
+              :href="config.app.dashboard"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
+              Dashboard
+            </a>
+            <a
+              v-else
+              href="/#"
+              class="flex items-center opacity-60 hover:opacity-100 cursor-not-allowed"
               @click.prevent="emit('navigate', 'coming-soon')"
             >
-              Dashboard (Coming Soon)
+              Dashboard <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
             </a>
           </div>
         </div>
@@ -91,7 +144,7 @@
               FAQ
             </a>
           </div>
-          <div>
+          <div v-if="config.features.newsletter">
             <a
               href="#newsletter"
               class="opacity-60 hover:opacity-100"
@@ -149,14 +202,26 @@
 
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Socials</h3>
-          <div>
-            <span class="text-muted-foreground cursor-not-allowed"> Instagram </span>
+          <div v-if="config.socials.instagram">
+            <a
+              :href="config.socials.instagram"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
+              Instagram
+            </a>
           </div>
-          <div>
-            <span class="text-muted-foreground cursor-not-allowed"> TikTok </span>
+
+          <div v-if="config.socials.tiktok">
+            <a :href="config.socials.tiktok" target="_blank" class="opacity-60 hover:opacity-100">
+              TikTok
+            </a>
           </div>
-          <div>
-            <span class="text-muted-foreground cursor-not-allowed"> LinkedIn </span>
+
+          <div v-if="config.socials.linkedin">
+            <a :href="config.socials.linkedin" target="_blank" class="opacity-60 hover:opacity-100">
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>
@@ -164,7 +229,7 @@
       <Separator class="my-6" />
       <section class="flex flex-col sm:flex-row items-center justify-between gap-2">
         <h3>
-          © 2015–2025
+          © 2015–{{ currentYear }}
           <a
             target="_blank"
             href="https://www.efficiver.com"
