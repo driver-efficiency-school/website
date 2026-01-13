@@ -33,5 +33,8 @@ export const config = {
   },
   pricing: {
     launchOffer: import.meta.env.VITE_LAUNCH_OFFER_ECO_MASTER !== 'false' // Default to true
+  },
+  popup: {
+    savings: import.meta.env.VITE_EXIT_POPUP_SAVINGS || '$300,000+ in Fuel Costs'
   }
 }

@@ -60,7 +60,7 @@
         </div>
         <SheetTitle class="text-center text-2xl">Wait! Free Fuel Tips Inside 🚗</SheetTitle>
         <SheetDescription class="text-center text-base pt-2">
-          Don't miss out on saving 8-22% on fuel costs. Efficiver is 100% free, works offline, and
+          Don't miss out on saving 8-22% on fuel costs. Efficiver is free to use, works offline, and
           respects your privacy.
         </SheetDescription>
       </SheetHeader>
@@ -68,7 +68,7 @@
       <div class="space-y-4 pt-4">
         <div class="bg-muted/50 rounded-lg p-4 text-center">
           <p class="text-sm text-muted-foreground mb-2">Join 10K+ drivers who saved</p>
-          <p class="text-2xl font-bold text-primary">₹2.5 Crore in Fuel Costs</p>
+          <p class="text-2xl font-bold text-primary">{{ config.popup.savings }}</p>
         </div>
 
         <div class="flex flex-col gap-3">
