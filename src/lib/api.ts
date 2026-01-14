@@ -35,6 +35,13 @@ export interface SubscriptionResponse {
   source: string
 }
 
+// New response format from subscribe endpoint
+export interface SubscribeResult {
+  subscriber: SubscriptionResponse
+  isNew: boolean
+  message: string
+}
+
 class ApiService {
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     const url = `${API_BASE_URL}${endpoint}`
@@ -81,13 +88,13 @@ class ApiService {
     })
   }
 
-  async subscribeToNewsletter(data: NewsletterSubscriptionData): Promise<SubscriptionResponse> {
+  async subscribeToNewsletter(data: NewsletterSubscriptionData): Promise<SubscribeResult> {
     const payload = {
       ...data,
       source: data.source || config.contact.website || 'www.efficiver.com'
     }
 
-    return this.request<SubscriptionResponse>('/subscribers/subscribe', {
+    return this.request<SubscribeResult>('/subscribers/subscribe', {
       method: 'POST',
       body: JSON.stringify(payload)
     })

@@ -31,6 +31,8 @@
   const isSubmitting = ref(false)
   const submitStatus = ref<'idle' | 'success' | 'error'>('idle')
   const errorMessage = ref('')
+  const successMessage = ref('')
+  const isNewSubscriber = ref(true)
 
   const handleSubmit = async () => {
     if (isSubmitting.value) return
@@ -47,8 +49,12 @@
         source: 'www.efficiver.com'
       }
 
-      await apiService.subscribeToNewsletter(formData)
+      const result = await apiService.subscribeToNewsletter(formData)
       submitStatus.value = 'success'
+
+      // Use the message from API response
+      successMessage.value = result.message
+      isNewSubscriber.value = result.isNew
 
       // Reset form on success
       Object.assign(newsletterForm, {
@@ -152,9 +158,9 @@
           class="border-green-200 bg-green-50 text-green-800"
         >
           <CheckCircle class="w-4 h-4" />
-          <AlertTitle>Subscribed!</AlertTitle>
+          <AlertTitle>{{ isNewSubscriber ? 'Subscribed!' : 'Already Subscribed' }}</AlertTitle>
           <AlertDescription>
-            Thank you for subscribing! You'll receive updates soon.
+            {{ successMessage || "Thank you for subscribing! You'll receive updates soon." }}
           </AlertDescription>
         </Alert>
 
