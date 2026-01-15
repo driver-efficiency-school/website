@@ -67,7 +67,7 @@ echo -e "${YELLOW}🔄 Uploading files via rsync with sudo...${NC}"
 # Use rsync with sudo for upload
 if rsync -avz --exclude='.DS_Store' --exclude='Thumbs.db' --exclude='*.log' --rsync-path="sudo rsync" "$SOURCE_DIR/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"; then
     echo -e "${GREEN}✅ Deployment to DEV completed successfully!${NC}"
-    echo -e "${GREEN}🌐 Development site available at: https://dev.efficiver.com${NC}"
+    echo -e "${GREEN}🌐 Development site available at: https://www-dev.efficiver.com${NC}"
 else
     echo -e "${RED}❌ Deployment failed!${NC}"
     echo -e "${YELLOW}💡 Check your SSH keys or server permissions${NC}"
