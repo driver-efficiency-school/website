@@ -1,129 +1,205 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+  import { ref } from 'vue'
 
-import { useColorMode } from "@vueuse/core";
-const mode = useColorMode();
-mode.value = "dark";
+  import { useColorMode } from '@vueuse/core'
+  const mode = useColorMode()
+  mode.value = 'dark'
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+  import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger
+  } from '@/components/ui/navigation-menu'
+  import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger
+  } from '@/components/ui/dropdown-menu'
+  import {
+    Sheet,
+    SheetContent,
+    SheetFooter,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+    SheetDescription
+  } from '@/components/ui/sheet'
 
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+  import { Button } from '@/components/ui/button'
+  import { Separator } from '@/components/ui/separator'
 
-import { Menu, ExternalLinkIcon, ChartSpline } from "lucide-vue-next";
-import ToggleTheme from "./ToggleTheme.vue";
+  import { Menu, ExternalLinkIcon, ChartSpline, ChevronDown } from 'lucide-vue-next'
+  import ToggleTheme from './ToggleTheme.vue'
 
-const emit = defineEmits(['navigate']);
+  const emit = defineEmits(['navigate'])
 
-interface RouteProps {
-  href: string;
-  label: string;
-}
+  interface RouteProps {
+    href: string
+    label: string
+  }
 
-interface FeatureProps {
-  title: string;
-  description: string;
-}
+  interface FeatureProps {
+    title: string
+    description: string
+  }
 
-const routeList: RouteProps[] = [
-  {
-    href: "#testimonials",
-    label: "Testimonials",
-  },
-  {
-    href: "#team",
-    label: "Team",
-  },
-  {
-    href: "#contact",
-    label: "Contact",
-  },
-  {
-    href: "#faq",
-    label: "FAQ",
-  },
-];
+  const routeList: RouteProps[] = [
+    {
+      href: '#whats-new',
+      label: "What's New"
+    },
+    {
+      href: '#testimonials',
+      label: 'Testimonials'
+    },
+    {
+      href: '#contact',
+      label: 'Contact'
+    },
+    {
+      href: '#faq',
+      label: 'FAQ'
+    }
+  ]
 
-const externalList: RouteProps[] = [
-  {
-    href: "#",
-    label: "Coming soon...",
-  },
-];
+  interface AboutItemProps {
+    title: string
+    href: string
+    description: string
+  }
 
-const featureList: FeatureProps[] = [
-  {
-    title: "Drive Green",
-    description: "Cut emissions with offline eco-insights.",
-  },
-  {
-    title: "Save Fuel",
-    description: "Track savings, boost efficiency fast.",
-  },
-  {
-    title: "Stay Safe",
-    description: "Get offline tips for safer driving.",
-  },
-];
+  const aboutList: AboutItemProps[] = [
+    {
+      title: 'Team',
+      href: '#team',
+      description: 'Meet the passionate team behind Efficiver.'
+    }
+  ]
 
-const isOpen = ref<boolean>(false);
+  const externalList: RouteProps[] = [
+    {
+      href: '#',
+      label: 'Dashboard'
+    }
+  ]
+
+  const featureList: FeatureProps[] = [
+    {
+      title: 'Background Ready',
+      description: 'Track efficiency while using Maps or Music.'
+    },
+    {
+      title: 'Engine Calibration',
+      description: 'Petrol, Diesel & EV support for accuracy.'
+    },
+    {
+      title: 'Biometric Privacy',
+      description: 'Secured with FaceID/TouchID. 100% Private.'
+    }
+  ]
+
+  const isOpen = ref<boolean>(false)
+
+  function handleNavigateMain() {
+    emit('navigate', 'main')
+    isOpen.value = false
+  }
+
+  function handleNavigateComingSoon() {
+    emit('navigate', 'coming-soon')
+    isOpen.value = false
+  }
 </script>
 
 <template>
-  <header :class="{
-    'shadow-light': mode === 'light',
-    'shadow-dark': mode === 'dark',
-    'w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true,
-  }">
+  <header
+    :class="{
+      'shadow-light': mode === 'light',
+      'shadow-dark': mode === 'dark',
+      'w-[90%] md:w-[90%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true
+    }"
+  >
     <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
-      <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
-      <span style="font-family: 'Audiowide', cursive;">Efficiver</span>
+      <img
+        src="../icons/EDIcons_128x128_Transparent.webp"
+        alt="Efficiver Logo - Free Driving Coach App"
+        class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"
+      />
+      <span style="font-family: 'Audiowide', cursive">Efficiver</span>
     </a>
     <!-- Mobile -->
-    <div class="flex items-center lg:hidden">
+    <div class="flex items-center md:hidden">
       <Sheet v-model:open="isOpen">
         <SheetTrigger as-child>
-          <Menu @click="isOpen = true" class="cursor-pointer" />
+          <Menu class="cursor-pointer" @click="isOpen = true" />
         </SheetTrigger>
 
-        <SheetContent side="left" class="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl bg-card">
+        <SheetContent
+          side="left"
+          class="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl bg-card"
+        >
           <div>
             <SheetHeader class="mb-4 ml-4">
               <SheetTitle class="flex items-center">
-                <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
-                  <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
-                  <span style="font-family: 'Audiowide', cursive;">Efficiver</span>
+                <a
+                  href="/#"
+                  class="font-bold text-lg flex items-center"
+                  @click="emit('navigate', 'main')"
+                >
+                  <img
+                    src="../icons/EDIcons_128x128_Transparent.webp"
+                    alt="Logo"
+                    class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"
+                  />
+                  <span style="font-family: 'Audiowide', cursive">Efficiver</span>
                 </a>
               </SheetTitle>
+              <SheetDescription class="sr-only"> Mobile navigation menu </SheetDescription>
             </SheetHeader>
 
             <div class="flex flex-col gap-2">
-              <Button v-for="{ href, label } in routeList" :key="label" as-child variant="ghost"
-                class="justify-start text-base">
-                <a @click="emit('navigate', 'main'); isOpen = false" :href="href">
+              <Button as-child variant="ghost" class="justify-start text-base">
+                <a href="#features" @click="handleNavigateMain"> Features </a>
+              </Button>
+              <Button
+                v-for="{ href, label } in routeList"
+                :key="label"
+                as-child
+                variant="ghost"
+                class="justify-start text-base"
+              >
+                <a :href="href" @click="handleNavigateMain">
                   {{ label }}
                 </a>
               </Button>
               <Separator class="my-2" />
-              <Button v-for="{ href, label } in externalList" :key="label" as-child variant="ghost" class="justify-start text-base">
-                <a @click.prevent="emit('navigate', 'coming-soon'); isOpen = false" :href="href">
+              <Button
+                v-for="{ href, label } in externalList"
+                :key="label"
+                as-child
+                variant="ghost"
+                class="justify-start text-base"
+              >
+                <a :href="href" @click.prevent="handleNavigateComingSoon">
                   {{ label }}
                   <ExternalLinkIcon class="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Separator class="my-2" />
+              <span class="px-4 text-sm font-semibold text-muted-foreground">About</span>
+              <Button
+                v-for="{ title, href } in aboutList"
+                :key="title"
+                as-child
+                variant="ghost"
+                class="justify-start text-base pl-6"
+              >
+                <a :href="href" @click="handleNavigateMain">
+                  {{ title }}
                 </a>
               </Button>
             </div>
@@ -138,44 +214,77 @@ const isOpen = ref<boolean>(false);
     </div>
 
     <!-- Desktop -->
-    <NavigationMenu class="hidden lg:block">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger class="bg-card text-base">
-            Features
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <div class="grid w-[512px] grid-cols-2 gap-5 p-4">
-              <img src="../icons/EDIcons_256x256_Transparent.png" alt="Beach" class="h-full w-full rounded-md object-cover" />
-              <ul class="flex flex-col gap-2">
-                <li v-for="{ title, description } in featureList" :key="title"
-                  class="rounded-md p-3 text-sm hover:bg-muted">
-                  <p class="mb-1 font-semibold leading-none text-foreground">
-                    {{ title }}
-                  </p>
-                  <p class="line-clamp-2 text-muted-foreground">
-                    {{ description }}
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+    <!-- Desktop -->
+    <div class="hidden md:flex items-center gap-2 mx-auto">
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger class="bg-card text-base"> Features </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div class="grid w-[512px] grid-cols-2 gap-5 p-4">
+                <img
+                  src="../icons/EDIcons_256x256_Transparent.webp"
+                  alt="Efficiver Features"
+                  class="h-full w-full rounded-md object-cover"
+                />
+                <ul class="flex flex-col gap-2">
+                  <li
+                    v-for="{ title, description } in featureList"
+                    :key="title"
+                    class="rounded-md p-3 text-sm hover:bg-muted"
+                  >
+                    <a href="#features" @click="emit('navigate', 'main')">
+                      <p class="mb-1 font-semibold leading-none text-foreground">
+                        {{ title }}
+                      </p>
+                      <p class="line-clamp-2 text-muted-foreground">
+                        {{ description }}
+                      </p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Button v-for="{ href, label } in routeList" :key="label" as-child variant="ghost"
-              class="justify-start text-base">
-              <a @click="emit('navigate', 'main')" :href="href">
-                {{ label }}
-              </a>
-            </Button>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+          <NavigationMenuItem v-for="{ href, label } in routeList" :key="label">
+            <NavigationMenuLink as-child>
+              <Button as-child variant="ghost" class="justify-start text-base">
+                <a :href="href" @click="emit('navigate', 'main')">
+                  {{ label }}
+                </a>
+              </Button>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
 
-    <div class="hidden lg:flex">
+      <DropdownMenu>
+        <DropdownMenuTrigger
+          class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-card px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+        >
+          About
+          <ChevronDown
+            class="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
+            aria-hidden="true"
+          />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="center" class="w-[250px]">
+          <DropdownMenuItem v-for="{ title, href, description } in aboutList" :key="title" as-child>
+            <a :href="href" class="block w-full cursor-pointer" @click="emit('navigate', 'main')">
+              <p class="mb-1 font-semibold leading-none text-foreground">
+                {{ title }}
+              </p>
+              <p class="line-clamp-2 text-muted-foreground">
+                {{ description }}
+              </p>
+            </a>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+
+    <div class="hidden md:flex">
       <ToggleTheme />
       <Button as-child size="sm" variant="ghost" aria-label="Coming soon...">
         <a aria-label="Coming soon..." href="#" @click.prevent="emit('navigate', 'coming-soon')">
@@ -187,10 +296,10 @@ const isOpen = ref<boolean>(false);
 </template>
 
 <style scoped>
-.shadow-light {
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.085);
-}
-.shadow-dark {
-  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.141);
-}
+  .shadow-light {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.085);
+  }
+  .shadow-dark {
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.141);
+  }
 </style>

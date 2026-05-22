@@ -1,105 +1,111 @@
-const API_BASE_URL = 'https://email.efficiency.school/api/v1';
+import { config } from '@/lib/config'
+
+const API_BASE_URL = config.api.baseUrl
 
 export interface ContactFormData {
-  name: string;
-  email: string;
-  phone?: string;
-  company?: string;
-  subject: string;
-  message: string;
-  source?: string;
+  name: string
+  email: string
+  phone?: string
+  company?: string
+  subject: string
+  message: string
+  source?: string
 }
 
 export interface NewsletterSubscriptionData {
-  email: string;
-  name?: string;
-  preferences?: string[];
-  source?: string;
+  email: string
+  name?: string
+  preferences?: string[]
+  source?: string
 }
 
 export interface ApiResponse {
-  message?: string;
-  error?: boolean;
-  reason?: string;
+  message?: string
+  error?: boolean
+  reason?: string
 }
 
 export interface SubscriptionResponse {
-  id: string;
-  email: string;
-  name?: string;
-  isActive: boolean;
-  subscriptionDate: string;
-  preferences?: string[];
-  source: string;
+  id: string
+  email: string
+  name?: string
+  isActive: boolean
+  subscriptionDate: string
+  preferences?: string[]
+  source: string
+}
+
+// New response format from subscribe endpoint
+export interface SubscribeResult {
+  subscriber: SubscriptionResponse
+  isNew: boolean
+  message: string
 }
 
 class ApiService {
-  private async request<T>(
-    endpoint: string,
-    options: RequestInit = {}
-  ): Promise<T> {
-    const url = `${API_BASE_URL}${endpoint}`;
+  private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    const url = `${API_BASE_URL}${endpoint}`
 
     const config: RequestInit = {
       headers: {
         'Content-Type': 'application/json',
-        ...options.headers,
+        ...options.headers
       },
-      ...options,
-    };
+      ...options
+    }
 
     try {
-      const response = await fetch(url, config);
+      const response = await fetch(url, config)
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.reason || `HTTP ${response.status}: ${response.statusText}`);
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.reason || `HTTP ${response.status}: ${response.statusText}`)
       }
 
-      return await response.json();
+      return await response.json()
     } catch (error) {
-      console.error('API request failed:', error);
-      throw error;
+      console.error('API request failed:', error)
+      throw error
     }
   }
 
   async submitContactForm(data: ContactFormData): Promise<ApiResponse> {
     // Only include optional fields if they have values
-    const payload: any = {
+    const payload: Record<string, string | undefined> = {
       name: data.name,
       email: data.email,
       subject: data.subject,
-      message: data.message,
-    };
+      message: data.message
+    }
 
-    if (data.phone) payload.phone = data.phone;
-    if (data.company) payload.company = data.company;
-    if (data.source) payload.source = data.source;
+    if (data.phone) payload.phone = data.phone
+    if (data.company) payload.company = data.company
+    if (data.source) payload.source = data.source
 
     return this.request<ApiResponse>('/contact', {
       method: 'POST',
-      body: JSON.stringify(payload),
-    });
+      body: JSON.stringify(payload)
+    })
   }
 
-  async subscribeToNewsletter(data: NewsletterSubscriptionData): Promise<SubscriptionResponse> {
+  async subscribeToNewsletter(data: NewsletterSubscriptionData): Promise<SubscribeResult> {
     const payload = {
       ...data,
-      source: data.source || 'www.efficiver.com',
-    };
+      source: data.source || config.contact.website || 'www.efficiver.com'
+    }
 
-    return this.request<SubscriptionResponse>('/subscribers/subscribe', {
+    return this.request<SubscribeResult>('/subscribers/subscribe', {
       method: 'POST',
-      body: JSON.stringify(payload),
-    });
+      body: JSON.stringify(payload)
+    })
   }
 
   async unsubscribeFromNewsletter(email: string): Promise<ApiResponse> {
     return this.request<ApiResponse>('/subscribers/unsubscribe', {
       method: 'POST',
-      body: JSON.stringify({ email }),
-    });
+      body: JSON.stringify({ email })
+    })
   }
 }
 
-export const apiService = new ApiService();
+export const apiService = new ApiService()

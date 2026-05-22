@@ -1,41 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efficiver: Free iPhone Driving Coach (formerly Efficient Driver)</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="./src/assets/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Efficiver Home</title>
+    <!-- Google Fonts - Non-render-blocking -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      onload="
+        this.onload = null
+        this.rel = 'stylesheet'
+      "
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Efficiver: Free iPhone Driving Coach (formerly Efficient Driver)" />
+    <meta
+      name="description"
+      content="Efficiver (formerly Efficient Driver) helps you save 8-22% on fuel using only your iPhone sensors. Free offline driving coach app – no OBD hardware needed, 100% privacy-first."
+    />
+    <meta
+      name="keywords"
+      content="Efficiver, Efficient Driver, free driving coach app, fuel saving iPhone app, eco driving app, fuel efficiency, safe driving, offline driving coach, no OBD app"
+    />
+    <meta name="author" content="Efficiver" />
 
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="Efficiver Home" />
-  <meta name="description"
-    content="Efficiver is a web application that helps you manage your driving habits and improve your driving efficiency." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.efficiver.com" />
+    <meta property="og:title" content="Efficiver v1.1: Smart Detection, Eco Route & Wallet Watch" />
+    <meta
+      property="og:description"
+      content="Efficiver v1.1 is now on the App Store — on-device Smart Detection (no rev-range setup), Eco Route planning with background drive tracking, and Wallet Watch fuel & CO₂ savings in your local currency."
+    />
+    <meta property="og:image" content="https://www.efficiver.com/og-image.png" />
+    <meta property="og:site_name" content="Efficiver" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.efficiver.com" />
-  <meta property="og:title" content="Efficiver" />
-  <meta property="og:description" content="Efficiver" />
-  <meta property="og:image" content="https://www.efficiver.com/img/efficiver.png" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.efficiver.com" />
+    <meta
+      name="twitter:title"
+      content="Efficiver v1.1: Smart Detection, Eco Route & Wallet Watch"
+    />
+    <meta
+      name="twitter:description"
+      content="Efficiver v1.1 is now on the App Store — on-device Smart Detection, Eco Route planning, and Wallet Watch fuel & CO₂ savings in your local currency."
+    />
+    <meta name="twitter:image" content="https://www.efficiver.com/og-image.png" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://www.efficiver.com" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
 
-  <meta name="twitter:url" content="https://www.efficiver.com" />
-  <meta name="twitter:title" content="Efficiver" />
-  <meta name="twitter:description" content="Efficiver" />
-  <meta name="twitter:image" content="https://www.efficiver.com/img/efficiver.png" />
-</head>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Efficiver",
+        "operatingSystem": "iOS",
+        "applicationCategory": "LifestyleApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "150"
+        },
+        "description": "Save 8-22% on fuel with Efficiver - the free offline driving coach app. No OBD hardware needed, 100% privacy-first.",
+        "screenshot": "https://www.efficiver.com/og-image.png",
+        "softwareVersion": "1.1",
+        "author": {
+          "@type": "Organization",
+          "name": "Efficiver",
+          "url": "https://www.efficiver.com"
+        }
+      }
+    </script>
+  </head>
 
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

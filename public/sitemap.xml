@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!--
+    Efficiver — sitemap.xml
+    Hash routes (#whats-new, #features, #releases, #privacy, #terms,
+    #help, #contact, #faq) are intentionally NOT listed here. Per
+    the sitemap protocol, URL fragments are not separately indexable
+    by search engines, so the canonical entry is the home page. If
+    we migrate to true URLs (vue-router) later, add per-page entries
+    at that time.
+  -->
+  <url>
+    <loc>https://www.efficiver.com/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>

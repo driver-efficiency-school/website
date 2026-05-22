@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
-import { SelectSeparator, type SelectSeparatorProps } from 'radix-vue'
-import { cn } from '@/lib/utils'
+  import { type HTMLAttributes, computed } from 'vue'
+  import { SelectSeparator, type SelectSeparatorProps } from 'radix-vue'
+  import { cn } from '@/lib/utils'
 
-const props = defineProps<SelectSeparatorProps & { class?: HTMLAttributes['class'] }>()
+  const props = defineProps<SelectSeparatorProps & { class?: HTMLAttributes['class'] }>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+  const delegatedProps = computed(() => {
+    const { class: _class, ...delegated } = props
+    void _class
 
-  return delegated
-})
+    return delegated
+  })
 </script>
 
 <template>

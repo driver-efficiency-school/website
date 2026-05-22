@@ -1,7 +1,22 @@
 <script setup lang="ts">
-import Separator from "./ui/separator/Separator.vue";
+  import { ref } from 'vue'
+  import Separator from './ui/separator/Separator.vue'
+  import { config } from '@/lib/config'
+  import { Badge } from '@/components/ui/badge'
 
-const emit = defineEmits(['navigate']);
+  const emit = defineEmits(['navigate'])
+
+  const version = 'v1.1.0 (26052206)'
+  const copied = ref(false)
+  const currentYear = new Date().getFullYear()
+
+  function copyVersion() {
+    navigator.clipboard.writeText(version)
+    copied.value = true
+    setTimeout(() => {
+      copied.value = false
+    }, 2000)
+  }
 </script>
 
 <template>
@@ -10,7 +25,11 @@ const emit = defineEmits(['navigate']);
       <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div class="col-span-full xl:col-span-2">
           <a href="/#" class="flex font-bold items-center" @click="emit('navigate', 'main')">
-            <img src="../icons/EDIcons_128x128_Transparent.png" alt="Logo" class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"/>
+            <img
+              src="../icons/EDIcons_128x128_Transparent.webp"
+              alt="Efficiver Logo - Free Driving Coach App"
+              class="h-10 w-10 mr-2 bg-gradient-to via-primary rounded-lg size-9 border text-white"
+            />
             <h3 class="text-2xl">Efficiver</h3>
           </a>
         </div>
@@ -18,19 +37,17 @@ const emit = defineEmits(['navigate']);
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Contact</h3>
           <div>
-            <a href="mailto:support@efficiver.com" class="opacity-60 hover:opacity-100">
+            <a :href="'mailto:' + config.contact.email" class="opacity-60 hover:opacity-100">
               Email
             </a>
           </div>
-          <div>
-            <a href="tel:+18005551234" class="opacity-60 hover:opacity-100">
+          <div v-if="config.contact.phone">
+            <a :href="'tel:' + config.contact.phone" class="opacity-60 hover:opacity-100">
               Phone
             </a>
           </div>
           <div>
-            <a href="https://www.efficiver.com" class="opacity-60 hover:opacity-100">
-              Website
-            </a>
+            <a :href="config.contact.website" class="opacity-60 hover:opacity-100"> Website </a>
           </div>
         </div>
 
@@ -42,31 +59,81 @@ const emit = defineEmits(['navigate']);
             </a>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
-              Android (Future Support)
+            <a
+              v-if="config.app.android"
+              :href="config.app.android"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
+              Android
             </a>
+            <span
+              v-else
+              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
+            >
+              Android <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
+            </span>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
-              Apple Watch (Future Support)
+            <a
+              v-if="config.app.watch.apple"
+              :href="config.app.watch.apple"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
+              Apple Watch
             </a>
+            <span
+              v-else
+              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
+            >
+              Apple Watch
+              <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
+            </span>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
-              Android Watch (Future Support)
+            <a
+              v-if="config.app.watch.android"
+              :href="config.app.watch.android"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
+              Android Watch
             </a>
+            <span
+              v-else
+              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
+            >
+              Android Watch
+              <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
+            </span>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click.prevent="emit('navigate', 'coming-soon')">
-              Dashboard (Coming Soon)
+            <a
+              v-if="config.app.dashboard"
+              :href="config.app.dashboard"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
+              Dashboard
             </a>
+            <span
+              v-else
+              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
+            >
+              Dashboard <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
+            </span>
           </div>
         </div>
 
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Help</h3>
-          <div>
-            <a href="#contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+          <div v-if="config.features.contact">
+            <a
+              href="#contact"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               Contact Us
             </a>
           </div>
@@ -75,56 +142,109 @@ const emit = defineEmits(['navigate']);
               FAQ
             </a>
           </div>
-          <div>
-            <a href="#contact" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+          <div v-if="config.features.newsletter">
+            <a
+              href="#newsletter"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
+              Newsletter
+            </a>
+          </div>
+          <div v-if="config.features.contact">
+            <a
+              href="#contact"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               Feedback
             </a>
           </div>
           <div>
-            <a href="#investors" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'investors')">
+            <a
+              href="#investors"
+              class="opacity-60 hover:opacity-100 cursor-pointer"
+              @click="emit('navigate', 'investors')"
+            >
               Investors
             </a>
           </div>
           <div>
-            <a href="#terms" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'terms')">
+            <a
+              href="#terms"
+              class="opacity-60 hover:opacity-100 cursor-pointer"
+              @click="emit('navigate', 'terms')"
+            >
               Terms of Use
             </a>
           </div>
           <div>
-            <a href="#privacy" class="opacity-60 hover:opacity-100 cursor-pointer" @click="emit('navigate', 'privacy')">
+            <a
+              href="#privacy"
+              class="opacity-60 hover:opacity-100 cursor-pointer"
+              @click="emit('navigate', 'privacy')"
+            >
               Privacy Policy
+            </a>
+          </div>
+          <div>
+            <a
+              href="#help"
+              class="opacity-60 hover:opacity-100 cursor-pointer"
+              @click="emit('navigate', 'help')"
+            >
+              Help & Support
             </a>
           </div>
         </div>
 
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Socials</h3>
-          <div>
-            <span class="opacity-30 cursor-not-allowed">
+          <div v-if="config.socials.instagram">
+            <a
+              :href="config.socials.instagram"
+              target="_blank"
+              class="opacity-60 hover:opacity-100"
+            >
               Instagram
-            </span>
+            </a>
           </div>
-          <div>
-            <span class="opacity-30 cursor-not-allowed">
+
+          <div v-if="config.socials.tiktok">
+            <a :href="config.socials.tiktok" target="_blank" class="opacity-60 hover:opacity-100">
               TikTok
-            </span>
+            </a>
           </div>
-          <div>
-            <span class="opacity-30 cursor-not-allowed">
+
+          <div v-if="config.socials.linkedin">
+            <a :href="config.socials.linkedin" target="_blank" class="opacity-60 hover:opacity-100">
               LinkedIn
-            </span>
+            </a>
           </div>
         </div>
       </div>
 
       <Separator class="my-6" />
-      <section>
+      <section class="flex flex-col sm:flex-row items-center justify-between gap-2">
         <h3>
-          © 2025
-          <a target="_blank" href="https://www.efficiver.com" class="text-primary transition-all border-primary hover:border-b-2">
-            efficiver.com
+          © 2015–{{ currentYear }}
+          <a
+            target="_blank"
+            :href="config.contact.website"
+            class="text-primary transition-all border-primary hover:border-b-2"
+          >
+            Efficiver
           </a>
+          <span class="text-muted-foreground">(formerly Efficient Driver)</span>
+          <span class="hidden sm:inline"> • All rights reserved</span>
         </h3>
+        <button
+          class="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+          :title="copied ? 'Copied!' : 'Click to copy version'"
+          @click="copyVersion"
+        >
+          {{ copied ? 'Copied!' : version }}
+        </button>
       </section>
     </div>
   </footer>
