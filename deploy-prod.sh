@@ -7,7 +7,8 @@ set -e  # Exit on any error
 
 # Configuration
 SOURCE_DIR="./dist"
-REMOTE_HOST="app01.digidhamu.com"
+REMOTE_HOST="app03.digidhamu.com"
+REMOTE_PORT="2222"
 REMOTE_USER="dhamukrish"
 REMOTE_PATH="/home/dhamukrish/digidhamu/efficiver.com/www"
 
@@ -53,7 +54,7 @@ EOF
 echo -e "${YELLOW}🧹 Cleaning server directory...${NC}"
 
 # Clean the server directory first
-ssh "$REMOTE_USER@$REMOTE_HOST" "sudo rm -rf $REMOTE_PATH/*"
+ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" "sudo rm -rf $REMOTE_PATH/*"
 
 echo -e "${YELLOW}🧽 Removing unwanted files from source...${NC}"
 
@@ -65,7 +66,7 @@ find "$SOURCE_DIR" -name '*.log' -delete
 echo -e "${YELLOW}🔄 Uploading files via rsync with sudo...${NC}"
 
 # Use rsync with sudo for upload (without --delete since we already cleaned)
-if rsync -avz --exclude='.DS_Store' --exclude='Thumbs.db' --exclude='*.log' --rsync-path="sudo rsync" "$SOURCE_DIR/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"; then
+if rsync -avz -e "ssh -p $REMOTE_PORT" --exclude='.DS_Store' --exclude='Thumbs.db' --exclude='*.log' --rsync-path="sudo rsync" "$SOURCE_DIR/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"; then
     echo -e "${GREEN}✅ Deployment to PRODUCTION completed successfully!${NC}"
     echo -e "${GREEN}🌐 Production site available at: https://efficiver.com${NC}"
 else
