@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { Marquee } from '@selemondev/vue3-marquee'
+  import Marquee from '@selemondev/vue3-marquee'
   import '@selemondev/vue3-marquee/dist/style.css'
 
   import { Car, Zap, Leaf, Battery, Smartphone, Globe, Bike } from 'lucide-vue-next'
