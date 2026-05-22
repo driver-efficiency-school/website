@@ -6,14 +6,6 @@
   mode.value = 'dark'
 
   import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger
-  } from '@/components/ui/navigation-menu'
-  import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
@@ -21,6 +13,7 @@
   } from '@/components/ui/dropdown-menu'
   import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetFooter,
     SheetHeader,
@@ -103,16 +96,6 @@
   ]
 
   const isOpen = ref<boolean>(false)
-
-  function handleNavigateMain() {
-    emit('navigate', 'main')
-    isOpen.value = false
-  }
-
-  function handleNavigateComingSoon() {
-    emit('navigate', 'coming-soon')
-    isOpen.value = false
-  }
 </script>
 
 <template>
@@ -161,47 +144,41 @@
               <SheetDescription class="sr-only"> Mobile navigation menu </SheetDescription>
             </SheetHeader>
 
+            <!-- Wrap every menu item in SheetClose so a tap on any
+                 link auto-closes the mobile sheet (radix-vue idiom).
+                 The @click handlers retain emit('navigate', ...) so
+                 the parent route still updates. -->
             <div class="flex flex-col gap-2">
-              <Button as-child variant="ghost" class="justify-start text-base">
-                <a href="#features" @click="handleNavigateMain"> Features </a>
-              </Button>
-              <Button
-                v-for="{ href, label } in routeList"
-                :key="label"
-                as-child
-                variant="ghost"
-                class="justify-start text-base"
-              >
-                <a :href="href" @click="handleNavigateMain">
-                  {{ label }}
-                </a>
-              </Button>
+              <SheetClose as-child>
+                <Button as-child variant="ghost" class="justify-start text-base">
+                  <a href="#features" @click="emit('navigate', 'main')"> Features </a>
+                </Button>
+              </SheetClose>
+              <SheetClose v-for="{ href, label } in routeList" :key="label" as-child>
+                <Button as-child variant="ghost" class="justify-start text-base">
+                  <a :href="href" @click="emit('navigate', 'main')">
+                    {{ label }}
+                  </a>
+                </Button>
+              </SheetClose>
               <Separator class="my-2" />
-              <Button
-                v-for="{ href, label } in externalList"
-                :key="label"
-                as-child
-                variant="ghost"
-                class="justify-start text-base"
-              >
-                <a :href="href" @click.prevent="handleNavigateComingSoon">
-                  {{ label }}
-                  <ExternalLinkIcon class="ml-2 h-4 w-4" />
-                </a>
-              </Button>
+              <SheetClose v-for="{ href, label } in externalList" :key="label" as-child>
+                <Button as-child variant="ghost" class="justify-start text-base">
+                  <a :href="href" @click.prevent="emit('navigate', 'coming-soon')">
+                    {{ label }}
+                    <ExternalLinkIcon class="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </SheetClose>
               <Separator class="my-2" />
               <span class="px-4 text-sm font-semibold text-muted-foreground">About</span>
-              <Button
-                v-for="{ title, href } in aboutList"
-                :key="title"
-                as-child
-                variant="ghost"
-                class="justify-start text-base pl-6"
-              >
-                <a :href="href" @click="handleNavigateMain">
-                  {{ title }}
-                </a>
-              </Button>
+              <SheetClose v-for="{ title, href } in aboutList" :key="title" as-child>
+                <Button as-child variant="ghost" class="justify-start text-base pl-6">
+                  <a :href="href" @click="emit('navigate', 'main')">
+                    {{ title }}
+                  </a>
+                </Button>
+              </SheetClose>
             </div>
           </div>
 
@@ -214,51 +191,61 @@
     </div>
 
     <!-- Desktop -->
-    <!-- Desktop -->
     <div class="hidden md:flex items-center gap-2 mx-auto">
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger class="bg-card text-base"> Features </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div class="grid w-[512px] grid-cols-2 gap-5 p-4">
-                <img
-                  src="../icons/EDIcons_256x256_Transparent.webp"
-                  alt="Efficiver Features"
-                  class="h-full w-full rounded-md object-cover"
-                />
-                <ul class="flex flex-col gap-2">
-                  <li
-                    v-for="{ title, description } in featureList"
-                    :key="title"
-                    class="rounded-md p-3 text-sm hover:bg-muted"
-                  >
-                    <a href="#features" @click="emit('navigate', 'main')">
-                      <p class="mb-1 font-semibold leading-none text-foreground">
-                        {{ title }}
-                      </p>
-                      <p class="line-clamp-2 text-muted-foreground">
-                        {{ description }}
-                      </p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem v-for="{ href, label } in routeList" :key="label">
-            <NavigationMenuLink as-child>
-              <Button as-child variant="ghost" class="justify-start text-base">
-                <a :href="href" @click="emit('navigate', 'main')">
-                  {{ label }}
+      <!-- Features dropdown — click-triggered to match About (was
+           hover-triggered NavigationMenu; converted to DropdownMenu
+           for consistency). -->
+      <DropdownMenu>
+        <DropdownMenuTrigger
+          class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-card px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+        >
+          Features
+          <ChevronDown
+            class="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
+            aria-hidden="true"
+          />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="center" class="w-[512px] p-4">
+          <div class="grid grid-cols-2 gap-5">
+            <img
+              src="../icons/EDIcons_256x256_Transparent.webp"
+              alt="Efficiver Features"
+              class="h-full w-full rounded-md object-cover"
+            />
+            <ul class="flex flex-col gap-2">
+              <li
+                v-for="{ title, description } in featureList"
+                :key="title"
+                class="rounded-md p-3 text-sm hover:bg-muted"
+              >
+                <a href="#features" @click="emit('navigate', 'main')">
+                  <p class="mb-1 font-semibold leading-none text-foreground">
+                    {{ title }}
+                  </p>
+                  <p class="line-clamp-2 text-muted-foreground">
+                    {{ description }}
+                  </p>
                 </a>
-              </Button>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+              </li>
+            </ul>
+          </div>
+        </DropdownMenuContent>
+      </DropdownMenu>
 
+      <!-- Plain route links (no dropdown, no hover-trigger). -->
+      <Button
+        v-for="{ href, label } in routeList"
+        :key="label"
+        as-child
+        variant="ghost"
+        class="justify-start text-base"
+      >
+        <a :href="href" @click="emit('navigate', 'main')">
+          {{ label }}
+        </a>
+      </Button>
+
+      <!-- About dropdown — click-triggered, unchanged. -->
       <DropdownMenu>
         <DropdownMenuTrigger
           class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-card px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
