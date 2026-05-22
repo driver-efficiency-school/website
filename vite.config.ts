@@ -29,11 +29,21 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Core Vue runtime
-          'vue-vendor': ['vue', '@vueuse/core'],
-          // UI components library
-          'ui-vendor': ['lucide-vue-next', 'class-variance-authority', 'clsx', 'tailwind-merge']
+        // Vite 7+ (rolldown bundler) requires manualChunks as a
+        // function. Object form is no longer accepted. Same chunk
+        // mapping as before, expressed via id-prefix matching.
+        manualChunks: (id: string) => {
+          if (id.includes('/node_modules/vue/') || id.includes('/node_modules/@vueuse/core/')) {
+            return 'vue-vendor'
+          }
+          if (
+            id.includes('/node_modules/lucide-vue-next/') ||
+            id.includes('/node_modules/class-variance-authority/') ||
+            id.includes('/node_modules/clsx/') ||
+            id.includes('/node_modules/tailwind-merge/')
+          ) {
+            return 'ui-vendor'
+          }
         }
       }
     }

@@ -9,13 +9,19 @@ const __dirname = dirname(__filename)
 const packagePath = join(__dirname, '..', 'package.json')
 const packageJson = JSON.parse(readFileSync(packagePath, 'utf-8'))
 
-// Increment patch version
-const [major, minor, patch] = packageJson.version.split('.').map(Number)
-const newVersion = `${major}.${minor}.${patch + 1}`
-packageJson.version = newVersion
+// Allow deliberate releases (e.g. v1.1.0) to deploy without the patch
+// auto-incrementing. Set SKIP_VERSION_BUMP=1 in the build env to skip
+// the package.json bump. The build-number suffix in Footer.vue still
+// updates so each rebuild is identifiable.
+const skipVersionBump = process.env.SKIP_VERSION_BUMP === '1'
 
-// Write updated package.json
-writeFileSync(packagePath, JSON.stringify(packageJson, null, 2) + '\n')
+let newVersion = packageJson.version
+if (!skipVersionBump) {
+  const [major, minor, patch] = packageJson.version.split('.').map(Number)
+  newVersion = `${major}.${minor}.${patch + 1}`
+  packageJson.version = newVersion
+  writeFileSync(packagePath, JSON.stringify(packageJson, null, 2) + '\n')
+}
 
 // Generate build date in YYMMDD format
 const now = new Date()

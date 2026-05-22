@@ -8,6 +8,7 @@
   import Footer from './components/Footer.vue'
 
   // Below-the-fold components - lazy load
+  const WhatsNew = defineAsyncComponent(() => import('./components/WhatsNew.vue'))
   const Features = defineAsyncComponent(() => import('./components/Features.vue'))
   const HowItWorks = defineAsyncComponent(() => import('./components/HowItWorks.vue'))
   const Comparison = defineAsyncComponent(() => import('./components/Comparison.vue'))
@@ -27,26 +28,32 @@
   const PrivacyPolicy = defineAsyncComponent(() => import('./components/PrivacyPolicy.vue'))
   const Help = defineAsyncComponent(() => import('./components/Help.vue'))
   const ComingSoon = defineAsyncComponent(() => import('./components/ComingSoon.vue'))
+  const Releases = defineAsyncComponent(() => import('./components/Releases.vue'))
 
   const showInvestors = ref(false)
   const showTerms = ref(false)
   const showPrivacy = ref(false)
   const showHelp = ref(false)
   const showComingSoon = ref(false)
+  const showReleases = ref(false)
 
-  function navigate(target: 'main' | 'investors' | 'terms' | 'privacy' | 'help' | 'coming-soon') {
+  function navigate(
+    target: 'main' | 'investors' | 'terms' | 'privacy' | 'help' | 'coming-soon' | 'releases'
+  ) {
     showInvestors.value = target === 'investors'
     showTerms.value = target === 'terms'
     showPrivacy.value = target === 'privacy'
     showHelp.value = target === 'help'
     showComingSoon.value = target === 'coming-soon'
+    showReleases.value = target === 'releases'
     window.location.hash = target === 'main' ? '' : target
     if (
       showInvestors.value ||
       showTerms.value ||
       showPrivacy.value ||
       showHelp.value ||
-      showComingSoon.value
+      showComingSoon.value ||
+      showReleases.value
     ) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
@@ -60,12 +67,14 @@
     showPrivacy.value = hash === 'privacy'
     showHelp.value = hash === 'help'
     showComingSoon.value = hash === 'coming-soon'
+    showReleases.value = hash === 'releases'
     if (
       showInvestors.value ||
       showTerms.value ||
       showPrivacy.value ||
       showHelp.value ||
-      showComingSoon.value
+      showComingSoon.value ||
+      showReleases.value
     ) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
@@ -79,8 +88,13 @@
 
 <template>
   <Navbar @navigate="navigate" />
-  <div v-if="!showInvestors && !showTerms && !showPrivacy && !showHelp && !showComingSoon">
+  <div
+    v-if="
+      !showInvestors && !showTerms && !showPrivacy && !showHelp && !showComingSoon && !showReleases
+    "
+  >
     <Hero />
+    <WhatsNew @navigate="navigate" />
     <Features />
     <Comparison />
     <HowItWorks />
@@ -101,6 +115,7 @@
   <PrivacyPolicy v-else-if="showPrivacy" />
   <Help v-else-if="showHelp" />
   <ComingSoon v-else-if="showComingSoon" />
+  <Releases v-else-if="showReleases" @navigate="navigate" />
   <Footer @navigate="navigate" />
   <BackToTop />
   <ExitIntentPopup />
