@@ -10,7 +10,6 @@
   import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuItem,
     DropdownMenuTrigger
   } from '@/components/ui/dropdown-menu'
   import {
@@ -58,20 +57,6 @@
     {
       href: '#faq',
       label: 'FAQ'
-    }
-  ]
-
-  interface AboutItemProps {
-    title: string
-    href: string
-    description: string
-  }
-
-  const aboutList: AboutItemProps[] = [
-    {
-      title: 'Team',
-      href: '#team',
-      description: 'Meet the passionate team behind Efficiver.'
     }
   ]
 
@@ -172,15 +157,6 @@
                   </a>
                 </Button>
               </SheetClose>
-              <Separator class="my-2" />
-              <span class="px-4 text-sm font-semibold text-muted-foreground">About</span>
-              <SheetClose v-for="{ title, href } in aboutList" :key="title" as-child>
-                <Button as-child variant="ghost" class="justify-start text-base pl-6">
-                  <a :href="href" @click="emit('navigate', 'main')">
-                    {{ title }}
-                  </a>
-                </Button>
-              </SheetClose>
             </div>
           </div>
 
@@ -246,31 +222,6 @@
           {{ label }}
         </a>
       </Button>
-
-      <!-- About dropdown — click-triggered, unchanged. -->
-      <DropdownMenu>
-        <DropdownMenuTrigger
-          class="group inline-flex h-10 w-max items-center justify-center rounded-md bg-card px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-        >
-          About
-          <ChevronDown
-            class="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
-            aria-hidden="true"
-          />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="center" class="w-[250px]">
-          <DropdownMenuItem v-for="{ title, href, description } in aboutList" :key="title" as-child>
-            <a :href="href" class="block w-full cursor-pointer" @click="emit('navigate', 'main')">
-              <p class="mb-1 font-semibold leading-none text-foreground">
-                {{ title }}
-              </p>
-              <p class="line-clamp-2 text-muted-foreground">
-                {{ description }}
-              </p>
-            </a>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
     </div>
 
     <div class="hidden md:flex">

@@ -16,7 +16,10 @@
   // template-default placeholder reviews and shadcn-stock avatars are an
   // FTC compliance risk. Re-introduce when real App Store review excerpts
   // are available.
-  const Team = defineAsyncComponent(() => import('./components/Team.vue'))
+  //
+  // Team.vue also removed from render per user 2026-05-25 — social
+  // handles haven't been migrated to the `efficiver-*` namespace yet
+  // (see WEBSITE_AUDIT_V12 I10). Re-introduce once handles are live.
   const Pricing = defineAsyncComponent(() => import('./components/Pricing.vue'))
   const Community = defineAsyncComponent(() => import('./components/Community.vue'))
   const NewsletterSignup = defineAsyncComponent(() => import('./components/NewsletterSignup.vue'))
@@ -101,7 +104,6 @@
     <Features />
     <Comparison />
     <HowItWorks />
-    <Team />
     <Community />
     <Pricing />
     <section v-if="config.features.newsletter" id="newsletter" class="container py-24 sm:py-32">
