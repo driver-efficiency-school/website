@@ -46,7 +46,7 @@
     {
       question: 'What are the pricing plans for Efficiver?',
       answer:
-        'Currently, the Smart Driver and Eco Master plans are Free for a limited time! Our Enterprise plan is coming soon.',
+        'Efficiver is currently free, with all features included. No in-app purchases. Future pricing has not been decided.',
       value: 'item-6'
     },
     {
