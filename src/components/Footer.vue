@@ -60,22 +60,6 @@
           </div>
           <div>
             <a
-              v-if="config.app.android"
-              :href="config.app.android"
-              target="_blank"
-              class="opacity-60 hover:opacity-100"
-            >
-              Android
-            </a>
-            <span
-              v-else
-              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
-            >
-              Android <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
-            </span>
-          </div>
-          <div>
-            <a
               v-if="config.app.watch.apple"
               :href="config.app.watch.apple"
               target="_blank"
@@ -88,40 +72,7 @@
               class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
             >
               Apple Watch
-              <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
-            </span>
-          </div>
-          <div>
-            <a
-              v-if="config.app.watch.android"
-              :href="config.app.watch.android"
-              target="_blank"
-              class="opacity-60 hover:opacity-100"
-            >
-              Android Watch
-            </a>
-            <span
-              v-else
-              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
-            >
-              Android Watch
-              <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
-            </span>
-          </div>
-          <div>
-            <a
-              v-if="config.app.dashboard"
-              :href="config.app.dashboard"
-              target="_blank"
-              class="opacity-60 hover:opacity-100"
-            >
-              Dashboard
-            </a>
-            <span
-              v-else
-              class="text-muted-foreground flex items-center cursor-not-allowed opacity-60"
-            >
-              Dashboard <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Soon</Badge>
+              <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Future</Badge>
             </span>
           </div>
         </div>
@@ -235,7 +186,6 @@
           >
             Efficiver
           </a>
-          <span class="text-muted-foreground">(formerly Efficient Driver)</span>
           <span class="hidden sm:inline"> • All rights reserved</span>
         </h3>
         <button
