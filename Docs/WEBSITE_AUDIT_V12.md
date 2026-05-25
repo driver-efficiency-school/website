@@ -16,11 +16,70 @@ metadata, `public/sitemap.xml`, `src/lib/config.ts`, plus the public
 asset list.
 
 **Bottom line:** The website is materially out of date relative to the
-iOS app. Multiple components reference removed features, fabricated
-plans, dead Eco terminology, and a privacy policy that _contradicts_
-the iOS app's actual privacy model. Per the V12 assessment #12 (legal
-exposure), the **Privacy Policy + Terms of Use rewrite is a hard
-blocker before any paid acquisition campaign**.
+iOS app **AND** internally inconsistent with itself. Multiple
+components reference removed features, fabricated plans, and a privacy
+policy that _contradicts_ the iOS app's actual privacy model.
+**Bigger surprise from the full source read:** the website
+contradicts itself on Smart Detection (auto vs manual), user count
+(10K+ vs 1,000+), email (`support@` vs `contact@`), and uses a fake
+office address. The brand's own trademarked Subline (`Save. Drive.
+Live. / Offline. Anytime. Anywhere.`) is **not rendered anywhere on
+the public site** — a primary brand-surface gap. Per the V12
+assessment #12 (legal exposure), the **Privacy Policy + Terms of Use
+rewrite is a hard blocker before any paid acquisition campaign**.
+
+---
+
+## Source of truth — DO NOT VIOLATE
+
+Per user direction 2026-05-25 (correcting an earlier mis-direction in
+this very audit): **the website is the source of truth for trademarked
+branding**; the iOS app is the source of truth for in-product feature
+names.
+
+### Trademarked brand assets (IMMUTABLE — locked per user 2026-05-25)
+
+| Asset                            | Canonical form                                                       | Currently on live site?                                                |
+| -------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **App name**                     | `Efficiver`                                                          | Yes, everywhere                                                        |
+| **Brand etymology**              | `Efficient + Driver`                                                 | No — only in `ios-frontend/Docs/AppStoreConnect_Review/AppStore.md`    |
+| **Trademarked Subline — line 1** | `Save. Drive. Live.`                                                 | **NO — not rendered anywhere on the public site** (gap — see I1 below) |
+| **Trademarked Subline — line 2** | `Offline. Anytime. Anywhere.`                                        | **NO — same gap**                                                      |
+| **Logo**                         | `public/Logo-v1_Transparent.webp` + `src/icons/EDIcons_*.webp`       | Yes                                                                    |
+| **Brand font**                   | Audiowide (logo wordmark only)                                       | Yes, Navbar + mobile sheet headers                                     |
+| **Brand color**                  | Orange (`--primary: 24.6 95% 53.1%` light / `20.5 90.2% 48.2%` dark) | Yes                                                                    |
+
+These are **locked**. Do not rename, modify, or propose alternatives
+in this audit or any follow-up doc. The App Store metadata, social
+copy, and any new marketing copy must use these verbatim.
+
+### Established (non-trademarked) brand positioning copy — also locked for v1.2
+
+| Element                                  | Source                                      | Status                                                                                                                      |
+| ---------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `The Offline Eco-Driving Assistant.`     | `Hero.vue` line 65 (hero descriptor)        | Live, established. Not the trademarked Subline — but established brand positioning. **Out of scope for the "Eco" cascade**. |
+| `eco-conscious drivers`                  | `Hero.vue` line 72, `Community.vue` line 29 | Established descriptive language. Out of scope.                                                                             |
+| `eco-driving coach` / `eco-driving tips` | `FAQ.vue`, `Help.vue`                       | Established descriptive language. Out of scope.                                                                             |
+
+The `feedback_efficiency_score_not_eco_score` rule applies to the
+**scoring metric** (`Efficiency Score`, not `Eco Score`) — verified
+already-correct in `Help.vue` and Releases.vue. It does **NOT** apply
+to general "eco-driving" descriptor language, which is the existing
+brand positioning.
+
+### App-is-canonical (when in conflict with website)
+
+| Topic                                                           | Canonical                                                                      |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **In-product feature names** (e.g., the route-planning feature) | iOS app code                                                                   |
+| **Scoring metric name**                                         | `Efficiency Score` per the iOS app + `feedback_efficiency_score_not_eco_score` |
+| **Data model** (what's collected, where stored)                 | iOS app code (drives Privacy Policy rewrite)                                   |
+| **Accessibility claims**                                        | iOS app code (drives website accessibility section)                            |
+
+When the app and website disagree about _features_, the app wins
+because the app code is what users actually run. When they disagree
+about _branding_, the website wins because the brand is trademarked
+and predates the in-product copy decisions.
 
 ---
 
@@ -32,6 +91,191 @@ blocker before any paid acquisition campaign**.
 | **HIGH**     | Embarrassing inconsistency, materially wrong feature claim, or significant credibility cost. Must fix before any marketing push. |
 | **MEDIUM**   | Wrong / stale content that hurts conversion but doesn't break trust outright. Fix in the v1.2 web update.                        |
 | **LOW**      | Cosmetic / consistency / minor copy polish.                                                                                      |
+
+---
+
+## Internal inconsistencies within the website (revealed by full source read 2026-05-25)
+
+These are conflicts **between website components themselves**, not just
+app-vs-website misalignment. Several are CRITICAL because they
+contradict claims the site makes in adjacent components.
+
+### I1 — Trademarked Subline ("Save. Drive. Live. / Offline. Anytime. Anywhere.") is NOT rendered anywhere on the public website
+
+**Files:** none of `Hero.vue`, `Footer.vue`, `Navbar.vue`, `WhatsNew.vue`, `Releases.vue`, `Investors.vue`, `Help.vue`, `Community.vue`. The Subline exists only in `ios-frontend/Docs/AppStoreConnect_Review/AppStore.md`.
+
+**Severity:** HIGH. The brand's canonical Subline is invisible on the
+brand's primary landing page. Hero.vue uses "The Offline Eco-Driving
+Assistant" as the descriptor instead; that's an established line but
+it's not the Subline.
+
+**Fix:** Add `Save. Drive. Live.` (and/or `Offline. Anytime. Anywhere.`)
+to Hero.vue prominently — under the logo, near the descriptor. Same
+phrasing should appear in the App Store subtitle slot (ASO bundle).
+
+### I2 — Three competing taglines/missions across the site
+
+| Source                                                 | Phrase                                                                         |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ios-frontend/Docs/AppStoreConnect_Review/AppStore.md` | `Save. Drive. Live.` + `Offline. Anytime. Anywhere.` (the trademarked Subline) |
+| `Hero.vue` line 65                                     | `The Offline Eco-Driving Assistant.` (hero descriptor)                         |
+| `Investors.vue` line 17                                | `Save Earth, Wealth, and Health` (mission statement)                           |
+
+**Severity:** MEDIUM. They serve different purposes (Subline vs.
+descriptor vs. mission) and can coexist — but the relationship between
+the three is undocumented. A reader who lands on Investors.vue and
+then on Hero.vue sees two different identity claims.
+
+**Fix:** Decide the hierarchy + document in a brand-guidelines file.
+At minimum, surface the Subline on Hero.vue (per I1) so all three
+appear on the same site at different layers.
+
+### I3 — User-count claims contradict each other
+
+| Source                        | Claim                                  |
+| ----------------------------- | -------------------------------------- |
+| `Hero.vue` line 44            | `Join 10K+ Drivers` (badge)            |
+| `ExitIntentPopup.vue` line 70 | `Join 10K+ drivers who saved`          |
+| `Investors.vue` line 53       | `Efficiver has attracted 1,000+ users` |
+
+**Severity:** HIGH. The investor-facing page says 1,000; the
+user-facing page says 10,000. One of these is wrong by an order of
+magnitude.
+
+**Fix:** Use the verifiable number across all components. If neither
+is real, replace with non-specific phrasing ("Built for everyday
+drivers").
+
+### I4 — Three different support emails used
+
+| Email                     | Used in                                                                                      |
+| ------------------------- | -------------------------------------------------------------------------------------------- |
+| `support@efficiver.com`   | `.env.example`, `Footer.vue` (via config), `FAQ.vue` line 67 + 97, `ShareButtons` indirectly |
+| `contact@efficiver.com`   | `Help.vue` line 342                                                                          |
+| `investors@efficiver.com` | `Investors.vue` line 78                                                                      |
+
+**Severity:** MEDIUM. Splitting investor inquiries from support is
+fine; having two different "support" addresses (`support@` vs
+`contact@`) is a leak.
+
+**Fix:** Standardize on `support@efficiver.com` for support. Update
+`Help.vue` line 342 to match.
+
+### I5 — Placeholder fictional address used in Privacy Policy AND Investors
+
+| Source                      | Address                                                                          |
+| --------------------------- | -------------------------------------------------------------------------------- |
+| `PrivacyPolicy.vue` line 39 | `Efficiver Team, 123 Eco Lane, Green City, CA 90210, USA, support@efficiver.com` |
+| `Investors.vue` line 13     | `Efficiver, developed by Efficiver Team (based in Green City, CA, USA)`          |
+
+**Severity:** CRITICAL (compounds C1). "Green City, CA" is fictional.
+A privacy policy citing a fake address is legally weaker than one
+citing the actual entity location. App Store reviewers and any
+attentive user will catch it.
+
+**Fix:** Replace with the actual registered business address (or, if
+none exists yet, soften to non-claim phrasing like "Efficiver Team,
+operated remotely; correspondence via support@efficiver.com").
+
+### I6 — Smart Detection claim contradicts itself across pages
+
+| Source                 | Claim                                                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `WhatsNew.vue` line 22 | `No more rev-range setup — a one-minute calibration on first launch and acceleration and braking are picked up automatically` |
+| `Releases.vue` line 39 | Same — "Efficiver now learns your car on its own"                                                                             |
+| `Help.vue` line 53     | `Requires a manual calibration while the vehicle is stationary and the engine is warm`                                        |
+| `Help.vue` line 184    | `Calibrate the engine idling signature while your vehicle is stationary...`                                                   |
+
+**Severity:** HIGH. The site's WhatsNew page sells Smart Detection as
+"no more rev-range setup, fully automatic". The site's Help page tells
+the same user to do a "manual calibration while stationary". A user
+who reads both leaves confused.
+
+**Fix:** Update Help.vue Section 2 ("How Efficiver Works") to describe
+v1.1 Smart Detection auto-calibration accurately. Remove the manual-
+calibration language. (This is part of a broader Help.vue rewrite —
+see I7.)
+
+### I7 — Help.vue is v1.0-era and lags every other site page
+
+**File:** `src/components/Help.vue` (417 lines).
+**Severity:** HIGH. The site's primary self-serve support doc is one
+major version behind the rest of the site:
+
+- Smart Detection wrongly described as manual (per I6)
+- No mention of v1.1 features: Eco/Efficient Route, Wallet Watch
+- No mention of v1.2 features: interactive drive map, per-waypoint markers, iCloud sync, low-power-aware map, full accessibility (VoiceOver, Dynamic Type, etc.)
+- "Coming Soon" section (line 405-412) lists features that are now SHIPPED in v1.1/v1.2 (Apple Maps integration, Advanced route planning, Detailed fuel cost savings reports → Wallet Watch)
+- Onboarding steps listed (Section 1) are pre-Smart-Detection 7-screen flow; actual app has 8 screens with different ordering
+- "Last updated: December 20, 2025" — predates v1.1 and v1.2
+
+**Fix:** Full rewrite required. Lower priority than C1/C2/C3 (legal
+blockers) but should land before any post-v1.2 marketing push.
+
+### I8 — Testimonials are placeholder content (template-source)
+
+**File:** `src/components/Testimonials.vue`.
+**Severity:** HIGH (credibility).
+
+- All 8 reviewer avatars use `https://github.com/shadcn.png` (the
+  shadcn-vue template's default placeholder image)
+- Specific savings claims ("Saved ₹2,500", "15% on fuel", "10%
+  emissions reduction") cannot be substantiated per V12 assessment
+  item #7 (no analytics)
+- Reviewer roles include "Fleet Manager" + "Driving School Owner" who
+  praise enterprise features that don't ship
+- Reviewers include "Eco-Conscious Driver" and "Eco Enthusiast" as
+  user names — not real names
+
+**Fix:** Either (a) replace with real App Store review excerpts once
+they exist (post-TestFlight), or (b) remove the Testimonials section
+until real reviews exist. Synthetic testimonials with placeholder
+photos are an FTC compliance risk for any paid acquisition.
+
+### I9 — Sponsors are template content, not real partners
+
+**File:** `src/components/Sponsors.vue`.
+**Severity:** MEDIUM (credibility).
+
+The 10 "Sponsors / Eco Partners" listed (Tata Motors, Mahindra
+Electric, Ola Electric, Ather Energy, BluSmart, Yulu, Hero Electric,
+TVS Motor, Bajaj Auto, Revolt Motors) are Indian auto/EV companies
+with no documented partnership in the codebase or memory.
+
+**Fix:** Verify each sponsor's status. Remove any that are not real
+partnerships. The section may be entirely removable if there are no
+real partners yet.
+
+### I10 — Team URLs use stale `efficientdriver-*` handles
+
+**File:** `src/components/Team.vue`.
+**Severity:** LOW (cosmetic).
+
+GitHub/LinkedIn URLs for all 3 team members use the
+`efficientdriver-{name}` format — old brand. The rebrand to Efficiver
+happened months ago. These URLs may still resolve (handles preserved)
+but the public-facing impression is stale.
+
+**Fix:** Verify each handle resolves, or update to `efficiver-{name}`
+handles if they exist.
+
+### I11 — Sheet/Pricing/Investors all reference unshipped Enterprise tier
+
+| File                            | Reference                                                                          |
+| ------------------------------- | ---------------------------------------------------------------------------------- |
+| `Pricing.vue`                   | 3rd tier "Enterprise — Custom Pricing /user/year, 30-day free trial"               |
+| `Contact.vue` line 170          | Subject dropdown option "Enterprise Solutions"                                     |
+| `FAQ.vue` line 49               | "Our Enterprise plan is coming soon"                                               |
+| `Investors.vue` line 41         | "expand enterprise partnerships" (business model section)                          |
+| `Testimonials.vue` line 36 + 54 | Reviews from "Driving School Owner" + "Fleet Manager" praising enterprise features |
+
+**Severity:** HIGH. The site repeatedly promises B2B/Enterprise
+features that don't ship. Per user direction 2026-05-25, Pricing.vue
+stays as-is for now — but the cross-component Enterprise references
+create the same trust risk every place they appear.
+
+**Fix:** Per user direction, defer to post-v1.2. Track in a follow-up
+file alongside Pricing.vue decision.
 
 ---
 
@@ -144,29 +388,43 @@ visitors.
 grid. Add accessibility-moat callout block in Hero or as a dedicated
 section. Updated index.html OG/Twitter/JSON-LD.
 
-### H2 — "Eco" terminology lingering in 8+ user-facing places
+### H2 — "Eco" terminology that conflicts with shipped iOS feature renames
 
-**Files:** Hero.vue, WhatsNew.vue, Releases.vue, FAQ.vue, Pricing.vue,
-HowItWorks.vue, index.html.
+**Files:** WhatsNew.vue, Releases.vue, index.html (OG/Twitter).
 
-Per `feedback_efficiency_score_not_eco_score`, all user-facing copy
-must say "Efficient" / "Efficiency" — never "Eco". Specific hits:
+**Scope correction (2026-05-25):** The
+`feedback_efficiency_score_not_eco_score` memory is **scoped to the
+scoring-metric term**, not to every "eco" occurrence. The website's
+established brand-positioning copy ("The Offline Eco-Driving
+Assistant", "eco-conscious drivers", "eco-driving coach", "Eco Master"
+plan name) is **NOT in scope for this audit** per the IMMUTABLE list
+at the top of this doc.
 
-| File           | Line context                                                              | Required change                                                                         |
-| -------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Hero.vue       | _"The Offline Eco-Driving Assistant"_                                     | _"The Offline Efficient-Driving Assistant"_ OR rewrite                                  |
-| Hero.vue       | _"eco-conscious drivers"_                                                 | _"efficiency-conscious drivers"_                                                        |
-| WhatsNew.vue   | _"Eco Route"_ + _"Plan an eco-friendly route"_                            | _"Efficient Route"_ + _"Plan an efficient route"_                                       |
-| Releases.vue   | Same as WhatsNew                                                          | Same                                                                                    |
-| FAQ.vue        | _"eco-driving coach"_ (item-1 / item-2 context)                           | _"efficient-driving coach"_                                                             |
-| Pricing.vue    | Plan name _"Eco Master"_                                                  | Rename or delete plan (see H5)                                                          |
-| HowItWorks.vue | _"badges for eco-friendly driving habits"_                                | _"badges for efficient driving habits"_ (or remove if badges don't ship — see H4)       |
-| index.html     | meta description: _"eco driving app"_; meta keywords: _"eco driving app"_ | Keep "eco" in keyword field (search vocabulary); rewrite description to use "efficient" |
-| index.html     | og:title v1.1 features include "Eco Route"                                | Update to v1.2                                                                          |
+What IS in scope: words that the iOS app explicitly renamed for v1.2.
+The route-planning feature was renamed in code from `case eco = "Eco-Friendly"`
+to `case efficient = "Efficient"` (RouteManager.swift) + the ECO badge
+on the route card became EFF. Website still says "Eco Route" — this is
+a stale **feature name**, not stale brand positioning.
 
-Per the App Store ASO bundle: "eco" stays in search-only keyword field
-(it's high-traffic search vocabulary), removed from all user-visible
-copy.
+**In-scope renames (limited to feature-name-followed-app):**
+
+| File           | Line context                                                                                                                    | Required change                                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `WhatsNew.vue` | line 27: `title: 'Eco Route'` + line 28: `'Plan an eco-friendly route inside Efficiver'`                                        | `'Efficient Route'` + `'Plan an efficient route inside Efficiver'` (matches RouteManager.swift code rename)          |
+| `Releases.vue` | line 53: `'Eco Route'` + line 54: `'Plan an eco-friendly route'`                                                                | Same as above                                                                                                        |
+| `index.html`   | line 43: og:title `"...Eco Route..."` + line 46: og:description `"...Eco Route planning..."` + line 56-60: same in twitter tags | Update to v1.2 messaging — remove "Eco Route", introduce v1.2 features (interactive map, accessibility, iCloud sync) |
+
+**Explicitly OUT of scope (trademarked or established positioning):**
+
+- `Hero.vue` "The Offline Eco-Driving Assistant" — established brand descriptor; do not rename
+- `Hero.vue` "eco-conscious drivers" — established descriptive language; do not rename
+- `FAQ.vue` "eco-driving coach" — established descriptive language; do not rename
+- `Community.vue` "eco-conscious drivers" — established descriptive language; do not rename
+- `HowItWorks.vue` "eco-friendly driving habits" — established descriptive language; do not rename. (Badge claim itself flagged separately in H4 if badges don't ship.)
+- `Pricing.vue` "Eco Master" plan name — leave per user direction 2026-05-25 (pricing revisit deferred)
+- `index.html` meta keywords `"eco driving app"` — leave; keyword field is search vocabulary, not user-facing copy
+
+The route-feature rename is the ONLY user-visible cascade required by v1.2 ship state.
 
 ### H3 — Pricing.vue describes 3 paid tiers that don't ship
 
@@ -438,24 +696,23 @@ Rebrand happened ~6 months ago (per memory + Hero copy). Time to drop
 the "(formerly)" tag from copyright. Keep in About / Help if useful
 as searchable context.
 
-### M13 — Components I haven't audited in this pass but flagged for review
+### M13 — Components now audited in the full-source-read pass (2026-05-25)
 
-- `Testimonials.vue` — likely contains specific named testimonials.
-  Verify each is real (asked permission, not fabricated).
-- `Team.vue` — verify team list accuracy.
-- `Community.vue` — verify community claims.
-- `NewsletterSignup.vue` — verify the API endpoint (`email.efficiency.school/api/v1`)
-  actually exists and stores emails consensually per the rewritten
-  Privacy Policy.
-- `ExitIntentPopup.vue` — claim verification + accessibility (modals
-  are notoriously hard for screen readers).
-- `Sponsors.vue` — verify each sponsor exists / has agreed to be
-  listed.
-- `Investors.vue` — verify the pitch matches actual seeking/raised state.
-- `ComingSoon.vue` — verify it doesn't tease unshipped features.
-- `Help.vue` — verify support paths actually work.
-- `Contact.vue` — verify form submission goes somewhere real.
-- `ShareButtons.vue` — verify share text is up to date for v1.2.
+This row used to flag "components I haven't audited yet". After the
+full source read on 2026-05-25, all components have been examined.
+Outcomes:
+
+- `Testimonials.vue` → **escalated to I8** (placeholder content)
+- `Team.vue` → **escalated to I10** (stale `efficientdriver-*` URLs)
+- `Community.vue` → no new findings beyond H2 scope correction
+- `NewsletterSignup.vue` → functional + uses `apiService` properly; "We respect your privacy. Unsubscribe at any time." footer is OK; verify API endpoint stores emails consensually per the rewritten Privacy Policy (depends on C1 rewrite)
+- `ExitIntentPopup.vue` → **escalated to I3** (10K+ claim) + see M11 ($300K claim)
+- `Sponsors.vue` → **escalated to I9** (template content)
+- `Investors.vue` → **escalated to I2, I3, I5, I11** (multiple)
+- `ComingSoon.vue` → minimal; teases "Dashboard" (no real Dashboard backend exists per config.ts)
+- `Help.vue` → **escalated to I6 + I7** (v1.0-era + contradicts WhatsNew)
+- `Contact.vue` → functional; subject dropdown includes "Enterprise Solutions" → see I11
+- `ShareButtons.vue` → default share text `"I'm saving fuel with Efficiver - the free offline driving coach app! 🚗💚"` is generic; OK for v1.2; update if a v1.2-specific hook is wanted
 
 ---
 
@@ -485,26 +742,36 @@ the v1.2 update commits.
 
 ---
 
-## Summary table — by component
+## Summary table — by component (updated 2026-05-25 after full source read)
 
-| Component           | Severity of issues                          |
-| ------------------- | ------------------------------------------- |
-| `PrivacyPolicy.vue` | **CRITICAL** (C1)                           |
-| `TermsOfUse.vue`    | **CRITICAL** (C2)                           |
-| `FAQ.vue`           | CRITICAL (C3) + HIGH (H2) + MEDIUM (M3, M4) |
-| `Hero.vue`          | HIGH (H2) + MEDIUM (M9, M10)                |
-| `WhatsNew.vue`      | HIGH (H1, H2)                               |
-| `Releases.vue`      | HIGH (H1, H2)                               |
-| `Features.vue`      | HIGH (H1, H4)                               |
-| `HowItWorks.vue`    | HIGH (H6) + HIGH (H2)                       |
-| `Pricing.vue`       | HIGH (H3, H5)                               |
-| `Navbar.vue`        | HIGH (H9, H10)                              |
-| `Comparison.vue`    | MEDIUM (M1, M2, M6)                         |
-| `Footer.vue`        | HIGH (H7) + MEDIUM (M5, M12)                |
-| `index.html`        | HIGH (H8) + MEDIUM (M7)                     |
-| `sitemap.xml`       | MEDIUM (M8)                                 |
-| `config.ts`         | MEDIUM (M11)                                |
-| Other components    | M13 — to audit                              |
+| Component              | Severity of issues                                 |
+| ---------------------- | -------------------------------------------------- |
+| `PrivacyPolicy.vue`    | **CRITICAL** (C1, I5)                              |
+| `TermsOfUse.vue`       | **CRITICAL** (C2)                                  |
+| `FAQ.vue`              | CRITICAL (C3) + MEDIUM (M3, M4) + HIGH via I11     |
+| `Hero.vue`             | HIGH (H1, I1, I3) + MEDIUM (M9, M10)               |
+| `WhatsNew.vue`         | HIGH (H1, H2, I6)                                  |
+| `Releases.vue`         | HIGH (H1, H2)                                      |
+| `Features.vue`         | HIGH (H1, H4)                                      |
+| `HowItWorks.vue`       | HIGH (H6)                                          |
+| `Pricing.vue`          | HIGH (H3, H5) + I11 — DEFERRED per user 2026-05-25 |
+| `Navbar.vue`           | HIGH (H9, H10)                                     |
+| `Comparison.vue`       | MEDIUM (M1, M2, M6)                                |
+| `Footer.vue`           | HIGH (H7) + MEDIUM (M5, M12) + I4                  |
+| `Help.vue`             | **HIGH** (I6, I7) + I4                             |
+| `Investors.vue`        | HIGH (I2, I3, I5, I11)                             |
+| `Testimonials.vue`     | **HIGH** (I8)                                      |
+| `Sponsors.vue`         | MEDIUM (I9)                                        |
+| `Team.vue`             | LOW (I10)                                          |
+| `ExitIntentPopup.vue`  | HIGH (I3) + MEDIUM (M11)                           |
+| `Contact.vue`          | LOW (I11 — Enterprise dropdown option)             |
+| `Community.vue`        | (no new findings)                                  |
+| `NewsletterSignup.vue` | LOW (privacy-policy dependency only)               |
+| `ComingSoon.vue`       | LOW (Dashboard tease)                              |
+| `ShareButtons.vue`     | (OK as-is for v1.2)                                |
+| `index.html`           | HIGH (H8) + MEDIUM (M7)                            |
+| `sitemap.xml`          | MEDIUM (M8)                                        |
+| `config.ts`            | MEDIUM (M11)                                       |
 
 ---
 
@@ -512,58 +779,56 @@ the v1.2 update commits.
 
 ### Phase 0 — Pre-launch blockers (BEFORE v1.2 App Store submission)
 
-1. **C1** — Privacy Policy rewrite to match actual app data model.
-2. **C2** — Terms of Use rewrite + add Driving Safety section.
+1. **C1 + I5** — Privacy Policy rewrite to match actual app data model + replace fake "123 Eco Lane, Green City, CA" address.
+2. **C2** — Terms of Use rewrite + add Driving Safety section + dedupe Sections 1 + 3.
 3. **C3** — FAQ item-5 corrected for iCloud sync truth.
-4. Extract Privacy + Terms to standalone routes (or at least stable
-   anchor URLs) so App Store Connect can reference them.
+4. **I3** — Reconcile user-count claim (Hero 10K+ vs Investors 1,000+). Pick one truth, replicate everywhere.
 
-Estimate: ~4 hours of focused writing. No code structure changes
-needed.
+Estimate: ~5 hours of focused writing. No code structure changes
+needed. Phase 4 (standalone /privacy + /terms routes) is **cancelled**
+per user 2026-05-25 — hash routes stay.
 
-### Phase 1 — v1.2 feature alignment
+### Phase 1 — v1.2 feature alignment + Subline placement
 
-5. **H1** — WhatsNew.vue rewrite for v1.2 (5 flagship features:
-   interactive map, per-waypoint markers, iCloud sync, accessibility,
-   low-power-aware map). Releases.vue add v1.2 entry.
-6. **H8** — index.html OG/Twitter/JSON-LD updated for v1.2 messaging
-   - softwareVersion bump.
-7. **H2** — Eco → Efficient terminology sweep across 8 files.
-8. Footer version bump to read from package.json.
+5. **I1** — Add the trademarked Subline (`Save. Drive. Live.` + `Offline. Anytime. Anywhere.`) to Hero.vue. **Highest-priority surface gap** — the brand's own canonical Subline is invisible on its own landing page.
+6. **H1** — WhatsNew.vue rewrite for v1.2 (5 flagship features: interactive map, per-waypoint markers, iCloud sync, accessibility, low-power-aware map). Releases.vue add v1.2 entry.
+7. **H8** — index.html OG/Twitter/JSON-LD updated for v1.2 messaging + softwareVersion bump.
+8. **H2** — narrow scope: only the route-feature rename ("Eco Route" → "Efficient Route") in WhatsNew + Releases + index.html OG/Twitter copy.
+9. **I6** — Help.vue Section 2 + 5: update Smart Detection language to "auto-calibration" (not manual).
+10. **H7** — Footer version reads from package.json (build-time substitution).
 
-Estimate: ~3 hours.
+Estimate: ~4 hours.
 
 ### Phase 2 — Honesty pass (remove unshipped feature claims)
 
-9. **H3** — Pricing.vue: delete tiers or reduce to "Free Forever" single card.
-10. **H4** — Features.vue: delete Business Solutions; verify badges
-    feature; delete Gamified Experience row if badges don't ship.
-11. **H6** — HowItWorks step 1: update for Smart Detection
-    auto-calibration.
-12. **H10** — Navbar feature dropdown updated.
-13. **M3, M4, M5** — FAQ honesty pass on fuel-saving claim, Android
-    timeline, Apple Watch timeline.
-14. **M9, M10, M11, M12** — Hero unsubstantiated claims + ExitIntent
-    - "formerly Efficient Driver" cleanup.
+11. **H4** — Features.vue: delete Business Solutions; verify badges feature in iOS code; delete Gamified Experience row if badges don't ship.
+12. **H6** — HowItWorks step 1: update for Smart Detection auto-calibration.
+13. **H10** — Navbar feature dropdown updated.
+14. **I9** — Sponsors.vue: verify each "Eco Partner". Remove un-verified.
+15. **M3, M4, M5** — FAQ honesty pass on fuel-saving claim, Android timeline, Apple Watch timeline.
+16. **M9, M10, M11, M12** — Hero unsubstantiated claims + ExitIntent + "formerly Efficient Driver" cleanup.
 
-Estimate: ~2 hours.
+Estimate: ~3 hours.
 
 ### Phase 3 — Accessibility + UX polish
 
-15. **H9** — Remove forced dark mode in Navbar.
-16. **M13** — Audit + fix ExitIntentPopup, NewsletterSignup,
-    Testimonials, Team accessibility.
-17. **M8** — Sitemap.xml lastmod update on deploy.
-18. **M7** — Remove fake aggregateRating block.
+17. **H9** — Remove forced dark mode in Navbar.
+18. **I7** — Help.vue full rewrite (v1.2-current, mentioning all shipped features).
+19. **I8** — Testimonials.vue: replace placeholder content OR remove section entirely until real App Store reviews exist.
+20. **I4** — Standardize on `support@efficiver.com` across Footer + FAQ + Help.vue.
+21. **I10** — Team.vue: verify GitHub/LinkedIn handles, update if `efficiver-*` handles exist.
+22. **M8** — Sitemap.xml lastmod update on deploy.
+23. **M7** — Remove fake aggregateRating block from index.html JSON-LD.
 
-Estimate: ~2 hours.
+Estimate: ~3 hours.
 
-### Phase 4 — Standalone routes for legal pages (optional but recommended)
+### Deferred per user direction 2026-05-25
 
-19. Convert `#privacy` and `#terms` from hash-routes to standalone
-    static pages (or vue-router routes if you're up for the
-    refactor). Cleaner URLs for App Store Connect metadata + better
-    for SEO crawlers.
+- **H3 + H5 + I11** (Pricing.vue 3-tier + Eco Master plan name + cross-component Enterprise references) — revisit when pricing model is decided post-v1.2.
+- **Phase 4** (standalone /privacy + /terms routes) — keep hash routes.
+
+**Total estimate:** ~15 hours of focused work (was ~12; 11 new I
+findings added ~3 hours).
 
 Estimate: ~3 hours if introducing vue-router; ~1 hour if just static
 HTML.
