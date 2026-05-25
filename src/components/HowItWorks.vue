@@ -23,9 +23,9 @@
     },
     {
       badgeTitle: 'Drive',
-      title: 'Drive & Track – Background Ready',
+      title: 'Drive & Track – Offline',
       description:
-        'Track your driving efficiency in the background while using Maps or Music – No internet required.',
+        'Track your driving efficiency offline using only your iPhone sensors. Keep Efficiver visible while you drive; logging continues when you switch to Maps or Music.',
       alt: 'Drive and track with your phone in the car'
     },
     {

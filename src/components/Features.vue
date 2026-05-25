@@ -46,8 +46,9 @@
     },
     {
       icon: 'tabletSmartphone',
-      title: 'Offline & Background',
-      description: 'Track efficiency anywhere, even in the background while using Maps or Music.'
+      title: 'Offline & background-aware',
+      description:
+        'Works offline using only your iPhone sensors. Continues logging when you switch to Maps or Music.'
     },
     {
       icon: 'goal',
