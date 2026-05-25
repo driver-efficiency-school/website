@@ -147,10 +147,11 @@
       <h2 class="text-2xl font-semibold mb-4">9. Governing Law</h2>
       <div class="opacity-80">
         <p>
-          These Terms shall be governed by and construed in accordance with the laws of the
-          jurisdiction in which Efficiver is registered, without regard to its conflict-of-law
-          provisions. Any disputes arising out of or relating to these Terms or your use of the App
-          or Website shall be resolved exclusively in the courts of that jurisdiction.
+          Efficiver is a trademark registered in India. These Terms shall be governed by and
+          construed in accordance with the laws of the Republic of India, without regard to its
+          conflict-of-law provisions. Any disputes arising out of or relating to these Terms or your
+          use of the App or Website shall be subject to the exclusive jurisdiction of the competent
+          courts in India.
         </p>
       </div>
     </section>
