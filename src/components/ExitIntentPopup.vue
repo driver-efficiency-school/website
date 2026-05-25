@@ -58,17 +58,17 @@
             <Fuel class="h-8 w-8 text-primary" />
           </div>
         </div>
-        <SheetTitle class="text-center text-2xl">Wait! Free Fuel Tips Inside 🚗</SheetTitle>
+        <SheetTitle class="text-center text-2xl">Wait — before you go 🚗</SheetTitle>
         <SheetDescription class="text-center text-base pt-2">
-          Don't miss out on saving 8-22% on fuel costs. Efficiver is free to use, works offline, and
-          respects your privacy.
+          Efficiver is free, works offline, and respects your privacy. Real-time driving feedback
+          helps you adopt the techniques that save fuel.
         </SheetDescription>
       </SheetHeader>
 
       <div class="space-y-4 pt-4">
         <div class="bg-muted/50 rounded-lg p-4 text-center">
-          <p class="text-sm text-muted-foreground mb-2">Designed to help drivers save</p>
-          <p class="text-2xl font-bold text-primary">{{ config.popup.savings }}</p>
+          <p class="text-xl font-bold text-primary">Save. Drive. Live.</p>
+          <p class="text-sm text-muted-foreground mt-1">Free, offline, private.</p>
         </div>
 
         <div class="flex flex-col gap-3">
