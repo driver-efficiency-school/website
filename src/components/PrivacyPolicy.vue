@@ -2,217 +2,184 @@
 
 <template>
   <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
-    <!-- Document Title (excluded from opacity-70) -->
     <h1 class="text-3xl font-bold mb-6 text-center">Privacy Policy for Efficiver</h1>
 
-    <!-- Section 1: Policy Summary -->
+    <p class="text-center text-sm text-muted-foreground mb-10">Last updated: May 25, 2026</p>
+
+    <!-- Plain-English summary -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Policy Summary</h2>
-      <div class="opacity-70">
-        <p>Efficiver collects limited Personal Data from its Users to provide services.</p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">
-          Personal Data collected for the following purposes and using the following services:
-        </h3>
-        <ul class="list-disc pl-6">
+      <h2 class="text-2xl font-semibold mb-4">Summary</h2>
+      <div class="opacity-80">
+        <p>Efficiver is built privacy-first. In plain English:</p>
+        <ul class="list-disc pl-6 mt-4 space-y-2">
+          <li>Your driving data stays on your iPhone. We don't see it. We don't collect it.</li>
           <li>
-            <strong>Location-based interactions</strong>
-            <ul class="list-disc pl-6">
-              <li>Geolocation: Personal Data: Geographic position (for eco-driving insights)</li>
-            </ul>
+            iCloud sync is optional and uses <em>your</em> private iCloud database — never our
+            servers.
           </li>
           <li>
-            <strong>Contacting the User</strong>
-            <ul class="list-disc pl-6">
-              <li>
-                Contact form: Personal Data: Email address, First Name, Last Name, Phone number
-              </li>
-            </ul>
+            The website's newsletter and contact form collect only what you type in, for the purpose
+            you submitted them.
+          </li>
+          <li>We don't sell, share, rent, or trade your personal information.</li>
+          <li>No advertising identifiers, no third-party analytics, no telemetry.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 1: The Efficiver iOS app -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">1. The Efficiver iOS app</h2>
+      <div class="opacity-80">
+        <h3 class="text-xl font-semibold mt-4 mb-2">What stays on your iPhone</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Driving sessions</strong> (speed, acceleration, braking, idle time, gear use,
+            GPS waypoints, route choices) are stored locally using SwiftData. They are never
+            transmitted to Efficiver's servers.
+          </li>
+          <li>
+            <strong>Smart Detection model</strong> is trained entirely on your iPhone using Apple's
+            machine-learning frameworks. The model never leaves your device.
+          </li>
+          <li>
+            <strong>Vehicle settings</strong> (fuel type, engine size, transmission) are stored
+            locally; never transmitted.
+          </li>
+          <li>
+            <strong>Location data</strong> is used during active drives to log waypoints and compute
+            the Efficiency Score. Stored locally with each session. The app requires this permission
+            to function.
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Apple-provided services we call directly</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>
+            <strong>WeatherKit</strong> is queried when you start a drive to fetch current weather.
+            Apple handles the request; Efficiver does not intermediate or retain the response.
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">iCloud sync (optional, off by default)</h3>
+        <p>
+          If you turn on iCloud sync, your driving sessions and the Smart Detection model
+          synchronize across <em>your</em> Apple devices via <em>your</em> private iCloud database.
+          This is end-to-end inside your iCloud account; Efficiver has no access to it. You can
+          disable iCloud sync at any time in iOS Settings or the app's preferences.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">What the app does NOT collect</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>No advertising identifiers (IDFA, IDFV)</li>
+          <li>No analytics events (no Apple App Analytics, no third-party SDKs)</li>
+          <li>No crash reports sent to us</li>
+          <li>No telemetry of any kind</li>
+          <li>No location history beyond the active drive session</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: The Efficiver website -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">2. The Efficiver website (efficiver.com)</h2>
+      <div class="opacity-80">
+        <p>The website has two optional forms that send information to us:</p>
+
+        <h3 class="text-xl font-semibold mt-4 mb-2">Newsletter subscription</h3>
+        <p>
+          If you subscribe to the newsletter, we collect your email address, optionally your name,
+          and your selected topic preferences. We use this solely to send the newsletter. You can
+          unsubscribe at any time using the link in any newsletter email.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-4 mb-2">Contact form</h3>
+        <p>
+          If you submit the contact form, we collect your name, email address, optional phone,
+          optional company, the chosen subject, and your message. We use this solely to respond to
+          your inquiry. You are not added to any list.
+        </p>
+
+        <p class="mt-4">
+          Both forms submit to <code>https://email.efficiency.school/api/v1</code>, an
+          Efficiver-operated email API. Data is retained for the time needed to fulfill your request
+          and respond. No third-party processors.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: How we share data -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">3. How we share data</h2>
+      <div class="opacity-80">
+        <p>We don't sell, rent, share, or trade your personal information. The only exceptions:</p>
+        <ul class="list-disc pl-6 mt-4 space-y-2">
+          <li>
+            If you submit the contact form, we may share your message with the relevant Efficiver
+            support staff so we can respond.
+          </li>
+          <li>
+            If required by law (e.g., a valid court order or subpoena), we will comply with that
+            legal obligation.
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- Section 2: Data Controller and Owner -->
+    <!-- Section 4: Your rights -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Data Controller and Owner</h2>
-      <div class="opacity-70">
-        <p>Efficiver Team, 123 Eco Lane, Green City, CA 90210, USA, support@efficiver.com</p>
-      </div>
-    </section>
-
-    <!-- Section 3: Types of Data Collected -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Types of Data Collected</h2>
-      <div class="opacity-70">
-        <p>
-          Efficiver collects minimal Personal Data, including: First Name, Last Name, Phone number,
-          Email address, and Geographic position.
-        </p>
-        <p class="mt-4">
-          Other Personal Data may be described in other sections of this policy or during data
-          collection.
-        </p>
-        <p class="mt-4">
-          Data may be provided by the User or collected automatically (e.g., Geographic position).
-          We use minimal Cookies or tracking tools only to provide required services.
-        </p>
-        <p class="mt-4">
-          Not providing certain Personal Data may prevent Efficiver from delivering its services.
-        </p>
-        <p class="mt-4">
-          Users are responsible for any third-party Personal Data shared through Efficiver and must
-          have consent to provide it.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section 4: Mode and Place of Processing the Data -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Mode and Place of Processing the Data</h2>
-      <div class="opacity-70">
-        <h3 class="text-xl font-semibold mt-4 mb-2">Methods of Processing</h3>
-        <p>
-          We process User Data securely to prevent unauthorized access, disclosure, or destruction.
-        </p>
-        <p class="mt-4">
-          Data is processed using IT tools, following strict procedures for stated purposes. Data
-          may be accessed by internal teams (e.g., support, tech) or external parties (e.g., hosting
-          providers) as needed, appointed as Data Processors. Contact us for a list of these
-          parties.
-        </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Place</h3>
-        <p>
-          Data is processed at our offices in the USA and other locations of involved parties.
-          Contact us for details.
-        </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Retention Time</h3>
-        <p>
-          Data is kept only as long as needed for the requested service or stated purposes. Users
-          can request data suspension or removal.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section 5: The Use of the Collected Data -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">The Use of the Collected Data</h2>
-      <div class="opacity-70">
-        <p>
-          We collect User Data to provide services like Location-based interactions and Contacting
-          the User.
-        </p>
-        <p class="mt-4">Data usage details are outlined in specific sections of this policy.</p>
-      </div>
-    </section>
-
-    <!-- Section 6: Detailed Information on the Processing of Personal Data -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">
-        Detailed Information on the Processing of Personal Data
-      </h2>
-      <div class="opacity-70">
-        <p>Personal Data is collected for these purposes and services:</p>
-        <ul class="list-disc pl-6">
+      <h2 class="text-2xl font-semibold mb-4">4. Your rights</h2>
+      <div class="opacity-80">
+        <p>You can:</p>
+        <ul class="list-disc pl-6 mt-4 space-y-2">
+          <li>Delete individual driving sessions inside the iOS app.</li>
+          <li>Reset all app settings to defaults.</li>
+          <li>Uninstall the app to remove all locally-stored data.</li>
           <li>
-            <strong>Location-based interactions</strong>
-            <p class="mt-2">
-              Efficiver collects location data for eco-driving insights, with user consent.
-            </p>
-            <ul class="list-disc pl-6">
-              <li>
-                <strong>Geolocation (Efficiver)</strong>: We may collect and share User location
-                Data for location-based services. Opt-out tools are available in most devices.
-                Personal Data collected: Geographic position.
-              </li>
-            </ul>
+            Disable iCloud sync to stop new cloud-stored sessions; previously-synced sessions remain
+            on whichever device created them until you delete them.
           </li>
+          <li>Unsubscribe from the newsletter via the link in any newsletter email.</li>
           <li>
-            <strong>Contacting the User</strong>
-            <ul class="list-disc pl-6">
-              <li>
-                <strong>Contact form (Efficiver)</strong>: By submitting the form, Users authorize
-                us to use their details to respond to requests. Personal Data collected: Email
-                address, First Name, Last Name, Phone number.
-              </li>
-            </ul>
+            Email <a href="mailto:support@efficiver.com" class="underline">support@efficiver.com</a>
+            to request deletion of any data we hold from the contact form or newsletter.
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- Section 7: Additional Information about Data Collection and Processing -->
+    <!-- Section 5: Children's privacy -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">
-        Additional Information about Data Collection and Processing
-      </h2>
-      <div class="opacity-70">
-        <h3 class="text-xl font-semibold mt-4 mb-2">Legal Action</h3>
+      <h2 class="text-2xl font-semibold mb-4">5. Children's privacy</h2>
+      <div class="opacity-80">
         <p>
-          User Data may be used for legal purposes by Efficiver in court or related proceedings due
-          to improper app use.
+          Efficiver is intended for users aged 17 and over. We do not knowingly collect personal
+          information from children under 13. If you believe we have inadvertently received such
+          information, please contact us and we will delete it.
         </p>
-        <p class="mt-4">
-          Users acknowledge that we may be required to disclose data upon public authority requests.
-        </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">
-          Additional Information about User's Personal Data
-        </h3>
-        <p>
-          Upon request, Efficiver may provide additional details about specific services or data
-          processing.
-        </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">System Logs and Maintenance</h3>
-        <p>
-          For operation and maintenance, Efficiver may collect System Logs or use other Data (e.g.,
-          IP Address).
-        </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Information Not Contained in This Policy</h3>
-        <p>
-          More details on data processing can be requested from Efficiver at support@efficiver.com.
-        </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">The Rights of Users</h3>
-        <p>
-          Users can verify, update, or delete their Data by contacting Efficiver. They can also
-          oppose data processing for legitimate reasons.
-        </p>
-        <p class="mt-4">
-          Efficiver does not support “Do Not Track” requests. Check third-party services for their
-          policies.
-        </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Changes to This Privacy Policy</h3>
-        <p>
-          We may update this policy, with changes effective immediately upon posting. Users should
-          check this page regularly (last modified: May 11, 2025). If you object, stop using the app
-          and request data removal.
-        </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Information about This Privacy Policy</h3>
-        <p>Efficiver is responsible for this privacy policy.</p>
       </div>
     </section>
 
-    <!-- Section 8: Definitions and Legal References -->
+    <!-- Section 6: Changes to this policy -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Definitions and Legal References</h2>
-      <div class="opacity-70">
-        <h3 class="text-xl font-semibold mt-4 mb-2">Personal Data (or Data)</h3>
+      <h2 class="text-2xl font-semibold mb-4">6. Changes to this policy</h2>
+      <div class="opacity-80">
         <p>
-          Any info identifying a person, directly or indirectly, including via a personal ID number.
+          We may update this Privacy Policy as the app and website evolve. The "Last updated" date
+          at the top of this page reflects the most recent change. Material changes will be
+          highlighted on the website and in the iOS app's What's New screen.
         </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Usage Data</h3>
+      </div>
+    </section>
+
+    <!-- Section 7: Contact -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">7. Contact</h2>
+      <div class="opacity-80">
         <p>
-          Data collected automatically (e.g., IP addresses, browser details, visit times, page
-          sequences) by Efficiver or third-party services.
+          For privacy questions, email
+          <a href="mailto:support@efficiver.com" class="underline">support@efficiver.com</a>.
         </p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">User</h3>
-        <p>The individual using Efficiver, authorized by the Data Subject.</p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Data Subject</h3>
-        <p>The person to whom the Personal Data refers.</p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Data Processor (or Data Supervisor)</h3>
-        <p>Entity authorized by Efficiver to process Personal Data per this policy.</p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Data Controller (or Owner)</h3>
-        <p>Efficiver, deciding the purposes, methods, and security of Personal Data processing.</p>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Efficiver</h3>
-        <p>The app by which User Personal Data is collected.</p>
       </div>
     </section>
   </div>
