@@ -2,18 +2,16 @@
   import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
   import {
-    Paintbrush,
-    MessageCircle,
     TabletSmartphone,
     BadgeCheck,
     Goal,
-    PictureInPicture,
-    MousePointerClick,
-    Newspaper,
     Mic,
     Activity,
-    Settings,
-    Fingerprint
+    BrainCircuit,
+    Fingerprint,
+    Map,
+    Cloud,
+    Accessibility
   } from 'lucide-vue-next'
 
   interface FeaturesProps {
@@ -24,29 +22,42 @@
 
   const featureList: FeaturesProps[] = [
     {
+      icon: 'map',
+      title: 'Live drive map',
+      description:
+        'Full-screen Apple Maps view that follows you smoothly, with per-waypoint event markers.'
+    },
+    {
+      icon: 'accessibility',
+      title: 'Accessibility-first',
+      description:
+        'VoiceOver, Dynamic Type AX1-AX5, Reduce Motion, Reduce Transparency, Differentiate Without Color.'
+    },
+    {
+      icon: 'cloud',
+      title: 'iCloud sync',
+      description: 'Sessions and your trained Smart Detection model sync across your devices.'
+    },
+    {
+      icon: 'brainCircuit',
+      title: 'Smart Detection',
+      description:
+        'Learns your engine signature on-device. No OBD dongle, no rev-range setup, no data leaving your iPhone.'
+    },
+    {
       icon: 'tabletSmartphone',
       title: 'Offline & Background',
       description: 'Track efficiency anywhere, even in the background while using Maps or Music.'
     },
     {
       icon: 'goal',
-      title: 'Fuel & CO2 Savings',
-      description: 'Quantify fuel savings and CO2 reductions with detailed trip metrics.'
-    },
-    {
-      icon: 'settings',
-      title: 'Engine Calibration',
-      description: 'Calibrate for Petrol, Diesel and EV engines for maximum accuracy.'
+      title: 'Fuel & CO₂ Savings',
+      description: 'Quantify fuel savings and CO₂ reductions with detailed session metrics.'
     },
     {
       icon: 'activity',
       title: 'Advanced Metrics',
       description: 'Monitor Acceleration, Braking, Cornering, and Idle Time in real-time.'
-    },
-    {
-      icon: 'pictureInPicture',
-      title: 'Gamified Experience',
-      description: 'Earn badges and achieve eco-driving goals with fun challenges.'
     },
     {
       icon: 'fingerprint',
@@ -62,11 +73,6 @@
       icon: 'badgeCheck',
       title: 'Safer Driving Tips',
       description: 'Get personalized offline coaching to improve your driving habits and safety.'
-    },
-    {
-      icon: 'newspaper',
-      title: 'Business Solutions',
-      description: 'Multi-user support and custom reports for driving schools and fleets.'
     }
   ]
 
@@ -75,28 +81,24 @@
     | typeof TabletSmartphone
     | typeof BadgeCheck
     | typeof Goal
-    | typeof PictureInPicture
-    | typeof Paintbrush
-    | typeof MousePointerClick
-    | typeof MessageCircle
-    | typeof Newspaper
     | typeof Mic
     | typeof Activity
-    | typeof Settings
+    | typeof BrainCircuit
     | typeof Fingerprint
+    | typeof Map
+    | typeof Cloud
+    | typeof Accessibility
   > = {
     tabletSmartphone: TabletSmartphone,
     badgeCheck: BadgeCheck,
     goal: Goal,
-    pictureInPicture: PictureInPicture,
-    paintbrush: Paintbrush,
-    mousePointerClick: MousePointerClick,
-    messageCircle: MessageCircle,
-    newspaper: Newspaper,
     mic: Mic,
     activity: Activity,
-    settings: Settings,
-    fingerprint: Fingerprint
+    brainCircuit: BrainCircuit,
+    fingerprint: Fingerprint,
+    map: Map,
+    cloud: Cloud,
+    accessibility: Accessibility
   }
 </script>
 
