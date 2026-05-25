@@ -48,9 +48,10 @@
         <h3 class="text-xl font-semibold mt-4 mb-2">Key Features</h3>
         <ul class="list-disc pl-6">
           <li>
-            <strong>Engine Idling Detection:</strong> Identifies your idling engine using vibration
-            patterns (like a unique 'fingerprint' from your car's shakes) - no OBD dongle needed.
-            Requires a manual calibration while the vehicle is stationary and the engine is warm.
+            <strong>Smart Detection:</strong> Identifies when your engine is running by recognizing
+            its unique vibration 'fingerprint' — no OBD dongle needed. Smart Detection
+            auto-calibrates from a short sample on first launch (about a minute, vehicle stationary,
+            engine warm). No rev-range setup required.
           </li>
           <li>
             <strong>Real-time Efficiency Scoring:</strong> Live percentage score showing your
