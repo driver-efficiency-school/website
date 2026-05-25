@@ -4,163 +4,165 @@
   <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
     <h1 class="text-3xl font-bold mb-6 text-center">Terms of Use for Efficiver</h1>
 
-    <!-- Section 1: Terms -->
+    <p class="text-center text-sm text-muted-foreground mb-10">Last updated: May 25, 2026</p>
+
+    <!-- Section 1: Acceptance of Terms -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">1. Terms</h2>
-      <div class="opacity-70">
+      <h2 class="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
+      <div class="opacity-80">
         <p>
-          Use of the app is at your own risk. The materials on Efficiver's website are provided "as
-          is." Efficiver makes no warranties, expressed or implied, and disclaims all other
-          warranties, including merchantability, fitness for a particular purpose, or
-          non-infringement of intellectual property. Efficiver does not warrant the accuracy,
-          results, or reliability of the materials on its website or linked sites. We accept no
-          responsibility for internet or app failures, or damage to users or their equipment due to
-          app use. Your statutory rights are not affected.
+          By downloading, installing, or using the Efficiver iPhone app (the "App") or accessing
+          efficiver.com (the "Website"), you agree to these Terms of Use. If you do not agree,
+          please do not use the App or the Website.
         </p>
       </div>
     </section>
 
-    <!-- Section 2: Use License -->
+    <!-- Section 2: License to Use -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">2. Use License</h2>
-      <div class="opacity-70">
-        <ol class="list-decimal pl-6">
-          <li>
-            Permission is granted to temporarily download one copy of the materials on Efficiver's
-            app and website for personal, non-commercial viewing only. This is a license, not a
-            title transfer, and you may not:
-            <ol class="list-decimal pl-6">
-              <li>modify or copy the materials;</li>
-              <li>use the materials for commercial purposes or public display;</li>
-              <li>
-                use the app unlawfully or to promote illegal activity, including copyright
-                infringement;
-              </li>
-              <li>modify, adapt, translate, decompile, or reverse engineer the app or website;</li>
-              <li>attempt unauthorized access to the app or connected systems;</li>
-              <li>remove any copyright or proprietary notations;</li>
-              <li>transfer or mirror the materials on another server.</li>
-            </ol>
-          </li>
-          <li>
-            This license terminates if you violate these restrictions and may be terminated by
-            Efficiver at any time. Upon termination, you must destroy any downloaded materials in
-            your possession.
-          </li>
-          <li>
-            You agree to indemnify Efficiver and its affiliates from any loss, damage, or costs
-            arising from your use of the app in violation of these Terms or laws.
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Section 3: Disclaimer -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">3. Disclaimer</h2>
-      <div class="opacity-70">
+      <h2 class="text-2xl font-semibold mb-4">2. License to Use</h2>
+      <div class="opacity-80">
         <p>
-          Use of the app is at your own risk. The materials on Efficiver's website are provided "as
-          is." Efficiver makes no warranties, expressed or implied, and disclaims all other
-          warranties, including merchantability, fitness for a particular purpose, or
-          non-infringement of intellectual property. Efficiver does not warrant the accuracy,
-          results, or reliability of the materials on its website or linked sites. We accept no
-          responsibility for internet or app failures, or damage to users or their equipment due to
-          app use. Your statutory rights are not affected.
+          Efficiver grants you a limited, non-exclusive, non-transferable, revocable license to
+          download and use the App on your personal iPhone for personal, non-commercial purposes.
+          You may not:
         </p>
-      </div>
-    </section>
-
-    <!-- Section 4: Limitations -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">4. Limitations</h2>
-      <div class="opacity-70">
-        <p>
-          Efficiver or its suppliers are not liable for damages (including loss of data, profit, or
-          business interruption) arising from the use or inability to use the materials on
-          Efficiver's website, even if notified of such damage. Some jurisdictions may not allow
-          limitations on implied warranties or liability for consequential damages, so these
-          limitations may not apply to you.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section 5: Revisions and Errata -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">5. Revisions and Errata</h2>
-      <div class="opacity-70">
-        <p>
-          Materials on Efficiver's website may include technical, typographical, or photographic
-          errors. Efficiver does not warrant that these materials are accurate, complete, or
-          current. We may update materials on the website at any time without notice but are not
-          committed to doing so.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section 6: Links -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">6. Links</h2>
-      <div class="opacity-70">
-        <p>
-          Efficiver has not reviewed all sites linked to its website and is not responsible for
-          their content. Including a link does not imply endorsement by Efficiver. Use of linked
-          websites is at your own risk.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section 7: Site Terms of Use Modifications -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">7. Site Terms of Use Modifications</h2>
-      <div class="opacity-70">
-        <p>
-          These Terms form the entire agreement between you and Efficiver regarding app use. We may
-          update these Terms, effective immediately upon posting. You’re responsible for reviewing
-          updates and are bound by them upon continued app use. No other changes are effective
-          unless in writing and signed by an authorized representative of Efficiver.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section 8: Governing Law -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">8. Governing Law</h2>
-      <div class="opacity-70">
-        <p>
-          Any claim relating to Efficiver's website shall be governed by the laws of the State of
-          California, USA, without regard to its conflict of law provisions.
-        </p>
-      </div>
-    </section>
-
-    <!-- Section 9: Privacy -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">9. Privacy</h2>
-      <div class="opacity-70">
-        <ul class="list-disc pl-6">
-          <li>We identify purposes for collecting personal information at or before collection.</li>
+        <ul class="list-disc pl-6 mt-4 space-y-2">
+          <li>Modify, adapt, translate, decompile, reverse-engineer, or disassemble the App</li>
           <li>
-            We collect and use personal information only to fulfill specified purposes, unless
-            consented otherwise or required by law.
+            Use the App for commercial fleet, ride-share, or driving-school operations without a
+            separate written agreement with Efficiver
           </li>
-          <li>We retain personal information only as long as necessary for those purposes.</li>
+          <li>Remove any copyright, trademark, or other proprietary notices</li>
+          <li>Use the App or Website in violation of any applicable law</li>
+          <li>Attempt unauthorized access to the App, Website, or any connected systems</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 3: Driving Safety & User Responsibility — KEY -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">3. Driving Safety & User Responsibility</h2>
+      <div class="opacity-80">
+        <p class="font-semibold">
+          Efficiver provides informational feedback about your driving. It is NOT a navigation
+          system, a collision-avoidance system, or a safety-critical aid. You remain fully
+          responsible for safe operation of your vehicle at all times.
+        </p>
+        <ul class="list-disc pl-6 mt-4 space-y-2">
           <li>
-            We collect personal information lawfully and fairly, with user knowledge or consent
-            where appropriate.
+            <strong>Do not manually operate the App while driving.</strong> Voice cues and
+            hands-free use are the intended interaction mode. Use a passenger to interact with the
+            screen, or pull over safely first.
           </li>
           <li>
-            We protect personal information with reasonable security against loss, theft, or
-            unauthorized access, disclosure, copying, use, or modification.
+            Efficiency Scores, route suggestions, and on-screen feedback are estimates and may not
+            reflect actual conditions on the road.
           </li>
           <li>
-            We make our policies on personal information management readily available to customers.
+            Always obey traffic laws, signs, signals, and road conditions. Use your own judgment. Do
+            not follow App suggestions if doing so would be unsafe or illegal.
           </li>
           <li>
-            We are committed to ensuring the confidentiality of personal information through these
-            principles.
+            Efficiver is not a substitute for safe driving practices, defensive driving, vehicle
+            maintenance, or driver training.
+          </li>
+          <li>
+            You acknowledge that Efficiver and its affiliates are not liable for accidents, damage,
+            injury, or any other harm arising from your use of the App while driving.
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Section 4: Disclaimer of Warranties -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">4. Disclaimer of Warranties</h2>
+      <div class="opacity-80">
+        <p>
+          The App and Website are provided "AS IS" and "AS AVAILABLE" without warranties of any
+          kind, express or implied, including but not limited to merchantability, fitness for a
+          particular purpose, or non-infringement. Efficiver does not warrant that the App or
+          Website will be uninterrupted, error-free, or accurate. Use is at your own risk. Your
+          statutory rights are not affected.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 5: Limitation of Liability -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">5. Limitation of Liability</h2>
+      <div class="opacity-80">
+        <p>
+          To the maximum extent permitted by law, Efficiver and its affiliates shall not be liable
+          for any direct, indirect, incidental, consequential, special, or punitive damages arising
+          out of or in connection with your use of the App or Website. This includes, but is not
+          limited to, lost data, lost profits, vehicle damage, personal injury, or any third-party
+          claims. Some jurisdictions do not allow limitations on implied warranties or consequential
+          damages; in those jurisdictions, these limitations apply to the maximum extent permitted.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 6: Privacy -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">6. Privacy</h2>
+      <div class="opacity-80">
+        <p>
+          Your use of the App and Website is also governed by our
+          <a href="#privacy" class="underline">Privacy Policy</a>, which describes what data is
+          collected, how it is used, and your rights. Please review it.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 7: Changes to Terms -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">7. Changes to Terms</h2>
+      <div class="opacity-80">
+        <p>
+          Efficiver may update these Terms from time to time. The "Last updated" date at the top of
+          this page reflects the most recent change. Continued use of the App or Website after a
+          change constitutes acceptance of the updated Terms. Material changes will be highlighted
+          on the Website and in the App's What's New screen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 8: Termination -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">8. Termination</h2>
+      <div class="opacity-80">
+        <p>
+          Efficiver may suspend or terminate your access to the App or Website at any time, for any
+          reason, including violation of these Terms. Upon termination, your license to use the App
+          ends and you must delete any copies in your possession. You may delete the App and
+          unsubscribe from any communications at any time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 9: Governing Law -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">9. Governing Law</h2>
+      <div class="opacity-80">
+        <p>
+          These Terms shall be governed by and construed in accordance with the laws of the
+          jurisdiction in which Efficiver is registered, without regard to its conflict-of-law
+          provisions. Any disputes arising out of or relating to these Terms or your use of the App
+          or Website shall be resolved exclusively in the courts of that jurisdiction.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 10: Contact -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">10. Contact</h2>
+      <div class="opacity-80">
+        <p>
+          For questions about these Terms, email
+          <a href="mailto:contact@efficiver.com" class="underline">contact@efficiver.com</a>.
+        </p>
       </div>
     </section>
   </div>
