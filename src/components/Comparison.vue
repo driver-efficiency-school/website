@@ -14,10 +14,8 @@
     { feature: 'Cost', efficiver: 'Free Forever', obdApps: '$50-150 dongle' },
     { feature: 'Works Offline', efficiver: true, obdApps: false },
     { feature: 'Privacy First', efficiver: true, obdApps: false },
-    { feature: 'Background Tracking', efficiver: true, obdApps: true },
-    { feature: 'Works with All Vehicles', efficiver: true, obdApps: false },
-    { feature: 'EV Support', efficiver: true, obdApps: false },
-    { feature: 'Setup Time', efficiver: '30 seconds', obdApps: '15+ minutes' },
+    { feature: 'EV Support without OBD', efficiver: true, obdApps: false },
+    { feature: 'Setup Time', efficiver: '~3-5 min', obdApps: '15+ minutes' },
     { feature: 'Battery Drain', efficiver: 'Minimal', obdApps: 'High' }
   ]
 </script>
