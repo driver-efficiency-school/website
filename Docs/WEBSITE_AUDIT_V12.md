@@ -22,11 +22,17 @@ policy that _contradicts_ the iOS app's actual privacy model.
 **Bigger surprise from the full source read:** the website
 contradicts itself on Smart Detection (auto vs manual), user count
 (10K+ vs 1,000+), email (`support@` vs `contact@`), and uses a fake
-office address. The brand's own trademarked Subline (`Save. Drive.
-Live. / Offline. Anytime. Anywhere.`) is **not rendered anywhere on
-the public site** — a primary brand-surface gap. Per the V12
-assessment #12 (legal exposure), the **Privacy Policy + Terms of Use
-rewrite is a hard blocker before any paid acquisition campaign**.
+office address. Per the V12 assessment #12 (legal exposure), the
+**Privacy Policy + Terms of Use rewrite is a hard blocker before any
+paid acquisition campaign**.
+
+**Correction (2026-05-25 — visual review of rendered logo):** the
+trademarked Subline `Save. Drive. Live.` IS rendered on the public
+site — **baked into the logo image** (`Logo-v1_Transparent.webp`)
+alongside the `Efficiver` wordmark and the `™` mark. An earlier
+iteration of this audit (I1) claimed the Subline was not rendered
+anywhere; that was wrong because I read Vue source only and didn't
+view the rendered image asset. I1 corrected below.
 
 ---
 
@@ -39,15 +45,15 @@ names.
 
 ### Trademarked brand assets (IMMUTABLE — locked per user 2026-05-25)
 
-| Asset                            | Canonical form                                                       | Currently on live site?                                                |
-| -------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| **App name**                     | `Efficiver`                                                          | Yes, everywhere                                                        |
-| **Brand etymology**              | `Efficient + Driver`                                                 | No — only in `ios-frontend/Docs/AppStoreConnect_Review/AppStore.md`    |
-| **Trademarked Subline — line 1** | `Save. Drive. Live.`                                                 | **NO — not rendered anywhere on the public site** (gap — see I1 below) |
-| **Trademarked Subline — line 2** | `Offline. Anytime. Anywhere.`                                        | **NO — same gap**                                                      |
-| **Logo**                         | `public/Logo-v1_Transparent.webp` + `src/icons/EDIcons_*.webp`       | Yes                                                                    |
-| **Brand font**                   | Audiowide (logo wordmark only)                                       | Yes, Navbar + mobile sheet headers                                     |
-| **Brand color**                  | Orange (`--primary: 24.6 95% 53.1%` light / `20.5 90.2% 48.2%` dark) | Yes                                                                    |
+| Asset                            | Canonical form                                                       | Currently on live site?                                                                                                                                               |
+| -------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **App name**                     | `Efficiver`                                                          | Yes, everywhere                                                                                                                                                       |
+| **Brand etymology**              | `Efficient + Driver`                                                 | No — only in `ios-frontend/Docs/AppStoreConnect_Review/AppStore.md`                                                                                                   |
+| **Trademarked Subline — line 1** | `Save. Drive. Live.`                                                 | **Yes — baked into the logo image** alongside the `Efficiver` wordmark + `™` mark. Rendered everywhere the logo appears (Hero, Footer, Navbar).                       |
+| **Trademarked Subline — line 2** | `Offline. Anytime. Anywhere.`                                        | Not in the logo image; the "Offline" concept appears in Hero descriptor + body copy, but the verbatim Subline line 2 is not rendered. Acceptable — see I1 correction. |
+| **Logo**                         | `public/Logo-v1_Transparent.webp` + `src/icons/EDIcons_*.webp`       | Yes                                                                                                                                                                   |
+| **Brand font**                   | Audiowide (logo wordmark only)                                       | Yes, Navbar + mobile sheet headers                                                                                                                                    |
+| **Brand color**                  | Orange (`--primary: 24.6 95% 53.1%` light / `20.5 90.2% 48.2%` dark) | Yes                                                                                                                                                                   |
 
 These are **locked**. Do not rename, modify, or propose alternatives
 in this audit or any follow-up doc. The App Store metadata, social
@@ -100,18 +106,34 @@ These are conflicts **between website components themselves**, not just
 app-vs-website misalignment. Several are CRITICAL because they
 contradict claims the site makes in adjacent components.
 
-### I1 — Trademarked Subline ("Save. Drive. Live. / Offline. Anytime. Anywhere.") is NOT rendered anywhere on the public website
+### I1 — Trademarked Subline is rendered via the logo image (CORRECTED 2026-05-25)
 
-**Files:** none of `Hero.vue`, `Footer.vue`, `Navbar.vue`, `WhatsNew.vue`, `Releases.vue`, `Investors.vue`, `Help.vue`, `Community.vue`. The Subline exists only in `ios-frontend/Docs/AppStoreConnect_Review/AppStore.md`.
+**Original finding (wrong):** I claimed the Subline was not rendered
+anywhere on the public site. That was based on a Vue-source-only grep
+without examining the rendered logo image.
 
-**Severity:** HIGH. The brand's canonical Subline is invisible on the
-brand's primary landing page. Hero.vue uses "The Offline Eco-Driving
-Assistant" as the descriptor instead; that's an established line but
-it's not the Subline.
+**Corrected finding:** `Save. Drive. Live.` is **baked into the logo
+image** (`public/Logo-v1_Transparent.webp`) alongside the `Efficiver`
+wordmark and the `™` mark. The logo appears in Hero, Navbar, Footer,
+mobile sheet header — so the Subline line 1 is rendered everywhere
+the logo appears. Line 2 (`Offline. Anytime. Anywhere.`) is not in
+the logo image; the "Offline" concept is conveyed via the Hero
+descriptor and body copy.
 
-**Fix:** Add `Save. Drive. Live.` (and/or `Offline. Anytime. Anywhere.`)
-to Hero.vue prominently — under the logo, near the descriptor. Same
-phrasing should appear in the App Store subtitle slot (ASO bundle).
+**Severity:** LOW (was HIGH). The brand's Subline is present via
+the trademarked logo mark itself. Adding the Subline again as
+separate Vue text would be redundant and was attempted/reverted in
+the Phase 1 first commit per user direction "Logo already carries
+this".
+
+**Fix:** None required. The App Store metadata bundle still needs
+the Subline in metadata slots that don't render the logo (subtitle,
+promotional text, description) — that's handled separately in
+`ios-frontend/Docs/AppStoreConnect_Review/ASO_v1.2_Bundle.md`.
+
+**Lesson:** when auditing brand presence, view the rendered images
+(open the .webp / .png in a viewer), not just the Vue source. Logo
+marks often carry brand text that source-level greps miss.
 
 ### I2 — Three competing taglines/missions across the site
 
@@ -127,8 +149,8 @@ the three is undocumented. A reader who lands on Investors.vue and
 then on Hero.vue sees two different identity claims.
 
 **Fix:** Decide the hierarchy + document in a brand-guidelines file.
-At minimum, surface the Subline on Hero.vue (per I1) so all three
-appear on the same site at different layers.
+The Subline is already present via the logo image (per I1 correction);
+the descriptor and the mission are the layers that need reconciliation.
 
 ### I3 — User-count claims contradict each other
 
@@ -748,34 +770,34 @@ the v1.2 update commits.
 
 ## Summary table — by component (updated 2026-05-25 after full source read)
 
-| Component              | Severity of issues                                 |
-| ---------------------- | -------------------------------------------------- |
-| `PrivacyPolicy.vue`    | **CRITICAL** (C1, I5)                              |
-| `TermsOfUse.vue`       | **CRITICAL** (C2)                                  |
-| `FAQ.vue`              | CRITICAL (C3) + MEDIUM (M3, M4) + HIGH via I11     |
-| `Hero.vue`             | HIGH (H1, I1, I3) + MEDIUM (M9, M10)               |
-| `WhatsNew.vue`         | HIGH (H1, H2, I6)                                  |
-| `Releases.vue`         | HIGH (H1, H2)                                      |
-| `Features.vue`         | HIGH (H1, H4)                                      |
-| `HowItWorks.vue`       | HIGH (H6)                                          |
-| `Pricing.vue`          | HIGH (H3, H5) + I11 — DEFERRED per user 2026-05-25 |
-| `Navbar.vue`           | HIGH (H9, H10)                                     |
-| `Comparison.vue`       | MEDIUM (M1, M2, M6)                                |
-| `Footer.vue`           | HIGH (H7) + MEDIUM (M5, M12) + I4                  |
-| `Help.vue`             | **HIGH** (I6, I7) + I4                             |
-| `Investors.vue`        | HIGH (I2, I3, I5, I11)                             |
-| `Testimonials.vue`     | **HIGH** (I8)                                      |
-| `Sponsors.vue`         | MEDIUM (I9)                                        |
-| `Team.vue`             | LOW (I10)                                          |
-| `ExitIntentPopup.vue`  | HIGH (I3) + MEDIUM (M11)                           |
-| `Contact.vue`          | LOW (I11 — Enterprise dropdown option)             |
-| `Community.vue`        | (no new findings)                                  |
-| `NewsletterSignup.vue` | LOW (privacy-policy dependency only)               |
-| `ComingSoon.vue`       | LOW (Dashboard tease)                              |
-| `ShareButtons.vue`     | (OK as-is for v1.2)                                |
-| `index.html`           | HIGH (H8) + MEDIUM (M7)                            |
-| `sitemap.xml`          | MEDIUM (M8)                                        |
-| `config.ts`            | MEDIUM (M11)                                       |
+| Component              | Severity of issues                                  |
+| ---------------------- | --------------------------------------------------- |
+| `PrivacyPolicy.vue`    | **CRITICAL** (C1, I5)                               |
+| `TermsOfUse.vue`       | **CRITICAL** (C2)                                   |
+| `FAQ.vue`              | CRITICAL (C3) + MEDIUM (M3, M4) + HIGH via I11      |
+| `Hero.vue`             | HIGH (H1) + MEDIUM (M9, M10) + LOW (I1 — corrected) |
+| `WhatsNew.vue`         | HIGH (H1, H2, I6)                                   |
+| `Releases.vue`         | HIGH (H1, H2)                                       |
+| `Features.vue`         | HIGH (H1, H4)                                       |
+| `HowItWorks.vue`       | HIGH (H6)                                           |
+| `Pricing.vue`          | HIGH (H3, H5) + I11 — DEFERRED per user 2026-05-25  |
+| `Navbar.vue`           | HIGH (H9, H10)                                      |
+| `Comparison.vue`       | MEDIUM (M1, M2, M6)                                 |
+| `Footer.vue`           | HIGH (H7) + MEDIUM (M5, M12) + I4                   |
+| `Help.vue`             | **HIGH** (I6, I7) + I4                              |
+| `Investors.vue`        | HIGH (I2, I3, I5, I11)                              |
+| `Testimonials.vue`     | **HIGH** (I8)                                       |
+| `Sponsors.vue`         | MEDIUM (I9)                                         |
+| `Team.vue`             | LOW (I10)                                           |
+| `ExitIntentPopup.vue`  | HIGH (I3) + MEDIUM (M11)                            |
+| `Contact.vue`          | LOW (I11 — Enterprise dropdown option)              |
+| `Community.vue`        | (no new findings)                                   |
+| `NewsletterSignup.vue` | LOW (privacy-policy dependency only)                |
+| `ComingSoon.vue`       | LOW (Dashboard tease)                               |
+| `ShareButtons.vue`     | (OK as-is for v1.2)                                 |
+| `index.html`           | HIGH (H8) + MEDIUM (M7)                             |
+| `sitemap.xml`          | MEDIUM (M8)                                         |
+| `config.ts`            | MEDIUM (M11)                                        |
 
 ---
 
@@ -794,7 +816,7 @@ per user 2026-05-25 — hash routes stay.
 
 ### Phase 1 — v1.2 feature alignment + Subline placement
 
-5. **I1** — Add the trademarked Subline (`Save. Drive. Live.` + `Offline. Anytime. Anywhere.`) to Hero.vue. **Highest-priority surface gap** — the brand's own canonical Subline is invisible on its own landing page.
+5. ~~**I1** — Add the trademarked Subline to Hero.vue.~~ **CANCELLED 2026-05-25** — the logo image already carries `Save. Drive. Live.` as part of the trademarked mark. Attempted in Phase 1 first commit, reverted per user direction "Logo already carries this".
 6. **H1** — WhatsNew.vue rewrite for v1.2 (5 flagship features: interactive map, per-waypoint markers, iCloud sync, accessibility, low-power-aware map). Releases.vue add v1.2 entry.
 7. **H8** — index.html OG/Twitter/JSON-LD updated for v1.2 messaging + softwareVersion bump.
 8. **H2** — narrow scope: only the route-feature rename ("Eco Route" → "Efficient Route") in WhatsNew + Releases + index.html OG/Twitter copy.
