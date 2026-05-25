@@ -82,16 +82,16 @@
 
   const featureList: FeatureProps[] = [
     {
-      title: 'Background Ready',
-      description: 'Track efficiency while using Maps or Music.'
+      title: 'Live drive map',
+      description: 'Apple Maps follow + per-waypoint event markers.'
     },
     {
-      title: 'Engine Calibration',
-      description: 'Petrol, Diesel & EV support for accuracy.'
+      title: 'Accessibility-first',
+      description: 'VoiceOver, Dynamic Type, Reduce Motion, and more.'
     },
     {
-      title: 'Biometric Privacy',
-      description: 'Secured with FaceID/TouchID. 100% Private.'
+      title: 'iCloud sync',
+      description: 'Sessions and Smart Detection model across devices.'
     }
   ]
 
