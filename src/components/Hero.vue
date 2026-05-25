@@ -40,7 +40,7 @@
           </Badge>
           <Badge variant="secondary" class="text-sm py-2">
             <span class="mr-2">🚗</span>
-            <span>Join 10K+ Drivers</span>
+            <span>Free for every driver</span>
           </Badge>
         </div>
 

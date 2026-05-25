@@ -67,7 +67,7 @@
 
       <div class="space-y-4 pt-4">
         <div class="bg-muted/50 rounded-lg p-4 text-center">
-          <p class="text-sm text-muted-foreground mb-2">Join 10K+ drivers who saved</p>
+          <p class="text-sm text-muted-foreground mb-2">Designed to help drivers save</p>
           <p class="text-2xl font-bold text-primary">{{ config.popup.savings }}</p>
         </div>
 
