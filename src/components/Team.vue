@@ -27,11 +27,11 @@
       socialNetworks: [
         {
           name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/efficientdriver-dhamodharan/'
+          url: 'https://www.linkedin.com/in/efficiver-dhamodharan/'
         },
         {
           name: 'Github',
-          url: 'https://github.com/efficientdriver-dhamodharan'
+          url: 'https://github.com/efficiver-dhamodharan'
         },
         {
           name: 'X',
@@ -47,7 +47,7 @@
       socialNetworks: [
         {
           name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/efficientdriver-karuneswara/'
+          url: 'https://www.linkedin.com/in/efficiver-karuneswara/'
         },
         {
           name: 'X',
@@ -63,11 +63,11 @@
       socialNetworks: [
         {
           name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/efficientdriver-praba/'
+          url: 'https://www.linkedin.com/in/efficiver-praba/'
         },
         {
           name: 'Github',
-          url: 'https://github.com/efficientdriver-praba'
+          url: 'https://github.com/efficiver-praba'
         }
       ]
     }
