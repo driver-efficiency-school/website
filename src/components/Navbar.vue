@@ -2,8 +2,10 @@
   import { ref } from 'vue'
 
   import { useColorMode } from '@vueuse/core'
+  // Respect the user's system color-scheme + their ToggleTheme choice.
+  // `useColorMode` defaults to 'auto' which follows prefers-color-scheme;
+  // ToggleTheme persists explicit user choice via localStorage.
   const mode = useColorMode()
-  mode.value = 'dark'
 
   import {
     DropdownMenu,
