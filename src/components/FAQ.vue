@@ -34,7 +34,7 @@
     {
       question: 'How much fuel can I save with Efficiver?',
       answer:
-        'Beta users have reported 8-22% fuel savings depending on driving habits. The app provides real-time feedback to help you develop more efficient driving techniques.',
+        'Industry studies show that efficient-driving techniques typically save 8-22% on fuel depending on habits and vehicle. Efficiver gives you real-time feedback so you can adopt those techniques — your actual savings depend on how much you adjust.',
       value: 'item-4'
     },
     {
@@ -52,7 +52,7 @@
     {
       question: 'Which devices are compatible with Efficiver?',
       answer:
-        'Efficiver supports iOS 18+ devices. Android version is coming soon, along with Apple Watch and Android Watch support.',
+        'Efficiver runs on iPhones with iOS 18 or later, and on iPad. An Apple Watch companion is on the roadmap for a future release. We are currently iOS-only; there is no Android timeline.',
       value: 'item-7'
     },
     {
