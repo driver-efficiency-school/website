@@ -148,18 +148,22 @@ drivers").
 
 ### I4 — Three different support emails used
 
-| Email                     | Used in                                                                                      |
-| ------------------------- | -------------------------------------------------------------------------------------------- |
-| `support@efficiver.com`   | `.env.example`, `Footer.vue` (via config), `FAQ.vue` line 67 + 97, `ShareButtons` indirectly |
-| `contact@efficiver.com`   | `Help.vue` line 342                                                                          |
-| `investors@efficiver.com` | `Investors.vue` line 78                                                                      |
+| Email                     | Used in                                                           |
+| ------------------------- | ----------------------------------------------------------------- |
+| `support@efficiver.com`   | `.env.example`, `Footer.vue` (via config), `FAQ.vue` line 67 + 97 |
+| `contact@efficiver.com`   | `Help.vue` line 342; **canonical per user direction 2026-05-25**  |
+| `investors@efficiver.com` | `Investors.vue` line 78                                           |
 
 **Severity:** MEDIUM. Splitting investor inquiries from support is
 fine; having two different "support" addresses (`support@` vs
 `contact@`) is a leak.
 
-**Fix:** Standardize on `support@efficiver.com` for support. Update
-`Help.vue` line 342 to match.
+**Fix:** Standardize on **`contact@efficiver.com`** per user direction
+2026-05-25. (Earlier audit recommendation said `support@` — wrong
+direction.) Phase 0 already corrected the legal docs (Privacy Policy
+
+- Terms of Use). Phase 3 needs to update `FAQ.vue` lines 67 + 97 and
+  `.env.example` `VITE_CONTACT_EMAIL` default to `contact@efficiver.com`.
 
 ### I5 — Placeholder fictional address used in Privacy Policy AND Investors
 
@@ -815,7 +819,7 @@ Estimate: ~3 hours.
 17. **H9** — Remove forced dark mode in Navbar.
 18. **I7** — Help.vue full rewrite (v1.2-current, mentioning all shipped features).
 19. **I8** — Testimonials.vue: replace placeholder content OR remove section entirely until real App Store reviews exist.
-20. **I4** — Standardize on `support@efficiver.com` across Footer + FAQ + Help.vue.
+20. **I4** — Standardize on `contact@efficiver.com` across Footer (`.env.example` `VITE_CONTACT_EMAIL`) + FAQ.vue (lines 67 + 97). `Help.vue` already correct.
 21. **I10** — Team.vue: verify GitHub/LinkedIn handles, update if `efficiver-*` handles exist.
 22. **M8** — Sitemap.xml lastmod update on deploy.
 23. **M7** — Remove fake aggregateRating block from index.html JSON-LD.
