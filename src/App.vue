@@ -12,7 +12,10 @@
   const Features = defineAsyncComponent(() => import('./components/Features.vue'))
   const HowItWorks = defineAsyncComponent(() => import('./components/HowItWorks.vue'))
   const Comparison = defineAsyncComponent(() => import('./components/Comparison.vue'))
-  const Testimonials = defineAsyncComponent(() => import('./components/Testimonials.vue'))
+  // Testimonials.vue removed from render per WEBSITE_AUDIT_V12 I8 — the
+  // template-default placeholder reviews and shadcn-stock avatars are an
+  // FTC compliance risk. Re-introduce when real App Store review excerpts
+  // are available.
   const Team = defineAsyncComponent(() => import('./components/Team.vue'))
   const Pricing = defineAsyncComponent(() => import('./components/Pricing.vue'))
   const Community = defineAsyncComponent(() => import('./components/Community.vue'))
@@ -98,7 +101,6 @@
     <Features />
     <Comparison />
     <HowItWorks />
-    <Testimonials />
     <Team />
     <Community />
     <Pricing />
