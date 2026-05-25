@@ -34,6 +34,13 @@ iteration of this audit (I1) claimed the Subline was not rendered
 anywhere; that was wrong because I read Vue source only and didn't
 view the rendered image asset. I1 corrected below.
 
+**Closeout (2026-05-25):** All findings are now resolved or
+explicitly deferred per user direction. See the "Status by finding"
+table at the bottom of this doc for the per-item closeout. Two
+items remain genuinely deferred: H3 + H5 (Pricing.vue tier display +
+"Eco Master" plan name), per user 2026-05-25 ("leave Pricing
+as-is"). Brand hierarchy now documented in `Docs/BRAND.md` (I2).
+
 ---
 
 ## Source of truth — DO NOT VIOLATE
@@ -922,3 +929,89 @@ Open questions still to decide before later phases:
   pushes (ProductHunt, accessibility-press) are separate workstream.
   This audit just ensures the site doesn't embarrass us when those
   pushes drive traffic.
+
+---
+
+## Status by finding (closeout 2026-05-25)
+
+After the four-phase pass + honest-self-audit closeout, here is the
+ground-truth status of every finding. "Done" = code change shipped on
+`main`. "Deferred" = explicit user decision to leave as-is.
+"Placeholder" = shipped but with a placeholder pending user input.
+
+### Critical
+
+| #   | Status | Notes                                                                                                                                                                        |
+| --- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| C1  | Done   | PrivacyPolicy.vue full rewrite (commits `ee3fb2c` + `1dc4c8b`). Entity address uses no-address phrasing — placeholder pending user confirmation of actual registered entity. |
+| C2  | Done   | TermsOfUse.vue full rewrite (commit `3812666`). Governing-law jurisdiction is **placeholder** ("jurisdiction in which Efficiver is registered") pending user confirmation.   |
+| C3  | Done   | FAQ.vue item-5 iCloud-sync truth (commit `38dd2f6`).                                                                                                                         |
+
+### High
+
+| #   | Status       | Notes                                                                                                                   |
+| --- | ------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| H1  | Done         | WhatsNew.vue + Releases.vue v1.2 rewrite (commits `c97a528` + `0ae4ae7`).                                               |
+| H2  | Done         | "Eco Route" → "Efficient Route" in WhatsNew/Releases/index.html (committed across H1 + H8).                             |
+| H3  | **DEFERRED** | Pricing.vue 3 tiers — user direction 2026-05-25 "leave as-is".                                                          |
+| H4  | Done         | Features.vue removed Business Solutions + Gamified; added v1.2 features (commit `20b9d55`).                             |
+| H5  | **DEFERRED** | "Eco Master" plan name in Pricing.vue — same deferral as H3.                                                            |
+| H6  | Done         | HowItWorks step 1 + 4 (commit `a6439ea`).                                                                               |
+| H7  | Done         | package.json + Footer version bumped to v1.2.0 (commit `46e5a7b`); build-time substitution in scripts/bump-version.mjs. |
+| H8  | Done         | index.html OG/Twitter/JSON-LD v1.2 (commit `f423a0c`).                                                                  |
+| H9  | Done         | Navbar `mode.value = 'dark'` removed (commit `a02b707`).                                                                |
+| H10 | Done         | Navbar dropdown refreshed (commit `ffc4af1`).                                                                           |
+
+### Medium
+
+| #   | Status | Notes                                                                                                                                    |
+| --- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| M1  | Done   | Features.vue + HowItWorks.vue background-claim softened (commit `945ff0f`).                                                              |
+| M2  | Done   | Comparison.vue EV Support row reframed (commit `349b6ca`).                                                                               |
+| M3  | Done   | FAQ.vue item-4 fuel-savings claim softened (commit `52f1a54`) + ExitIntent (commit `97644e6`).                                           |
+| M4  | Done   | FAQ.vue item-7 Android timeline honest (commit `52f1a54`).                                                                               |
+| M5  | Done   | Footer.vue Apple Watch "Soon" → "Future"; Android/Watch/Dashboard rows removed (commit `0fb81ec`). FAQ.vue same item (commit `52f1a54`). |
+| M6  | Done   | Comparison.vue Setup Time → ~3-5 min (commit `349b6ca`).                                                                                 |
+| M7  | Done   | aggregateRating block removed from JSON-LD (commit `3097711`).                                                                           |
+| M8  | Done   | Sitemap.xml lastmod bumped to 2026-05-25 (commit `9232a5e`). Manual bump; not wired into build script.                                   |
+| M9  | Done   | Hero "10K+ Drivers" → "Free for every driver" (Phase 0 commit `d9cccd0`).                                                                |
+| M10 | Done   | Hero "FaceID Secured" verified against AppSecurity.swift LAContext — no edit needed.                                                     |
+| M11 | Done   | ExitIntent $300K removed; replaced with Subline brand line (commit `97644e6`).                                                           |
+| M12 | Done   | Footer "(formerly Efficient Driver)" removed (commit `0fb81ec`).                                                                         |
+| M13 | Done   | All 9 previously-unaudited components covered in full-source-read pass.                                                                  |
+
+### Low
+
+| #   | Status               | Notes                                                                                                                |
+| --- | -------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| L1  | Open (LOW, cosmetic) | Asset filenames mix `_001` vs `_101` styles. Cosmetic. Address next time screenshots are re-captured.                |
+| L2  | Done                 | robots.txt verified during full-source read.                                                                         |
+| L3  | Open (LOW, cosmetic) | Logo filename `Logo-v1_Transparent.webp` carries `v1` suffix. Cosmetic. Address only if a logo refresh ever happens. |
+| L4  | Done                 | husky + lint-staged verified working (ran across every Phase 0-3 commit).                                            |
+
+### Internal inconsistencies
+
+| #   | Status            | Notes                                                                                                                                                                                                                                                  |
+| --- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| I1  | Done (correction) | Subline IS rendered via the logo image (commit `326b921`). Earlier finding was wrong.                                                                                                                                                                  |
+| I2  | Done              | Three-layer brand hierarchy documented in `Docs/BRAND.md` (commit `c4f53f5`).                                                                                                                                                                          |
+| I3  | Done              | Hero + ExitIntent 10K+ claim removed (Phase 0 commit `d9cccd0`).                                                                                                                                                                                       |
+| I4  | Done              | `contact@efficiver.com` standardized across PrivacyPolicy / TermsOfUse / FAQ / Footer (via config.ts) / .env.example. Help.vue was already canonical (commit `da29017` + the Phase 0 fixes).                                                           |
+| I5  | Done              | Privacy Policy address removed (Phase 0) + Investors.vue "Green City, CA, USA" replaced (commit `90c129e`).                                                                                                                                            |
+| I6  | Done              | Help.vue Section 2 Smart Detection language (commit `b34a01f`) + full Help.vue rewrite (commit `962671f`).                                                                                                                                             |
+| I7  | Done              | Help.vue full v1.2 rewrite (commit `962671f`).                                                                                                                                                                                                         |
+| I8  | Done              | Testimonials section removed from App.vue render (commit `05dd08e`). File kept as dead code for future repopulation.                                                                                                                                   |
+| I9  | Done              | Sponsors.vue confirmed dead code (not imported in App.vue). Audit note updated (commit `4e58e6e`).                                                                                                                                                     |
+| I10 | Done with caveat  | Team.vue social-handle prefix `efficientdriver-` → `efficiver-` (commit `5ff3f76`). **Caveat:** assumes the new handles exist on each platform; verify before deploy.                                                                                  |
+| I11 | Done              | Investors.vue tiered-subscription language softened (commit `90c129e`); FAQ.vue item-6 honest pricing answer (commit `c57ecd3`); Contact.vue Enterprise Solutions dropdown removed (commit `aa34e3d`). Pricing.vue itself remains per H3/H5 deferrals. |
+
+### Summary
+
+- **Done:** C1, C2, C3, H1, H2, H4, H6, H7, H8, H9, H10, M1-M13 (13 items), L2, L4, I1, I2, I3, I4, I5, I6, I7, I8, I9, I10, I11.
+- **Deferred per user direction:** H3, H5 (Pricing tiers + plan name).
+- **Open (LOW, cosmetic):** L1, L3.
+- **Placeholders pending user input:** C1 entity address, C2 governing-law jurisdiction, I10 social-handle verification.
+
+Two genuine deferrals; the rest is shipped. The placeholders are
+called out in their respective commits and should be tightened before
+any production deploy.
