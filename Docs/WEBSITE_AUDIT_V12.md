@@ -261,16 +261,20 @@ photos are an FTC compliance risk for any paid acquisition.
 ### I9 — Sponsors are template content, not real partners
 
 **File:** `src/components/Sponsors.vue`.
-**Severity:** MEDIUM (credibility).
+**Severity:** MEDIUM downgraded to **LOW (not currently rendered)**.
 
 The 10 "Sponsors / Eco Partners" listed (Tata Motors, Mahindra
 Electric, Ola Electric, Ather Energy, BluSmart, Yulu, Hero Electric,
 TVS Motor, Bajaj Auto, Revolt Motors) are Indian auto/EV companies
 with no documented partnership in the codebase or memory.
 
-**Fix:** Verify each sponsor's status. Remove any that are not real
-partnerships. The section may be entirely removable if there are no
-real partners yet.
+**Update 2026-05-25 (Phase 2):** `Sponsors.vue` is **not imported in
+`App.vue`** — the component exists as dead code in the repo but is
+not rendered to users. Confirmed by re-reading App.vue's
+defineAsyncComponent list. No live-site risk; the file remains a
+deletion candidate but does not block any Phase.
+
+**Fix when re-introducing:** verify each partnership before listing.
 
 ### I10 — Team URLs use stale `efficientdriver-*` handles
 
