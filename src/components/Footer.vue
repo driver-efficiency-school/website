@@ -59,6 +59,12 @@
             </a>
           </div>
           <div>
+            <span class="text-muted-foreground flex items-center cursor-not-allowed opacity-60">
+              CarPlay
+              <Badge variant="secondary" class="ml-2 h-5 px-1.5 text-[10px]">Future</Badge>
+            </span>
+          </div>
+          <div>
             <a
               v-if="config.app.watch.apple"
               :href="config.app.watch.apple"
