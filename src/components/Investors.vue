@@ -10,10 +10,10 @@
       <h2 class="text-2xl font-semibold mb-4">1. Company Overview</h2>
       <div class="opacity-70">
         <p>
-          Efficiver, developed by Efficiver Team (based in Green City, CA, USA), is an offline
-          eco-driving app launched to empower users to reduce emissions, save fuel, and drive safer.
-          Our mission—Save Earth, Wealth, and Health—drives us to deliver privacy-first,
-          sensor-based solutions without internet or hardware.
+          Efficiver is an offline driving-feedback app for iPhone — privacy-first, sensor-based, no
+          OBD hardware. Our mission, <em>Save Earth, Wealth, and Health</em>, drives the product
+          roadmap: reduce emissions, save fuel, drive safer. Correspondence:
+          <a href="mailto:investors@efficiver.com" class="underline">investors@efficiver.com</a>.
         </p>
       </div>
     </section>
@@ -36,10 +36,10 @@
       <h2 class="text-2xl font-semibold mb-4">3. Business Model</h2>
       <div class="opacity-70">
         <p>
-          Efficiver is currently offering all premium features for free for a limited time to
-          accelerate user adoption. This "Free for Early Adopters" strategy allows us to gather data
-          and refine our product. Future monetization will reintroduce our tiered subscription model
-          (Smart Driver, Eco Master) and expand enterprise partnerships.
+          Efficiver is currently free, with all features included. This "Free for Early Adopters"
+          phase helps us refine the product based on real usage. Future monetization options being
+          considered include subscription tiers and partnerships with fleets and driving schools;
+          pricing model and tier structure have not been finalized.
         </p>
       </div>
     </section>
