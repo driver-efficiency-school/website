@@ -16,9 +16,9 @@
   const HowItWorksList: HowItWorksProps[] = [
     {
       badgeTitle: 'Download',
-      title: 'Download & Calibrate',
+      title: 'Download & Auto-Calibrate',
       description:
-        'Install Efficiver and select your engine type (Petrol, Diesel and EV) for personalized tracking accuracy.',
+        "Install Efficiver and run Smart Detection's one-minute calibration on first launch — Efficiver learns your engine's signature automatically. No OBD dongle, no rev-range setup.",
       alt: 'Download the Efficiver app on mobile'
     },
     {
@@ -39,8 +39,8 @@
       badgeTitle: 'Improve',
       title: 'Improve and Stay Safe – Personalized Tips',
       description:
-        'Receive offline coaching tips to drive safer and earn badges for eco-friendly driving habits.',
-      alt: 'Earn badges and improve driving'
+        'Receive offline coaching tips to drive safer and more efficiently with every session.',
+      alt: 'Improve driving with personalized tips'
     }
   ]
 </script>
