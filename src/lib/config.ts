@@ -1,6 +1,6 @@
 export const config = {
   contact: {
-    email: import.meta.env.VITE_CONTACT_EMAIL || 'support@efficiver.com',
+    email: import.meta.env.VITE_CONTACT_EMAIL || 'contact@efficiver.com',
     phone: import.meta.env.VITE_CONTACT_PHONE || '', // Default to empty to hide
     website: import.meta.env.VITE_CONTACT_WEBSITE || 'https://www.efficiver.com'
   },

@@ -64,7 +64,7 @@
     {
       question: 'How can I get support for Efficiver?',
       answer:
-        'Our support team is here to help! Contact us at support@efficiver.com for assistance or visit our FAQ section for quick answers.',
+        'Our support team is here to help! Contact us at contact@efficiver.com for assistance or visit our FAQ section for quick answers.',
       value: 'item-9'
     },
     {
@@ -93,8 +93,8 @@
     </Accordion>
     <h3 class="font-medium mt-4">
       Still have questions?
-      <a href="mailto:support@efficiver.com" class="underline"
-        >Contact us at support@efficiver.com</a
+      <a href="mailto:contact@efficiver.com" class="underline"
+        >Contact us at contact@efficiver.com</a
       >
     </h3>
   </section>
