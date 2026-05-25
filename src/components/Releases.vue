@@ -51,8 +51,7 @@
               two-finger drag to rotate. Acceleration and braking events render as colored markers
               (green / orange / red) along your route — on the live map and again on the past-trip
               Route card in Session Detail. When iPhone is in Low Power Mode (with Prioritize Low
-              Power on in <em>Settings → App Preferences</em>), the map pauses with a clear
-              placeholder.
+              Power on in <em>Settings → General</em>), the map pauses with a clear placeholder.
             </p>
           </div>
         </div>
@@ -145,7 +144,7 @@
                 Plan an efficient route inside Efficiver and open it in Apple or Google Maps for
                 turn-by-turn directions. Efficiver quietly logs the drive for you and saves it when
                 you arrive — no need to keep the app open. Turn it on in
-                <em>Settings → Driving Preferences → Auto Track Drive</em>.
+                <em>Settings → Driving → Auto Track Drive</em>.
               </p>
             </div>
           </div>

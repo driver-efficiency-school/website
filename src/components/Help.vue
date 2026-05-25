@@ -72,8 +72,8 @@
           </li>
           <li>
             <strong>Low Power Mode-aware map (v1.2):</strong> When iPhone is in Low Power Mode and
-            <em>Prioritize Low Power</em> is on in app preferences, the map pauses with a clear
-            placeholder to save battery.
+            <em>Prioritize Low Power</em> is on in <em>Settings → General</em>, the map pauses with
+            a clear placeholder to save battery.
           </li>
           <li>
             <strong>iCloud sync (v1.2):</strong> Your sessions and the trained Smart Detection model
@@ -218,7 +218,7 @@
           <dt class="font-semibold">App not detecting drives automatically</dt>
           <dd>
             Ensure <em>Auto Start Drive</em> and <em>Auto Stop Drive</em> are enabled in
-            <em>Settings → Driving Preferences</em>. Grant Motion &amp; Fitness permission in
+            <em>Settings → Driving</em>. Grant Motion &amp; Fitness permission in
             <em>iOS Settings → Privacy &amp; Security</em>.
           </dd>
 
@@ -231,8 +231,8 @@
 
           <dt class="font-semibold">No voice feedback</dt>
           <dd>
-            Check <em>Settings → Voice Preferences → Voice Assistance</em>. Verify device volume and
-            Do Not Disturb settings. Try changing the voice language.
+            Check <em>Settings → Voice → Voice Assistance</em>. Verify device volume and Do Not
+            Disturb settings. Try changing the voice language.
           </dd>
 
           <dt class="font-semibold">GPS signal weak or unavailable</dt>
@@ -244,8 +244,8 @@
 
           <dt class="font-semibold">High battery usage during drives</dt>
           <dd>
-            Enable <em>Prioritize Low Power</em> in <em>Settings → App Preferences</em>. With iOS
-            Low Power Mode on, the live drive map automatically pauses (v1.2).
+            Enable <em>Prioritize Low Power</em> in <em>Settings → General</em>. With iOS Low Power
+            Mode on, the live drive map automatically pauses (v1.2).
           </dd>
 
           <dt class="font-semibold">iCloud sync not working</dt>
@@ -257,15 +257,15 @@
 
           <dt class="font-semibold">Live drive map looks blank or laggy</dt>
           <dd>
-            Confirm <em>Apple Maps</em> is enabled in <em>Settings → App Preferences</em>. Check for
-            an iOS update; map tile rendering benefits from recent iOS versions. Disable Low Power
-            Mode if you want the map active.
+            Confirm <em>Apple Maps</em> is enabled in <em>Settings → General</em>. Check for an iOS
+            update; map tile rendering benefits from recent iOS versions. Disable Low Power Mode if
+            you want the map active.
           </dd>
 
           <dt class="font-semibold">Incorrect vehicle parameters</dt>
           <dd>
-            Go to <em>Settings → Vehicle Parameters</em> and update fuel type, engine size, and
-            transmission to match your actual vehicle.
+            Go to <em>Settings → Vehicle</em> and update fuel type, engine size, and transmission to
+            match your actual vehicle.
           </dd>
 
           <dt class="font-semibold">App not responding or crashing</dt>
@@ -287,7 +287,7 @@
           <li><strong>Technical:</strong> Detailed vehicle settings and advanced options</li>
           <li><strong>Non-Technical:</strong> Simplified interface with guided explanations</li>
         </ul>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Vehicle Parameters</h3>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Vehicle</h3>
         <ul class="list-disc pl-6">
           <li><strong>Fuel Type:</strong> Petrol, Diesel, or Electric</li>
           <li><strong>Engine Size:</strong> Capacity in cc (petrol/diesel) or kW (electric)</li>
@@ -297,7 +297,7 @@
           <li><strong>Turbocharged:</strong> Enable for turbo engines</li>
           <li><strong>Number of Gears:</strong> For manual transmissions (4-8 gears)</li>
         </ul>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Driving Preferences</h3>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Driving</h3>
         <ul class="list-disc pl-6">
           <li>
             <strong>Proficiency Level:</strong> 1-5 scale (1=Beginner, 5=Expert) — adjusts feedback
@@ -312,13 +312,13 @@
             Efficient Route in Apple/Google Maps
           </li>
         </ul>
-        <h3 class="text-xl font-semibold mt-4 mb-2">Voice Preferences</h3>
+        <h3 class="text-xl font-semibold mt-4 mb-2">Voice</h3>
         <ul class="list-disc pl-6">
           <li><strong>Voice Assistance:</strong> Enable / disable audio feedback</li>
           <li><strong>Language:</strong> Choose from available voice languages</li>
           <li><strong>Voice Volume:</strong> Adjust feedback loudness</li>
         </ul>
-        <h3 class="text-xl font-semibold mt-4 mb-2">App Preferences</h3>
+        <h3 class="text-xl font-semibold mt-4 mb-2">General</h3>
         <ul class="list-disc pl-6">
           <li><strong>Units:</strong> Kilometers / Miles or Liters / Gallons</li>
           <li>
