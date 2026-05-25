@@ -164,11 +164,10 @@
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem value="General Inquiry"> General Inquiry </SelectItem>
-                    <SelectItem value="Billing Support"> Billing Support </SelectItem>
+                    <SelectItem value="General Inquiry">General Inquiry</SelectItem>
                     <SelectItem value="Technical Support">Technical Support</SelectItem>
-                    <SelectItem value="Enterprise Solutions">Enterprise Solutions</SelectItem>
                     <SelectItem value="Feature Request">Feature Request</SelectItem>
+                    <SelectItem value="Accessibility Feedback">Accessibility Feedback</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
