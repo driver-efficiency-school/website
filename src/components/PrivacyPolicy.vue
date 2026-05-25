@@ -141,7 +141,7 @@
           </li>
           <li>Unsubscribe from the newsletter via the link in any newsletter email.</li>
           <li>
-            Email <a href="mailto:support@efficiver.com" class="underline">support@efficiver.com</a>
+            Email <a href="mailto:contact@efficiver.com" class="underline">contact@efficiver.com</a>
             to request deletion of any data we hold from the contact form or newsletter.
           </li>
         </ul>
@@ -178,7 +178,7 @@
       <div class="opacity-80">
         <p>
           For privacy questions, email
-          <a href="mailto:support@efficiver.com" class="underline">support@efficiver.com</a>.
+          <a href="mailto:contact@efficiver.com" class="underline">contact@efficiver.com</a>.
         </p>
       </div>
     </section>
