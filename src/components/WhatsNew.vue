@@ -2,13 +2,13 @@
   import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
   import { Badge } from '@/components/ui/badge'
   import { Button } from '@/components/ui/button'
-  import { ArrowRight, BrainCircuit, Leaf, Banknote } from 'lucide-vue-next'
+  import { ArrowRight, Map, Cloud, Accessibility } from 'lucide-vue-next'
   import { config } from '@/lib/config'
 
   const emit = defineEmits(['navigate'])
 
   interface Flagship {
-    icon: typeof BrainCircuit
+    icon: typeof Map
     color: string
     title: string
     body: string
@@ -16,22 +16,22 @@
 
   const flagships: Flagship[] = [
     {
-      icon: BrainCircuit,
-      color: 'text-green-600 dark:text-green-400',
-      title: 'Smart Detection',
-      body: 'Efficiver now learns your car. No more rev-range setup — a one-minute calibration on first launch and acceleration and braking are picked up automatically. Runs entirely on your iPhone; nothing leaves your device.'
-    },
-    {
-      icon: Leaf,
+      icon: Map,
       color: 'text-blue-600 dark:text-blue-400',
-      title: 'Eco Route',
-      body: 'Plan an eco-friendly route inside Efficiver and open it in Apple or Google Maps for turn-by-turn directions. Efficiver quietly logs the drive for you and saves it when you arrive — no need to keep the app open.'
+      title: 'Live drive map',
+      body: 'A full-screen Apple Maps view that follows you smoothly as you drive. Pinch to zoom, two-finger drag to rotate. Acceleration and braking events appear as colored markers (green / orange / red) along your route — on the live map and again on the past-trip Route card. When iPhone is in Low Power Mode, the map politely pauses to save battery.'
     },
     {
-      icon: Banknote,
+      icon: Cloud,
       color: 'text-orange-600 dark:text-orange-400',
-      title: 'Wallet Watch',
-      body: 'See how much money and CO₂ you saved on every drive, in your local currency (₹, $, £, and more). Set your fuel price and baseline consumption in Settings.'
+      title: 'iCloud sync',
+      body: 'Your driving sessions and the Smart Detection model now sync across your iPhones and iPad via your own private iCloud database. Sign in to iCloud on each device and Efficiver picks up where you left off. Optional and off by default.'
+    },
+    {
+      icon: Accessibility,
+      color: 'text-green-600 dark:text-green-400',
+      title: 'Built accessibility-first',
+      body: 'Full VoiceOver support, Dynamic Type from default through AX5, Reduce Motion respected across every animation, Reduce Transparency, Differentiate Without Color, Bold Text, and lifecycle announcements for drive start / stop / saved. Few driving apps are built this way.'
     }
   ]
 </script>
@@ -39,18 +39,18 @@
 <template>
   <section id="whats-new" class="container py-24 sm:py-32">
     <div class="text-center mb-12">
-      <Badge variant="default" class="mb-4 text-sm py-1.5 px-4">NEW — v1.1</Badge>
+      <Badge variant="default" class="mb-4 text-sm py-1.5 px-4">NEW — v1.2</Badge>
 
-      <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">What's New in Efficiver 1.1</h2>
+      <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">What's New in Efficiver 1.2</h2>
 
       <h3 class="md:w-2/3 mx-auto text-xl text-center text-muted-foreground mb-6">
-        Three new flagship features — and a lot of polish. Now available on the App Store.
+        A live drive map, iCloud sync, and a deep accessibility pass — now on the App Store.
       </h3>
 
       <div class="flex flex-col md:flex-row justify-center items-center gap-3">
         <Button as-child class="w-5/6 md:w-auto font-bold group/arrow">
           <a :href="config.app.ios" target="_blank" rel="noopener">
-            Download v1.1 on the App Store
+            Download v1.2 on the App Store
             <ArrowRight class="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
           </a>
         </Button>
@@ -86,18 +86,16 @@
       <summary
         class="cursor-pointer font-semibold text-base list-none flex justify-between items-center"
       >
-        <span>More improvements in v1.1</span>
+        <span>More improvements in v1.2</span>
         <ArrowRight class="size-4 transition-transform group-open:rotate-90" />
       </summary>
       <ul class="mt-4 space-y-2 text-muted-foreground list-disc list-inside">
-        <li>Rename a session straight from the in-drive top bar.</li>
-        <li>Add notes to any session, up to 255 characters.</li>
-        <li>
-          Weather widget shows live vs cached data, counts down to the next refresh, and flags
-          failed refresh attempts.
-        </li>
-        <li>Faster launch animation; smoother scrolling.</li>
-        <li>Clearer banner when a drive auto-continues.</li>
+        <li>"Eco Route" is now "Efficient Route" everywhere in the app.</li>
+        <li>Per-waypoint event markers appear on the past-trip Route card in Session Detail.</li>
+        <li>Drive gauge inner circle is now visible in light mode (was effectively invisible).</li>
+        <li>Page-bullet and Stop button tap targets grown to Apple's 44pt minimum touch target.</li>
+        <li>Calibration phase-change confirmations spell out the transition before saving.</li>
+        <li>Wallet Watch Save button moved to the toolbar.</li>
       </ul>
     </details>
   </section>
