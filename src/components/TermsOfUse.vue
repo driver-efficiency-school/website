@@ -4,7 +4,7 @@
   <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
     <h1 class="text-3xl font-bold mb-6 text-center">Terms of Use for Efficiver</h1>
 
-    <p class="text-center text-sm text-muted-foreground mb-10">Last updated: May 25, 2026</p>
+    <p class="text-center text-sm text-muted-foreground mb-10">Last updated: May 27, 2026</p>
 
     <!-- Section 1: Acceptance of Terms -->
     <section class="mb-8">
@@ -58,6 +58,16 @@
           <li>
             Efficiency Scores, route suggestions, and on-screen feedback are estimates and may not
             reflect actual conditions on the road.
+          </li>
+          <li>
+            Efficiver depends on your iPhone's built-in GPS (provided by Apple's Core Location
+            service) for speed, distance, route, and scoring. GPS accuracy may be reduced or
+            unavailable in tunnels, underground parking, urban canyons, or under heavy tree cover,
+            and brief GPS recovery events can produce transient inaccuracies in distance, idle time,
+            or harsh-event detection that self-correct on the next clean fix. Efficiver shows
+            on-screen GPS-quality indicators ("GPS Warming Up" and "Low GPS") but does not control
+            GPS accuracy and is not liable for scoring or route inaccuracies caused by GPS
+            conditions outside of its control.
           </li>
           <li>
             Always obey traffic laws, signs, signals, and road conditions. Use your own judgment. Do

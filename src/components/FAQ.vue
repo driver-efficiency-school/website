@@ -38,6 +38,12 @@
       value: 'item-4'
     },
     {
+      question: 'Does Efficiver need a clear GPS signal to work?',
+      answer:
+        'Yes. Speed, distance, route, and scoring all come from your iPhone\'s GPS, so GPS accuracy directly affects your Efficiency Score. Efficiver shows an orange "GPS Warming Up" label for the first few seconds of every drive and a red "Low GPS" label (plus a "GPS Signal Weak — Scores may be affected" banner) whenever signal accuracy drops. Scoring continues during weak signal so you don\'t lose your drive, but accuracy may be reduced. Best results outdoors with a clear view of the sky — tunnels, underground parking, dense tree cover, and tall buildings (urban canyons) can degrade accuracy and cause brief glitches such as a small jump in distance, a stray harsh-event flag on signal recovery, or the idle timer triggering while you\'re actually moving through a tunnel. These self-correct on the next good fix.',
+      value: 'item-gps'
+    },
+    {
       question: 'Is my data safe with Efficiver?',
       answer:
         "Yes. Your driving data stays on your iPhone, stored locally. iCloud sync is optional and uses your own private iCloud database — never Efficiver's servers. We don't collect, store, or sell your driving data. Privacy is built in.",

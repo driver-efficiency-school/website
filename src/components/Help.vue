@@ -5,7 +5,7 @@
     <!-- Document Title (excluded from opacity-80) -->
     <h1 class="text-3xl font-bold mb-6 text-center">Help & Support for Efficiver</h1>
 
-    <p class="text-center text-sm text-muted-foreground mb-10">Last updated: May 25, 2026</p>
+    <p class="text-center text-sm text-muted-foreground mb-10">Last updated: May 27, 2026</p>
 
     <!-- Section 1: Getting Started -->
     <section class="mb-8">
@@ -112,6 +112,12 @@
           </li>
           <li>
             <strong>Session History:</strong> Detailed analytics for each of your driving sessions.
+          </li>
+          <li>
+            <strong>GPS Required:</strong> Speed, distance, route, and scoring come from your
+            iPhone's GPS. Best results outdoors with a clear view of the sky. The app shows an
+            orange <em>"GPS Warming Up"</em> label for the first few seconds, and a red
+            <em>"Low GPS"</em> label whenever signal accuracy drops below ~30 m.
           </li>
           <li>
             <strong>Offline Operation:</strong> Works offline with GPS signal; all data stays on
@@ -235,11 +241,19 @@
             Disturb settings. Try changing the voice language.
           </dd>
 
-          <dt class="font-semibold">GPS signal weak or unavailable</dt>
+          <dt class="font-semibold">GPS signal weak or accuracy degraded</dt>
           <dd>
-            GPS is <em>required</em> for Efficiver to function. Ensure location permissions are
-            granted and GPS is enabled. Drive to an area with better GPS reception — the app cannot
-            provide efficiency feedback without GPS signal.
+            GPS is <em>required</em> for Efficiver to function, and accuracy matters as much as
+            signal presence. Watch for the orange <em>"GPS Warming Up"</em> label at the start of
+            each drive — wait for it to clear before relying on the score. A red
+            <em>"Low GPS"</em> label (and the
+            <em>"GPS Signal Weak — Scores may be affected"</em> banner on the gauge) means signal
+            accuracy has dropped below the ~30 m threshold; scoring continues but accuracy may be
+            reduced. To fix: ensure location permissions are granted and
+            <em>Precise Location</em> is enabled in
+            <em>iOS Settings → Privacy &amp; Security → Location Services → Efficiver</em>. Drive
+            outdoors with a clear view of the sky. After exiting a tunnel or underground area,
+            expect a one-or-two-second recovery before scoring resumes normally.
           </dd>
 
           <dt class="font-semibold">High battery usage during drives</dt>
