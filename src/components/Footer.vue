@@ -1,11 +1,12 @@
 <script setup lang="ts">
   import { ref } from 'vue'
+  import ShareButtons from './ShareButtons.vue'
   import Separator from './ui/separator/Separator.vue'
   import { config } from '@/lib/config'
 
   const emit = defineEmits(['navigate'])
 
-  const version = 'v1.3.36 (26083102)'
+  const version = 'v1.3.36 (26091001)'
   const copied = ref(false)
   const currentYear = new Date().getFullYear()
 
@@ -53,17 +54,29 @@
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Platforms</h3>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#compatibility"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               iOS
             </a>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#compatibility"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               CarPlay
             </a>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#compatibility"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               Apple Watch
             </a>
           </div>
@@ -181,7 +194,10 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-2">
+        <div
+          v-if="config.socials.instagram || config.socials.tiktok || config.socials.linkedin"
+          class="flex flex-col gap-2"
+        >
           <h3 class="font-bold text-lg">Socials</h3>
           <div v-if="config.socials.instagram">
             <a
@@ -229,5 +245,6 @@
         </button>
       </section>
     </div>
+    <div class="container pb-8"><ShareButtons /></div>
   </footer>
 </template>

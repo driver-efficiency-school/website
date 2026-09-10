@@ -34,9 +34,9 @@ describe('Hero', () => {
     expect(wrapper.text()).not.toContain('Google Play')
   })
 
-  it('names the former brand once, without hiding the current one', () => {
+  it('leads with a clear flagship benefit and one main heading', () => {
     const wrapper = mount(Hero)
-    expect(wrapper.text()).toContain('Formerly known as Efficient Driver')
+    expect(wrapper.get('h1').text()).toContain('Understand your driving.')
     expect(wrapper.text()).toContain('Efficiver')
   })
 
@@ -50,33 +50,26 @@ describe('Hero', () => {
     localStorage.setItem('vueuse-color-scheme', 'light')
     const wrapper = mount(Hero)
     const images = wrapper.findAll('img[src^="screen-"]')
-    expect(images).toHaveLength(6)
-    expect(images[0].attributes('src')).toBe('screen-light_101.webp')
+    expect(images).toHaveLength(1)
+    expect(images[0].attributes('src')).toBe('screen-light_104.webp')
   })
 
   it('shows the dark screenshot set when the color mode is dark', () => {
     localStorage.setItem('vueuse-color-scheme', 'dark')
     const wrapper = mount(Hero)
     const images = wrapper.findAll('img[src^="screen-"]')
-    expect(images[0].attributes('src')).toBe('screen-dark_001.webp')
+    expect(images[0].attributes('src')).toBe('screen-dark_004.webp')
   })
 
   it('gives every screenshot a distinct, descriptive alt text', () => {
     localStorage.setItem('vueuse-color-scheme', 'light')
     const wrapper = mount(Hero)
     const alts = wrapper.findAll('img[src^="screen-"]').map((img) => img.attributes('alt'))
-    expect(alts).toEqual([
-      expect.stringContaining('DriveButton interface'),
-      expect.stringContaining('calibration screen'),
-      expect.stringContaining('trip score card'),
-      expect.stringContaining('estimated fuel and CO2 metrics'),
-      expect.stringContaining('driving analytics'),
-      expect.stringContaining('eco-driving badges')
-    ])
+    expect(alts).toEqual([expect.stringContaining('trip review')])
   })
 
-  it('renders the share row', () => {
+  it('keeps the first impression focused on installation', () => {
     const wrapper = mount(Hero)
-    expect(wrapper.text()).toContain('Share:')
+    expect(wrapper.text()).not.toContain('Share:')
   })
 })

@@ -23,6 +23,7 @@ import { test, expect } from '@playwright/test'
 test.describe('FAQ (C3, M3, M4, I11)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page
       .locator('section#faq')
       .scrollIntoViewIfNeeded()
@@ -95,7 +96,8 @@ test.describe('FAQ (C3, M3, M4, I11)', () => {
 
   test('Hero biometric claim is platform-neutral (Face ID is iOS-only)', async ({ page }) => {
     const hero = (await page.locator('section').first().textContent()) ?? ''
-    expect(hero).toMatch(/Biometric Secured/i)
+    await page.locator('#features summary').click()
+    await expect(page.getByText('Biometric Privacy', { exact: true })).toBeVisible()
     expect(hero).not.toMatch(/FaceID Secured/i)
   })
 
@@ -133,6 +135,7 @@ test.describe('FAQ (C3, M3, M4, I11)', () => {
 test.describe('WhatsNew section (H1, H2)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page
       .locator('section#whats-new')
       .scrollIntoViewIfNeeded()
@@ -217,6 +220,7 @@ test.describe('Releases page (H1, H2)', () => {
 test.describe('Features grid (H4)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     // Features.vue is lazy-loaded via defineAsyncComponent; force
     // mount by scrolling it into view + waiting for it to render.
     await page.locator('section#features').scrollIntoViewIfNeeded()
@@ -290,6 +294,7 @@ test.describe('Accessibility page (iOS scope)', () => {
 test.describe('HowItWorks (H6)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
   })
 
   test('step 1 names Smart Detection and describes the real calibration', async ({ page }) => {
@@ -310,6 +315,7 @@ test.describe('HowItWorks (H6)', () => {
 test.describe('Fleet callout (v1.5)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
   })
 
   test('tells drivers fleet joining is invite-only', async ({ page }) => {

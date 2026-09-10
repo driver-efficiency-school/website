@@ -9,6 +9,7 @@ import { test, expect } from '@playwright/test'
 test.describe('index.html meta + structured data', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
   })
 
   // Titles are deliberately VERSION-FREE from v1.5 (owner call 2026-07-27).

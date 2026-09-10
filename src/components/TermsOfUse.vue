@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
+  <div class="reading-page mx-auto px-6 sm:px-8 py-12 sm:py-16">
     <h1 class="text-3xl font-bold mb-6 text-center">Terms of Use for Efficiver</h1>
 
     <p class="text-center text-sm text-muted-foreground mb-10">

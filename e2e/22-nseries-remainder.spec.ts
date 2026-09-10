@@ -60,6 +60,7 @@ test.describe('No outcome claim in share or exit copy (N14, N15)', () => {
     // page.content() passes for the wrong reason. Intercept window.open and read
     // the URL the share button actually builds.
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.evaluate(() => {
       ;(window as unknown as { __openedUrl?: string }).__openedUrl = ''
       window.open = (url?: string | URL) => {
@@ -80,15 +81,12 @@ test.describe('No outcome claim in share or exit copy (N14, N15)', () => {
 
   test('the exit popup does not imply declining costs money', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.waitForLoadState('load')
-    await expect(async () => {
-      await page.evaluate(() =>
-        document.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
-      )
-      await expect(page.getByText('Save. Drive. Live.', { exact: false }).first()).toBeVisible({
-        timeout: 1_000
-      })
-    }).toPass({ timeout: 15_000 })
+    await page.evaluate(() =>
+      document.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+    )
+    await expect(page.getByText('Wait — before you go 🚗')).toHaveCount(0)
     const body = (await page.locator('body').textContent()) ?? ''
     expect(body).not.toMatch(/pay more for fuel/i)
   })

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
+  <div class="reading-page mx-auto px-6 sm:px-8 py-12 sm:py-16">
     <h1 class="text-3xl font-bold mb-6 text-center">Privacy Policy for Efficiver</h1>
 
     <p class="text-center text-sm text-muted-foreground mb-10">
@@ -25,10 +25,11 @@
             <strong>Fleet mode is the one exception, and it is opt-in.</strong> If your employer
             runs Efficiver Fleet and gives you an invite code, the drives you record
             <em>while you are on duty</em> are uploaded and shared with that employer. You are shown
-            what will be shared and must agree before joining, you control the on-duty switch, and
-            you can leave at any time. Off-duty drives are never uploaded to or shared with your
-            fleet — though depending on your platform settings, they may still synchronize or back
-            up through your own Apple or Google account, same as any other session. See section 3.
+            what will be shared and must agree before joining. Your fleet may let you change duty
+            status or keep you on duty by policy. You can leave at any time. Off-duty drives are
+            never uploaded to or shared with your fleet — though depending on your platform
+            settings, they may still synchronize or back up through your own Apple or Google
+            account, same as any other session. See section 3.
           </li>
           <li>
             On iPhone, if you are signed in to iCloud your sessions sync through <em>your own</em>
@@ -214,7 +215,9 @@
         <h3 class="text-xl font-semibold mt-6 mb-2">What the Android app does NOT collect</h3>
         <ul class="list-disc pl-6 space-y-2">
           <li>No advertising identifiers</li>
-          <li>No analytics events (no third-party analytics SDKs)</li>
+          <li>
+            No app-usage analytics events sent to third parties (no third-party analytics SDKs)
+          </li>
           <li>No crash reports sent to us</li>
           <li>No usage analytics or telemetry about how you use the app</li>
           <li>
@@ -249,7 +252,8 @@
             will be shared. You must accept it to continue.
           </li>
           <li>
-            Once joined, you control an <strong>on-duty / off-duty</strong> switch. Nothing is
+            Once joined, your fleet may allow an <strong>on-duty / off-duty</strong> switch or keep
+            you on duty by policy. Check your organisation’s rules before joining. Nothing is
             uploaded while you are off duty.
           </li>
         </ul>

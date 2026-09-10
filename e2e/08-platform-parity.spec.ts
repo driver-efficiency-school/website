@@ -27,7 +27,7 @@ import { test, expect } from '@playwright/test'
  * identifier before any text is read.
  */
 const ROUTES = [
-  { hash: '', name: 'home', identifier: 'Why Choose Efficiver?' },
+  { hash: '', name: 'home', identifier: 'The details that make everyday driving easier' },
   // #investors removed (D2) — no longer a route, so nothing to crawl.
   // Each identifier must be text that ONLY the mounted view has. The footer links read
   // "Terms of Use", "Privacy Policy", "Help & Support" and "Accessibility" and are present

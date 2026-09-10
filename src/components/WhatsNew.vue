@@ -37,7 +37,7 @@
 </script>
 
 <template>
-  <section id="whats-new" class="container py-24 sm:py-32">
+  <section id="whats-new" class="container py-16 sm:py-20">
     <div class="text-center mb-12">
       <Badge variant="default" class="mb-4 text-sm py-1.5 px-4">NEW — v1.5</Badge>
 
@@ -75,6 +75,11 @@
       </div>
     </div>
 
+    <p class="max-w-3xl mx-auto mb-8 rounded-xl border p-5 text-sm text-muted-foreground">
+      <strong class="text-foreground">Availability:</strong> recorded scores and core coaching are
+      free. Forecasts, deeper patterns and savings projections are planned for Efficiver Pro, which
+      is coming soon. Screens and release notes may include these future Pro features.
+    </p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       <Card
         v-for="{ icon, color, title, body } in flagships"

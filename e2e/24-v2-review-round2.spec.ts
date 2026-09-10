@@ -10,6 +10,7 @@ import { test, expect } from '@playwright/test'
 test.describe('§3.1 Privacy wording', () => {
   test('FAQ answer on data safety mentions Fleet', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     const trigger = page.locator('section#faq button', { hasText: 'Is my data safe' })
     await trigger.click()
     const answer = (await page.locator('section#faq').textContent()) ?? ''
@@ -59,6 +60,7 @@ test.describe('§3.2 iCloud consolidation', () => {
 test.describe('§3.3 Fuel/emissions and §3.5 offline wording', () => {
   test('Hero no longer states fuel/emissions as a present-tense capability', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     const hero = (await page.locator('section').first().textContent()) ?? ''
     expect(hero).not.toMatch(/designed to reduce emissions/i)
     // "smoother" - the D9 replacement for a safety claim - must survive the rewrite.
@@ -67,6 +69,8 @@ test.describe('§3.3 Fuel/emissions and §3.5 offline wording', () => {
 
   test('Hero screenshot alt text says "estimated", not "savings"', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
+    await page.getByRole('button', { name: /Compare before you leave/ }).click()
     const alts = await page
       .locator('img[src^="screen-"]')
       .evaluateAll((els) => els.map((el) => el.getAttribute('alt')))
@@ -78,6 +82,7 @@ test.describe('§3.3 Fuel/emissions and §3.5 offline wording', () => {
     page
   }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#features').scrollIntoViewIfNeeded()
     const f = (await page.locator('section#features').textContent()) ?? ''
     expect(f).not.toMatch(/all without needing internet or hardware/i)
@@ -88,6 +93,7 @@ test.describe('§3.3 Fuel/emissions and §3.5 offline wording', () => {
 test.describe('§3.4 Residual safety positioning', () => {
   test('Hero logo alt text drops "safe driving"', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     const alt = await page.locator('img[src*="Logo-v1"]').getAttribute('alt')
     expect(alt).not.toMatch(/safe driving/i)
     expect(alt).toMatch(/phone-based driving efficiency coach/i)
@@ -95,6 +101,7 @@ test.describe('§3.4 Residual safety positioning', () => {
 
   test('meta keywords drop "safe driving"', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     const keywords = await page.locator('meta[name="keywords"]').getAttribute('content')
     expect(keywords).not.toMatch(/safe driving/i)
   })
@@ -105,9 +112,10 @@ test.describe('§3.6 Pricing and hero reconciliation', () => {
     page
   }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     const hero = (await page.locator('section').first().textContent()) ?? ''
     expect(hero).not.toMatch(/Limited Time Offer/i)
-    expect(hero).toMatch(/Free Forever/i)
+    expect(hero).toMatch(/Pro insights are coming soon/i)
     expect(hero).toMatch(/Free for personal use/i)
   })
 
@@ -115,6 +123,7 @@ test.describe('§3.6 Pricing and hero reconciliation', () => {
     page
   }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#pricing').scrollIntoViewIfNeeded()
     const p = (await page.locator('section#pricing').textContent()) ?? ''
     expect(p).not.toMatch(/Efficiver Pro adds depth/i)
@@ -123,6 +132,7 @@ test.describe('§3.6 Pricing and hero reconciliation', () => {
 
   test("Efficiver's button is a real store link, not dead", async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#pricing').scrollIntoViewIfNeeded()
     const link = page.locator('section#pricing a', { hasText: 'Get Started' }).first()
     const href = await link.getAttribute('href')
@@ -133,6 +143,7 @@ test.describe('§3.6 Pricing and hero reconciliation', () => {
     page
   }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#pricing').scrollIntoViewIfNeeded()
     const cards = page.locator('section#pricing .grid > *')
     const pro = cards.nth(1)
@@ -144,6 +155,7 @@ test.describe('§3.6 Pricing and hero reconciliation', () => {
 
   test("Fleet's button scrolls to the real enquiry form, not a dead button", async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#pricing').scrollIntoViewIfNeeded()
     const link = page.locator('section#pricing a', { hasText: 'Talk to us' })
     await expect(link).toHaveAttribute('href', '#fleet')

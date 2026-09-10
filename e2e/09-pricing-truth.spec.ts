@@ -25,6 +25,7 @@ import { test, expect } from '@playwright/test'
 test.describe('Pricing tier naming (Brief §2 / §2.2)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#pricing').scrollIntoViewIfNeeded()
     await expect(page.locator('section#pricing')).toBeVisible()
   })
@@ -56,6 +57,7 @@ test.describe('Pricing tier naming (Brief §2 / §2.2)', () => {
 test.describe('Offers that do not exist', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#pricing').scrollIntoViewIfNeeded()
     await expect(page.locator('section#pricing')).toBeVisible()
   })

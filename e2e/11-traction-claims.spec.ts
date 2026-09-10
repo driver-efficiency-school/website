@@ -29,7 +29,7 @@ test.describe('Investor figures are not publicly reachable (D2)', () => {
    * behaviour being asserted. Pre-fix this times out, because #investors renders
    * the investor view instead — so the red is real.
    */
-  const HERO = 'The Offline Eco-Driving Assistant.'
+  const HERO = 'Understand your driving.'
 
   test('the #investors route renders no investor content', async ({ page }) => {
     await page.goto('/#investors')

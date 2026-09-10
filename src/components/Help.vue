@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
+  <div class="reading-page mx-auto px-6 sm:px-8 py-12 sm:py-16">
     <!-- Document Title (excluded from opacity-80) -->
     <h1 class="text-3xl font-bold mb-6 text-center">Help & Support for Efficiver</h1>
 
@@ -584,7 +584,8 @@
             own backup, if you leave it on, saves to <em>your</em> Google account.
           </li>
           <li>
-            <strong>No ads or analytics:</strong> No analytics SDKs, no advertising IDs, no
+            <strong>No ads or ad tracking:</strong> Driving analytics help you understand your
+            trips. We do not include third-party usage analytics SDKs, advertising IDs or usage
             telemetry. Weather and maps are served by Apple on iPhone and by OpenWeather and Google
             on Android — see the Privacy Policy for what each receives.
           </li>
