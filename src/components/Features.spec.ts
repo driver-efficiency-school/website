@@ -51,6 +51,9 @@ describe('Features', () => {
     const wrapper = mount(Features)
     expect(wrapper.text()).toContain('CarPlay support (iPhone)')
     expect(wrapper.text()).toContain('iCloud sync (iPhone)')
+    // Both watch platforms ship since 2026-09-12 (wear vCode 10054 published to the
+    // Wear OS Play track), so the card names each against its own phone platform.
+    // This previously asserted Wear OS was ABSENT — correct while the track was empty.
     expect(wrapper.text()).toContain('Apple Watch on iPhone, Wear OS on Android')
     expect(wrapper.text()).not.toMatch(/\bAndroid Auto\b/)
     expect(wrapper.text()).not.toMatch(/\bcornering\b/i)

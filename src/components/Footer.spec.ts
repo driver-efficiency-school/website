@@ -33,6 +33,11 @@ describe('Footer', () => {
   beforeEach(() => {
     config.contact.phone = ''
     config.app.android = ''
+    // The real production default since 2026-09-12: Wear OS is live on Play and served
+    // from the phone listing by form factor. This was '' while the wear track was empty,
+    // which made "(soon)" the honest baseline; it no longer is.
+    config.app.watch.android =
+      'https://play.google.com/store/apps/details?id=school.efficiency.drive.efficiver'
     config.features.contact = true
     config.features.newsletter = true
     config.socials.instagram = ''
@@ -71,7 +76,40 @@ describe('Footer', () => {
       const wrapper = mount(Footer)
       const android = wrapper.findAll('a').find((a) => a.text().trim() === 'Android')!
       expect(android.attributes('href')).toBe('https://play.google.com/test')
-      expect(wrapper.text()).not.toContain('(soon)')
+      // Not a blanket page-wide check: Wear OS carries its own, independent
+      // "(soon)" gate (it is built but never published to Play - ced4cb0), so
+      // "(soon)" can legitimately still appear elsewhere on the page.
+      expect(linkTexts(wrapper).find((t) => t.includes('Android'))).not.toContain('(soon)')
+    })
+
+    it('links Wear OS to the listing - live on Play since 2026-09-12 (wear 10054)', () => {
+      // This asserted the OPPOSITE until 2026-09-12: "(soon)" and not clickable, which
+      // was correct while the wear Play track was empty. config.app.watch.android now
+      // defaults to the phone listing (Play routes by form factor; there is no separate
+      // Wear URL), so the gate in Footer.vue resolves to a real link.
+      const wrapper = mount(Footer)
+      expect(wrapper.text()).toContain('Wear OS')
+      expect(linkTexts(wrapper).some((t) => t.includes('Wear OS'))).toBe(true)
+    })
+
+    it('falls back to Wear OS "(soon)" if the link is ever cleared', () => {
+      // The gate itself, still covered. This is what kept the footer honest through the
+      // months when :wear built but no Play track served it, and it is the mechanism that
+      // would protect us again if the Wear track were pulled — no code change needed.
+      config.app.watch.android = ''
+      const wrapper = mount(Footer)
+      expect(wrapper.text()).toContain('Wear OS')
+      expect(wrapper.text()).toContain('(soon)')
+      expect(linkTexts(wrapper).some((t) => t.includes('Wear OS'))).toBe(false)
+    })
+
+    it('links straight to the Wear OS listing once that link is configured', () => {
+      config.app.watch.android = 'https://play.google.com/store/apps/details?id=wear.test'
+      const wrapper = mount(Footer)
+      const wearOs = wrapper.findAll('a').find((a) => a.text().trim() === 'Wear OS')!
+      expect(wearOs.attributes('href')).toBe(
+        'https://play.google.com/store/apps/details?id=wear.test'
+      )
     })
 
     it('hides Contact Us and Feedback together when the contact feature is off', () => {
@@ -135,9 +173,11 @@ describe('Footer', () => {
       }
     })
 
-    it('sends the static platform links (iOS, CarPlay, Apple Watch, Wear OS) back to main', async () => {
+    it('sends the static platform links (iOS, CarPlay, Apple Watch) back to main', async () => {
+      // Wear OS is excluded here - it is conditionally a link (see its own
+      // gated tests above) rather than an always-present static one.
       const wrapper = mount(Footer)
-      const staticLabels = ['iOS', 'CarPlay', 'Apple Watch', 'Wear OS']
+      const staticLabels = ['iOS', 'CarPlay', 'Apple Watch']
       for (const label of staticLabels) {
         const link = wrapper.findAll('a').find((a) => a.text().trim() === label)!
         await link.trigger('click')

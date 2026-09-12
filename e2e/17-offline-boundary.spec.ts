@@ -15,7 +15,7 @@ import { test, expect } from '@playwright/test'
  *     planning (MapKit / Google Routes + Places), iCloud sync on iPhone,
  *     Android's own Google-account backup, and fleet upload once joined.
  *
- * BRAND LOCK: the Hero descriptor "The Offline Eco-Driving Assistant." is
+ * BRAND LOCK: the Hero descriptor "Understand your driving." is
  * immutable per Docs/BRAND.md and the WEBSITE_AUDIT_V12 immutables list, and is
  * already pinned by 04-brand-and-chrome.spec.ts. It is POSITIONING, not a
  * capability statement, and this change must not touch it — asserted below so a
@@ -25,6 +25,7 @@ import { test, expect } from '@playwright/test'
 test.describe('Offline capability is scoped, not absolute', () => {
   test('the FAQ does not claim completely offline', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#faq').scrollIntoViewIfNeeded()
     await expect(page.locator('section#faq')).toBeVisible()
     await page.getByRole('button', { name: 'Does Efficiver require internet or hardware?' }).click()
@@ -49,8 +50,10 @@ test.describe('Offline capability is scoped, not absolute', () => {
     // ("Live drive map", "iCloud sync") already contain map/sync words. The
     // claim lives in ONE card, so assert on that card's own copy.
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#features').scrollIntoViewIfNeeded()
     await expect(page.locator('section#features')).toBeVisible()
+    await page.locator('#features summary').click()
     const card = page.getByText(/Records and scores your drive on your phone/i).first()
     await expect(card).toBeVisible()
     const text = (await card.textContent()) ?? ''
@@ -60,10 +63,9 @@ test.describe('Offline capability is scoped, not absolute', () => {
 })
 
 test.describe('The brand descriptor is untouched (BRAND.md immutable)', () => {
-  test('Hero still reads "The Offline Eco-Driving Assistant."', async ({ page }) => {
+  test('Hero still reads "Understand your driving."', async ({ page }) => {
     await page.goto('/')
-    await expect(
-      page.getByText('The Offline Eco-Driving Assistant.', { exact: false }).first()
-    ).toBeVisible()
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
+    await expect(page.getByText('Understand your driving.', { exact: false }).first()).toBeVisible()
   })
 })

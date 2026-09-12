@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
+  <div class="reading-page mx-auto px-6 sm:px-8 py-12 sm:py-16">
     <!-- Document Title (excluded from opacity-80) -->
     <h1 class="text-3xl font-bold mb-6 text-center">Help & Support for Efficiver</h1>
 
@@ -52,7 +52,8 @@
       <div class="opacity-80">
         <p>
           Efficiver uses your phone's built-in sensors to track your driving and give instant
-          feedback to save fuel — entirely on-device, no OBD hardware required.
+          feedback intended to support smoother, more efficient driving — entirely on-device, no OBD
+          hardware required.
         </p>
         <h3 class="text-xl font-semibold mt-4 mb-2">Key Features</h3>
         <ul class="list-disc pl-6">
@@ -73,9 +74,9 @@
             or wireless.
           </li>
           <li>
-            <strong>Redesigned Insights tab (v1.3):</strong> Opens on an Analytics view — your real
-            savings so far this year, CO₂ impact, and average efficiency score, all free. Flip to a
-            searchable list of every drive.
+            <strong>Redesigned Insights tab (v1.3):</strong> Opens on an Analytics view — your
+            estimated fuel, cost and CO₂ impact so far this year, and average efficiency score, all
+            free. Flip to a searchable list of every drive.
           </li>
           <li>
             <strong>Minimize the drive (v1.3):</strong> Swipe the drive screen down to shrink it to
@@ -93,10 +94,10 @@
             Efficiver Pro (coming soon).
           </li>
           <li>
-            <strong>Watch companion:</strong> Live score, mistakes, and elapsed time on your wrist,
+            <strong>Watch companions:</strong> Live score, mistakes and elapsed time on your wrist,
             start or stop with a tap, and a watch-face complication — on Apple Watch (v1.4) and on
-            Wear OS. Siri start/stop and the haptic buzz on every harsh accel or brake are iPhone
-            and Apple Watch only today.
+            Wear OS (v1.5.4). Siri start/stop and the haptic buzz on every harsh accel or brake are
+            iPhone and Apple Watch only today.
           </li>
           <li>
             <strong>More accurate savings (v1.4):</strong> Fuel and CO₂ savings are now calculated
@@ -131,8 +132,8 @@
           </li>
           <li>
             <strong>iCloud sync (v1.2):</strong> Your sessions and the trained Smart Detection model
-            sync across your iPhones and iPad via your own private iCloud database. Optional and off
-            by default.
+            sync across your iPhones and iPad via your own private iCloud database. No separate
+            switch — it syncs automatically once you're signed in to iCloud.
           </li>
           <li>
             <strong>Efficient Route (v1.1):</strong> Plan an efficient route inside Efficiver and
@@ -140,8 +141,8 @@
             when you arrive.
           </li>
           <li>
-            <strong>Wallet Watch (v1.1):</strong> See your fuel and CO₂ savings in your local
-            currency, per session and per month.
+            <strong>Wallet Watch (v1.1):</strong> View estimated fuel or energy use, cost and CO₂
+            impact in your local currency, per session and per month.
           </li>
           <li>
             <strong>Accessibility (v1.2):</strong> Screen-reader support — VoiceOver on iPhone,
@@ -467,8 +468,9 @@
           </li>
           <li><strong>Temperature in Gauge:</strong> Show weather temperature</li>
           <li>
-            <strong>iCloud sync (iPhone):</strong> Sync sessions and the Smart Detection model
-            across your devices via your private iCloud database. Off by default.
+            <strong>iCloud sync (iPhone):</strong> Managed by iOS, not a switch inside Efficiver —
+            sessions and the Smart Detection model sync automatically while you're signed in to
+            iCloud, via your own private iCloud database.
           </li>
         </ul>
         <h3 class="text-xl font-semibold mt-4 mb-2">Savings</h3>
@@ -531,8 +533,8 @@
           <li><strong>Distance:</strong> Total kilometres / miles driven</li>
           <li><strong>Duration:</strong> Total time of the driving session</li>
           <li><strong>Mistakes:</strong> Breakdown of acceleration, braking, and idle events</li>
-          <li><strong>Fuel Savings:</strong> Estimated fuel / electricity saved (Wallet Watch)</li>
-          <li><strong>Environmental Impact:</strong> CO₂ emissions avoided (Wallet Watch)</li>
+          <li><strong>Fuel Impact:</strong> Estimated fuel or energy impact (Wallet Watch)</li>
+          <li><strong>Environmental Impact:</strong> Estimated CO₂ impact (Wallet Watch)</li>
           <li><strong>Route card:</strong> Past-trip map with per-waypoint event markers (v1.2)</li>
           <li><strong>Notes:</strong> Tap to add a note (up to 255 characters, v1.1)</li>
           <li><strong>Rename:</strong> Tap the title to rename the session inline (v1.1)</li>
@@ -540,8 +542,8 @@
         <h3 class="text-xl font-semibold mt-4 mb-2">Insights tab (v1.3)</h3>
         <ul class="list-disc pl-6">
           <li>
-            <strong>Analytics view:</strong> Your real savings so far this year, CO₂ impact, and
-            average efficiency score — all free.
+            <strong>Analytics view:</strong> Your estimated fuel, cost and CO₂ impact so far this
+            year, and average efficiency score — all free.
           </li>
           <li>
             <strong>Sessions view:</strong> A searchable list of every drive — search by name or
@@ -582,7 +584,8 @@
             own backup, if you leave it on, saves to <em>your</em> Google account.
           </li>
           <li>
-            <strong>No ads or analytics:</strong> No analytics SDKs, no advertising IDs, no
+            <strong>No ads or ad tracking:</strong> Driving analytics help you understand your
+            trips. We do not include third-party usage analytics SDKs, advertising IDs or usage
             telemetry. Weather and maps are served by Apple on iPhone and by OpenWeather and Google
             on Android — see the Privacy Policy for what each receives.
           </li>
@@ -608,8 +611,9 @@
           <li>Reset all settings to defaults</li>
           <li>Uninstall the app to remove all locally-stored data</li>
           <li>
-            On iPhone, disable iCloud sync to stop adding new cloud-stored sessions; previously
-            synced sessions remain on whichever device created them until you delete them
+            On iPhone, manage Efficiver's iCloud access through iOS Settings. Disabling access stops
+            future synchronization. For data already stored in iCloud, use Apple's own iCloud
+            controls, or contact Efficiver support and we'll help you get to the right place.
           </li>
         </ul>
       </div>
@@ -709,7 +713,7 @@
             <strong>v1.4 (July 2026, iPhone):</strong> Apple Watch companion (live glance,
             Start/Stop + Siri, haptics, watch-face complication), more accurate fuel &amp; CO₂
             savings from your actual driving physics, live drive card on CarPlay and Watch Smart
-            Stack. The Android app arrived later, with a Wear OS companion.
+            Stack. The Android app arrived later.
           </li>
           <li>
             <strong>v1.3 (June 2026, iPhone):</strong> CarPlay support, redesigned Insights tab
@@ -738,7 +742,7 @@
         <p class="mt-4 text-sm">
           Efficiver ships today on iOS (iPhone, iPad, CarPlay, Apple Watch) and on Android via
           Google Play, with a Wear OS companion. Android requires Android 12 or later on a 64-bit
-          device.
+          device; the watch companion needs Wear OS 3 or later, paired to that phone.
         </p>
       </div>
     </section>

@@ -27,12 +27,17 @@ import { test, expect } from '@playwright/test'
  * identifier before any text is read.
  */
 const ROUTES = [
-  { hash: '', name: 'home', identifier: 'Why Choose Efficiver?' },
+  { hash: '', name: 'home', identifier: 'The details that make everyday driving easier' },
   // #investors removed (D2) — no longer a route, so nothing to crawl.
-  { hash: '#terms', name: 'terms', identifier: 'Terms of Use' },
-  { hash: '#privacy', name: 'privacy', identifier: 'Privacy Policy' },
+  // Each identifier must be text that ONLY the mounted view has. The footer links read
+  // "Terms of Use", "Privacy Policy", "Help & Support" and "Accessibility" and are present
+  // in the app shell on every route, so those bare strings satisfied the barrier BEFORE
+  // the lazy view mounted — the exact false-pass this comment block warns about, hiding in
+  // the fix for it. The page <h1>s carry the "… for Efficiver" suffix the footer lacks.
+  { hash: '#terms', name: 'terms', identifier: 'Terms of Use for Efficiver' },
+  { hash: '#privacy', name: 'privacy', identifier: 'Privacy Policy for Efficiver' },
   { hash: '#accessibility', name: 'accessibility', identifier: 'Accessibility at Efficiver' },
-  { hash: '#help', name: 'help', identifier: 'Help & Support' },
+  { hash: '#help', name: 'help', identifier: 'Help & Support for Efficiver' },
   { hash: '#coming-soon', name: 'coming-soon', identifier: 'Coming Soon' },
   { hash: '#releases', name: 'releases', identifier: 'Release notes' }
 ] as const
@@ -47,6 +52,14 @@ const ROUTES = [
  */
 const IOS_EXCLUSIVE: Array<{ ios: RegExp; counterpart: RegExp; label: string }> = [
   { ios: /\bVoiceOver\b/i, counterpart: /\bTalkBack\b/i, label: 'VoiceOver → TalkBack' },
+  // Apple Watch / watchOS ↔ Wear OS: PAIRED AGAIN as of 2026-09-12, when wear vCode
+  // 10054 (1.5.4) was published to the Wear OS Play track.
+  //
+  // They were moved OUT of this list on 2026-08-27 and into IPHONE_ONLY, because a
+  // counterpart is only a counterpart if it SHIPS — while the wear track was empty,
+  // pairing let an Apple Watch claim pass merely BY NAMING Wear OS, so the invariant
+  // rewarded advertising a companion nobody could install. That condition is now gone.
+  // If the Wear track is ever pulled, move these back rather than deleting the rule.
   { ios: /\bApple Watch\b/i, counterpart: /\bWear OS\b/i, label: 'Apple Watch → Wear OS' },
   { ios: /\bwatchOS\b/i, counterpart: /\bWear OS\b/i, label: 'watchOS → Wear OS' },
   { ios: /\bApple Maps\b/i, counterpart: /\bGoogle Maps\b/i, label: 'Apple Maps → Google Maps' },
@@ -254,8 +267,14 @@ test.describe('Platform parity across every route', () => {
     })
 
     test(`${route.name}: no shipped platform is labelled "(soon)"`, async ({ page }) => {
-      // iOS, Android and both watch companions all ship. A "(soon)" chip on any of
-      // them is the bug that left "Wear OS (soon)" on the site after launch.
+      // A "(soon)" chip on a platform that HAS shipped understates the product.
+      //
+      // Wear OS is back on this list as of 2026-09-12, when wear vCode 10054 was
+      // published. It was removed on 2026-08-27 — correctly, because its Play track was
+      // then empty (:wear had no signingConfig until 1.5.3, so every earlier bundle was
+      // unsigned and unuploadable) and "(soon)" was the honest label. Both directions of
+      // this list have been wrong at different times; it tracks what Play actually
+      // serves, not what the repo can build.
       const body = await textOf(page, route)
       for (const shipped of ['iOS', 'Android', 'Apple Watch', 'Wear OS', 'CarPlay']) {
         expect(
@@ -298,4 +317,12 @@ test.describe('Platform parity across every route', () => {
       `routes with iOS-only settings instructions and no Android path: ${offenders.join(', ')}`
     ).toEqual([])
   })
+
+  // REMOVED 2026-09-12: 'Wear OS is never presented as available while its Play track is
+  // empty'. It existed because the repo could BUILD a wear app that Play never served —
+  // the site advertised it in six places while the track was empty — and it carried its
+  // own instruction to delete it once that track went live. Wear vCode 10054 (1.5.4) was
+  // published 2026-09-12 12:59, so the premise is gone and keeping the test would now
+  // forbid the truth. The forward direction (Apple Watch ↔ Wear OS) is back in
+  // IOS_EXCLUSIVE above, which is what guards this ground from here on.
 })

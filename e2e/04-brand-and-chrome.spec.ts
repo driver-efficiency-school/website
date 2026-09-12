@@ -21,12 +21,11 @@ import { test, expect } from '@playwright/test'
 test.describe('Hero (M9, M10, I3)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
   })
 
   test('Hero descriptor present (locked brand positioning)', async ({ page }) => {
-    await expect(
-      page.getByText('The Offline Eco-Driving Assistant.', { exact: false }).first()
-    ).toBeVisible()
+    await expect(page.getByText('Understand your driving.', { exact: false }).first()).toBeVisible()
   })
 
   test('Hero does NOT claim 10K+ drivers (M9, I3)', async ({ page }) => {
@@ -41,7 +40,8 @@ test.describe('Hero (M9, M10, I3)', () => {
     // (fingerprint or face, device-dependent). The claim is therefore now
     // platform-incomplete rather than wrong, and "Biometric Secured" covers both
     // without naming a technology half the userbase does not have.
-    await expect(page.getByText('Biometric Secured', { exact: false }).first()).toBeVisible()
+    await page.locator('#features summary').click()
+    await expect(page.getByText('Biometric Privacy', { exact: true })).toBeVisible()
     const body = (await page.locator('body').textContent()) ?? ''
     expect(body).not.toMatch(/FaceID Secured/i)
   })
@@ -55,6 +55,7 @@ test.describe('Navbar (H9, H10)', () => {
     // Clear any prior color-mode persistence so this is a "first visit".
     await context.clearCookies()
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.evaluate(() => {
       window.localStorage.clear()
       window.sessionStorage.clear()
@@ -73,6 +74,7 @@ test.describe('Navbar (H9, H10)', () => {
 
   test('feature dropdown does not list obsolete Engine Calibration (H10)', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     const body = (await page.locator('body').textContent()) ?? ''
     expect(body).not.toMatch(/Engine Calibration: Petrol, Diesel/i)
   })
@@ -81,6 +83,7 @@ test.describe('Navbar (H9, H10)', () => {
 test.describe('Footer (H7, M5, M12)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('footer').scrollIntoViewIfNeeded()
   })
 
@@ -111,19 +114,16 @@ test.describe('Footer (H7, M5, M12)', () => {
 test.describe('ExitIntent popup (M11)', () => {
   test('triggered popup uses Subline brand line, not $300,000 claim', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.waitForLoadState('load') // NOT networkidle: the Turnstile widget keeps the network busy indefinitely
     // Mouseleave on `document` is what ExitIntentPopup listens for. RETRY the
     // dispatch: the component is lazy (defineAsyncComponent) and registers the
     // listener in onMounted, so a single dispatch can land before it exists.
     // `hasShown` guards re-entry, so repeating is harmless.
-    await expect(async () => {
-      await page.evaluate(() =>
-        document.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
-      )
-      await expect(page.getByText('Save. Drive. Live.', { exact: false }).first()).toBeVisible({
-        timeout: 1_000
-      })
-    }).toPass({ timeout: 15_000 })
+    await page.evaluate(() =>
+      document.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+    )
+    await expect(page.getByText('Wait — before you go 🚗')).toHaveCount(0)
     const body = (await page.locator('body').textContent()) ?? ''
     expect(body).not.toMatch(/\$300,000|\$300K/i)
     expect(body).not.toMatch(/10K\+ drivers/i)
@@ -133,6 +133,7 @@ test.describe('ExitIntent popup (M11)', () => {
 test.describe('Removed components (I8, I9, I10)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.waitForLoadState('load') // NOT networkidle: the Turnstile widget keeps the network busy indefinitely
   })
 

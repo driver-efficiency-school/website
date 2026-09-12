@@ -46,9 +46,10 @@
   }
 
   const routeList: RouteProps[] = [
+    { href: '#fleet-guide', label: 'For fleets', nav: 'fleet-guide' },
     {
-      href: '#whats-new',
-      label: "What's New"
+      href: '#how-it-works',
+      label: 'First drive'
     },
     {
       // Replaces the old Testimonials link (section unrendered → dead anchor).
@@ -100,7 +101,7 @@
     :class="{
       'shadow-light': mode === 'light',
       'shadow-dark': mode === 'dark',
-      'w-[90%] md:w-[90%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true
+      'w-[94%] md:w-[94%] lg:w-[92%] lg:max-w-screen-xl top-5 mx-auto sticky border z-40 rounded-2xl flex justify-between items-center p-2 bg-card shadow-md': true
     }"
   >
     <a href="/#" class="font-bold text-lg flex items-center" @click="emit('navigate', 'main')">
@@ -112,10 +113,12 @@
       <span style="font-family: 'Audiowide', cursive">Efficiver</span>
     </a>
     <!-- Mobile -->
-    <div class="flex items-center md:hidden">
+    <div class="flex items-center lg:hidden">
       <Sheet v-model:open="isOpen">
         <SheetTrigger as-child>
-          <Menu class="cursor-pointer" @click="isOpen = true" />
+          <button type="button" aria-label="Open navigation" class="p-2" @click="isOpen = true">
+            <Menu />
+          </button>
         </SheetTrigger>
 
         <SheetContent
@@ -179,7 +182,7 @@
     </div>
 
     <!-- Desktop -->
-    <div class="hidden md:flex items-center gap-2 mx-auto">
+    <div class="hidden lg:flex items-center gap-2 mx-auto">
       <!-- Features dropdown — click-triggered to match About (was
            hover-triggered NavigationMenu; converted to DropdownMenu
            for consistency). -->
@@ -234,7 +237,7 @@
       </Button>
     </div>
 
-    <div class="hidden md:flex">
+    <div class="hidden lg:flex">
       <ToggleTheme />
       <Button as-child size="sm" variant="ghost" aria-label="Coming soon...">
         <a aria-label="Coming soon..." href="#" @click.prevent="emit('navigate', 'coming-soon')">

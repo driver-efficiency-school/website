@@ -9,6 +9,7 @@ import { test, expect } from '@playwright/test'
 test.describe('index.html meta + structured data', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
   })
 
   // Titles are deliberately VERSION-FREE from v1.5 (owner call 2026-07-27).
@@ -33,18 +34,23 @@ test.describe('index.html meta + structured data', () => {
     const ogDesc = await page.locator('meta[property="og:description"]').getAttribute('content')
     expect(ogDesc).toBeTruthy()
     expect(ogDesc).toMatch(/CarPlay/i)
-    expect(ogDesc).toMatch(/Year Recap|patterns/i)
-    // CONTRACT FLIP. This required `nothing leaves your device` to be PRESENT.
-    // The privacy promise IS load-bearing and still is — but that phrasing is
-    // unqualified and untrue as written: driving data syncs to the user's own
-    // iCloud (on by default — AppMain.makeSharedModelContainer attempts CloudKit
-    // .private first) or Android's Google-account backup, and weather and maps
-    // each receive a coordinate. The promise is kept, SCOPED to what is verified,
-    // and banned in both directions so neither the absolute nor its removal can
-    // drift back.
+    expect(ogDesc).toMatch(/AI insights|forecast/i)
+    // THIRD CONTRACT FLIP (v3 review §2.1/§2.6-adjacent metadata sweep). The
+    // second flip's "no data leaves your phone unless you join a fleet" was
+    // itself still an absolute once iCloud sync, Android's own backup, and
+    // weather/maps location sends are counted - none of those require
+    // joining a fleet. Scoped a third time to the one thing that IS true
+    // unconditionally (drive records specifically), with the other flows
+    // pointed at the Privacy Policy instead of denied. All three phrasings
+    // stay banned so none can drift back silently.
     expect(ogDesc).not.toMatch(/nothing leaves your device/i)
-    expect(ogDesc).toMatch(/never reach Efficiver's servers/i)
-    expect(ogDesc).toMatch(/no ads, no analytics/i)
+    expect(ogDesc).not.toMatch(/never reach Efficiver's servers/i)
+    expect(ogDesc).not.toMatch(/no data leaves your phone unless you join a fleet/i)
+    expect(ogDesc).toMatch(/drive records are not sent to Efficiver unless you opt into fleet/i)
+    expect(ogDesc).toMatch(/no ads or third-party analytics/i)
+    // §3.7: Year Recap and the full forecast are Pro-gated ("coming soon") -
+    // the metadata must not present them as unconditionally available today.
+    expect(ogDesc).not.toMatch(/\bYear Recap\b/i)
   })
 
   test('twitter:title carries NO version number', async ({ page }) => {

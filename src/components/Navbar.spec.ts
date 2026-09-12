@@ -13,7 +13,7 @@ function mountNavbar() {
 }
 
 async function openMobileSheet(wrapper: VueWrapper) {
-  const menu = document.body.querySelector('svg.cursor-pointer') as HTMLElement
+  const menu = document.body.querySelector('button[aria-label="Open navigation"]') as HTMLElement
   menu.dispatchEvent(new MouseEvent('click', { bubbles: true }))
   await wrapper.vm.$nextTick()
   await settle()
@@ -80,11 +80,15 @@ describe('Navbar', () => {
   })
 
   describe('the Features dropdown', () => {
-    it('is platform-neutral - Apple and Android technologies named side by side', async () => {
+    it('names both platforms for map and accessibility, and stays iPhone-only for Watch', async () => {
       const wrapper = mountNavbar()
       await openFeaturesDropdown(wrapper)
       expect(document.body.textContent).toContain('Apple Maps on iPhone, Google Maps on Android')
       expect(document.body.textContent).toContain('VoiceOver and TalkBack')
+      // Wear OS went live on Play 2026-09-12 (wear 10054), so the dropdown now names
+      // BOTH watch platforms. It previously asserted Wear OS was absent, which was
+      // right while the track was empty and would now forbid the truth.
+      expect(document.body.textContent).toContain('Watch companions')
       expect(document.body.textContent).toContain('Apple Watch on iPhone, Wear OS on Android')
     })
 
@@ -136,7 +140,7 @@ describe('Navbar', () => {
     it('falls back to main for its own copy of a no-nav item', async () => {
       const wrapper = mountNavbar()
       await openMobileSheet(wrapper)
-      const whatsNew = document.body.querySelectorAll('a[href="#whats-new"]')[1] as HTMLElement
+      const whatsNew = document.body.querySelectorAll('a[href="#how-it-works"]')[1] as HTMLElement
       whatsNew.dispatchEvent(new MouseEvent('click', { bubbles: true }))
       await wrapper.vm.$nextTick()
       expect(lastEmittedNavigate(wrapper)).toEqual(['main'])

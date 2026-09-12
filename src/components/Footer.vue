@@ -1,11 +1,12 @@
 <script setup lang="ts">
   import { ref } from 'vue'
+  import ShareButtons from './ShareButtons.vue'
   import Separator from './ui/separator/Separator.vue'
   import { config } from '@/lib/config'
 
   const emit = defineEmits(['navigate'])
 
-  const version = 'v1.3.29 (26082684)'
+  const version = 'v1.3.36 (26091001)'
   const copied = ref(false)
   const currentYear = new Date().getFullYear()
 
@@ -53,17 +54,29 @@
         <div class="flex flex-col gap-2">
           <h3 class="font-bold text-lg">Platforms</h3>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#compatibility"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               iOS
             </a>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#compatibility"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               CarPlay
             </a>
           </div>
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              href="#compatibility"
+              class="opacity-60 hover:opacity-100"
+              @click="emit('navigate', 'main')"
+            >
               Apple Watch
             </a>
           </div>
@@ -84,16 +97,30 @@
                Android Auto surface (Google Play ruled a phone-sensor driving dashboard
                outside the Car App Library's permitted categories), so advertising it as
                "(soon)" would be untrue. CarPlay above is unaffected and stays. -->
-          <!-- Wear OS ships INSIDE the Android app (Play delivers the wear build from the
-               same listing — there is no separate store URL, which is why
-               VITE_ANDROID_WATCH_LINK is empty and always has been). Gating on that empty
-               var rendered "Wear OS (soon)" for a companion that has shipped since
-               vCode 10042, while Apple Watch directly above renders as available with no
-               gate at all. Same treatment for both now. -->
+          <!-- Wear OS is LIVE since 2026-09-12 (wear vCode 10054 / 1.5.4, published 12:59
+               once the WO-G2 listing rejection was fixed). The gate below is KEPT rather
+               than replaced by a plain link: it is what held this honest through the whole
+               build-but-unpublished period, and it flips on config alone. It now resolves
+               because config.app.watch.android defaults to the Play listing — Play serves
+               the wear build from the SAME listing by form factor, so there is no separate
+               Wear URL to point at.
+               History worth keeping: :wear carried no signingConfig until 1.5.3, so every
+               earlier wear bundle was unsigned and unuploadable — which is why the track
+               sat empty for months while the code shipped. An edit here once removed this
+               gate and rendered a plain link on the belief it had shipped; it had not. -->
           <div>
-            <a href="/#" class="opacity-60 hover:opacity-100" @click="emit('navigate', 'main')">
+            <a
+              v-if="config.app.watch.android"
+              :href="config.app.watch.android"
+              target="_blank"
+              rel="noopener"
+              class="opacity-60 hover:opacity-100"
+            >
               Wear OS
             </a>
+            <span v-else class="text-muted-foreground cursor-not-allowed opacity-60">
+              Wear OS <span class="text-[10px]">(soon)</span>
+            </span>
           </div>
         </div>
 
@@ -169,7 +196,10 @@
           </div>
         </div>
 
-        <div class="flex flex-col gap-2">
+        <div
+          v-if="config.socials.instagram || config.socials.tiktok || config.socials.linkedin"
+          class="flex flex-col gap-2"
+        >
           <h3 class="font-bold text-lg">Socials</h3>
           <div v-if="config.socials.instagram">
             <a
@@ -217,5 +247,6 @@
         </button>
       </section>
     </div>
+    <div class="container pb-8"><ShareButtons /></div>
   </footer>
 </template>

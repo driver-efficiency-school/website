@@ -47,7 +47,7 @@
     {
       question: 'Is my data safe with Efficiver?',
       answer:
-        "Yes. Your driving data stays on your phone, stored locally — in SwiftData on iPhone and SQLite on Android. On iPhone, iCloud sync is optional and uses your own private iCloud database — never Efficiver's servers. We don't collect, store, or sell your driving data. Privacy is built in.",
+        "Yes. Your driving data stays on your phone, stored locally — in SwiftData on iPhone and SQLite on Android. On iPhone, sessions sync automatically once you're signed in to iCloud, through your own private iCloud database — never Efficiver's servers, and there's no separate switch. We don't collect, store, or sell your driving data — the one exception is if you join an employer's Efficiver Fleet, where the drives you record on duty are shared with them. Privacy is built in.",
       value: 'item-5'
     },
     {
@@ -59,7 +59,7 @@
     {
       question: 'Which devices are compatible with Efficiver?',
       answer:
-        "Efficiver runs on iPhones with iOS 26 or later, and on iPad, with CarPlay support (v1.3) and an Apple Watch companion (v1.4). The AidOps Edge coaching insights use Apple Intelligence where it's available; every other feature works without it. Efficiver is also available on Google Play for Android 12 and later, on 64-bit devices, with a Wear OS companion.",
+        "Efficiver runs on iPhones with iOS 26 or later, and on iPad, with CarPlay support (v1.3) and an Apple Watch companion (v1.4). The AidOps Edge coaching insights use Apple Intelligence where it's available; every other feature works without it. Efficiver is also available on Google Play for Android 12 and later, on 64-bit devices, with a Wear OS companion for watches running Wear OS 3 or later.",
       value: 'item-7'
     },
     {

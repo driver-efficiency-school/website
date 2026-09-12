@@ -35,6 +35,7 @@ function mainStubs(wrapper: VueWrapper) {
 
 function pageStubs(wrapper: VueWrapper) {
   return {
+    fleet: wrapper.find('fleet-page-stub').exists(),
     terms: wrapper.find('terms-of-use-stub').exists(),
     privacy: wrapper.find('privacy-policy-stub').exists(),
     accessibility: wrapper.find('accessibility-stub').exists(),
@@ -75,6 +76,7 @@ describe('App', () => {
         faq: true
       })
       expect(pageStubs(wrapper)).toEqual({
+        fleet: false,
         terms: false,
         privacy: false,
         accessibility: false,
@@ -103,6 +105,8 @@ describe('App', () => {
 
   describe('landing on a direct link', () => {
     it.each([
+      ['#fleet-guide', 'fleet'],
+      ['#fleet', 'fleet'],
       ['#terms', 'terms'],
       ['#privacy', 'privacy'],
       ['#accessibility', 'accessibility'],
@@ -123,6 +127,15 @@ describe('App', () => {
   })
 
   describe('navigating from within the app', () => {
+    it('opens the fleet guide from navigation', async () => {
+      const wrapper = shallowMount(App)
+      await flush()
+      await wrapper.findComponent({ name: 'Navbar' }).vm.$emit('navigate', 'fleet-guide')
+      expect(window.location.hash).toBe('#fleet-guide')
+      expect(pageStubs(wrapper).fleet).toBe(true)
+      expect(mainStubs(wrapper).hero).toBe(false)
+    })
+
     it("Navbar's navigate event switches the view and updates the hash", async () => {
       const wrapper = shallowMount(App)
       await flush()
