@@ -37,7 +37,14 @@ export const config = {
     androidAuto: import.meta.env.VITE_ANDROID_AUTO_LINK || '',
     watch: {
       apple: import.meta.env.VITE_APPLE_WATCH_LINK || '',
-      android: import.meta.env.VITE_ANDROID_WATCH_LINK || ''
+      // Wear OS went LIVE on Play 2026-09-12 (wear vCode 10054 / 1.5.4, published
+      // 12:59). It is delivered from the SAME listing as the phone app — Play
+      // routes by form factor, there is no separate Wear URL — so this defaults
+      // to the phone listing rather than staying empty. Footer.vue's gate then
+      // renders a real link instead of "(soon)".
+      android:
+        import.meta.env.VITE_ANDROID_WATCH_LINK ||
+        'https://play.google.com/store/apps/details?id=school.efficiency.drive.efficiver'
     },
     dashboard: import.meta.env.VITE_DASHBOARD_LINK || ''
   },

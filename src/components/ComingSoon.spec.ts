@@ -5,7 +5,7 @@ import ComingSoon from './ComingSoon.vue'
 describe('ComingSoon', () => {
   it('renders the placeholder heading and message', () => {
     const wrapper = mount(ComingSoon)
-    expect(wrapper.get('h2').text()).toBe('Coming Soon...')
+    expect(wrapper.get('h1').text()).toBe('The fleet Dashboard is on its way.')
     expect(wrapper.text()).toContain('Dashboard')
   })
 })

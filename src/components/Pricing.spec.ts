@@ -68,12 +68,12 @@ describe('Pricing', () => {
     expect(pro.text()).not.toMatch(/auto-start/i)
   })
 
-  it('visually marks exactly the Pro card as the popular choice', () => {
+  it('emphasises the available free app over the upcoming Pro plan', () => {
     const wrapper = mount(Pricing)
     const [free, pro, fleet] = cards(wrapper)
-    expect(pro.classes().join(' ')).toContain('border-primary')
-    expect(free.classes().join(' ')).toContain('opacity-75')
-    expect(fleet.classes().join(' ')).toContain('opacity-75')
+    expect(free.classes().join(' ')).toContain('border-primary')
+    expect(pro.classes().join(' ')).not.toContain('border-primary')
+    expect(fleet.classes().join(' ')).not.toContain('border-primary')
   })
 
   describe('what each button actually does', () => {

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="container mx-auto px-6 sm:px-8 py-12 sm:py-16">
+  <div class="reading-page mx-auto px-6 sm:px-8 py-12 sm:py-16">
     <!-- Document Title (excluded from opacity-80) -->
     <h1 class="text-3xl font-bold mb-6 text-center">Help & Support for Efficiver</h1>
 
@@ -94,10 +94,10 @@
             Efficiver Pro (coming soon).
           </li>
           <li>
-            <strong>Apple Watch companion (v1.4, iPhone):</strong> Live score, mistakes, and elapsed
-            time on your wrist, start or stop with a tap or Siri, a haptic buzz on every harsh accel
-            or brake, and a watch-face complication. A Wear OS companion is built and will follow in
-            a later release; it is not available yet.
+            <strong>Watch companions:</strong> Live score, mistakes and elapsed time on your wrist,
+            start or stop with a tap, and a watch-face complication — on Apple Watch (v1.4) and on
+            Wear OS (v1.5.4). Siri start/stop and the haptic buzz on every harsh accel or brake are
+            iPhone and Apple Watch only today.
           </li>
           <li>
             <strong>More accurate savings (v1.4):</strong> Fuel and CO₂ savings are now calculated
@@ -584,7 +584,8 @@
             own backup, if you leave it on, saves to <em>your</em> Google account.
           </li>
           <li>
-            <strong>No ads or analytics:</strong> No analytics SDKs, no advertising IDs, no
+            <strong>No ads or ad tracking:</strong> Driving analytics help you understand your
+            trips. We do not include third-party usage analytics SDKs, advertising IDs or usage
             telemetry. Weather and maps are served by Apple on iPhone and by OpenWeather and Google
             on Android — see the Privacy Policy for what each receives.
           </li>
@@ -740,8 +741,8 @@
         </ul>
         <p class="mt-4 text-sm">
           Efficiver ships today on iOS (iPhone, iPad, CarPlay, Apple Watch) and on Android via
-          Google Play. Android requires Android 12 or later on a 64-bit device. A Wear OS companion
-          is built and will follow in a later release.
+          Google Play, with a Wear OS companion. Android requires Android 12 or later on a 64-bit
+          device; the watch companion needs Wear OS 3 or later, paired to that phone.
         </p>
       </div>
     </section>

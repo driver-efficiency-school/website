@@ -1,111 +1,49 @@
 <script setup lang="ts">
-  import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-  import { Badge } from '@/components/ui/badge'
-  import DownloadPhone from '@/components/icons/DownloadPhone.vue'
-  import DriveCar from '@/components/icons/DriveCar.vue'
-  import AnalyzeChart from '@/components/icons/AnalyzeChart.vue'
-  import ImproveBadge from '@/components/icons/ImproveBadge.vue'
-
-  interface HowItWorksProps {
-    badgeTitle: string
-    title: string
-    description: string
-    alt?: string
-  }
-
-  const HowItWorksList: HowItWorksProps[] = [
-    {
-      badgeTitle: 'Download',
-      title: 'Download & Calibrate',
-      description:
-        "Install Efficiver and run Smart Detection's initial calibration while parked — about two minutes, a minute with the engine running and a minute with it off. You start it yourself; it does not happen while you drive. It learns to tell your engine running from stopped. No OBD dongle, no rev-range setup.",
-      alt: 'Download the Efficiver app on mobile'
-    },
-    {
-      badgeTitle: 'Drive',
-      title: 'Drive & Track – Offline',
-      description:
-        "Track your driving efficiency offline using only your phone's sensors. Keep Efficiver visible while you drive; logging continues when you switch to Maps or Music.",
-      alt: 'Drive and track with your phone in the car'
-    },
-    {
-      badgeTitle: 'Analyze',
-      title: 'Analyze – Fuel & CO2 Insights',
-      description:
-        'Get detailed trip metrics with estimated fuel, cost and CO2 impact for each drive.',
-      alt: 'Trip analytics and CO2/fuel insights'
-    },
-    {
-      badgeTitle: 'Improve',
-      title: 'Improve – Personalized Tips',
-      description:
-        'Receive offline coaching tips to drive more smoothly and efficiently with every session.',
-      alt: 'Improve driving with personalized tips'
-    }
-  ]
+  import { useColorMode } from '@vueuse/core'
+  const mode = useColorMode()
 </script>
-
 <template>
-  <section id="how-it-works" class="container py-24 sm:py-32">
-    <div class="text-center mb-8">
-      <h2 class="text-lg text-primary text-center mb-2 tracking-wider">How It Works</h2>
-
-      <h2 class="text-3xl md:text-4xl text-center font-bold">
-        Get Started with Efficiver in 4 Easy Steps
-      </h2>
-    </div>
-
-    <div class="lg:w-[80%] mx-auto relative">
-      <div
-        v-for="({ badgeTitle, title, description, alt }, index) in HowItWorksList"
-        :key="title"
-        :class="['flex mb-8 items-center', { ' flex-row-reverse': index % 2 !== 0 }]"
-      >
-        <Card class="h-full bg-transparent border-0 shadow-none">
-          <CardHeader>
-            <div class="pb-4">
-              <Badge>{{ badgeTitle }}</Badge>
-            </div>
-
-            <CardTitle>
-              {{ title }}
-            </CardTitle>
-          </CardHeader>
-
-          <CardContent class="text-muted-foreground w-[80%]">
-            {{ description }}
-          </CardContent>
-        </Card>
-
-        <div class="w-[105px] md:w-[175px] lg:w-[210px] mx-auto -scale-x-100 text-primary">
-          <!-- v8 ignore start: `alt || title` is unreachable while every entry
-               in HowItWorksList sets `alt` - the whole tag is bracketed
-               because a template comment cannot sit between one attribute and
-               another. The icon-selection ternary just above stays genuinely
-               tested: all four branches are asserted by name in the spec. -->
-          <component
-            :is="
-              index === 0
-                ? DownloadPhone
-                : index === 1
-                  ? DriveCar
-                  : index === 2
-                    ? AnalyzeChart
-                    : ImproveBadge
-            "
-            :aria-label="alt || title"
-          />
-          <!-- v8 ignore stop -->
-        </div>
-        <div
-          :class="[
-            '-z-10 absolute right-0 w-44 h-72  lg:w-64 lg:h-80 rounded-full bg-primary/15 dark:bg-primary/10 blur-3xl',
-            {
-              'left-0': index % 2 !== 0
-            }
-          ]"
-        ></div>
+  <section id="how-it-works" class="container py-16 sm:py-20">
+    <div class="grid md:grid-cols-[1fr_auto] items-center gap-10 max-w-5xl mx-auto">
+      <div>
+        <p class="text-primary text-sm uppercase tracking-widest font-semibold">Getting started</p>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-3">Set up once. Start your drive.</h2>
+        <p class="text-muted-foreground text-lg mt-5">
+          Do the setup while parked. You do not need to buy or fit an OBD dongle.
+        </p>
+        <ol class="list-decimal pl-5 space-y-5 mt-7 text-muted-foreground">
+          <li>
+            <strong class="text-foreground">Choose your vehicle and permissions.</strong> Select
+            petrol, diesel or electric and allow the location and motion access needed for
+            recording.
+          </li>
+          <li>
+            <strong class="text-foreground">Keep your phone in a stable position.</strong> Follow
+            Smart Detection’s parked calibration instructions. For an engine, this is about a minute
+            running and a minute off. Recalibrate after changing vehicle or phone position.
+          </li>
+          <li>
+            <strong class="text-foreground">Start recording before you move.</strong> Logging
+            continues when you switch to Maps or Music. Review the results after parking.
+          </li>
+        </ol>
+        <a href="#help" class="inline-block mt-7 font-semibold underline underline-offset-4"
+          >Read the complete setup guide →</a
+        >
       </div>
+      <figure class="flex flex-col items-center">
+        <img
+          :src="mode === 'light' ? 'screen-light_101.webp' : 'screen-dark_001.webp'"
+          alt="Efficiver start screen with its Drive button"
+          width="1206"
+          height="2622"
+          loading="lazy"
+          class="w-44 sm:w-52 rounded-3xl border shadow-lg"
+        />
+        <figcaption class="text-xs text-muted-foreground mt-4">
+          The start screen · iPhone shown
+        </figcaption>
+      </figure>
     </div>
   </section>
 </template>

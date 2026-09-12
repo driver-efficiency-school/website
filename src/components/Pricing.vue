@@ -114,10 +114,12 @@
 </script>
 
 <template>
-  <section id="pricing" class="container py-24 sm:py-32">
+  <section id="pricing" class="container py-16 sm:py-20">
     <h2 class="text-lg text-primary text-center mb-2 tracking-wider">Pricing</h2>
 
-    <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">Plans</h2>
+    <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
+      Start free. Go deeper when you need to.
+    </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
       Efficiver is free to use today. Efficiver Pro will add deeper insights and history, and
@@ -129,9 +131,9 @@
         v-for="{ id, title, popular, description, buttonText, benefitList } in plans"
         :key="title"
         :class="{
-          'drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.1]':
-            popular === PopularPlan?.YES,
-          'opacity-75': popular === PopularPlan?.NO
+          'drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary ':
+            popular === PopularPlan?.NO && id === 'efficiver',
+          'bg-muted/20': popular === PopularPlan?.YES
         }"
       >
         <CardHeader class="relative">

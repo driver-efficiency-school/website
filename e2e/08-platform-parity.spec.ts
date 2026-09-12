@@ -27,7 +27,7 @@ import { test, expect } from '@playwright/test'
  * identifier before any text is read.
  */
 const ROUTES = [
-  { hash: '', name: 'home', identifier: 'Why Choose Efficiver?' },
+  { hash: '', name: 'home', identifier: 'The details that make everyday driving easier' },
   // #investors removed (D2) — no longer a route, so nothing to crawl.
   // Each identifier must be text that ONLY the mounted view has. The footer links read
   // "Terms of Use", "Privacy Policy", "Help & Support" and "Accessibility" and are present
@@ -52,12 +52,16 @@ const ROUTES = [
  */
 const IOS_EXCLUSIVE: Array<{ ios: RegExp; counterpart: RegExp; label: string }> = [
   { ios: /\bVoiceOver\b/i, counterpart: /\bTalkBack\b/i, label: 'VoiceOver → TalkBack' },
-  // Apple Watch and watchOS were paired with Wear OS here until 2026-08-27. That was a
-  // BUG IN THE TEST once Wear OS turned out to be unpublished: pairing let an Apple Watch
-  // claim pass BY NAMING Wear OS, so the invariant actively rewarded advertising a
-  // companion nobody can install. A counterpart is only a counterpart if it ships. Both
-  // now live in IPHONE_ONLY, where qualification is the only way to pass. Move them back
-  // when the Wear OS Play track has an actual release.
+  // Apple Watch / watchOS ↔ Wear OS: PAIRED AGAIN as of 2026-09-12, when wear vCode
+  // 10054 (1.5.4) was published to the Wear OS Play track.
+  //
+  // They were moved OUT of this list on 2026-08-27 and into IPHONE_ONLY, because a
+  // counterpart is only a counterpart if it SHIPS — while the wear track was empty,
+  // pairing let an Apple Watch claim pass merely BY NAMING Wear OS, so the invariant
+  // rewarded advertising a companion nobody could install. That condition is now gone.
+  // If the Wear track is ever pulled, move these back rather than deleting the rule.
+  { ios: /\bApple Watch\b/i, counterpart: /\bWear OS\b/i, label: 'Apple Watch → Wear OS' },
+  { ios: /\bwatchOS\b/i, counterpart: /\bWear OS\b/i, label: 'watchOS → Wear OS' },
   { ios: /\bApple Maps\b/i, counterpart: /\bGoogle Maps\b/i, label: 'Apple Maps → Google Maps' },
   { ios: /\bApp Store\b/i, counterpart: /\bGoogle Play\b/i, label: 'App Store → Google Play' },
   // androidx.sqlite (SupportSQLiteOpenHelper), verified in libs.versions.toml.
@@ -99,11 +103,7 @@ const IOS_EXCLUSIVE: Array<{ ios: RegExp; counterpart: RegExp; label: string }> 
 const IPHONE_ONLY: Array<{ ios: RegExp; label: string }> = [
   { ios: /\bSiri\b/i, label: 'Siri (iPhone only)' },
   { ios: /\biCloud\b/i, label: 'iCloud (iPhone only)' },
-  { ios: /\bCarPlay\b/i, label: 'CarPlay (iPhone only)' },
-  // Wear OS is BUILT but NOT PUBLISHED — no release has ever existed on its dedicated Play
-  // track, so the watch companion is iPhone-only in practice however much wear code exists.
-  { ios: /\bApple Watch\b/i, label: 'Apple Watch (iPhone only until Wear OS ships)' },
-  { ios: /\bwatchOS\b/i, label: 'watchOS (iPhone only until Wear OS ships)' }
+  { ios: /\bCarPlay\b/i, label: 'CarPlay (iPhone only)' }
 ]
 
 /**
@@ -269,13 +269,14 @@ test.describe('Platform parity across every route', () => {
     test(`${route.name}: no shipped platform is labelled "(soon)"`, async ({ page }) => {
       // A "(soon)" chip on a platform that HAS shipped understates the product.
       //
-      // Wear OS was on this list until 2026-08-27, on the belief it had shipped. It had
-      // not — its dedicated Play track has never had a release, because :wear carried no
-      // signingConfig until 1.5.3 and every earlier bundle was unsigned. So "(soon)" is
-      // the accurate label for it, and this list must not demand otherwise. Add it back
-      // when the Wear OS track goes live.
+      // Wear OS is back on this list as of 2026-09-12, when wear vCode 10054 was
+      // published. It was removed on 2026-08-27 — correctly, because its Play track was
+      // then empty (:wear had no signingConfig until 1.5.3, so every earlier bundle was
+      // unsigned and unuploadable) and "(soon)" was the honest label. Both directions of
+      // this list have been wrong at different times; it tracks what Play actually
+      // serves, not what the repo can build.
       const body = await textOf(page, route)
-      for (const shipped of ['iOS', 'Android', 'Apple Watch', 'CarPlay']) {
+      for (const shipped of ['iOS', 'Android', 'Apple Watch', 'Wear OS', 'CarPlay']) {
         expect(
           body,
           `${route.name} labels shipped platform "${shipped}" as coming soon`
@@ -317,35 +318,11 @@ test.describe('Platform parity across every route', () => {
     ).toEqual([])
   })
 
-  test('Wear OS is never presented as available while its Play track is empty', async ({
-    page
-  }) => {
-    // The inverse of every other check in this file: not "is the Android side named?" but
-    // "are we naming something nobody can install?". Wear OS code ships in the repo, which
-    // is exactly what made this easy to get wrong — the site advertised it in six places
-    // while no Wear OS release had ever existed on Play.
-    //
-    // DELETE THIS TEST when the Wear OS track goes live. Until then, Wear OS may only
-    // appear as unavailable — "(soon)", "will follow", "not available yet".
-    const UNAVAILABLE = /\(soon\)|will follow|not (yet )?available|coming/i
-    const offenders: string[] = []
-
-    for (const route of ROUTES) {
-      await textOf(page, route)
-      const statements = await statementsOf(page)
-      for (const s of statements) {
-        if (!/\bWear OS\b/i.test(s.text)) continue
-        if (UNAVAILABLE.test(s.text)) continue
-        offenders.push(`${route.name}: "${s.text.slice(0, 110)}"`)
-      }
-      // A live hyperlink is a stronger claim than prose, so check it separately.
-      const linked = await page.locator('a', { hasText: /^\s*Wear OS\s*$/i }).count()
-      if (linked > 0) offenders.push(`${route.name}: ${linked} live "Wear OS" link(s)`)
-    }
-
-    expect(
-      offenders,
-      `Wear OS presented as available, but its Play track has no release:\n  ${offenders.join('\n  ')}`
-    ).toEqual([])
-  })
+  // REMOVED 2026-09-12: 'Wear OS is never presented as available while its Play track is
+  // empty'. It existed because the repo could BUILD a wear app that Play never served —
+  // the site advertised it in six places while the track was empty — and it carried its
+  // own instruction to delete it once that track went live. Wear vCode 10054 (1.5.4) was
+  // published 2026-09-12 12:59, so the premise is gone and keeping the test would now
+  // forbid the truth. The forward direction (Apple Watch ↔ Wear OS) is back in
+  // IOS_EXCLUSIVE above, which is what guards this ground from here on.
 })

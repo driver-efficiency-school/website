@@ -36,6 +36,7 @@ import { test, expect } from '@playwright/test'
 test.describe('No absolute data claim on the marketing surface', () => {
   test('Hero claims no blanket absence of data collection', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     const hero = (await page.locator('section').first().textContent()) ?? ''
     expect(hero).not.toMatch(/No Data Collection/i)
   })
@@ -46,6 +47,7 @@ test.describe('No absolute data claim on the marketing surface', () => {
   ] as const) {
     test(`${label} makes no unqualified privacy absolute`, async ({ page }) => {
       await page.goto('/')
+      await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
       const v = (await page.locator(sel).getAttribute('content')) ?? ''
       expect(v, label).not.toMatch(/nothing leaves your device/i)
       expect(v, label).not.toMatch(/100% priv/i)
@@ -85,6 +87,7 @@ test.describe('Help states the real default, not a false one', () => {
 test.describe('Verified privacy claims are preserved', () => {
   test('Features keeps the verified no-ad-tracking claim, scoped', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#features').scrollIntoViewIfNeeded()
     const f = (await page.locator('section#features').textContent()) ?? ''
     expect(f).toMatch(/No advertising identifiers, no third-party analytics, no ad tracking/i)
@@ -94,6 +97,7 @@ test.describe('Verified privacy claims are preserved', () => {
 
   test('the AidOps-scoped on-device claim survives', async ({ page }) => {
     await page.goto('/')
+    await page.getByText('Fleet enquiries and joining information', { exact: true }).click()
     await page.locator('section#whats-new').scrollIntoViewIfNeeded()
     const w = (await page.locator('section#whats-new').textContent()) ?? ''
     expect(w).toMatch(/nothing leaves your device/i)

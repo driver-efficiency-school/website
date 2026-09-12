@@ -32,7 +32,7 @@ import { test, expect } from '@playwright/test'
 const MEASUREMENT_WORDS = [/quantify/i, /exact fuel|exact savings|exact CO/i, /precisely/i]
 
 test.describe('Savings are described as estimates', () => {
-  for (const sel of ['section#features', 'section#how-it-works']) {
+  for (const sel of ['section#features', '#costs']) {
     test(`${sel} claims no measurement of fuel or CO₂`, async ({ page }) => {
       await page.goto('/')
       await page.locator(sel).scrollIntoViewIfNeeded()
@@ -53,11 +53,11 @@ test.describe('Savings are described as estimates', () => {
     expect(f).toMatch(/vehicle|road|traffic|route|conditions/i)
   })
 
-  test('How It Works says estimate', async ({ page }) => {
+  test('Cost explanation labels estimates', async ({ page }) => {
     await page.goto('/')
-    await page.locator('section#how-it-works').scrollIntoViewIfNeeded()
-    await expect(page.locator('section#how-it-works')).toBeVisible()
-    const h = (await page.locator('section#how-it-works').textContent()) ?? ''
+    await page.locator('#costs').scrollIntoViewIfNeeded()
+    await expect(page.locator('#costs')).toBeVisible()
+    const h = (await page.locator('#costs').textContent()) ?? ''
     expect(h).toMatch(/estimate/i)
   })
 })

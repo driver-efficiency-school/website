@@ -51,7 +51,14 @@ describe('defaults when env is empty', () => {
     })
     expect(c.contact.phone).toBe('')
     expect(c.socials).toEqual({ instagram: '', tiktok: '', linkedin: '' })
-    expect(c.app.watch).toEqual({ apple: '', android: '' })
+    // watch.apple stays empty — there is no separate Apple Watch store URL to point at.
+    // watch.android is NOT empty by design since 2026-09-12: Wear OS is live on Play
+    // (wear vCode 10054) and is served from the phone listing by form factor, so the
+    // default IS the real destination rather than an invention.
+    expect(c.app.watch.apple).toBe('')
+    expect(c.app.watch.android).toBe(
+      'https://play.google.com/store/apps/details?id=school.efficiency.drive.efficiver'
+    )
     expect(c.app.dashboard).toBe('')
   })
 })

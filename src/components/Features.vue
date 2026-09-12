@@ -43,12 +43,10 @@
     },
     {
       icon: 'watch',
-      title: 'Apple Watch companion (iPhone)',
-      // Wear OS is built but not published — its Play track has never had a release, so
-      // naming it here would advertise something nobody can install. Restore the pairing
-      // when the Wear OS track goes live.
+      title: 'Watch companions',
+      // Wear OS went live on Play 2026-09-12 (wear 10054), so the pairing is restored.
       description:
-        'Start and stop drives from your wrist and glance at your live score, on iPhone with Apple Watch.'
+        'Start and stop drives from your wrist and glance at your live score — Apple Watch on iPhone, Wear OS on Android.'
     },
     {
       icon: 'map',
@@ -156,10 +154,12 @@
 </script>
 
 <template>
-  <section id="features" class="container py-24 sm:py-32">
+  <section id="features" class="container py-16 sm:py-20">
     <h2 class="text-lg text-primary text-center mb-2 tracking-wider">Features</h2>
 
-    <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">Why Choose Efficiver?</h2>
+    <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">
+      The details that make everyday driving easier
+    </h2>
 
     <h3 class="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
       Discover the features that help you understand and improve your driving efficiency. Core trip
@@ -174,25 +174,30 @@
       a navigation, collision-avoidance or safety-critical system.
     </p>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div v-for="{ icon, title, description } in featureList" :key="title">
-        <Card class="h-full bg-background border-0 shadow-none">
-          <CardHeader class="flex justify-center items-center">
-            <div class="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
-              <component :is="iconMap[icon]" class="size-6 text-primary" />
-            </div>
+    <details class="rounded-2xl border p-5 sm:p-8">
+      <summary class="cursor-pointer font-semibold text-lg">
+        Explore all 13 app capabilities
+      </summary>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+        <div v-for="{ icon, title, description } in featureList" :key="title">
+          <Card class="h-full bg-background border-0 shadow-none">
+            <CardHeader class="flex justify-center items-center">
+              <div class="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
+                <component :is="iconMap[icon]" class="size-6 text-primary" />
+              </div>
 
-            <CardTitle>
-              {{ title }}
-            </CardTitle>
-          </CardHeader>
+              <CardTitle>
+                {{ title }}
+              </CardTitle>
+            </CardHeader>
 
-          <CardContent class="text-muted-foreground text-center">
-            {{ description }}
-          </CardContent>
-        </Card>
+            <CardContent class="text-muted-foreground text-center">
+              {{ description }}
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </div>
+    </details>
   </section>
 </template>
 

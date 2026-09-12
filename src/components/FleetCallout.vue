@@ -67,7 +67,7 @@
 </script>
 
 <template>
-  <section id="fleet" class="container py-24 sm:py-32">
+  <section id="fleet" class="container py-16 sm:py-20">
     <h2 class="text-lg text-primary text-center mb-2 tracking-wider">Efficiver Fleet</h2>
 
     <h2 class="text-3xl md:text-4xl text-center font-bold mb-4">Driving for work?</h2>
@@ -77,6 +77,11 @@
       hardware, no trackers to fit.
     </h3>
 
+    <p class="text-center mb-8">
+      <a href="#fleet-guide" class="text-primary font-semibold underline underline-offset-4"
+        >Explore the fleet workflow →</a
+      >
+    </p>
     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       <!-- Drivers: invite-only, so deliberately no CTA button. -->
       <Card class="flex flex-col">
@@ -92,6 +97,10 @@
             Only the drives you record while you are
             <strong class="text-foreground">on duty</strong> are shared with your fleet. Off-duty
             drives stay on your phone, and you can leave the fleet at any time.
+          </p>
+          <p class="text-sm">
+            Your fleet may allow a duty switch or keep you on duty by policy. Check your
+            organisation’s rules before joining.
           </p>
           <p class="text-sm">No code yet? Ask your employer — we can't issue one for you.</p>
         </CardContent>
