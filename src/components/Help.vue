@@ -94,10 +94,10 @@
             Efficiver Pro (coming soon).
           </li>
           <li>
-            <strong>Apple Watch companion (v1.4, iPhone):</strong> Live score, mistakes, and elapsed
-            time on your wrist, start or stop with a tap or Siri, a haptic buzz on every harsh accel
-            or brake, and a watch-face complication. A Wear OS companion is built and will follow in
-            a later release; it is not available yet.
+            <strong>Watch companions:</strong> Live score, mistakes and elapsed time on your wrist,
+            start or stop with a tap, and a watch-face complication — on Apple Watch (v1.4) and on
+            Wear OS (v1.5.4). Siri start/stop and the haptic buzz on every harsh accel or brake are
+            iPhone and Apple Watch only today.
           </li>
           <li>
             <strong>More accurate savings (v1.4):</strong> Fuel and CO₂ savings are now calculated
@@ -741,8 +741,8 @@
         </ul>
         <p class="mt-4 text-sm">
           Efficiver ships today on iOS (iPhone, iPad, CarPlay, Apple Watch) and on Android via
-          Google Play. Android requires Android 12 or later on a 64-bit device. A Wear OS companion
-          is built and will follow in a later release.
+          Google Play, with a Wear OS companion. Android requires Android 12 or later on a 64-bit
+          device; the watch companion needs Wear OS 3 or later, paired to that phone.
         </p>
       </div>
     </section>

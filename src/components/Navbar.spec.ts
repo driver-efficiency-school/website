@@ -85,10 +85,11 @@ describe('Navbar', () => {
       await openFeaturesDropdown(wrapper)
       expect(document.body.textContent).toContain('Apple Maps on iPhone, Google Maps on Android')
       expect(document.body.textContent).toContain('VoiceOver and TalkBack')
-      // Wear OS is built but never published to Play (ced4cb0) - the dropdown
-      // must not imply it's available on Android.
-      expect(document.body.textContent).toContain('Apple Watch companion')
-      expect(document.body.textContent).not.toMatch(/Wear OS/)
+      // Wear OS went live on Play 2026-09-12 (wear 10054), so the dropdown now names
+      // BOTH watch platforms. It previously asserted Wear OS was absent, which was
+      // right while the track was empty and would now forbid the truth.
+      expect(document.body.textContent).toContain('Watch companions')
+      expect(document.body.textContent).toContain('Apple Watch on iPhone, Wear OS on Android')
     })
 
     it('sends the reader to the Features section and closes the routing back to main', async () => {
